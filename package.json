@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.2",
+    "contentlayer": "^0.2.8",
+    "date-fns": "^2.29.3",
     "next": "12.3.1",
+    "next-contentlayer": "^0.2.8",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.7",
     "@types/node": "18.7.19",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
