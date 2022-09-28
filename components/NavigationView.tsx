@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React, { FC } from "react";
-import { Menu } from "@headlessui/react";
+import React, { FC, useState } from "react";
+// import { Menu } from "@headlessui/react";
 import { useRouter } from "next/router";
 
 const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
   const router = useRouter();
+  // const [isActive, setActive] = useState("false");
   const isActive = router.asPath === url;
   return (
     <Link href={url}>
@@ -22,6 +23,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
     </Link>
   );
 };
+
 export default function NavigationView() {
   return (
     <div>
@@ -29,8 +31,8 @@ export default function NavigationView() {
         {/* Desktop menu */}
         <div className="hidden items-center sm:flex">
           <DesktopNavItem url="/" name="Home" />
-          <DesktopNavItem url="/blogs" name="blogs" />
-          <DesktopNavItem url="/about" name="about" />
+          <DesktopNavItem url="/posts" name="Posts" />
+          <DesktopNavItem url="/about" name="About" />
         </div>
       </div>
     </div>

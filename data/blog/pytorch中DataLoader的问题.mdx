@@ -1,0 +1,70 @@
+---
+title: pytorch 中 DataLoader 的问题
+summary: "idk"
+publishDate: 2022-01-25 22:09:14
+tags:
+  - python
+  - pytorch
+  - DataLoader
+  - error
+categories:
+  - 技术
+---
+
+## 复现问题
+
+` RuntimeError: DataLoader worker (pid(s) 34132) exited unexpectedly`，但是如果将 `num_workers` 设置为 0，则不会出现这个问题。只用单线程跑的话不会出问题。
+
+```python
+import torch
+import numpy as np
+from torch.utils.data import Dataset, DataLoader
+
+
+class WineDataset(Dataset):
+    def __init__(self):
+        # data loading
+        xy = np.loadtxt(
+            "./pytorchTutorial/data/wine/wine.csv", delimiter=",", dtype=np.float32, skiprows=1,
+        )
+        self.x = torch.from_numpy(xy[:, 1:])
+        self.y = torch.from_numpy(xy[:, [0]])
+        self.n_samples = xy.shape[0]  # number of samples
+
+    def __getitem__(self, index):
+        return self.x[index], self.y[index]
+
+    def __len__(self):
+        return self.n_samples
+
+
+
+dataset = WineDataset()
+# first_data = dataset[0]
+# features, labels = first_data
+dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True, num_workers=2)
+dataiter = iter(dataloader)
+data = dataiter.next()
+features, labels = data
+print(features, labels)
+```
+
+## 解决
+
+发现有很多人都有这个问题，https://github.com/pytorch/pytorch/issues/5301。但是貌似还没有人解释为什么这个问题会出现。
+
+> I had a similar error with my datasets.
+> The problem was that I had incorrect dimensions at some point which made some of the tensors become huge, so they were overfilling the memory.
+>
+> Correcting the dimensions solved this problem.
+
+解决方法很简单，把迭代部分放在 `__main__` 中就可以了
+
+```python
+if __name__ == "__main__":
+    dataset = WineDataset()
+    dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True, num_workers=2)
+    dataiter = iter(dataloader)
+    data = dataiter.next()
+    features, labels = data
+```

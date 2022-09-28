@@ -1,0 +1,105 @@
+---
+title: javascript 的异步问题和 this 问题
+summary: "idk"
+tags:
+  - 前端
+  - Vue3
+  - 异步
+  - 问题
+  - this
+  - js
+  - ts
+categories:
+  - 技术
+publishDate: 2022-01-14 18:17:00
+---
+
+## 代码
+
+```html
+<template>
+  <!-- record has been declared -->
+  <a-button @click="edit(record)">edit</a-button>
+  <a-modal data-source="treeSelectData">
+    <a-form-item label="content">
+      <div id="content"></div>
+    </a-form-item>
+  </a-modal>
+</template>
+```
+
+```typescript
+import Editor from "wangeditor"; // a Rich Text Format Editor
+
+// variables has been declared
+const edit = (record: any) => {
+  modalVisible.value = true; // show the a-modal
+  doc.value = Tool.copy(record);
+
+  treeSelectData.value = Tool.copy(docs.value);
+  setDisable(treeSelectData.value, record.id);
+  treeSelectData.value.unshift({ id: "0", name: "root" }); // treeSelectData is the datasource of a-modal
+
+  const editor = new Editor("#content");
+  editor.create();
+};
+```
+
+## 现象
+
+### 异步问题
+
+报错 `Invalid selector: #content`，只有我按下 edit 按钮时，modal 才会出现。也就是说这之前 DOM 里面是没有元素 `<div id="content"></div>` 的。
+
+但是如果将 edit 改造成一个异步方法，在 `treeSelectData.value.unshift({ id: "0", name: "root" });` 前加上 `await`，就不会报错并且也能正常显示出 `editor`。
+
+所以这是为什么呢？
+
+我的猜测是只有在数据源准备好的时候 a-modal 才会显示，所以我把 `treeSelectData.value.unshift({ id: "0", name: "root" });` 加上 `await` 就能解决问题了。
+
+```typescript
+import Editor from "wangeditor"; // a Rich Text Format Editor
+
+// variables has been declared
+const edit = async (record: any) => {
+  modalVisible.value = true; // show the a-modal
+  doc.value = Tool.copy(record);
+
+  treeSelectData.value = Tool.copy(docs.value);
+  setDisable(treeSelectData.value, record.id);
+  await treeSelectData.value.unshift({ id: "0", name: "root" }); // treeSelectData is the datasource of a-modal
+
+  const editor = new Editor("#content");
+  editor.create();
+};
+```
+
+### this 的问题
+
+`handleQueryContent(record)` 是一个异步方法，从后端 `GET` 一个字符串，返回一个 `Promise<string>`。我的目的是直接在富文本编辑器中显示这个数据，显示方法大概是 `editor.txt.html(val:string)`。
+
+```typeScript
+handleQueryContent(record).then(editor.txt.html);
+```
+
+此时如果直接调用 `handleQueryContent(record).then(editor.txt.html)`，就会报错 `editor undefined`。
+
+调试一下发现是这个函数内部使用了 `this`，我这里这样调用是把调用处的上下文 `this` 传入了 `editor.txt.html()`。
+
+### 解决办法
+
+1. 使用箭头函数或者匿名函数就可以了，如下：
+
+   ```typescript
+   handleQueryContent(record).then((val: string) => {
+     editor.txt.html(val);
+   });
+   ```
+
+2. 如果是自己写代码，也可以在 `editor`实例化的时候将 `this` 绑定到 `editor` 上 [^1]
+3. 也可以在对象实例化的时候用 `that` 获取 `this`，之后一直用 `that` 就没有歧义了 [^2]
+
+## 参考资料
+
+[^1]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this
+[^2]: https://stackoverflow.com/questions/4011793/this-is-undefined-in-javascript-class-methods

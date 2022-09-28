@@ -1,8 +1,15 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import readingTime from "reading-time";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypeKatex from "rehype-katex";
+import rehypePrism from "rehype-prism-plus";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import remarkUnwrapImages from "remark-unwrap-images";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
-  filePathPattern: `blog/**/*.mdx`,
+  filePathPattern: `blog/**/*.md[x]*`,
   contentType: "mdx",
   fields: {
     title: {
@@ -20,7 +27,7 @@ export const Blog = defineDocumentType(() => ({
       required: false,
     },
     star: {
-      type: "string",
+      type: "boolean",
       required: false,
     },
   },
@@ -33,10 +40,18 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx?$/, ""),
     },
+    readingTime: {
+      type: "json",
+      resolve: (doc) => readingTime(doc.body.raw),
+    },
   },
 }));
 
 export default makeSource({
   contentDirPath: "data",
   documentTypes: [Blog],
+  mdx: {
+    rehypePlugins: [rehypeCodeTitles, rehypeKatex, rehypePrism],
+    remarkPlugins: [remarkGfm, remarkMath, remarkUnwrapImages],
+  },
 });
