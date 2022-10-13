@@ -6,7 +6,9 @@ import React, { PropsWithChildren } from "react";
 export default function BlogLayout({
   children,
   post,
-}: PropsWithChildren<{ post: Blog }>) {
+  prev,
+  next,
+}: PropsWithChildren<{ post: Blog; prev: Blog; next: Blog }>) {
   return (
     <div>
       <div className="bg-gray-100 dark:bg-black pt-20 -mt-20">
@@ -26,6 +28,10 @@ export default function BlogLayout({
             {children}
           </Prose>
         </article>
+        <div className="flex justify-between">
+          <div>{prev.slug}</div>
+          <div>{next.slug}</div>
+        </div>
       </div>
     </div>
   );

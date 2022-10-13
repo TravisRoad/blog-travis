@@ -14,7 +14,7 @@ function MyLink({ url, name }: { url: string; name: string }) {
 const ICPnumber = () => {
   return (
     <a
-      className="text-white/50 hover:underline hover:text-white/70 space-y-2 p-4"
+      className="text-white/50 hover:underline hover:text-white/70 space-y-2 p-2 mx-auto"
       href="https://www.beianx.cn/search/lxythan2lxy.cn"
     >
       <span className="font-bold">备案号：</span>
@@ -25,8 +25,8 @@ const ICPnumber = () => {
 
 const CopyRight = () => {
   return (
-    <div>
-      <span>CopyRight</span>
+    <div className="text-white/50 p-2 mx-auto">
+      <span>© 2022-2022 Travis Road</span>
     </div>
   );
 };
@@ -35,13 +35,16 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 mx-auto flex flex-col items-center justify-center px-2 w-full text-base">
       <div className="w-full max-w-2xl">
-        <div className="mt-2 flex flex-col space-y-4 items-center">
+        <div className="mt-2 mb-4 flex flex-col space-y-4 items-center">
           <MyLink url="/" name="Home" />
           <MyLink url="/about" name="About" />
           <MyLink url="/posts" name="Blogs" />
         </div>
       </div>
-      <ICPnumber />
+      <div className="flex flex-col">
+        <CopyRight />
+        <ICPnumber />
+      </div>
     </footer>
   );
 }

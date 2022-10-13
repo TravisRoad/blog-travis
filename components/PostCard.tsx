@@ -14,7 +14,7 @@ export default function PostCard({
   showSummary: boolean;
 }) {
   return (
-    <div className="bg-white px-3 py-3 transition-all hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded-none first:rounded-t-lg last:rounded-b-lg">
+    <div className="bg-white px-3 py-3 transition-all hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded-none first:rounded-t-lg last:rounded-b-lg border-0 ">
       <Link href={url ? url : "/"}>
         <a>
           <div className="flex flex-row justify-between items-baseline rounded-xl transition-all">

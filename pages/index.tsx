@@ -3,6 +3,7 @@ import Head from "next/head";
 import WelcomeCard from "components/WelcomeCard";
 import Main from "components/Main";
 import RecentPost from "components/RecentPost";
+import SideBar from "components/SideBar";
 
 const Home: NextPage = () => {
   return (
@@ -18,8 +19,17 @@ const Home: NextPage = () => {
         </main>
       </div> */}
       <Main>
-        <WelcomeCard />
-        <RecentPost />
+        <div className="flex flex-col lg:flex-row">
+          <div className="lg:hidden mx-4">
+            <WelcomeCard />
+          </div>
+          <div className="hidden lg:flex basis-1/4">
+            <SideBar />
+          </div>
+          <div className="flex-1">
+            <RecentPost />
+          </div>
+        </div>
       </Main>
     </div>
   );

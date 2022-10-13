@@ -12,7 +12,9 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/png" href="/favicon-1.png" />
       </Head>
       <Main>
-        <WelcomeCard />
+        <div className="mx-4 mb-2">
+          <WelcomeCard />
+        </div>
       </Main>
     </div>
   );

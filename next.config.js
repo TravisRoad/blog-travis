@@ -6,4 +6,8 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = withContentlayer({});
+module.exports = withContentlayer({
+  images: {
+    domains: ["lain.bgm.tv"],
+  },
+});
