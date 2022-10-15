@@ -7,11 +7,18 @@ import { ThemeButton } from "./ThemeButton";
 const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
   const router = useRouter();
   // const [isActive, setActive] = useState("false");
-  const isActive = router.asPath === url;
+  // const isActive = router.asPath === url;
+  const cwpClass =
+    router.asPath === url // current working path className
+      ? "text-gray-200 font-semibold"
+      : "text-gray-400 font-normal";
   return (
     <Link href={url}>
-      <a className="hover:ring-2 ring-red-600 mx-1 rounded-lg px-2 py-2 transition-all hover:bg-white/5">
-        <div
+      <a
+        className="overflow-hidden block mx-1
+        rounded-lg px-2 transition-all"
+      >
+        {/* <div
           className={`${
             isActive
               ? "font-semibold text-gray-200 hover:text-gray-100 transition"
@@ -19,7 +26,13 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
           }`}
         >
           {name}
-        </div>
+        </div> */}
+        <span
+          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full transition-transforma duration-500 ${cwpClass} before:text-gray-100`}
+          data-content={name}
+        >
+          {name}
+        </span>
       </a>
     </Link>
   );
@@ -30,7 +43,7 @@ export default function NavigationView() {
     <div>
       <div className="flex items-center flex-row-reverse">
         {/* Desktop menu */}
-        <div className="hidden items-center sm:flex font-sans">
+        <div className="hidden items-center sm:flex font-sans overflow-hidden">
           {/* <DesktopNavItem url="/" name="Home" />
           <DesktopNavItem url="/posts" name="Posts" />
           <DesktopNavItem url="/about" name="About" /> */}
