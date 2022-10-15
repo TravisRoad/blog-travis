@@ -28,10 +28,10 @@ export default function BlogLayout({
             {children}
           </Prose>
         </article>
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
           <div>{prev.slug}</div>
           <div>{next.slug}</div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
