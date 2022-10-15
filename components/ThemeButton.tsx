@@ -26,10 +26,10 @@ export const ThemeButton = () => {
         onClick={onClick}
         className="rounded-lg py-2 px-2 mx-2 hover:bg-white/5 text-gray-400 dark:text-gray-100"
       >
-        {darkMode ? ( //
-          <MoonIcon className="w-6 h-6 stroke-current" />
+        {darkMode ? (
+          <MoonIcon className="w-4 h-4" />
         ) : (
-          <SunIcon className="w-6 h-6" />
+          <SunIcon className="w-4 h-4" />
         )}
       </button>
     </div>
