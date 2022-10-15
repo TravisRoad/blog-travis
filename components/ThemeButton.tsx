@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 export const ThemeButton = () => {
   const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined);
@@ -23,9 +24,13 @@ export const ThemeButton = () => {
     <div>
       <button
         onClick={onClick}
-        className="rounded-lg py-2 px-2 mx-2 hover:ring-2 ring-red-600 hover:bg-white/5 text-gray-400 dark:text-gray-100"
+        className="rounded-lg py-2 px-2 mx-2 hover:bg-white/5 text-gray-400 dark:text-gray-100"
       >
-        {darkMode ? "明" : "暗"}
+        {darkMode ? ( //
+          <MoonIcon className="w-6 h-6 stroke-current" />
+        ) : (
+          <SunIcon className="w-6 h-6" />
+        )}
       </button>
     </div>
   );

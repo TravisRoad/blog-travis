@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@headlessui/react': ^1.7.2
+  '@heroicons/react': ^2.0.12
   '@jsdevtools/rehype-toc': ^3.0.2
   '@tailwindcss/typography': ^0.5.7
   '@types/node': 18.7.19
@@ -30,6 +31,7 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.7.2_biqbaboplfbrettd7655fr4n2y
+  '@heroicons/react': 2.0.12_react@18.2.0
   '@jsdevtools/rehype-toc': 3.0.2
   contentlayer: 0.2.8
   date-fns: 2.29.3
@@ -329,6 +331,14 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@heroicons/react/2.0.12_react@18.2.0:
+    resolution: {integrity: sha512-FZxKh3i9aKIDxyALTgIpSF2t6V6/eZfF5mRu41QlwkX3Oxzecdm1u6dpft6PQGxIBwO7TKYWaMAYYL8mp/EaOg==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.10.5:

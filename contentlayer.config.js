@@ -4,7 +4,6 @@ import rehypeCodeTitles from "rehype-code-titles";
 import rehypeKatex from "rehype-katex";
 import rehypePrism from "rehype-prism-plus";
 import rehypeImgSize from "rehype-img-size";
-import toc from "@jsdevtools/rehype-toc";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkUnwrapImages from "remark-unwrap-images";

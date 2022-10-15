@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.12",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "contentlayer": "^0.2.8",
     "date-fns": "^2.29.3",
