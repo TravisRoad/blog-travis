@@ -33,7 +33,7 @@ const CopyRight = () => {
 
 export default function Footer() {
   return (
-    <footer className="pb-10 text-nord-3 dark:text-nord-4 -mt-[1px] z-10 dark:bg-nord-1 bg-[#fbfbfc] mx-auto flex flex-col items-center justify-center px-2 w-full text-base">
+    <footer className="pb-10 text-nord-3 dark:text-nord-4 -mt-[1px] z-10 dark:bg-nord-1 bg-[#fbfbfc] mx-auto flex flex-col items-center justify-center px-2 w-full text-sm sm:text-base">
       <div className="w-full max-w-2xl">
         <div className="mt-2 mb-4 flex flex-col space-y-4 items-center">
           <MyLink url="/" name="Home" />

@@ -28,7 +28,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
           {name}
         </div> */}
         <span
-          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full transition-transforma duration-500 ${cwpClass} before:text-nord-2 before:dark:text-nord-7 before:font-semibold text-sm`}
+          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full ${cwpClass} before:text-nord-2 before:dark:text-nord-7 before:font-semibold`}
           data-content={name}
         >
           {name}
@@ -38,12 +38,16 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
   );
 };
 
-export default function NavigationView() {
+export default function NavigationView({ isTop }: { isTop: Boolean }) {
   return (
     <div>
-      <div className="flex items-center flex-row-reverse">
+      <div className="flex items-center flex-row-reverse transition-all ">
         {/* Desktop menu */}
-        <div className="hidden items-center sm:flex font-sans overflow-hidden">
+        <div
+          className={`hidden items-center sm:flex font-sans overflow-hidden ${
+            isTop ? "text-lg" : "text-sm"
+          }`}
+        >
           {/* <DesktopNavItem url="/" name="Home" />
           <DesktopNavItem url="/posts" name="Posts" />
           <DesktopNavItem url="/about" name="About" /> */}

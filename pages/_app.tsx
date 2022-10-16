@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div>
-      <Header isTop={scrollY < 20} />
+      <Header isTop={scrollY < 50} />
       <Component {...pageProps} />
       <svg
         viewBox="0 0 1920 250"
@@ -35,11 +35,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         className="w-[100%] bg-nord-light dark:bg-nord-dark"
       >
         <path
-          className="dark:fill-[#373d4c] fill-[#f4f6f9]"
+          className="dark:fill-[#373d4c] fill-nord-5/80"
           d="M1920 250H0V0s126.707 78.536 349.975 80.05c177.852 1.203 362.805-63.874 553.803-63.874 290.517 0 383.458 57.712 603.992 61.408 220.527 3.696 278.059-61.408 412.23-17.239"
         ></path>
         <path
-          className="fill-[#f7f9fb] dark:fill-[#39404f]"
+          className="fill-nord-6 dark:fill-[#39404f]"
           d="M1920 144s-467.917 116.857-1027.243-17.294C369.986 1.322 0 45.578 0 45.578V250h1920V144z"
         ></path>
         <path

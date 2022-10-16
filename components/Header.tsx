@@ -31,14 +31,16 @@ function Logo({ hidden }: { hidden: Boolean }) {
 export default function Header({ isTop }: { isTop: Boolean }) {
   console.log(isTop);
   return (
-    <header className="sticky col-start-1 top-0 z-50 w-full dark:sm:bg-nord-dark sm:bg-nord-light text-gray-400 print:hidden transition-all duration-500">
+    <header className="sticky col-start-1 top-0 z-50 w-full dark:bg-nord-dark bg-nord-light text-gray-400 print:hidden transition-all duration-500">
       <div
         className={`px-4 space-x-8 sm:text-xl text-base flex flex-row items-center justify-between transition-all ${
-          isTop ? "py-2" : "py-0 shadow-sm shadow-nord-5 dark:shadow-none"
+          isTop
+            ? "pt-1 pb-3"
+            : "py-[1px] shadow-sm shadow-nord-5 dark:shadow-none"
         }`}
       >
         <Logo hidden={!isTop} />
-        <NavigationView />
+        <NavigationView isTop={isTop}/>
       </div>
     </header>
   );
