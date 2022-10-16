@@ -16,7 +16,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
     <Link href={url}>
       <a
         className="overflow-hidden block mx-1
-        rounded-lg px-2 transition-all"
+        rounded-lg px-2"
       >
         {/* <div
           className={`${
@@ -28,7 +28,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
           {name}
         </div> */}
         <span
-          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full ${cwpClass} before:text-nord-2 before:dark:text-nord-7 before:font-semibold`}
+          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full ${cwpClass} text-xl before:text-nord-2 before:dark:text-nord-7 before:font-semibold transition-all duration-[350ms]`}
           data-content={name}
         >
           {name}

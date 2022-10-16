@@ -5,13 +5,13 @@ import avatar from "public/profile.jpg";
 function ProfileAvatar() {
   return (
     <Link href="/about">
-      <a className="mt-3 mb-6 h-[80px] w-[80px] duration-[750ms] transition-all hover:rotate-[10deg] hover:scale-125 sm:mb-0 sm:h-[120px] sm:w-[120px]">
+      <a className="mt-3 mb-6 h-[80px] w-[80px] transition-all duration-[750ms] hover:rotate-[10deg] hover:scale-125 sm:mb-0 sm:h-[120px] sm:w-[120px]">
         <Image
           src={avatar}
           alt="Travis Road"
           // layout="fixed"
           // objectFit="cover"
-          className="rounded-full overflow-hidden"
+          className="overflow-hidden rounded-full"
         />
       </a>
     </Link>
@@ -29,7 +29,7 @@ function ProfileDetail() {
       </p>
       <div className="mt-5 flex">
         <a
-          className="mr-1 inline-flex space-x-1 rounded-lg px-3 py-2 font-title ring-red-500 transition-all hover:ring-2"
+          className="font-title mr-1 inline-flex space-x-1 rounded-lg px-3 py-2 ring-red-500 transition-all hover:ring-2"
           href="https://github.com/whexy"
         >
           <svg
@@ -57,7 +57,7 @@ function ProfileDetail() {
 export default function WelcomeCard() {
   return (
     <div className="not-prose pt-4">
-      <div className="border-2 rounded-lg flex flex-col-reverse justify-between p-4 font-sans sm:flex-row sm:p-8">
+      <div className="flex flex-col-reverse justify-between rounded-lg border-2 p-4 font-sans sm:flex-row sm:p-8">
         <ProfileDetail />
         <ProfileAvatar />
       </div>

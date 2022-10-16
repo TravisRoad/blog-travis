@@ -9,16 +9,13 @@ function Logo({ hidden }: { hidden: Boolean }) {
       <Link href="/">
         <a>
           <span
-            className={`text-nord-3 dark:text-nord-6 font-bold font-sans tracking-tighter transition-all duration-500 ${
-              hidden ? "text-base" : "text-xl"
-            }`}
+            className={`text-nord-3 dark:text-nord-6 font-bold font-sans tracking-tighter transition-all duration-500 text-2xl`}
           >
             {metadata.header.logo}
           </span>
           <sup
-            className={`text-nord-11 dark:text-nord-13 font-normal font-sans transition-all overflow-hidden inline duration-500 ${
-              hidden ? "text-[0.55rem]" : "text-[0.8rem]"
-            }`}
+            className={`text-nord-11 dark:text-nord-13 font-normal font-sans transition-all overflow-hidden inline duration-500 text-base
+            `}
           >
             {metadata.header.sup}
           </sup>
@@ -35,8 +32,8 @@ export default function Header({ isTop }: { isTop: Boolean }) {
       <div
         className={`px-4 space-x-8 sm:text-xl text-base flex flex-row items-center justify-between transition-all ${
           isTop
-            ? "pt-1 pb-3"
-            : "py-[1px] shadow-sm shadow-nord-5 dark:shadow-none"
+            ? "h-[4em]"
+            : "h-[2.5em] shadow-sm shadow-nord-5 dark:shadow-none"
         }`}
       >
         <Logo hidden={!isTop} />

@@ -31,10 +31,10 @@ export default function BangumiCard({
   console.log(bangumiSubject);
 
   return (
-    <div className="flex rounded-lg border justify-between flex-row-reverse px-4 py-2">
+    <div className="flex flex-row-reverse justify-between rounded-lg border px-4 py-2">
       <div>{bangumiSubject.name_cn}</div>
       <Link href={url}>
-        <a className="w-[80px] h-[80px]">
+        <a className="h-[80px] w-[80px]">
           <Image
             src={image}
             alt="image"

@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         className="w-[100%] bg-nord-light dark:bg-nord-dark"
       >
         <path
-          className="dark:fill-[#373d4c] fill-nord-5/80"
+          className="fill-nord-5/80 dark:fill-[#373d4c]"
           d="M1920 250H0V0s126.707 78.536 349.975 80.05c177.852 1.203 362.805-63.874 553.803-63.874 290.517 0 383.458 57.712 603.992 61.408 220.527 3.696 278.059-61.408 412.23-17.239"
         ></path>
         <path

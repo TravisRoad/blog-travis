@@ -5,18 +5,18 @@ import Link from "next/link";
 
 export default function SideBar() {
   return (
-    <div className="flex-1 mx-2 mt-5 p-2">
-      <div className="cursor-pointer mx-auto h-[120px] w-[120px] transition-transform duration-500 hover:rotate-6 hover:scale-105 my-2">
+    <div className="mx-2 mt-5 flex-1 p-2">
+      <div className="mx-auto my-2 h-[120px] w-[120px] cursor-pointer transition-transform duration-500 hover:rotate-6 hover:scale-105">
         <Link href="/about">
           <Image
             src={avatar}
-            className="rounded-full overflow-hidden"
+            className="overflow-hidden rounded-full"
             alt="Travis Road"
           />
         </Link>
       </div>
       {/* username */}
-      <div className="font-bold text-lg text-center">Travis Road</div>
+      <div className="text-center text-lg font-bold">Travis Road</div>
       {/* about */}
       <div className="mt-2 px-1">
         <p className="font-sans">你好👋，我是 Travis</p>

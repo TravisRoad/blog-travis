@@ -9,7 +9,7 @@ export default function PostsView({ posts }: { posts: any }) {
   return (
     <Main>
       <div className="py-10">
-        <div className="rounded-lg p-5 mx-auto max-w-3xl divide-y divide-nord-6 overflow-hidden dark:divide-nord-dark/80">
+        <div className="mx-auto max-w-3xl divide-y divide-nord-6 overflow-hidden rounded-lg p-5 dark:divide-nord-dark/80">
           {posts.map((post: any) => (
             <PostCard
               key={post.title}

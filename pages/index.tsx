@@ -6,7 +6,7 @@ import RecentPost from "components/RecentPost";
 import SideBar from "components/SideBar";
 import createRss from "@/lib/feed";
 
-const Home: NextPage = ({ trivial }: { trivial: any }) => {
+const Home: NextPage = ({ trivial }: { trivial: boolean }) => {
   return (
     <div>
       <Head>
@@ -21,10 +21,10 @@ const Home: NextPage = ({ trivial }: { trivial: any }) => {
       </div> */}
       <Main>
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:hidden mx-4">
+          <div className="mx-4 lg:hidden">
             <WelcomeCard />
           </div>
-          <div className="hidden lg:flex basis-1/4">
+          <div className="hidden basis-1/4 lg:flex">
             <SideBar />
           </div>
           <div className="flex-1">
