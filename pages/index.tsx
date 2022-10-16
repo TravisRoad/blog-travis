@@ -6,7 +6,7 @@ import RecentPost from "components/RecentPost";
 import SideBar from "components/SideBar";
 import createRss from "@/lib/feed";
 
-const Home: NextPage = ({ trivial }: { trivial: boolean }) => {
+const Home = ({ trivial }: { trivial: boolean }) => {
   return (
     <div>
       <Head>
