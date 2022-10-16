@@ -4,8 +4,8 @@ import React from "react";
 function MyLink({ url, name }: { url: string; name: string }) {
   return (
     <Link href={url}>
-      <a className="transition text-white/50 hover:text-white/70 hover:font-semibold">
-        {name}
+      <a className="transition text-nord-3 dark:text-nord-4 hover:text-nord-dark dark:hover:text-white">
+        <span className="tracking-wider hover:underline">{name}</span>
       </a>
     </Link>
   );
@@ -14,7 +14,7 @@ function MyLink({ url, name }: { url: string; name: string }) {
 const ICPnumber = () => {
   return (
     <a
-      className="text-white/50 hover:underline hover:text-white/70 space-y-2 p-2 mx-auto"
+      className="text-nord-3 dark:text-nord-4 hover:underline dark:hover:text-white hover:text-nord-dark space-y-2 p-2 mx-auto"
       href="https://www.beianx.cn/search/lxythan2lxy.cn"
     >
       <span className="font-bold">备案号：</span>
@@ -25,7 +25,7 @@ const ICPnumber = () => {
 
 const CopyRight = () => {
   return (
-    <div className="text-white/50 p-2 mx-auto">
+    <div className="text-nord-3 dark:text-nord-4 p-2 mx-auto">
       <span>© 2022-2022 Travis Road</span>
     </div>
   );
@@ -33,7 +33,7 @@ const CopyRight = () => {
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 mx-auto flex flex-col items-center justify-center px-2 w-full text-base">
+    <footer className="pb-10 text-nord-3 dark:text-nord-4 -mt-[1px] z-10 dark:bg-nord-1 bg-[#fbfbfc] mx-auto flex flex-col items-center justify-center px-2 w-full text-base">
       <div className="w-full max-w-2xl">
         <div className="mt-2 mb-4 flex flex-col space-y-4 items-center">
           <MyLink url="/" name="Home" />

@@ -27,6 +27,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated"
-  ],
+, "pages/_document.js"  ],
   "exclude": ["node_modules"]
 }

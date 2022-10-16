@@ -4,9 +4,11 @@ import rehypeCodeTitles from "rehype-code-titles";
 import rehypeKatex from "rehype-katex";
 import rehypePrism from "rehype-prism-plus";
 import rehypeImgSize from "rehype-img-size";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkUnwrapImages from "remark-unwrap-images";
+import toc from "markdown-toc";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -42,6 +44,10 @@ export const Blog = defineDocumentType(() => ({
     readingTime: {
       type: "json",
       resolve: (doc) => readingTime(doc.body.raw),
+    },
+    toc: {
+      type: "json",
+      resolve: (doc) => toc(doc.body.raw).json,
     },
   },
 }));
@@ -85,6 +91,7 @@ export default makeSource({
       rehypeCodeTitles,
       [rehypePrism, { showLineNumbers: true }],
       rehypeKatex,
+      rehypeSlug,
       // [
       //   toc,
       //   {

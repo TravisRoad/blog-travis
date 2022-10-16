@@ -11,7 +11,7 @@ export default function BlogLayout({
 }: PropsWithChildren<{ post: Blog; prev: Blog; next: Blog }>) {
   return (
     <div>
-      <div className="bg-gray-100 dark:bg-black pt-20 -mt-20">
+      <div className="bg-nord-light dark:bg-nord-dark pt-20 -mt-20">
         <article className="p-5 sm:pt-8">
           <Prose>
             <h1 className="">{post.title}</h1>

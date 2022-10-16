@@ -14,7 +14,7 @@ export default function RecentPost() {
     <div className="mt-2 mb-2 px-4">
       <div className="py-4">
         <div className="pl-4 pb-1 text-base font-semibold opacity-80">star</div>
-        <div className="dark:border-neutral-700 border-gray-200 border-2 rounded-lg divide-y divide-black/10 overflow-hidden dark:divide-white/10">
+        <div className="dark:border-nord-2 border-nord-5 border-2 rounded-lg divide-y divide-nord-5 overflow-hidden dark:divide-nord-2">
           {staredBlogs.map((blog: Blog) => (
             <PostCard
               key={blog.title}
@@ -29,7 +29,7 @@ export default function RecentPost() {
         <div className="py-2 pl-4 pb-1 text-base font-semibold opacity-80">
           recent
         </div>
-        <div className="dark:border-neutral-700 border-gray-200 border-2 rounded-lg divide-y divide-black/10 overflow-hidden dark:divide-white/10">
+        <div className="dark:border-nord-2 border-nord-5 border-2 rounded-lg divide-y divide-black/10 overflow-hidden dark:divide-nord-2">
           {recentBlogs.slice(0, 5).map((blog: Blog) => (
             <PostCard
               key={blog.title}

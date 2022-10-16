@@ -3,6 +3,7 @@
     "contentlayer",
     "darkmode",
     "Katex",
+    "nord",
     "rehype",
     "tailwindcss"
   ],

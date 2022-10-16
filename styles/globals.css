@@ -29,12 +29,14 @@ a {
   }
 } */
 
-.rehype-code-title {
-  @apply rounded-t-lg border border-b-0 border-gray-200/10 bg-[#24252f] px-5 pt-1 pb-1 font-mono text-sm font-semibold text-gray-200;
-}
+@layer components {
+  .rehype-code-title {
+    @apply rounded-t-lg border border-b-0 border-gray-200/10 bg-[#24252f] px-5 pt-1 pb-1 font-mono text-sm font-semibold text-gray-200;
+  }
 
-.rehype-code-title + pre {
-  @apply !mt-0 rounded-t-none border-t-0;
+  .rehype-code-title + pre {
+    @apply !mt-0 rounded-t-none border-t-0;
+  }
 }
 
 .nav {

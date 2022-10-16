@@ -10,8 +10,8 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
   // const isActive = router.asPath === url;
   const cwpClass =
     router.asPath === url // current working path className
-      ? "text-gray-200 font-semibold"
-      : "text-gray-400 font-normal";
+      ? "text-nord-0 dark:text-nord-6 font-semibold"
+      : "text-nord-3/80 dark:text-nord-4/80 font-normal";
   return (
     <Link href={url}>
       <a
@@ -28,7 +28,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
           {name}
         </div> */}
         <span
-          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full transition-transforma duration-500 ${cwpClass} before:text-gray-100 text-sm`}
+          className={`relative block before:translate-y-full before:content-[attr(data-content)] before:absolute hover:-translate-y-full transition-transforma duration-500 ${cwpClass} before:text-nord-2 before:dark:text-nord-7 before:font-semibold text-sm`}
           data-content={name}
         >
           {name}

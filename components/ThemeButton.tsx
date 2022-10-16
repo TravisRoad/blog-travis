@@ -29,12 +29,12 @@ export const ThemeButton = () => {
     <div>
       <button
         onClick={onClick}
-        className="rounded-lg py-2 px-2 mx-2 hover:bg-white/5 text-gray-400 dark:text-gray-100"
+        className="rounded-lg py-2 px-2 mx-2 hover:bg-nord-5 dark:hover:bg-nord-2 bg-transparent duration-500 transition-color"
       >
         {darkMode ? (
-          <SunIcon className="w-4 h-4" />
+          <SunIcon className="w-4 h-4 stroke-nord-2 dark:stroke-nord-5" />
         ) : (
-          <MoonIcon className="w-4 h-4" />
+          <MoonIcon className="w-4 h-4 stroke-nord-2 dark:stroke-nord-5" />
         )}
       </button>
     </div>
