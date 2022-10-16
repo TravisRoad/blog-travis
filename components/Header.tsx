@@ -9,12 +9,12 @@ function Logo({ hidden }: { hidden: Boolean }) {
       <Link href="/">
         <a>
           <span
-            className={`text-nord-3 dark:text-nord-6 font-bold font-sans tracking-tighter transition-all duration-500 text-2xl`}
+            className={`font-sans text-2xl font-bold tracking-tighter text-nord-3 transition-all duration-500 dark:text-nord-6`}
           >
             {metadata.header.logo}
           </span>
           <sup
-            className={`text-nord-11 dark:text-nord-13 font-normal font-sans transition-all overflow-hidden inline duration-500 text-base
+            className={`inline overflow-hidden font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13
             `}
           >
             {metadata.header.sup}
@@ -28,12 +28,10 @@ function Logo({ hidden }: { hidden: Boolean }) {
 export default function Header({ isTop }: { isTop: Boolean }) {
   console.log(isTop);
   return (
-    <header className="sticky col-start-1 top-0 z-50 w-full dark:bg-nord-dark bg-nord-light text-gray-400 print:hidden transition-all duration-500">
+    <header className="sticky top-0 z-50 col-start-1 w-full bg-nord-light text-gray-400 transition-all duration-500 dark:bg-nord-dark print:hidden">
       <div
-        className={`px-4 space-x-8 sm:text-xl text-base flex flex-row items-center justify-between transition-all ${
-          isTop
-            ? "h-[4em]"
-            : "h-[2.5em] shadow-sm shadow-nord-5 dark:shadow-none"
+        className={`flex flex-row items-center justify-between space-x-8 px-4 text-base transition-all sm:text-xl ${
+          isTop ? "h-[4em]" : "h-[2.5em] shadow-sm shadow-nord-5 dark:shadow-lg"
         }`}
       >
         <Logo hidden={!isTop} />

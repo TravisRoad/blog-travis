@@ -5,10 +5,10 @@ export default function Document() {
   return (
     <Html>
       <Head />
-      <body>
+      <body className="bg-nord-light dark:bg-nord-dark">
         <Main />
         <NextScript />
-        <Script src="@/lib/darkmode.js" strategy="beforeInteractive" />
+        <Script src="lib/darkmode.js" strategy="beforeInteractive" />
       </body>
     </Html>
   );

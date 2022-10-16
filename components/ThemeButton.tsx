@@ -33,7 +33,7 @@ export const ThemeButton = () => {
     <div>
       <button
         onClick={onClick}
-        className="transition-color mx-2 rounded-lg bg-transparent py-2 px-2 duration-500 hover:bg-nord-5 dark:hover:bg-nord-2"
+        className="transition-color mx-2 rounded-lg bg-transparent p-1 duration-500 hover:bg-nord-5 dark:hover:bg-nord-2"
       >
         {darkMode ? (
           <SunIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5 " />

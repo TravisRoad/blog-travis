@@ -54,27 +54,21 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="application/rss+xml"
           title={metadata.title}
         />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="theme-color" content="#242933" />
+        {/* <meta
+          name="theme-color"
+          content="#f2f4f8"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#242933"
+          media="(prefers-color-scheme: dark)"
+        /> */}
       </Head>
       <Header isTop={scrollY < 50} />
       <Component {...pageProps} />
-      <svg
-        viewBox="0 0 1920 250"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-[100%] bg-nord-light dark:bg-nord-dark"
-      >
-        <path
-          className="fill-nord-5/80 dark:fill-[#373d4c]"
-          d="M1920 250H0V0s126.707 78.536 349.975 80.05c177.852 1.203 362.805-63.874 553.803-63.874 290.517 0 383.458 57.712 603.992 61.408 220.527 3.696 278.059-61.408 412.23-17.239"
-        ></path>
-        <path
-          className="fill-nord-6 dark:fill-[#39404f]"
-          d="M1920 144s-467.917 116.857-1027.243-17.294C369.986 1.322 0 45.578 0 45.578V250h1920V144z"
-        ></path>
-        <path
-          className="fill-[#fbfbfc] dark:fill-nord-1"
-          d="M0 195.553s208.547-75.581 701.325-20.768c376.707 41.908 520.834-67.962 722.545-67.962 222.926 0 311.553 83.523 496.129 86.394V250H0v-54.447z"
-        ></path>
-      </svg>
       <Footer />
     </div>
   );

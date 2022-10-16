@@ -11,8 +11,8 @@ export default function BlogLayout({
 }: PropsWithChildren<{ post: Blog; prev: Blog; next: Blog }>) {
   return (
     <div>
-      <div className="-mt-20 bg-nord-light pt-20 dark:bg-nord-dark">
-        <article className="p-5 sm:pt-8">
+      <div className="-mt-20 min-h-[92vh] bg-nord-light px-2 pt-20 dark:bg-nord-dark">
+        <article className="mx-auto px-2 sm:max-w-5xl">
           <Prose>
             <h1 className="">{post.title}</h1>
             <div className="-mt-5 flex items-center justify-between">
