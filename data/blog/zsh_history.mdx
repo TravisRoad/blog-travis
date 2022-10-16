@@ -53,6 +53,7 @@ history -n | awk '!seen[$0]++' | fzf -e --reverse --no-sort --tac --border=round
 ```
 
 管道中的第二命令 `awk '!seen[$0]++'` 是用来去重的 [^1]，使用 `uniq` 命令的话需要将 history 排序，并不符合我们的需求。
+[^1]: [how to get the unique result](https://unix.stackexchange.com/questions/11939/how-to-get-only-the-unique-results-without-having-to-sort-data)
 
 最后就是 `fzf` 命令了。简单解释一下，`fzf` 能接受多行输入，将之变成一个选择界面。`--reverse --border=rounded --height=50%` 这几个选项都是调整布局的选项。其他几个选项的解释如下。
 
@@ -81,5 +82,4 @@ stty -ixon
 bindkey '^s' pet-select
 ```
 
-[^1]: https://unix.stackexchange.com/questions/11939/how-to-get-only-the-unique-results-without-having-to-sort-data
 [^2]: https://www.alajmovic.com/posts/recording-terminal-commands-and-generating-gifs/index.html

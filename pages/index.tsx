@@ -4,8 +4,9 @@ import WelcomeCard from "components/WelcomeCard";
 import Main from "components/Main";
 import RecentPost from "components/RecentPost";
 import SideBar from "components/SideBar";
+import createRss from "@/lib/feed";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ trivial }: { trivial: any }) => {
   return (
     <div>
       <Head>
@@ -35,4 +36,8 @@ const Home: NextPage = () => {
   );
 };
 
+export async function getStaticProps() {
+  createRss();
+  return { props: { trivial: true } };
+}
 export default Home;

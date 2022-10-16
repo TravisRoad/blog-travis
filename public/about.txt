@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Nothing You Could Do
+- Font Author: http://scripts.sil.org/OFL
+- Font Source: http://fonts.gstatic.com/s/nothingyoucoulddo/v15/oY1B8fbBpaP5OX3DtrRYf_Q2BPB1SnfZb0OJl1ol2Ymo.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

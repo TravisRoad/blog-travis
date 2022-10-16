@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import NavigationView from "./NavigationView";
+import metadata from "data/metaData";
 
 function Logo({ hidden }: { hidden: Boolean }) {
   return (
@@ -12,15 +13,14 @@ function Logo({ hidden }: { hidden: Boolean }) {
               hidden ? "text-base" : "text-xl"
             }`}
           >
-            Travis
+            {metadata.header.logo}
           </span>
           <sup
             className={`text-nord-11 dark:text-nord-13 font-normal font-sans transition-all overflow-hidden inline duration-500 ${
               hidden ? "text-[0.55rem]" : "text-[0.8rem]"
             }`}
           >
-            {" "}
-            Blog{" "}
+            {metadata.header.sup}
           </sup>
         </a>
       </Link>
@@ -40,7 +40,7 @@ export default function Header({ isTop }: { isTop: Boolean }) {
         }`}
       >
         <Logo hidden={!isTop} />
-        <NavigationView isTop={isTop}/>
+        <NavigationView isTop={isTop} />
       </div>
     </header>
   );

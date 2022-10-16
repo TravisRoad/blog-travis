@@ -1,3 +1,4 @@
+import metadata from "data/metaData";
 import Link from "next/link";
 import React from "react";
 
@@ -15,10 +16,10 @@ const ICPnumber = () => {
   return (
     <a
       className="text-nord-3 dark:text-nord-4 hover:underline dark:hover:text-white hover:text-nord-dark space-y-2 p-2 mx-auto"
-      href="https://www.beianx.cn/search/lxythan2lxy.cn"
+      href={metadata.ICP.url}
     >
       <span className="font-bold">备案号：</span>
-      <span>{"京ICP备20006389号-1"}</span>
+      <span>{metadata.ICP.code}</span>
     </a>
   );
 };
@@ -26,7 +27,9 @@ const ICPnumber = () => {
 const CopyRight = () => {
   return (
     <div className="text-nord-3 dark:text-nord-4 p-2 mx-auto">
-      <span>© 2022-2022 Travis Road</span>
+      <span>
+        © {metadata.time.start}-{metadata.time.end} {metadata.title}
+      </span>
     </div>
   );
 };
