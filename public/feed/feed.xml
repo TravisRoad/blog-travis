@@ -4,16 +4,16 @@
         <title>Travis' Blog</title>
         <link>https://blog-travis.vercel.com</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Sun, 16 Oct 2022 15:02:25 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Oct 2022 15:26:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Travis Road</copyright>
         <item>
-            <title><![CDATA[Linux 系统中的信号量]]></title>
-            <link>https://blog-travis.vercel.com/Linux_mutex</link>
-            <guid>https://blog-travis.vercel.com/Linux_mutex</guid>
-            <pubDate>Mon, 28 Feb 2022 12:53:56 GMT</pubDate>
+            <title><![CDATA[利用 fzf 实现的历史记录]]></title>
+            <link>https://blog-travis.vercel.com/zsh_history</link>
+            <guid>https://blog-travis.vercel.com/zsh_history</guid>
+            <pubDate>Sat, 30 Apr 2022 16:35:59 GMT</pubDate>
             <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
@@ -28,28 +28,28 @@
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[永生之酒]]></title>
-            <link>https://blog-travis.vercel.com/forever</link>
-            <guid>https://blog-travis.vercel.com/forever</guid>
-            <pubDate>Sun, 28 Feb 2021 10:52:39 GMT</pubDate>
+            <title><![CDATA[Linux 系统中的信号量]]></title>
+            <link>https://blog-travis.vercel.com/Linux_mutex</link>
+            <guid>https://blog-travis.vercel.com/Linux_mutex</guid>
+            <pubDate>Mon, 28 Feb 2022 12:53:56 GMT</pubDate>
             <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[Hello, world]]></title>
-            <link>https://blog-travis.vercel.com/hello</link>
-            <guid>https://blog-travis.vercel.com/hello</guid>
-            <pubDate>Sat, 01 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[test post
+            <title><![CDATA[pytorch 中 DataLoader 的问题]]></title>
+            <link>https://blog-travis.vercel.com/pytorch_DataLoader</link>
+            <guid>https://blog-travis.vercel.com/pytorch_DataLoader</guid>
+            <pubDate>Tue, 25 Jan 2022 14:09:14 GMT</pubDate>
+            <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[idea 开启热重载]]></title>
-            <link>https://blog-travis.vercel.com/idea_hot_restart</link>
-            <guid>https://blog-travis.vercel.com/idea_hot_restart</guid>
-            <pubDate>Thu, 30 Dec 2021 07:50:00 GMT</pubDate>
+            <title><![CDATA[javascript 的异步问题和 this 问题]]></title>
+            <link>https://blog-travis.vercel.com/vue3</link>
+            <guid>https://blog-travis.vercel.com/vue3</guid>
+            <pubDate>Fri, 14 Jan 2022 10:17:00 GMT</pubDate>
             <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
@@ -64,10 +64,28 @@
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[pytorch 中 DataLoader 的问题]]></title>
-            <link>https://blog-travis.vercel.com/pytorch_DataLoader</link>
-            <guid>https://blog-travis.vercel.com/pytorch_DataLoader</guid>
-            <pubDate>Tue, 25 Jan 2022 14:09:14 GMT</pubDate>
+            <title><![CDATA[双城之战]]></title>
+            <link>https://blog-travis.vercel.com/twocity</link>
+            <guid>https://blog-travis.vercel.com/twocity</guid>
+            <pubDate>Fri, 07 Jan 2022 09:41:09 GMT</pubDate>
+            <description><![CDATA[idk
+请在浏览器中浏览以获得最佳体验]]></description>
+            <author>lxymontage@gmail.com (Travis Road)</author>
+        </item>
+        <item>
+            <title><![CDATA[idea 开启热重载]]></title>
+            <link>https://blog-travis.vercel.com/idea_hot_restart</link>
+            <guid>https://blog-travis.vercel.com/idea_hot_restart</guid>
+            <pubDate>Thu, 30 Dec 2021 07:50:00 GMT</pubDate>
+            <description><![CDATA[idk
+请在浏览器中浏览以获得最佳体验]]></description>
+            <author>lxymontage@gmail.com (Travis Road)</author>
+        </item>
+        <item>
+            <title><![CDATA[windows 3000 4200 端口神奇的消失事件]]></title>
+            <link>https://blog-travis.vercel.com/windows3000-4200port</link>
+            <guid>https://blog-travis.vercel.com/windows3000-4200port</guid>
+            <pubDate>Mon, 27 Dec 2021 16:20:25 GMT</pubDate>
             <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
@@ -95,42 +113,6 @@
             <link>https://blog-travis.vercel.com/theguy</link>
             <guid>https://blog-travis.vercel.com/theguy</guid>
             <pubDate>Fri, 10 Sep 2021 10:37:27 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[双城之战]]></title>
-            <link>https://blog-travis.vercel.com/twocity</link>
-            <guid>https://blog-travis.vercel.com/twocity</guid>
-            <pubDate>Fri, 07 Jan 2022 09:41:09 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[javascript 的异步问题和 this 问题]]></title>
-            <link>https://blog-travis.vercel.com/vue3</link>
-            <guid>https://blog-travis.vercel.com/vue3</guid>
-            <pubDate>Fri, 14 Jan 2022 10:17:00 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[windows 3000 4200 端口神奇的消失事件]]></title>
-            <link>https://blog-travis.vercel.com/windows3000-4200port</link>
-            <guid>https://blog-travis.vercel.com/windows3000-4200port</guid>
-            <pubDate>Mon, 27 Dec 2021 16:20:25 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[利用 fzf 实现的历史记录]]></title>
-            <link>https://blog-travis.vercel.com/zsh_history</link>
-            <guid>https://blog-travis.vercel.com/zsh_history</guid>
-            <pubDate>Sat, 30 Apr 2022 16:35:59 GMT</pubDate>
             <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>

@@ -6,6 +6,7 @@ import Footer from "components/Footer";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import metadata from "data/metaData";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [scrollY, setScrollY] = useState(0);
@@ -67,6 +68,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           media="(prefers-color-scheme: dark)"
         /> */}
       </Head>
+      <NextNProgress
+        options={{
+          showSpinner: false,
+        }}
+      />
       <Header isTop={scrollY < 50} />
       <Component {...pageProps} />
       <Footer />

@@ -53,13 +53,13 @@ pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  @apply p-4 border border-gray-200/20;
+  @apply border-2 border-nord-2;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   color: white;
-  background: #011627;
+  @apply bg-nord-1;
 }
 
 :not(pre) > code[class*="language-"] {
@@ -71,12 +71,14 @@ pre[class*="language-"] {
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: rgb(99, 119, 119);
+  /* color: rgb(99, 119, 119); */
+  @apply text-nord-4/25;
   font-style: italic;
 }
 
 .token.punctuation {
-  color: rgb(199, 146, 234);
+  /* color: rgb(199, 146, 234); */
+  @apply text-nord-15;
 }
 
 .namespace {
@@ -84,27 +86,32 @@ pre[class*="language-"] {
 }
 
 .token.deleted {
-  color: rgba(239, 83, 80, 0.56);
+  /* color: rgba(239, 83, 80, 0.56); */
+  @apply text-nord-11/60;
   font-style: italic;
 }
 
 .token.symbol,
 .token.property {
   color: rgb(128, 203, 196);
+  /* @apply text-nord-7; */
 }
 
 .token.tag,
 .token.operator,
 .token.keyword {
   color: rgb(127, 219, 202);
+  /* @apply text-nord-8; */
 }
 
 .token.boolean {
   color: rgb(255, 88, 116);
+  /* @apply text-nord-11; */
 }
 
 .token.number {
   color: rgb(247, 140, 108);
+  /* @apply text-nord-12; */
 }
 
 .token.constant,
@@ -112,11 +119,13 @@ pre[class*="language-"] {
 .token.builtin,
 .token.char {
   color: rgb(130, 170, 255);
+  /* @apply text-nord-10; */
 }
 
 .token.selector,
 .token.doctype {
   color: rgb(199, 146, 234);
+  /* @apply text-nord-15; */
   font-style: italic;
 }
 
@@ -189,7 +198,8 @@ pre {
 .highlight-line {
   margin-left: -16px;
   margin-right: -16px;
-  background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+  /* background-color: rgba(55, 65, 81, 0.5); Set highlight bg color */
+  @apply bg-nord-2;
   border-left: 4px solid rgb(59, 130, 246); /* Set highlight accent border color */
 }
 

@@ -1,7 +1,7 @@
 export default function Prose({ children }: { children: any }) {
   return (
-    <div className="mb-5 max-w-5xl rounded-lg bg-white py-10 dark:bg-nord-0 sm:mx-auto sm:rounded-lg sm:shadow-lg sm:dark:shadow-sm md:max-w-6xl">
-      <div className="prose prose-stone mx-auto overscroll-contain px-3 prose-h1:-mt-2 prose-a:text-nord-11 prose-a:no-underline hover:prose-a:underline dark:prose-invert md:prose-lg md:max-w-5xl">
+    <div className="mb-5 max-w-5xl rounded-lg bg-transparent py-10 transition-colors duration-500 sm:mx-auto sm:rounded-lg sm:shadow-lg sm:dark:shadow-sm md:max-w-6xl md:bg-white md:dark:bg-nord-0">
+      <div className="prose prose-stone mx-auto max-w-4xl overscroll-contain px-2 prose-h1:-mt-2 prose-a:text-nord-11 prose-a:no-underline hover:prose-a:underline dark:prose-invert md:prose-lg md:px-6">
         {children}
       </div>
     </div>
