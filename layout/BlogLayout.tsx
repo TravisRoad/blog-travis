@@ -11,7 +11,7 @@ export default function BlogLayout({
 }: PropsWithChildren<{ post: Blog; prev: Blog; next: Blog }>) {
   return (
     <div>
-      <div className="-mt-20 min-h-[92vh] bg-nord-light px-2 pt-20 dark:bg-nord-dark">
+      <div className="-mt-20 min-h-[92vh] bg-nord-bgLight px-2 pt-20 dark:bg-nord-bgDark">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article className="mx-auto mt-5 px-2 pb-5 sm:max-w-5xl ">
           <Prose>

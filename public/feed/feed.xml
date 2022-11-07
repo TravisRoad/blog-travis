@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog-travis.vercel.com</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Mon, 07 Nov 2022 13:17:05 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Nov 2022 13:21:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -14,34 +14,7 @@
             <link>https://blog-travis.vercel.com/Linux_mutex</link>
             <guid>https://blog-travis.vercel.com/Linux_mutex</guid>
             <pubDate>Mon, 28 Feb 2022 12:53:56 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[dpkg 误删除 info 目录]]></title>
-            <link>https://blog-travis.vercel.com/dpkg</link>
-            <guid>https://blog-travis.vercel.com/dpkg</guid>
-            <pubDate>Thu, 24 Mar 2022 14:35:56 GMT</pubDate>
-            <description><![CDATA[dpkg 删除 info 目录的解决方法
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[idea 开启热重载]]></title>
-            <link>https://blog-travis.vercel.com/idea_hot_restart</link>
-            <guid>https://blog-travis.vercel.com/idea_hot_restart</guid>
-            <pubDate>Thu, 30 Dec 2021 07:50:00 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[jpa 的 lazy 加载问题]]></title>
-            <link>https://blog-travis.vercel.com/jpa_spring_boot</link>
-            <guid>https://blog-travis.vercel.com/jpa_spring_boot</guid>
-            <pubDate>Fri, 07 Jan 2022 10:12:55 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[信号量机制详解
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -50,7 +23,7 @@
             <link>https://blog-travis.vercel.com/pytorch_DataLoader</link>
             <guid>https://blog-travis.vercel.com/pytorch_DataLoader</guid>
             <pubDate>Tue, 25 Jan 2022 14:09:14 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[DataLoader 多进程异常退出
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>

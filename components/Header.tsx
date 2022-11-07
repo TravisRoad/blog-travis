@@ -30,7 +30,7 @@ export default function Header({ isTop }: { isTop: Boolean }) {
     <header className="sticky top-0 z-50 col-start-1 w-full bg-nord-headerLight text-gray-400 transition-all duration-500 dark:bg-nord-headerDark print:hidden">
       <div
         className={`flex flex-row items-center justify-between space-x-8 px-4 text-base transition-all duration-300 sm:text-xl ${
-          isTop ? "h-[4em]" : "h-[2.5em] shadow-sm shadow-nord-5 dark:shadow-lg"
+          isTop ? "h-[4em]" : "h-[2.5em] shadow-nord-5 "
         }`}
       >
         <Logo hidden={!isTop} />

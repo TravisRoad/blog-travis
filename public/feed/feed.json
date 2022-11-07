@@ -13,38 +13,8 @@
             "id": "https://blog-travis.vercel.com/Linux_mutex",
             "url": "https://blog-travis.vercel.com/Linux_mutex",
             "title": "Linux 系统中的信号量",
-            "summary": "idk\n请在浏览器中浏览以获得最佳体验",
+            "summary": "信号量机制详解\n请在浏览器中浏览以获得最佳体验",
             "date_modified": "2022-02-28T12:53:56.000Z",
-            "author": {
-                "name": "Travis Road"
-            }
-        },
-        {
-            "id": "https://blog-travis.vercel.com/dpkg",
-            "url": "https://blog-travis.vercel.com/dpkg",
-            "title": "dpkg 误删除 info 目录",
-            "summary": "dpkg 删除 info 目录的解决方法\n请在浏览器中浏览以获得最佳体验",
-            "date_modified": "2022-03-24T14:35:56.000Z",
-            "author": {
-                "name": "Travis Road"
-            }
-        },
-        {
-            "id": "https://blog-travis.vercel.com/idea_hot_restart",
-            "url": "https://blog-travis.vercel.com/idea_hot_restart",
-            "title": "idea 开启热重载",
-            "summary": "idk\n请在浏览器中浏览以获得最佳体验",
-            "date_modified": "2021-12-30T07:50:00.000Z",
-            "author": {
-                "name": "Travis Road"
-            }
-        },
-        {
-            "id": "https://blog-travis.vercel.com/jpa_spring_boot",
-            "url": "https://blog-travis.vercel.com/jpa_spring_boot",
-            "title": "jpa 的 lazy 加载问题",
-            "summary": "idk\n请在浏览器中浏览以获得最佳体验",
-            "date_modified": "2022-01-07T10:12:55.000Z",
             "author": {
                 "name": "Travis Road"
             }
@@ -53,7 +23,7 @@
             "id": "https://blog-travis.vercel.com/pytorch_DataLoader",
             "url": "https://blog-travis.vercel.com/pytorch_DataLoader",
             "title": "pytorch 中 DataLoader 的问题",
-            "summary": "idk\n请在浏览器中浏览以获得最佳体验",
+            "summary": "DataLoader 多进程异常退出\n请在浏览器中浏览以获得最佳体验",
             "date_modified": "2022-01-25T14:09:14.000Z",
             "author": {
                 "name": "Travis Road"

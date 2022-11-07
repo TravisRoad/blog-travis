@@ -23,5 +23,5 @@ body:before {
   z-index: -10;
   content: "";
   position: fixed;
-  background: url(/image/rin.png) #242933 right bottom/140% no-repeat;
+  background: url(/image/rin.png) right bottom/100% no-repeat;
 }

@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head />
-      <body className=" before:bg-light dark:bg-nord-bgDark before:dark:bg-dark">
+      <body className=" bg-nord-bgLight bg-light dark:bg-nord-bgDark dark:bg-dark">
         <Main />
         <NextScript />
         <Script src="lib/darkmode.js" strategy="beforeInteractive" />
