@@ -10,12 +10,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        // background: url(/image/rin.png) #242933 right bottom/140% no-repeat;
+        dark: "url(/image/rin.png) right bottom/140 % no-repeat",
+        light: "url(/image/rin.png) #f2f4f8 right bottom/140% no-repeat;",
+      },
       colors: {
         nord: {
           // https://www.nordtheme.com/docs/colors-and-palettes
-          dark: "#242933d7",
+          dark: "#242933",
+          bgDark: "#242933d3",
           headerDark: "#242933",
-          light: "#f2f4f8a0",
+          light: "#f2f4f8",
+          bgLight: "#f2f4f8a0",
           headerLight: "#f2f4f8",
           0: "#2e3440",
           1: "#3b4252",

@@ -43,10 +43,10 @@ export default function Footer() {
       <svg
         viewBox="0 0 1920 250"
         xmlns="http://www.w3.org/2000/svg"
-        className="z-0 w-full overflow-hidden bg-nord-light dark:bg-nord-dark"
+        className="z-0 w-full overflow-hidden bg-nord-bgLight dark:bg-nord-bgDark"
       >
         <path
-          className="fill-nord-5/80 dark:fill-[#373d4c]"
+          className="fill-nord-5/90 dark:fill-[#373d4c]"
           d="M1920 250H0V0s126.707 78.536 349.975 80.05c177.852 1.203 362.805-63.874 553.803-63.874 290.517 0 383.458 57.712 603.992 61.408 220.527 3.696 278.059-61.408 412.23-17.239"
         ></path>
         <path
