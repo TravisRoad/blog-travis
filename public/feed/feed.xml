@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog-travis.vercel.com</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Mon, 07 Nov 2022 13:06:41 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Nov 2022 13:17:05 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -55,15 +55,6 @@
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[Spring 配置 maven 错误]]></title>
-            <link>https://blog-travis.vercel.com/spring_error_0</link>
-            <guid>https://blog-travis.vercel.com/spring_error_0</guid>
-            <pubDate>Mon, 27 Dec 2021 14:02:12 GMT</pubDate>
-            <description><![CDATA[idk
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
             <title><![CDATA[编程巨星的秘密]]></title>
             <link>https://blog-travis.vercel.com/star_programer</link>
             <guid>https://blog-travis.vercel.com/star_programer</guid>
@@ -77,7 +68,7 @@
             <link>https://blog-travis.vercel.com/theguy</link>
             <guid>https://blog-travis.vercel.com/theguy</guid>
             <pubDate>Fri, 10 Sep 2021 10:37:27 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[有意思的玩梗大片
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -86,7 +77,7 @@
             <link>https://blog-travis.vercel.com/twocity</link>
             <guid>https://blog-travis.vercel.com/twocity</guid>
             <pubDate>Fri, 07 Jan 2022 09:41:09 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[好，但没有那么好
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -95,7 +86,7 @@
             <link>https://blog-travis.vercel.com/vue3</link>
             <guid>https://blog-travis.vercel.com/vue3</guid>
             <pubDate>Fri, 14 Jan 2022 10:17:00 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[javascript 问题
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -104,7 +95,7 @@
             <link>https://blog-travis.vercel.com/windows3000-4200port</link>
             <guid>https://blog-travis.vercel.com/windows3000-4200port</guid>
             <pubDate>Mon, 27 Dec 2021 16:20:25 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[windows 的保留端口
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -113,7 +104,7 @@
             <link>https://blog-travis.vercel.com/zsh_history</link>
             <guid>https://blog-travis.vercel.com/zsh_history</guid>
             <pubDate>Sat, 30 Apr 2022 16:35:59 GMT</pubDate>
-            <description><![CDATA[idk
+            <description><![CDATA[设置 zsh 历史记录模糊查询
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
