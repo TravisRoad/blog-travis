@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^2.2.0",
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "^2.0.12",
     "@jsdevtools/rehype-toc": "^3.0.2",

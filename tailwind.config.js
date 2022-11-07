@@ -8,14 +8,15 @@ module.exports = {
     "./layout/**/*.{js,ts,tsx,jsx}",
     "./data/**/*.mdx",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
         nord: {
           // https://www.nordtheme.com/docs/colors-and-palettes
-          dark: "#242933",
-          light: "#f2f4f8",
+          dark: "#242933d7",
+          headerDark: "#242933",
+          light: "#f2f4f8a0",
+          headerLight: "#f2f4f8",
           0: "#2e3440",
           1: "#3b4252",
           2: "#434c5e",

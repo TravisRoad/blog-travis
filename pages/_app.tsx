@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/prism/prism-dark.css";
+import "../styles/nprogress.css";
 import type { AppProps } from "next/app";
 import Header from "components/Header";
 import Footer from "components/Footer";
