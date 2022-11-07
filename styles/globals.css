@@ -13,3 +13,31 @@
 .nav {
   inset-block-start: 0;
 }
+
+@media (min-width: 640px) {
+  body:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+    opacity: 0.1;
+    z-index: -10;
+    content: "";
+    position: fixed;
+    background: url(/image/rin.png) right bottom/140% no-repeat;
+  }
+}
+
+@media (min-width: 768px) {
+  body:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+    opacity: 0.1;
+    z-index: -10;
+    content: "";
+    position: fixed;
+    background: url(/image/rin.png) right bottom/85% no-repeat;
+  }
+}

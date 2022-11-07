@@ -12,7 +12,8 @@ export default function BlogLayout({
   return (
     <div>
       <div className="-mt-20 min-h-[92vh] bg-nord-light px-2 pt-20 dark:bg-nord-dark">
-        <article className="mx-auto px-2 sm:max-w-5xl">
+        {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
+        <article className="mx-auto mt-5 px-2 pb-5 sm:max-w-5xl ">
           <Prose>
             <h1 className="">{post.title}</h1>
             <div className="-mt-5 flex items-center justify-between">

@@ -17,7 +17,6 @@ export default function Post({
   // prev: Blog;
 }) {
   const Content = useMDXComponent(post.body.code);
-  // console.log(post.toc);
 
   return (
     <BlogLayout post={post} prev={post} next={post}>

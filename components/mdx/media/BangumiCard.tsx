@@ -28,7 +28,6 @@ export default function BangumiCard({
     };
     getJson();
   }, [url]);
-  console.log(bangumiSubject);
 
   return (
     <div className="flex flex-row-reverse justify-between rounded-lg border px-4 py-2">
