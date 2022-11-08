@@ -63,7 +63,14 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <CopyRight />
             <ICPnumber />
-            <div className="">
+            <div className="flex flex-col items-center">
+              <div>
+                powered by{" "}
+                <Link href="https://github.com/TravisRoad/blog-travis">
+                  {/* eslint-disable-next-line react/no-unescaped-entities */}
+                  <a className="font-semibold underline "> blog-travis </a>
+                </Link>
+              </div>
               <div>
                 spired by{" "}
                 <Link href="https://www.whexy.com/posts/blog-diy">

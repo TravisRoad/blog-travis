@@ -30,7 +30,7 @@ function ProfileDetail() {
       <div className="mt-5 flex">
         <a
           className="font-title mr-1 inline-flex space-x-1 rounded-lg px-3 py-2 ring-red-500 transition-all hover:ring-2"
-          href="https://github.com/whexy"
+          href="https://github.com/travisroad"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

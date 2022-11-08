@@ -18,13 +18,13 @@ export default function PostCard({
       <Link href={url ? url : "/"}>
         <a>
           <div className="flex flex-row items-baseline justify-between rounded-xl transition-all">
-            <p className="text-xs font-bold sm:text-lg">{title}</p>
+            <p className="text-sm font-bold sm:text-lg">{title}</p>
             <div className="flex-shrink-0 pl-2 font-mono tracking-wide opacity-60">
               {date}
             </div>
           </div>
           {typeof showSummary !== undefined && (
-            <p className="opacity-60">{summary}</p>
+            <p className="text-xs opacity-60 sm:text-base">{summary}</p>
           )}
         </a>
       </Link>

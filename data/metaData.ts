@@ -18,4 +18,8 @@ const metadata = {
   site: "https://blog-travis.vercel.com",
 };
 
+export const settings = {
+  postPerPage: 10,
+};
+
 export default metadata;

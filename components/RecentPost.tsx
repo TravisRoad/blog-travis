@@ -3,6 +3,8 @@ import { allBlogs } from "contentlayer/generated";
 import type { Blog } from "contentlayer/generated";
 import PostCard from "./PostCard";
 import { parseISO, format, compareDesc } from "date-fns";
+import Link from "next/link";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
 export default function RecentPost() {
   const recentBlogs = allBlogs.sort((p1: Blog, p2: Blog) =>
@@ -40,6 +42,19 @@ export default function RecentPost() {
               showSummary={true}
             />
           ))}
+          <div className="transition-color rounded-none border-0 bg-white px-3 py-3 duration-200 first:rounded-t-lg last:rounded-b-lg hover:bg-[#f7f7fe] dark:bg-nord-0 dark:hover:bg-nord-1">
+            <Link href="/posts">
+              <a>
+                <div className="flex flex-row items-center justify-between rounded-xl py-1 transition-all">
+                  <span className="font-semibold text-nord-10 dark:text-nord-7">
+                    {" "}
+                    read more
+                  </span>
+                  <ArrowUpRightIcon className="h-6 w-6 stroke-nord-10 stroke-[2px] dark:stroke-nord-7" />
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
