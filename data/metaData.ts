@@ -15,7 +15,8 @@ const metadata = {
   },
   author: "Travis Road",
   email: "lxymontage@gmail.com",
-  site: "https://blog-travis.vercel.com",
+  // site: "https://blog-travis.vercel.app",
+  site: "https://blog.lxythan2lxy.cn",
 };
 
 export const settings = {
