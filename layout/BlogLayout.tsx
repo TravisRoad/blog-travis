@@ -27,6 +27,15 @@ export default function BlogLayout({
               <div className="dark:text-gray-400">{post.readingTime.text}</div>
             </div>
             {children}
+            <div className="text-sm text-nord-3/50 dark:text-nord-6/50">
+              © LICENSED UNDER{" "}
+              <a
+                className="text-nord-11/80"
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+              >
+                CC BY-NC-SA 4.0
+              </a>
+            </div>
           </Prose>
         </article>
         {/* <div className="flex justify-between">

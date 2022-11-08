@@ -14,7 +14,7 @@ module.exports = {
         nord: {
           // https://www.nordtheme.com/docs/colors-and-palettes
           dark: "#242933",
-          bgDark: "#242933d3",
+          bgDark: "#242933e0",
           headerDark: "#242933",
           light: "#f2f4f8",
           bgLight: "#f2f4f8a0",

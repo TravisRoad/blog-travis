@@ -18,10 +18,10 @@ body:before {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0rem;
-  opacity: 0.1;
+  bottom: 0;
+  opacity: 0.09;
   z-index: -10;
   content: "";
   position: fixed;
-  background: url(/image/rin.png) right bottom/100% no-repeat;
+  background: url(/image/rin.png.bak) #000 right bottom/90% no-repeat;
 }

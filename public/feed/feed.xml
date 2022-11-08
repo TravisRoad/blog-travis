@@ -2,17 +2,17 @@
 <rss version="2.0">
     <channel>
         <title>Travis' Blog</title>
-        <link>https://blog-travis.vercel.com</link>
+        <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Tue, 08 Nov 2022 06:49:24 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Nov 2022 13:31:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Travis Road</copyright>
         <item>
             <title><![CDATA[Linux 系统中的信号量]]></title>
-            <link>https://blog-travis.vercel.com/posts/Linux_mutex</link>
-            <guid>https://blog-travis.vercel.com/posts/Linux_mutex</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/Linux_mutex</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/Linux_mutex</guid>
             <pubDate>Mon, 28 Feb 2022 12:53:56 GMT</pubDate>
             <description><![CDATA[信号量机制详解
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -20,8 +20,8 @@
         </item>
         <item>
             <title><![CDATA[pytorch 中 DataLoader 的问题]]></title>
-            <link>https://blog-travis.vercel.com/posts/pytorch_DataLoader</link>
-            <guid>https://blog-travis.vercel.com/posts/pytorch_DataLoader</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/pytorch_DataLoader</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/pytorch_DataLoader</guid>
             <pubDate>Tue, 25 Jan 2022 14:09:14 GMT</pubDate>
             <description><![CDATA[DataLoader 多进程异常退出
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -29,8 +29,8 @@
         </item>
         <item>
             <title><![CDATA[编程巨星的秘密]]></title>
-            <link>https://blog-travis.vercel.com/posts/star_programer</link>
-            <guid>https://blog-travis.vercel.com/posts/star_programer</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/star_programer</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/star_programer</guid>
             <pubDate>Mon, 27 Dec 2021 04:02:12 GMT</pubDate>
             <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -38,8 +38,8 @@
         </item>
         <item>
             <title><![CDATA[失控玩家]]></title>
-            <link>https://blog-travis.vercel.com/posts/theguy</link>
-            <guid>https://blog-travis.vercel.com/posts/theguy</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/theguy</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/theguy</guid>
             <pubDate>Fri, 10 Sep 2021 10:37:27 GMT</pubDate>
             <description><![CDATA[有意思的玩梗大片
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -47,8 +47,8 @@
         </item>
         <item>
             <title><![CDATA[双城之战]]></title>
-            <link>https://blog-travis.vercel.com/posts/twocity</link>
-            <guid>https://blog-travis.vercel.com/posts/twocity</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/twocity</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/twocity</guid>
             <pubDate>Fri, 07 Jan 2022 09:41:09 GMT</pubDate>
             <description><![CDATA[好，但没有那么好
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -56,8 +56,8 @@
         </item>
         <item>
             <title><![CDATA[javascript 的异步问题和 this 问题]]></title>
-            <link>https://blog-travis.vercel.com/posts/vue3</link>
-            <guid>https://blog-travis.vercel.com/posts/vue3</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/vue3</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/vue3</guid>
             <pubDate>Fri, 14 Jan 2022 10:17:00 GMT</pubDate>
             <description><![CDATA[javascript 问题
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -65,8 +65,8 @@
         </item>
         <item>
             <title><![CDATA[windows 3000 4200 端口神奇的消失事件]]></title>
-            <link>https://blog-travis.vercel.com/posts/windows3000-4200port</link>
-            <guid>https://blog-travis.vercel.com/posts/windows3000-4200port</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/windows3000-4200port</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/windows3000-4200port</guid>
             <pubDate>Mon, 27 Dec 2021 16:20:25 GMT</pubDate>
             <description><![CDATA[windows 的保留端口
 请在浏览器中浏览以获得最佳体验]]></description>
@@ -74,8 +74,8 @@
         </item>
         <item>
             <title><![CDATA[利用 fzf 实现的历史记录]]></title>
-            <link>https://blog-travis.vercel.com/posts/zsh_history</link>
-            <guid>https://blog-travis.vercel.com/posts/zsh_history</guid>
+            <link>https://blog.lxythan2lxy.cn/posts/zsh_history</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/zsh_history</guid>
             <pubDate>Sat, 30 Apr 2022 16:35:59 GMT</pubDate>
             <description><![CDATA[设置 zsh 历史记录模糊查询
 请在浏览器中浏览以获得最佳体验]]></description>

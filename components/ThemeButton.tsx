@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import {
   MoonIcon as MoonSolid,
   SunIcon as SunSolid,
@@ -36,9 +36,9 @@ export const ThemeButton = () => {
         className="transition-color mx-2 rounded-lg bg-transparent p-1 duration-500 hover:bg-nord-5 dark:hover:bg-nord-2"
       >
         {darkMode ? (
-          <SunIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5 " />
+          <SunIcon className="h-5 w-5 fill-nord-2 stroke-nord-2 dark:fill-nord-5 dark:stroke-nord-5" />
         ) : (
-          <MoonIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5 " />
+          <MoonIcon className="h-5 w-5 fill-nord-2 stroke-nord-2 dark:fill-nord-5 dark:stroke-nord-5" />
         )}
       </button>
     </div>

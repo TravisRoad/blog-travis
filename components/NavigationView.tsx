@@ -16,10 +16,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
       : "text-nord-3/80 dark:text-nord-4/80 font-normal";
   return (
     <Link href={url}>
-      <a
-        className="mx-1 block overflow-hidden
-        rounded-lg px-2"
-      >
+      <a className="mx-1 overflow-hidden rounded-lg px-2">
         {/* <div
           className={`${
             isActive
@@ -29,12 +26,12 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
         >
           {name}
         </div> */}
-        <span
-          className={`relative block before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
+        <div
+          className={` relative block items-center before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
           data-content={name}
         >
           {name}
-        </span>
+        </div>
       </a>
     </Link>
   );

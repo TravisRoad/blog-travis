@@ -46,11 +46,8 @@ export default function RecentPost() {
             <Link href="/posts">
               <a>
                 <div className="flex flex-row items-center justify-between rounded-xl py-1 transition-all">
-                  <span className="font-semibold text-nord-10 dark:text-nord-7">
-                    {" "}
-                    read more
-                  </span>
-                  <ArrowUpRightIcon className="h-6 w-6 stroke-nord-10 stroke-[2px] dark:stroke-nord-7" />
+                  <span className="font-semibold text-nord-10"> read more</span>
+                  <ArrowUpRightIcon className="h-4 w-4 stroke-nord-10 stroke-[2px] dark:stroke-nord-7" />
                 </div>
               </a>
             </Link>

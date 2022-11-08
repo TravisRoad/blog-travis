@@ -82,7 +82,7 @@ const edit = async (record: any) => {
 handleQueryContent(record).then(editor.txt.html);
 ```
 
-此时如果直接调用 `handleQueryContent(record).then(editor.txt.html)`，就会报错 `editor undefined`。
+此时如果直接调用 `handleQueryContent(record) .then(editor.txt.html)`，就会报错 `editor undefined`。
 
 调试一下发现是这个函数内部使用了 `this`，我这里这样调用是把调用处的上下文 `this` 传入了 `editor.txt.html()`。
 
