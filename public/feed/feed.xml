@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Tue, 08 Nov 2022 13:31:58 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 11 Nov 2022 17:18:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -24,15 +24,6 @@
             <guid>https://blog.lxythan2lxy.cn/posts/pytorch_DataLoader</guid>
             <pubDate>Tue, 25 Jan 2022 14:09:14 GMT</pubDate>
             <description><![CDATA[DataLoader 多进程异常退出
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
-            <title><![CDATA[编程巨星的秘密]]></title>
-            <link>https://blog.lxythan2lxy.cn/posts/star_programer</link>
-            <guid>https://blog.lxythan2lxy.cn/posts/star_programer</guid>
-            <pubDate>Mon, 27 Dec 2021 04:02:12 GMT</pubDate>
-            <description><![CDATA[idk
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>

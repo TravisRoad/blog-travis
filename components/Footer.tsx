@@ -13,7 +13,8 @@ function MyLink({ url, name }: { url: string; name: string }) {
 }
 
 const ICPnumber = () => {
-  const isChinaMainland: string | undefined = process.env.CHINA;
+  // const isChinaMainland: string | undefined = process.env.CHINA;
+  const isChinaMainland: string | undefined = "china";
   if (isChinaMainland !== undefined)
     return (
       <a
@@ -62,29 +63,29 @@ export default function Footer() {
         <div className="mx-auto flex flex-col-reverse items-center justify-center sm:grid sm:grid-cols-2 sm:gap-4">
           <div className="flex flex-col items-center">
             <CopyRight />
-            <ICPnumber />
-            <div className="flex flex-col items-center">
+            <div className="my-2 grid grid-cols-2 items-center gap-2">
+              <div className="text-right">powered by</div>
               <div>
-                powered by{" "}
                 <Link href="https://github.com/TravisRoad/blog-travis">
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
                   <a className="font-semibold underline "> blog-travis </a>
                 </Link>
               </div>
+              <div className="text-right">spired by</div>
               <div>
-                spired by{" "}
                 <Link href="https://www.whexy.com/posts/blog-diy">
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
                   <a className="font-semibold underline">Wenxuan Shi's Blog</a>
                 </Link>
               </div>
+              <div className="text-right">made with</div>
               <div>
-                made with{" "}
                 <Link href="https://nordtheme.com">
                   <a className="font-semibold underline ">Nord theme </a>
                 </Link>
               </div>
             </div>
+            <ICPnumber />
           </div>
           <div className="w-full max-w-2xl">
             <div className="mt-2 mb-4 flex flex-col items-center space-y-4">
