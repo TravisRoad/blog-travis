@@ -16,7 +16,7 @@ export default function PostsView({ posts }: { posts: Array<any> }) {
   const totlePage = Math.floor(posts.length / settings.postPerPage + 1);
   return (
     <Main>
-      <div className="mx-auto mt-10 max-w-4xl flex-col justify-center space-y-5">
+      <div className="mx-auto mt-10 max-w-5xl flex-col justify-center space-y-5">
         <div className=" divide-y divide-nord-5 divide-black/10 overflow-hidden rounded-lg border-2 border-nord-5 dark:divide-nord-dark/80 dark:divide-nord-2 dark:border-nord-2">
           {posts.slice(start, end).map((post: any) => (
             <PostCard

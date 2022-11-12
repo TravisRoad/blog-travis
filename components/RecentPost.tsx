@@ -13,7 +13,7 @@ export default function RecentPost() {
   const staredBlogs = recentBlogs.filter((blog: Blog) => blog.star);
 
   return (
-    <div className="mt-2 mb-2 px-4">
+    <div className="mt-2 mb-2 px-0">
       <div className="py-4">
         <div className="pl-4 pb-1 text-base font-semibold opacity-80">star</div>
         <div className="divide-y divide-nord-5 overflow-hidden rounded-lg border-2 border-nord-5 dark:divide-nord-2 dark:border-nord-2">

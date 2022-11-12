@@ -62,29 +62,34 @@ export default function Footer() {
       <footer className="z-10 mx-auto -mt-2 block w-full bg-[#fbfbfc] px-2 pb-4 text-sm text-nord-3 dark:bg-nord-1 dark:text-nord-4 sm:text-base">
         <div className="mx-auto flex flex-col-reverse items-center justify-center sm:grid sm:grid-cols-2 sm:gap-4">
           <div className="flex flex-col items-center">
-            <CopyRight />
             <div className="my-2 grid grid-cols-2 items-center gap-2">
-              <div className="text-right">powered by</div>
-              <div>
-                <Link href="https://github.com/TravisRoad/blog-travis">
-                  {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  <a className="font-semibold underline "> blog-travis </a>
-                </Link>
-              </div>
-              <div className="text-right">spired by</div>
+              <div className="text-right first-letter:uppercase">spired by</div>
               <div>
                 <Link href="https://www.whexy.com/posts/blog-diy">
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  <a className="font-semibold underline">Wenxuan Shi's Blog</a>
+                  <a className="font-semibold hover:underline">{"blog-1999"}</a>
                 </Link>
               </div>
-              <div className="text-right">made with</div>
+              <div className="text-right first-letter:uppercase">
+                powered by
+              </div>
+              <div>
+                <Link href="https://github.com/TravisRoad/blog-travis">
+                  {/* eslint-disable-next-line react/no-unescaped-entities */}
+                  <a className="font-semibold hover:underline ">
+                    {" "}
+                    blog-travis{" "}
+                  </a>
+                </Link>
+              </div>
+              <div className="text-right first-letter:uppercase">thanks to</div>
               <div>
                 <Link href="https://nordtheme.com">
-                  <a className="font-semibold underline ">Nord theme </a>
+                  <a className="font-semibold hover:underline ">Nord theme </a>
                 </Link>
               </div>
             </div>
+            <CopyRight />
             <ICPnumber />
           </div>
           <div className="w-full max-w-2xl">

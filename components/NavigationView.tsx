@@ -16,7 +16,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
       : "text-nord-3/80 dark:text-nord-4/80 font-normal";
   return (
     <Link href={url}>
-      <a className="mx-1 overflow-hidden rounded-lg px-2">
+      <a className="mx-1 overflow-hidden rounded-lg ">
         {/* <div
           className={`${
             isActive
@@ -55,7 +55,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
       <div className="flex flex-row-reverse items-center transition-all ">
         {/* Desktop menu */}
         <div
-          className={`hidden items-center overflow-hidden font-sans sm:flex ${
+          className={`hidden items-center space-x-4 overflow-hidden font-sans sm:flex ${
             isTop ? "text-lg" : "text-sm"
           }`}
         >
