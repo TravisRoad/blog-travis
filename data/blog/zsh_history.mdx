@@ -15,17 +15,17 @@ cata:
 
 这里我想达到的目的是按下 `C-r` 按键时会弹出窗口来选择历史，并且带有模糊搜索的功能。恰好 `fzf` 命令有这个功能，用包管理器安装好之后，就可以开始写小脚本了。
 
-![图片](/image/zsh_history.gif)
-
-![](/image/2022-04-30-23-46-22.jpeg)
+![按下 Ctrl+r 出现历史记录的选择器](/image/zsh_history.gif)
 
 ```shell:~/.zshrc {1,2}
 # select history command in fzf mode
 function hist(){
     if [ $#LBUFFER -gt 0 ]; then
-        BUFFER=$(history -n | awk '!seen[$0]++' | fzf -e --reverse --no-sort --tac --border=rounded --height=50% --query $LBUFFER)
+        BUFFER=$(history -n | awk '!seen[$0]++' | \
+            fzf -e --reverse --no-sort --tac --border=rounded --height=50% --query $LBUFFER)
     else
-        BUFFER=$(history -n | awk '!seen[$0]++' | fzf -e --reverse --no-sort --tac --border=rounded --height=50%)
+        BUFFER=$(history -n | awk '!seen[$0]++' | \
+            fzf -e --reverse --no-sort --tac --border=rounded --height=50%)
     fi
     CURSOR=$#BUFFER
     zle redisplay
@@ -37,7 +37,9 @@ bindkey '^r' hist
 ### 解释
 
 ```bash
-history -n | awk '!seen[$0]++' | fzf -e --reverse --no-sort --tac --border=rounded --height=50%
+history -n | awk '!seen[$0]++' | fzf \
+    -e --reverse --no-sort --tac \
+    --border=rounded --height=50%
 ```
 
 首先看看 `history` 命令输出的格式，看到 `omz_history` 默认是带有前面的数字的，我们把它用 `-n` 选项取消掉。

@@ -20,7 +20,7 @@ export default function Post({
 
   return (
     <BlogLayout post={post} prev={post} next={post}>
-      <Content components={{ ...MDXComponents }} />
+      <Content components={MDXComponents} />
     </BlogLayout>
   );
 }
