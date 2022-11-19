@@ -39,5 +39,5 @@ next-env.d.ts
 .vscode
 .vscode/settings.json
 
-public/sitemap.xml
-public/feed
+# public/sitemap.xml
+# public/feed

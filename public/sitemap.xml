@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/about</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/Linux_mutex</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/pytorch_DataLoader</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/theguy</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/twocity</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/vue3</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/windows3000-4200port</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/posts/zsh_history</loc>
+  </url>
+</urlset>
