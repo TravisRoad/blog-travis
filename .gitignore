@@ -38,3 +38,6 @@ next-env.d.ts
 .contentlayer
 .vscode
 .vscode/settings.json
+
+public/sitemap.xml
+public/feed
