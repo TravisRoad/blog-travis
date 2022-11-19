@@ -14,18 +14,18 @@ export default function PostCard({
   showSummary: boolean;
 }) {
   return (
-    <div className="transition-color rounded-none border-0 bg-white px-3 py-3 duration-200 first:rounded-t-lg last:rounded-b-lg hover:bg-[#f7f7fe] dark:bg-nord-0 dark:hover:bg-nord-1">
+    <div className="transition-color rounded-none border-0 bg-white px-2 py-3 duration-200 first:rounded-t-lg last:rounded-b-lg hover:bg-[#f7f7fe] dark:bg-nord-0 dark:hover:bg-nord-1">
       <Link href={url ? url : "/"}>
-        <a>
-          <div className="flex flex-row items-baseline justify-between rounded-xl transition-all">
+        <a className="flex items-center justify-between">
+          <div className="flex flex-col items-baseline justify-between rounded-xl transition-all">
             <p className="text-sm font-bold sm:text-lg">{title}</p>
-            <div className="flex-shrink-0 pl-2 font-mono tracking-wide opacity-60">
-              {date}
-            </div>
+            {typeof showSummary !== undefined && (
+              <p className="text-xs opacity-60 sm:text-base">{summary}</p>
+            )}
           </div>
-          {typeof showSummary !== undefined && (
-            <p className="text-xs opacity-60 sm:text-base">{summary}</p>
-          )}
+          <div className="flex-shrink-0 pl-2 font-mono text-sm tracking-wide opacity-60 sm:text-base">
+            {date}
+          </div>
         </a>
       </Link>
     </div>

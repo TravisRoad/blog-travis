@@ -18,8 +18,8 @@ const Logo = ({ children, url }: { children: any; url: string }) => {
 
 export default function SideBar() {
   return (
-    <div className="mx-2 mt-5 flex-1 p-2">
-      <div className="mx-auto my-2 h-[120px] w-[120px] cursor-pointer transition-transform duration-500 hover:rotate-6 hover:scale-105">
+    <div className="mr-2 mt-5 flex-1 pt-4">
+      <div className="mx-auto h-[120px] w-[120px] cursor-pointer transition-transform duration-500 hover:rotate-6 hover:scale-105">
         <Link href="/about">
           <Image
             src={avatar}

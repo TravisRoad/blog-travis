@@ -5,6 +5,7 @@ import Main from "components/Main";
 import RecentPost from "components/RecentPost";
 import SideBar from "components/SideBar";
 import createRss from "@/lib/feed";
+import createSiteMap from "@/lib/sitemap";
 
 const Home = ({ trivial }: { trivial: boolean }) => {
   return (
@@ -33,6 +34,7 @@ const Home = ({ trivial }: { trivial: boolean }) => {
 
 export async function getStaticProps() {
   createRss();
+  createSiteMap();
   return { props: { trivial: true } };
 }
 export default Home;
