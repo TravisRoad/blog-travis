@@ -32,7 +32,10 @@ const CopyRight = () => {
   return (
     <div className="mx-auto p-2 text-nord-3 dark:text-nord-4">
       <span>
-        © {metadata.time.start}-{metadata.time.end} {metadata.title}
+        © {metadata.time.start}-{metadata.time.end}{" "}
+        <Link href="https://github.com/TravisRoad/blog-travis">
+          <a className=" hover:underline "> {metadata.title} </a>
+        </Link>
       </span>
     </div>
   );
@@ -70,18 +73,17 @@ export default function Footer() {
                   <a className="font-semibold hover:underline">{"blog-1999"}</a>
                 </Link>
               </div>
-              <div className="text-right first-letter:uppercase">
+              {/* <div className="text-right first-letter:uppercase">
                 powered by
               </div>
               <div>
                 <Link href="https://github.com/TravisRoad/blog-travis">
-                  {/* eslint-disable-next-line react/no-unescaped-entities */}
                   <a className="font-semibold hover:underline ">
                     {" "}
                     blog-travis{" "}
                   </a>
                 </Link>
-              </div>
+              </div> */}
               <div className="text-right first-letter:uppercase">thanks to</div>
               <div>
                 <Link href="https://nordtheme.com">
