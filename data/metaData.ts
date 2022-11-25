@@ -6,7 +6,7 @@ const metadata = {
     sup: "Blog",
   },
   ICP: {
-    url: "https://www.beianx.cn/search/lxythan2lxy.cn",
+    url: "https://www.beianx.cn/info/335673546825797",
     code: "京ICP备20006389号-1",
   },
   time: {
