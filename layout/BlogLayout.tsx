@@ -54,9 +54,9 @@ export default function BlogLayout({
             {children}
             <div className="py-4"></div>
             <License />
-            <div className="absolute bottom-0 right-0 mr-5">
+            {/* <div className="absolute bottom-0 right-0 mr-5">
               <LikeButton slug={post.slug} />
-            </div>
+            </div> */}
           </Prose>
         </article>
         <Comment slug={post.slug} />
