@@ -86,7 +86,7 @@ function PostTimeLine({ posts }: { posts: Array<any> }) {
             <PostCard
               title={post.title}
               key={post.title}
-              url={post.url}
+              url={`/posts/${post.slug}`}
               summary={post.summary}
               date={format(parseISO(post.publishDate), "yyyy/LL/dd")}
               showSummary={true}

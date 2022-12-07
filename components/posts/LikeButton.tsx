@@ -44,9 +44,9 @@ export default function LikeButton({ slug }: { slug: string }) {
           className={`${cookieExist ? "cursor-default" : ""}`}
         >
           {cookieExist ? (
-            <ThumbUpIconSolid className="w-7 items-center fill-nord-11 dark:fill-nord-12 md:w-10 " />
+            <ThumbUpIconSolid className="w-9 items-center fill-nord-11 dark:fill-nord-12 md:w-10 " />
           ) : (
-            <ThumbUpIconOutline className="w-7 items-center stroke-nord-2/20 transition-all duration-200 hover:rotate-[-10deg] hover:scale-125 hover:stroke-nord-11 dark:stroke-nord-5/50 dark:hover:stroke-nord-11 md:w-10" />
+            <ThumbUpIconOutline className="w-9 items-center stroke-nord-2/20 transition-all duration-200 hover:rotate-[-10deg] hover:scale-125 hover:stroke-nord-11 dark:stroke-nord-5/50 dark:hover:stroke-nord-11 md:w-10" />
           )}
         </button>
       </div>
