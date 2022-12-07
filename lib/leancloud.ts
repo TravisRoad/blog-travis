@@ -67,7 +67,6 @@ export async function getLikeNum(slug: string): Promise<number> {
 export function unique_view(slug: string) {
   const query = new AV.Query("view");
   query.equalTo("slug", slug);
-  query.select(["slug", "vv"]);
 
   query.first().then((item) => {
     if (item === undefined) {
@@ -86,7 +85,6 @@ export function unique_view(slug: string) {
 export async function getViewCount(slug: string): Promise<number> {
   const query = new AV.Query("view");
   query.equalTo("slug", slug);
-  query.select(["slug", "uv"]);
 
   let val = -1;
 
@@ -112,7 +110,6 @@ export function setViewNum(slug: string, uv: number) {
 export function vv(slug: string) {
   const query = new AV.Query("view");
   query.equalTo("slug", slug);
-  query.select(["slug", "vv"]);
 
   query.first().then((item) => {
     if (item === undefined) {
@@ -131,7 +128,6 @@ export function vv(slug: string) {
 export async function getVVCount(slug: string): Promise<number> {
   const query = new AV.Query("view");
   query.equalTo("slug", slug);
-  query.select(["slug", "vv"]);
 
   let val = -1;
 

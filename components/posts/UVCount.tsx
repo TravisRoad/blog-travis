@@ -28,7 +28,7 @@ export default function UVCount({ slug }: { slug: string }) {
         <UserIcon className="w-5 translate-y-[10%] items-center stroke-nord-3 dark:stroke-gray-300" />
       </div>
       <div className=" text-nord-3 dark:text-gray-100">
-        {viewData === undefined ? "🈚" : viewData.num}
+        {viewData === undefined ? "" : viewData.num}
       </div>
     </div>
   );
