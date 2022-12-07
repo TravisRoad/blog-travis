@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
-import {
-  MoonIcon as MoonSolid,
-  SunIcon as SunSolid,
-} from "@heroicons/react/24/solid";
 
 export const ThemeButton = () => {
   const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined);
@@ -16,10 +12,10 @@ export const ThemeButton = () => {
   }, []);
 
   useEffect(() => {
-    if (darkMode) {
+    if (darkMode === true) {
       window.document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-    } else {
+    } else if (darkMode === false) {
       window.document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }

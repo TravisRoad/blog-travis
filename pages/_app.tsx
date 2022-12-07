@@ -58,6 +58,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="theme-color" content="#242933" />
+
+        {/*https://github.com/giscus/giscus/issues/675 */}
+        <meta name="color-scheme" content="dark light" />
+
         {/* <meta
           name="theme-color"
           content="#f2f4f8"

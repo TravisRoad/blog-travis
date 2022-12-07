@@ -1,7 +1,11 @@
+import LikeButton from "components/posts/LikeButton";
 import Prose from "components/Prose";
+import Seo from "components/Seo";
 import { Blog } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
+import Head from "next/head";
 import React, { PropsWithChildren } from "react";
+import Comment from "components/Comment";
 
 export default function BlogLayout({
   children,
@@ -9,8 +13,29 @@ export default function BlogLayout({
   prev,
   next,
 }: PropsWithChildren<{ post: Blog; prev: Blog; next: Blog }>) {
+  const License = () => (
+    <div className=" text-sm text-nord-3/50 dark:text-nord-6/50">
+      © LICENSED UNDER{" "}
+      <a
+        className="text-nord-11/80"
+        href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      >
+        CC BY-NC-SA 4.0
+      </a>
+    </div>
+  );
   return (
     <div>
+      <Seo
+        description={post.summary as string}
+        image={undefined}
+        title={post.title}
+        path={post.url}
+      />
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.summary} />
+      </Head>
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 pt-20 dark:bg-nord-bgDark">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article className="mx-auto mt-5 pb-5 sm:max-w-5xl ">
@@ -27,17 +52,13 @@ export default function BlogLayout({
               <div className="dark:text-gray-400">{post.readingTime.text}</div>
             </div>
             {children}
-            <div className=" text-sm text-nord-3/50 dark:text-nord-6/50">
-              © LICENSED UNDER{" "}
-              <a
-                className="text-nord-11/80"
-                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-              >
-                CC BY-NC-SA 4.0
-              </a>
+            <License />
+            <div className="absolute bottom-0 right-0 mr-5">
+              <LikeButton slug={post.slug} />
             </div>
           </Prose>
         </article>
+        <Comment slug={post.slug} />
         {/* <div className="flex justify-between">
           <div>{prev.slug}</div>
           <div>{next.slug}</div>

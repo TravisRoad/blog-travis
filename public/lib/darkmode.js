@@ -5,7 +5,9 @@ if (
 ) {
   document.documentElement.classList.add("dark");
   localStorage.setItem("theme", "dark");
+  console.log("darkmode set dark");
 } else {
   document.documentElement.classList.remove("dark");
   localStorage.setItem("theme", "light");
+  console.log("darkmode set light");
 }

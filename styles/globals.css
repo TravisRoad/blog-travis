@@ -23,5 +23,8 @@ body:before {
   z-index: -10;
   content: "";
   position: fixed;
-  background: url(/image/rin.png.bak) #000 right bottom/90% no-repeat;
+}
+
+#giscus::part(iframe) {
+  color-scheme: light;
 }
