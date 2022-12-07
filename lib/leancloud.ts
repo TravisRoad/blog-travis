@@ -64,10 +64,10 @@ export async function getLikeNum(slug: string): Promise<number> {
   return val;
 }
 
-export function user_view(slug: string) {
+export function unique_view(slug: string) {
   const query = new AV.Query("view");
   query.equalTo("slug", slug);
-  query.select(["slug", "uv"]);
+  query.select(["slug", "vv"]);
 
   query.first().then((item) => {
     if (item === undefined) {
@@ -83,21 +83,73 @@ export function user_view(slug: string) {
   });
 }
 
-export function preview_view(slug: string) {
+export async function getViewCount(slug: string): Promise<number> {
   const query = new AV.Query("view");
   query.equalTo("slug", slug);
-  query.select(["slug", "pv"]);
+  query.select(["slug", "uv"]);
+
+  let val = -1;
+
+  await query.first().then((item) => {
+    if (item !== undefined) {
+      val = item.get("uv");
+    } else {
+      throw Error("There is no Object");
+    }
+  });
+
+  return val;
+}
+
+export function setViewNum(slug: string, uv: number) {
+  const View = AV.Object.extend("view");
+  const view = new View();
+  view.set("slug", slug);
+  view.set("uv", uv);
+  view.save();
+}
+
+export function vv(slug: string) {
+  const query = new AV.Query("view");
+  query.equalTo("slug", slug);
+  query.select(["slug", "vv"]);
 
   query.first().then((item) => {
     if (item === undefined) {
       const View = AV.Object.extend("view");
       const view = new View();
       view.set("slug", slug);
-      view.set("pv", 1);
+      view.set("vv", 1);
     } else {
-      const pv = item.get("pv");
-      item.set("pv", pv + 1);
+      const vv = item.get("vv");
+      item.set("vv", vv + 1);
       item.save();
     }
   });
+}
+
+export async function getVVCount(slug: string): Promise<number> {
+  const query = new AV.Query("view");
+  query.equalTo("slug", slug);
+  query.select(["slug", "vv"]);
+
+  let val = -1;
+
+  await query.first().then((item) => {
+    if (item !== undefined) {
+      val = item.get("vv");
+    } else {
+      throw Error("There is no Object");
+    }
+  });
+
+  return val;
+}
+
+export function setVVNum(slug: string, vv: number) {
+  const View = AV.Object.extend("view");
+  const view = new View();
+  view.set("slug", slug);
+  view.set("vv", vv);
+  view.save();
 }

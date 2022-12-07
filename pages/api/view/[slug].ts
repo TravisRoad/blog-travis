@@ -1,24 +1,24 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { LikeData } from "type/LikeData";
-import { getLikeNum, setLikeNum, like } from "@/lib/leancloud";
+import { ViewData } from "type/LikeData";
+import { getViewCount, setViewNum, unique_view } from "@/lib/leancloud";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<LikeData>
+  res: NextApiResponse<ViewData>
 ) {
   const slug = req.query.slug as string;
   if (req.method === "GET") {
-    getLikeNum(slug)
+    getViewCount(slug)
       .then((val) => {
         res.status(200).json({ num: val });
       })
       .catch((_err) => {
-        setLikeNum(slug, 0);
-        res.status(200).json({ num: 0 });
+        setViewNum(slug, 1);
+        res.status(200).json({ num: 1 });
       });
   } else if (req.method === "POST") {
-    like(slug);
+    unique_view(slug);
     res.status(200).json({ num: -1 });
   }
 }

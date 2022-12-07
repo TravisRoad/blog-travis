@@ -1,6 +1,8 @@
 import metadata from "data/metaData";
 import Link from "next/link";
 import React from "react";
+import UVCount from "./posts/UVCount";
+import VVCount from "./posts/VVCount";
 
 function MyLink({ url, name }: { url: string; name: string }) {
   return (
@@ -93,6 +95,11 @@ export default function Footer() {
             </div>
             <CopyRight />
             <ICPnumber />
+            <div className="flex">
+              <UVCount slug="whole-site-uv" />
+              {"|"}
+              <VVCount slug="whole-site-uv" />
+            </div>
           </div>
           <div className="w-full max-w-2xl">
             <div className="mt-2 mb-4 flex flex-col items-center space-y-4">

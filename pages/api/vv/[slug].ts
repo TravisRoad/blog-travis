@@ -1,24 +1,24 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { getVVCount, setVVNum, vv } from "@/lib/leancloud";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { LikeData } from "type/LikeData";
-import { getLikeNum, setLikeNum, like } from "@/lib/leancloud";
+import { ViewData } from "type/LikeData";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<LikeData>
+  res: NextApiResponse<ViewData>
 ) {
   const slug = req.query.slug as string;
   if (req.method === "GET") {
-    getLikeNum(slug)
+    getVVCount(slug)
       .then((val) => {
         res.status(200).json({ num: val });
       })
       .catch((_err) => {
-        setLikeNum(slug, 0);
-        res.status(200).json({ num: 0 });
+        setVVNum(slug, 1);
+        res.status(200).json({ num: 1 });
       });
   } else if (req.method === "POST") {
-    like(slug);
+    vv(slug);
     res.status(200).json({ num: -1 });
   }
 }

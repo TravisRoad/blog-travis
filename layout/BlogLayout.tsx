@@ -6,6 +6,8 @@ import { format, parseISO } from "date-fns";
 import Head from "next/head";
 import React, { PropsWithChildren } from "react";
 import Comment from "components/Comment";
+import UVCount from "components/posts/UVCount";
+import VVCount from "components/posts/VVCount";
 
 export default function BlogLayout({
   children,
@@ -49,7 +51,13 @@ export default function BlogLayout({
                   {format(parseISO(post.publishDate), "yyyy/LL/dd")}
                 </span>
               </div>
-              <div className="dark:text-gray-400">{post.readingTime.text}</div>
+              <div className="flex items-center">
+                <div className="mr-1 dark:text-gray-400">
+                  {post.readingTime.text}
+                </div>
+                <UVCount slug={post.slug} />
+                <VVCount slug={post.slug} />
+              </div>
             </div>
             {children}
             <div className="py-4"></div>

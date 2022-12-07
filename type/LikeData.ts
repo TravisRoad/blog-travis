@@ -2,6 +2,10 @@ export interface LikeData {
   num: number;
 }
 
-export interface PostData {
+export interface LikePostData {
   data: number;
+}
+
+export interface ViewData {
+  num: number;
 }
