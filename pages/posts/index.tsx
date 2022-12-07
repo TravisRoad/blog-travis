@@ -117,7 +117,9 @@ export default function PostsView({ posts }: { posts: Array<any> }) {
 
 export async function getStaticProps() {
   const posts = allBlogs
-    .map((post) => pick(post, ["title", "slug", "summary", "publishDate"]))
+    .map((post) =>
+      pick(post, ["title", "slug", "summary", "publishDate", "url"])
+    )
     .sort((p1, p2) =>
       compareDesc(parseISO(p1.publishDate), parseISO(p2.publishDate))
     );
