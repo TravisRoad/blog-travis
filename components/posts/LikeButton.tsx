@@ -51,7 +51,7 @@ export default function LikeButton({ slug }: { slug: string }) {
         </button>
       </div>
       <div className="pr-2 font-mono text-xl font-semibold">
-        {likeData === undefined ? "N/A" : likeData.num}
+        {likeData === undefined ? "🈚" : likeData.num}
       </div>
     </div>
   );
