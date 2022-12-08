@@ -108,15 +108,15 @@ export function setViewNum(slug: string, uv: number) {
 }
 
 export function vv(slug: string) {
-  const query = new AV.Query("view");
+  const query = new AV.Query("vv");
   query.equalTo("slug", slug);
 
   query.first().then((item) => {
     if (item === undefined) {
-      const View = AV.Object.extend("view");
-      const view = new View();
-      view.set("slug", slug);
-      view.set("vv", 1);
+      const VV = AV.Object.extend("vv");
+      const vv = new VV();
+      vv.set("slug", slug);
+      vv.set("vv", 1);
     } else {
       const vv = item.get("vv");
       item.set("vv", vv + 1);
@@ -126,7 +126,7 @@ export function vv(slug: string) {
 }
 
 export async function getVVCount(slug: string): Promise<number> {
-  const query = new AV.Query("view");
+  const query = new AV.Query("vv");
   query.equalTo("slug", slug);
 
   let val = -1;
@@ -142,10 +142,10 @@ export async function getVVCount(slug: string): Promise<number> {
   return val;
 }
 
-export function setVVNum(slug: string, vv: number) {
-  const View = AV.Object.extend("view");
-  const view = new View();
-  view.set("slug", slug);
-  view.set("vv", vv);
-  view.save();
+export function setVVNum(slug: string, val: number) {
+  const VV = AV.Object.extend("vv");
+  const vv = new VV();
+  vv.set("slug", slug);
+  vv.set("vv", val);
+  vv.save();
 }

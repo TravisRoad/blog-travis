@@ -56,7 +56,7 @@ export default function BlogLayout({
                   {post.readingTime.text}
                 </div>
                 <UVCount slug={post.slug} />
-                {/* <VVCount slug={post.slug} /> */}
+                <VVCount slug={post.slug} />
               </div>
             </div>
             {children}
