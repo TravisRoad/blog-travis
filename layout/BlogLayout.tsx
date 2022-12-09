@@ -8,6 +8,7 @@ import React, { PropsWithChildren } from "react";
 import Comment from "components/Comment";
 import UVCount from "components/posts/UVCount";
 import VVCount from "components/posts/VVCount";
+import Toc from "components/Toc";
 
 export default function BlogLayout({
   children,
@@ -43,6 +44,7 @@ export default function BlogLayout({
         <article className="mx-auto mt-5 pb-5 sm:max-w-5xl ">
           <Prose>
             <h1 className="">{post.title}</h1>
+            {/* <div>{JSON.stringify(post.toc)}</div> */}
             <div className="-mt-5 flex items-center justify-between">
               {/* author and the date */}
               <div className="inline-flex items-center space-x-1 dark:text-gray-500">
@@ -59,6 +61,9 @@ export default function BlogLayout({
                 <VVCount slug={post.slug} />
               </div>
             </div>
+            {post.showTOC !== undefined && post.showTOC && (
+              <Toc toc={post.toc}></Toc>
+            )}
             {children}
             <div className="py-4"></div>
             <License />

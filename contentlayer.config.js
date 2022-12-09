@@ -31,6 +31,14 @@ export const Blog = defineDocumentType(() => ({
       type: "boolean",
       required: false,
     },
+    showTOC: {
+      type: "boolean",
+      required: false,
+    },
+    series: {
+      type: "string",
+      required: false,
+    },
   },
   computedFields: {
     url: {

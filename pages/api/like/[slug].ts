@@ -3,13 +3,13 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { LikeData } from "type/LikeData";
 import { getLikeNum, setLikeNum, like } from "@/lib/leancloud";
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<LikeData>
 ) {
   const slug = req.query.slug as string;
   if (req.method === "GET") {
-    getLikeNum(slug)
+    await getLikeNum(slug)
       .then((val) => {
         res.status(200).json({ num: val });
       })

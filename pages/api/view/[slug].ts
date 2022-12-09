@@ -3,13 +3,13 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { ViewData } from "type/LikeData";
 import { getViewCount, setViewNum, unique_view } from "@/lib/leancloud";
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ViewData>
 ) {
   const slug = req.query.slug as string;
   if (req.method === "GET") {
-    getViewCount(slug)
+    await getViewCount(slug)
       .then((val) => {
         res.status(200).json({ num: val });
       })

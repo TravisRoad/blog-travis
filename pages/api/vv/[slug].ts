@@ -3,13 +3,13 @@ import { getVVCount, setVVNum, vv } from "@/lib/leancloud";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { ViewData } from "type/LikeData";
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ViewData>
 ) {
   const slug = req.query.slug as string;
   if (req.method === "GET") {
-    getVVCount(slug)
+    await getVVCount(slug)
       .then((val) => {
         res.status(200).json({ num: val });
       })
