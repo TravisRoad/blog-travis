@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ViewData } from "type/LikeData";
+import { ViewData } from "types/LikeData";
 import { getCookie, setCookie } from "lib/utils";
 import { UserIcon } from "@heroicons/react/24/outline";
 

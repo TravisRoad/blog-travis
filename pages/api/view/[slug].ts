@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { ViewData } from "type/LikeData";
+import { ViewData } from "types/LikeData";
 import { getViewCount, setViewNum, unique_view } from "@/lib/leancloud";
 
 export default async function handler(

@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { LikeData } from "type/LikeData";
+import { LikeData } from "types/LikeData";
 import { getLikeNum, setLikeNum, like } from "@/lib/leancloud";
 
 export default async function handler(

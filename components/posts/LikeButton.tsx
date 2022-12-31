@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HandThumbUpIcon as ThumbUpIconSolid } from "@heroicons/react/24/solid";
 import { HandThumbUpIcon as ThumbUpIconOutline } from "@heroicons/react/24/outline";
-import { LikeData } from "type/LikeData";
+import { LikeData } from "types/LikeData";
 import { getCookie, setCookie } from "lib/utils";
 
 export default function LikeButton({ slug }: { slug: string }) {

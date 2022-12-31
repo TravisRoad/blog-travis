@@ -9,11 +9,14 @@ if (appKey === undefined) appKey = "";
 var serverURL = process.env.SERVERURL;
 if (serverURL === undefined) serverURL = "";
 
-AV.init({
-  appId,
-  appKey,
-  serverURL,
-});
+if (global.AVinit === undefined) {
+  AV.init({
+    appId,
+    appKey,
+    serverURL,
+  });
+  global.AVinit = true;
+}
 
 // user value, preview value
 export function like(slug: string, like: boolean = true) {
