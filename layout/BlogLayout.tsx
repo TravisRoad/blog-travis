@@ -39,7 +39,7 @@ export default function BlogLayout({
         <title>{post.title}</title>
         <meta name="description" content={post.summary} />
       </Head>
-      <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 pt-20 dark:bg-nord-bgDark">
+      <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark md:pt-20">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article className="mx-auto mt-5 pb-5 sm:max-w-5xl ">
           <Prose>

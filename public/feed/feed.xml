@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Sat, 31 Dec 2022 14:30:47 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Dec 2022 15:12:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -14,7 +14,7 @@
             <link>https://blog.lxythan2lxy.cn/posts/2022_final</link>
             <guid>https://blog.lxythan2lxy.cn/posts/2022_final</guid>
             <pubDate>Sat, 31 Dec 2022 13:55:00 GMT</pubDate>
-            <description><![CDATA[2022 年的一些碎碎念
+            <description><![CDATA[2022 年的年度总结，或许只是一些碎碎念
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
