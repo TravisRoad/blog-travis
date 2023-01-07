@@ -36,8 +36,9 @@ yarn-error.log*
 next-env.d.ts
 
 .contentlayer
-.vscode
-.vscode/settings.json
+.vscode/*
+!.vscode/settings.json
+!.vscode/mdx.json.code-snippets
 
 # public/sitemap.xml
 # public/feed
