@@ -9,6 +9,7 @@ import Comment from "components/Comment";
 import UVCount from "components/posts/UVCount";
 import VVCount from "components/posts/VVCount";
 import Toc from "components/Toc";
+import { FloatingToc } from "components/Toc";
 
 export default function BlogLayout({
   children,
@@ -41,29 +42,30 @@ export default function BlogLayout({
       </Head>
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark md:pt-20">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
-        <article className="mx-auto mt-5 pb-5 sm:max-w-5xl ">
+        <article className="mx-auto mt-5 pb-5 sm:max-w-4xl ">
           <Prose>
-            <h1 className="">{post.title}</h1>
-            {/* <div>{JSON.stringify(post.toc)}</div> */}
-            <div className="-mt-5 flex items-center justify-between">
-              {/* author and the date */}
-              <div className="inline-flex items-center space-x-1 dark:text-gray-500">
-                <span className="text-base">Travis</span>
-                <span className="text-base">
-                  {format(parseISO(post.publishDate), "yyyy/LL/dd")}
-                </span>
-              </div>
-              <div className="flex items-center">
-                <div className="mr-1 dark:text-gray-400">
-                  {post.readingTime.text}
+            <header>
+              <h1 className="">{post.title}</h1>
+              {/* <div>{JSON.stringify(post.toc)}</div> */}
+              <div className="-mt-5 flex items-center justify-between">
+                {/* author and the date */}
+                <div className="inline-flex items-center space-x-1 dark:text-gray-500">
+                  <span className="text-base">Travis</span>
+                  <span className="text-base">
+                    {format(parseISO(post.publishDate), "yyyy/LL/dd")}
+                  </span>
                 </div>
-                <UVCount slug={post.slug} />
-                <VVCount slug={post.slug} />
+                <div className="flex items-center">
+                  <div className="mr-1 dark:text-gray-400">
+                    {post.readingTime.text}
+                  </div>
+                  <UVCount slug={post.slug} />
+                  <VVCount slug={post.slug} />
+                </div>
               </div>
-            </div>
-            {post.showTOC !== undefined && post.showTOC && (
-              <Toc toc={post.toc}></Toc>
-            )}
+              {post.showTOC && <Toc toc={post.toc}></Toc>}
+            </header>
+            {/* <FloatingToc toc={post.toc} /> */}
             {children}
             <div className="py-4"></div>
             <License />

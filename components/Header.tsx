@@ -48,12 +48,14 @@ function LogoGradient({ hidden }: { hidden: Boolean }) {
 
 export default function Header({ isTop }: { isTop: Boolean }) {
   return (
-    <header className="sticky top-0 z-50 col-start-1 w-full bg-nord-headerLight text-gray-400 transition-all duration-500 dark:bg-nord-headerDark print:hidden">
+    <header
+      className={` sticky top-0 z-50 col-start-1 w-full bg-nord-headerLight text-gray-400 transition-all duration-500 dark:bg-nord-headerDark print:hidden sm:static ${
+        !isTop && "shadow-sm shadow-nord-5 dark:shadow-none "
+      }`}
+    >
       <div
         className={`mx-auto flex max-w-5xl flex-row items-center justify-between space-x-8 px-4 text-base transition-all duration-300 sm:text-xl lg:px-0 ${
-          isTop
-            ? "h-[4em]"
-            : "h-[2.5em] shadow-sm shadow-nord-5 dark:shadow-none "
+          isTop ? "h-[4em]" : "h-[2.5em] "
         }`}
       >
         {/* <Logo hidden={!isTop} /> */}

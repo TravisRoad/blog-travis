@@ -4,17 +4,35 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Sat, 31 Dec 2022 15:12:17 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Jan 2023 03:06:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>All rights reserved 2022, Travis Road</copyright>
+        <item>
+            <title><![CDATA[Arch Linux 个人小记]]></title>
+            <link>https://blog.lxythan2lxy.cn/posts/archlinux_share</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/archlinux_share</guid>
+            <pubDate>Sat, 07 Jan 2023 14:24:26 GMT</pubDate>
+            <description><![CDATA[说说我是如何使用 Arch Linux 的
+请在浏览器中浏览以获得最佳体验]]></description>
+            <author>lxymontage@gmail.com (Travis Road)</author>
+        </item>
         <item>
             <title><![CDATA[2022 年度总结]]></title>
             <link>https://blog.lxythan2lxy.cn/posts/2022_final</link>
             <guid>https://blog.lxythan2lxy.cn/posts/2022_final</guid>
             <pubDate>Sat, 31 Dec 2022 13:55:00 GMT</pubDate>
             <description><![CDATA[2022 年的年度总结，或许只是一些碎碎念
+请在浏览器中浏览以获得最佳体验]]></description>
+            <author>lxymontage@gmail.com (Travis Road)</author>
+        </item>
+        <item>
+            <title><![CDATA[利用 fzf 实现的历史记录]]></title>
+            <link>https://blog.lxythan2lxy.cn/posts/zsh_history</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/zsh_history</guid>
+            <pubDate>Sat, 30 Apr 2022 16:35:59 GMT</pubDate>
+            <description><![CDATA[设置 zsh 历史记录模糊查询
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -37,11 +55,11 @@
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[失控玩家]]></title>
-            <link>https://blog.lxythan2lxy.cn/posts/theguy</link>
-            <guid>https://blog.lxythan2lxy.cn/posts/theguy</guid>
-            <pubDate>Fri, 10 Sep 2021 10:37:27 GMT</pubDate>
-            <description><![CDATA[有意思的玩梗大片
+            <title><![CDATA[javascript 的异步问题和 this 问题]]></title>
+            <link>https://blog.lxythan2lxy.cn/posts/vue3</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/vue3</guid>
+            <pubDate>Fri, 14 Jan 2022 10:17:00 GMT</pubDate>
+            <description><![CDATA[javascript 问题
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
@@ -55,15 +73,6 @@
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[javascript 的异步问题和 this 问题]]></title>
-            <link>https://blog.lxythan2lxy.cn/posts/vue3</link>
-            <guid>https://blog.lxythan2lxy.cn/posts/vue3</guid>
-            <pubDate>Fri, 14 Jan 2022 10:17:00 GMT</pubDate>
-            <description><![CDATA[javascript 问题
-请在浏览器中浏览以获得最佳体验]]></description>
-            <author>lxymontage@gmail.com (Travis Road)</author>
-        </item>
-        <item>
             <title><![CDATA[windows 3000 4200 端口神奇的消失事件]]></title>
             <link>https://blog.lxythan2lxy.cn/posts/windows3000-4200port</link>
             <guid>https://blog.lxythan2lxy.cn/posts/windows3000-4200port</guid>
@@ -73,11 +82,11 @@
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>
-            <title><![CDATA[利用 fzf 实现的历史记录]]></title>
-            <link>https://blog.lxythan2lxy.cn/posts/zsh_history</link>
-            <guid>https://blog.lxythan2lxy.cn/posts/zsh_history</guid>
-            <pubDate>Sat, 30 Apr 2022 16:35:59 GMT</pubDate>
-            <description><![CDATA[设置 zsh 历史记录模糊查询
+            <title><![CDATA[失控玩家]]></title>
+            <link>https://blog.lxythan2lxy.cn/posts/theguy</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/theguy</guid>
+            <pubDate>Fri, 10 Sep 2021 10:37:27 GMT</pubDate>
+            <description><![CDATA[有意思的玩梗大片
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>

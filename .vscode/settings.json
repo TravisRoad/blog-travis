@@ -29,7 +29,8 @@
   "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx5-remote -t {im}",
   "pasteImage.basePath": "${projectRoot}/public/image",
   "pasteImage.path": "${projectRoot}/public/image",
-  "pasteImage.prefix": "image/",
+  "pasteImage.prefix": "/image/",
   "pangu.auto_space_on_save": true,
-  "pangu.auto_space_on_save_ext": ["mdx"]
+  "pangu.auto_space_on_save_ext": ["mdx"],
+  "files.autoSave": "onFocusChange"
 }

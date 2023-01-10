@@ -82,3 +82,33 @@ export default function Toc(toc: any) {
     </div>
   );
 }
+
+export function FloatingToc(toc: any) {
+  const root: TREE = genTree(toc.toc);
+  console.log(root);
+
+  const tocdom = root.son.map((h2) => {
+    const h2li = h2.son.map((h3) => (
+      <li key={h3.i} className="my-0 ml-5 py-0 font-serif">
+        <a href={`#${h3.slug}`} className="hover:underline">
+          {h3.content}
+        </a>
+      </li>
+    ));
+    return (
+      <li key={h2.i} className="my-0 ml-3 py-0 font-serif">
+        <a href={`#${h2.slug}`} className="hover:underline ">
+          {h2.content}
+        </a>
+        {h2li}
+      </li>
+    );
+  });
+
+  return (
+    <div className="not-prose fixed top-16 mx-2 mt-4 ml-[860px] hidden w-[220px] rounded bg-nord-9/20 pt-2 pr-[24px] pb-2 shadow dark:border-nord-3 dark:bg-nord-5/10 dark:text-nord-6 dark:text-nord-6/80 xl:block">
+      <h1 className="pl-4 pb-2 font-serif text-2xl uppercase"> Content </h1>
+      <ul className="list-inside list-[square]">{tocdom}</ul>
+    </div>
+  );
+}

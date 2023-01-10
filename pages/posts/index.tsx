@@ -1,6 +1,5 @@
 import React from "react";
-import { allBlogs } from "contentlayer/generated";
-import type { Blog } from "contentlayer/generated";
+import { allBlogs, Blog } from "contentlayer/generated";
 import { pick } from "contentlayer/client";
 import { compareDesc, format, parseISO } from "date-fns";
 import Main from "components/Main";
@@ -76,6 +75,35 @@ function PostTimeLine({ posts }: { posts: Array<any> }) {
   const yearCata = Object.keys(timeline).sort(
     (a, b) => Number.parseInt(b) - Number.parseInt(a)
   );
+
+  function NewCell({ year, posts }: { year: string; posts: any[] }) {
+    const postItem = (_post: Blog) => {
+      const month = parseISO(_post.publishDate).getMonth();
+      const year = parseISO(_post.publishDate).getFullYear();
+      const day = parseISO(_post.publishDate).getDate();
+      return (
+        <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-col">
+            <span>{day}</span>
+            <span>
+              {month} {year}
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span>{_post.title}</span>
+            {_post.summary && <span>{_post.summary}</span>}
+          </div>
+        </div>
+      );
+    };
+    return (
+      <div className="">
+        <div className=" divide-y divide-nord-5 divide-black/10 overflow-hidden rounded-lg border-2 border-nord-5 dark:divide-nord-dark/80 dark:divide-nord-2 dark:border-nord-2">
+          {posts.map((post) => postItem(post))}
+        </div>
+      </div>
+    );
+  }
 
   function Cell({ year, posts }: { year: string; posts: any[] }) {
     return (
