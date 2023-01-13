@@ -17,7 +17,7 @@
   </url>
 
   <url>
-    <loc>https://blog.lxythan2lxy.cn/posts/archlinux_share</loc>
+    <loc>https://blog.lxythan2lxy.cn/posts/jetBrainsIMproblem</loc>
   </url>
 
   <url>
@@ -42,5 +42,9 @@
 
   <url>
     <loc>https://blog.lxythan2lxy.cn/posts/zsh_history</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.lxythan2lxy.cn/draft/archlinux_share</loc>
   </url>
 </urlset>

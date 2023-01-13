@@ -4,17 +4,17 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Tue, 10 Jan 2023 03:06:52 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Jan 2023 16:18:57 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
-        <copyright>All rights reserved 2022, Travis Road</copyright>
+        <copyright>All rights reserved 2023, Travis Road</copyright>
         <item>
-            <title><![CDATA[Arch Linux 个人小记]]></title>
-            <link>https://blog.lxythan2lxy.cn/posts/archlinux_share</link>
-            <guid>https://blog.lxythan2lxy.cn/posts/archlinux_share</guid>
-            <pubDate>Sat, 07 Jan 2023 14:24:26 GMT</pubDate>
-            <description><![CDATA[说说我是如何使用 Arch Linux 的
+            <title><![CDATA[Linux 系统下输入候选框不跟随光标的问题]]></title>
+            <link>https://blog.lxythan2lxy.cn/posts/jetBrainsIMproblem</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/jetBrainsIMproblem</guid>
+            <pubDate>Fri, 13 Jan 2023 16:01:48 GMT</pubDate>
+            <description><![CDATA[解决一下 jre 的老问题
 请在浏览器中浏览以获得最佳体验]]></description>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>

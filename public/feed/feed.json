@@ -10,11 +10,11 @@
     },
     "items": [
         {
-            "id": "https://blog.lxythan2lxy.cn/posts/archlinux_share",
-            "url": "https://blog.lxythan2lxy.cn/posts/archlinux_share",
-            "title": "Arch Linux 个人小记",
-            "summary": "说说我是如何使用 Arch Linux 的\n请在浏览器中浏览以获得最佳体验",
-            "date_modified": "2023-01-07T14:24:26.000Z",
+            "id": "https://blog.lxythan2lxy.cn/posts/jetBrainsIMproblem",
+            "url": "https://blog.lxythan2lxy.cn/posts/jetBrainsIMproblem",
+            "title": "Linux 系统下输入候选框不跟随光标的问题",
+            "summary": "解决一下 jre 的老问题\n请在浏览器中浏览以获得最佳体验",
+            "date_modified": "2023-01-13T16:01:48.000Z",
             "author": {
                 "name": "Travis Road"
             }

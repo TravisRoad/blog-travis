@@ -1,0 +1,20 @@
+---
+title: Linux 系统下输入候选框不跟随光标的问题
+summary: 解决一下 jre 的老问题
+publishDate: 2023-01-14 00:01:48
+star: false
+showTOC: false
+# series:
+cata:
+  - default
+tags:
+  - default
+---
+
+Linux 系统下 Jetbrains 的各个产品所使用的 java runtime 有个 bug, 使得 ibus 或者 fcitx 的输入候选框永远出现在应用的左下角，为了解决这个问题，只需要替换掉这个 jre 就可以了。
+
+![安装完成的提示](/image/2023-01-14-00-03-19.png)
+
+Arch Linux 用户可以简单使用 `yay -S jbr-linux-x64` 安装 jbr（JetBrainsRuntime），然后按照提示，在 IDEA 中依次选择 `Help -> Find Action -> Choose Boot Java Runtime for the IDE` 更换 jbr
+
+非 Arch 用户可以手动在这个 [JetBrainsRuntime-for-linux-x64\Github](https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64) 仓库中下载 jbr，然后按照上面的方法替换即可。
