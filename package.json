@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "^2.0.12",
     "@jsdevtools/rehype-toc": "^3.0.2",
+    "@wcj/markdown-to-html": "^2.2.1",
     "contentlayer": "^0.2.8",
     "date-fns": "^2.29.3",
     "feed": "^4.2.2",

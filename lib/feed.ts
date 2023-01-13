@@ -34,7 +34,7 @@ const createRss = () => {
       id: `${metadata.site}/posts/${post.slug}`,
       link: `${metadata.site}/posts/${post.slug}`,
       description: `${post.summary}\n请在浏览器中浏览以获得最佳体验`,
-      // content: post,
+      content: post.html,
       author: [
         {
           name: metadata.author,

@@ -9,6 +9,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkUnwrapImages from "remark-unwrap-images";
 import toc from "markdown-toc";
+import markdown, { getCodeString } from "@wcj/markdown-to-html";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -60,6 +61,18 @@ export const Blog = defineDocumentType(() => ({
     toc: {
       type: "json",
       resolve: (doc) => toc(doc.body.raw).json,
+    },
+    html: {
+      type: "string",
+      resolve: (doc) => {
+        var html = markdown(doc.body.raw);
+        if (typeof html !== "string") return "";
+        html = html.replace(
+          /src=\"\/image/g,
+          `src=\"https://blog.lxythan2lxy.cn/image`
+        );
+        return html;
+      },
     },
   },
 }));
