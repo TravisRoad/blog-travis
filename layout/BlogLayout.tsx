@@ -9,7 +9,6 @@ import Comment from "components/Comment";
 import UVCount from "components/posts/UVCount";
 import VVCount from "components/posts/VVCount";
 import Toc from "components/Toc";
-import { FloatingToc } from "components/Toc";
 
 export default function BlogLayout({
   children,

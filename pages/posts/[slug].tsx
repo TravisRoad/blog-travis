@@ -5,7 +5,6 @@ import MDXComponents from "components/mdx/MDXComponents";
 import { allBlogs } from "contentlayer/generated";
 import type { Blog } from "contentlayer/generated";
 import React from "react";
-import { compareDesc, parseISO } from "date-fns";
 
 export default function Post({
   post,

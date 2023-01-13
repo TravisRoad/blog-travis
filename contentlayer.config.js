@@ -39,6 +39,10 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
+    draft: {
+      type: "boolean",
+      required: false,
+    },
   },
   computedFields: {
     url: {
@@ -90,9 +94,17 @@ export const Movie = defineDocumentType(() => ({
   },
 }));
 
+export const About = defineDocumentType(() => ({
+  name: "About",
+  filePathPattern: `about.mdx`,
+  contentType: "mdx",
+  fields: {},
+  computedFields: {},
+}));
+
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Blog, Movie],
+  documentTypes: [Blog, Movie, About],
   mdx: {
     rehypePlugins: [
       [rehypeImgSize, { dir: "public" }],

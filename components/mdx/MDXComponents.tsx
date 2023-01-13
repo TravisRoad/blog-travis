@@ -3,6 +3,7 @@ import BangumiCard from "./media/BangumiCard";
 import Image from "./MyImage";
 import Ezbg from "./Ezbg";
 import QuoteComponent from "./Quote";
+import DeletedData from "components/DeletedData";
 
 const MDXComponents = {
   img: Image,
@@ -10,6 +11,7 @@ const MDXComponents = {
   BangumiCard,
   Ezbg,
   QuoteComponent,
+  DeletedData,
 };
 
 export default MDXComponents;
