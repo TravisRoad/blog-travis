@@ -61,7 +61,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         {/*https://github.com/giscus/giscus/issues/675 */}
         <meta name="color-scheme" content="dark light" />
-
+        <meta
+          name="google-site-verification"
+          content="ZPrJ8vQw1_sw4obcKDYbQYYyZnpf4duEtq9Nu9GBw5E"
+        />
         {/* <meta
           name="theme-color"
           content="#f2f4f8"
