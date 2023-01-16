@@ -7,10 +7,18 @@ import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
 export default function RecentPost() {
-  const recentBlogs = allBlogs.sort((p1: Blog, p2: Blog) =>
-    compareDesc(parseISO(p1.publishDate), parseISO(p2.publishDate))
-  );
-  const staredBlogs = recentBlogs.filter((blog: Blog) => blog.star);
+  const recentBlogs = allBlogs
+    .sort((p1: Blog, p2: Blog) =>
+      compareDesc(parseISO(p1.publishDate), parseISO(p2.publishDate))
+    )
+    .filter(
+      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
+    );
+  const staredBlogs = recentBlogs
+    .filter((blog: Blog) => blog.star)
+    .filter(
+      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
+    );
 
   return (
     <div className="mt-2 mb-2 px-0">

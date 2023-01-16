@@ -1,5 +1,6 @@
 import React from "react";
-import { allBlogs, Blog } from "contentlayer/generated";
+import { allBlogs } from "contentlayer/generated";
+import type { Blog } from "contentlayer/generated";
 import { pick } from "contentlayer/client";
 import { compareDesc, format, parseISO } from "date-fns";
 import Main from "components/Main";
@@ -145,6 +146,9 @@ export default function PostsView({ posts }: { posts: Array<any> }) {
 
 export async function getStaticProps() {
   const posts = allBlogs
+    .filter(
+      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
+    )
     .map((post) =>
       pick(post, ["title", "slug", "summary", "publishDate", "url"])
     )

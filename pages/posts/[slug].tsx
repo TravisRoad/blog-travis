@@ -26,7 +26,11 @@ export default function Post({
 
 export async function getStaticPaths() {
   return {
-    paths: allBlogs.map((p: Blog) => ({ params: { slug: p.slug } })),
+    paths: allBlogs
+      .filter(
+        (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
+      )
+      .map((p: Blog) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 }
