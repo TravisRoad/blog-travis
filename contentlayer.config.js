@@ -8,6 +8,7 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkUnwrapImages from "remark-unwrap-images";
+import remarkRehype from "remark-rehype";
 import toc from "markdown-toc";
 import markdown, { getCodeString } from "@wcj/markdown-to-html";
 
@@ -69,9 +70,21 @@ export const Blog = defineDocumentType(() => ({
         if (typeof html !== "string") return "";
         html = html.replace(
           /src=\"\/image/g,
-          `src=\"https://blog.lxythan2lxy.cn/image`
+          `src=\"https://blog.lxythan2lxy.cn/image` // FIXME: hardcode the URL
         );
         return html;
+      },
+    },
+    externalLink: {
+      type: "json",
+      resolve: (doc) => {
+        var html = markdown(doc.body.raw);
+        if (typeof html !== "string") return [];
+        const rawLink = [...html.match(/href=\"https?[^\"]*\"/g)];
+        const res = rawLink.map(
+          (str) => str.match(/https?:\/\/([^\"\/]*)\/?/)[1]
+        );
+        return { res: res, raw: rawLink };
       },
     },
   },
@@ -119,23 +132,24 @@ export default makeSource({
   contentDirPath: "data",
   documentTypes: [Blog, Movie, About],
   mdx: {
+    remarkPlugins: [
+      remarkGfm,
+      remarkMath,
+      remarkUnwrapImages,
+      [
+        remarkRehype,
+        {
+          footnoteLabel: "脚注",
+          footnoteBackLabel: "Footnote",
+        },
+      ],
+    ],
     rehypePlugins: [
       [rehypeImgSize, { dir: "public" }],
       rehypeCodeTitles,
       [rehypePrism, { showLineNumbers: true }],
       rehypeKatex,
       rehypeSlug,
-      // [
-      //   toc,
-      //   {
-      //     headings: ["h2", "h3"],
-      //     cssClasses: {
-      //       toc: "page-outline", // Change the CSS class for the TOC
-      //       link: "page-link", // Change the CSS class for links in the TOC
-      //     },
-      //   },
-      // ],
     ],
-    remarkPlugins: [remarkGfm, remarkMath, remarkUnwrapImages],
   },
 });
