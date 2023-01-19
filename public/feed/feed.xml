@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Thu, 19 Jan 2023 18:33:23 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Jan 2023 19:06:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -123,6 +123,154 @@
 <li><a href="https://unix.stackexchange.com/questions/251195/difference-between-less-violent-kill-signal-hup-1-int-2-and-term-15">difference between kill and int</a></li>
 <li><a href="https://www.semicolonandsons.com/code_diary/unix/kill-vs-term-vs-int-vs-quit-signals">kill and init and quit</a></li>
 </ul>]]></content:encoded>
+            <author>lxymontage@gmail.com (Travis Road)</author>
+        </item>
+        <item>
+            <title><![CDATA[Arch Linux 个人小记]]></title>
+            <link>https://blog.lxythan2lxy.cn/posts/archlinux_share</link>
+            <guid>https://blog.lxythan2lxy.cn/posts/archlinux_share</guid>
+            <pubDate>Thu, 19 Jan 2023 18:44:56 GMT</pubDate>
+            <description><![CDATA[说说我是如何使用 Arch Linux 的，卖卖安利
+请在浏览器中浏览以获得最佳体验]]></description>
+            <content:encoded><![CDATA[<p><quote>KISS: Keep It Simple, Stupid</quote></p>
+<h2>整体配置</h2>
+<ul>
+<li>发行版：Arch Linux</li>
+<li>WM：i3wm</li>
+<li>终端：kitty</li>
+<li>应用启动器：albert (rofi, dmenu)</li>
+<li>dock: polybar</li>
+<li>窗口混成器 (composite): picom-jonaburg-git</li>
+</ul>
+<p><img src="https://blog.lxythan2lxy.cn/image/2023-01-10-09-53-53.png" alt="台式机的信息"></p>
+<h2>为啥要折腾 Arch</h2>
+<dialog>
+  🤔 为什么要折腾 Arch Linux 呢 ？ 用 Windows WSL 或者装个黑苹果，甚至用
+  ubuntu，不香吗？
+</dialog>
+<dialog reverse="true">
+  <p class="not-prose">
+    &#x3C;> 因为 
+    <del>
+      <a href="https://wiki.archlinux.org/title/Arch_is_the_best" class="text-nord-10 hover:underline dark:text-nord-9">
+        &#x3C;>"Arch is the best!"
+      </a>
+    </del>
+    &#x3C;>，开玩笑的。
+  </p>
+</dialog>
+<div class="py-0.5"></div>
+<p><img src="https://blog.lxythan2lxy.cn/image/2023-01-10-10-33-57.png" alt="Arch 邪教"></p>
+<border>
+  <ol>
+    <li class=""> 折腾也是一种乐趣 </li>
+    <li>Windows 不是 Linux，MacOS 也只是类 Unix</li>
+    <li>Linux 能让你看到一些操作系统较为底层的东西 </li>
+  </ol>
+</border>
+<p>首先说说 <strong>“折腾”</strong> 这件事，如果我需要使用 Linux, 那么折腾是必然的，这和我用什么发行版并没有什么关系，这个时候不如用一个比较纯净的系统（比如 Arch）。
+举个例子 🌰，一般的开箱即用的发行版就像精装修的样板房，提包入住，但是我很难一下子弄清楚房间里面的布线和一些家具的设置，万一某个组件坏了无从下手（尤其是当我自己还要当维修工人的时候）。
+Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做的仅仅是对着宜家的家具清单（Arch Wiki）找到自己想要的家具，一件件充实自己的小窝。
+这种感觉是无与伦比的，因为这个时候，它其中的各种东西是按照我的喜好来选择配置的，我好像真正的拥有了它。
+我能在简易的 WM 上慢慢调整自己的桌面布局，用按键映射软件或者快捷键管理软件管理自己的工作流，可以看看 <a href="https://www.reddit.com/r/unixporn/">unixporn</a> 看看大家是怎么美化桌面折腾电脑的。</p>
+<p>然后再说说 Linux 系统，我们开发的后端软件大多数是最终需要交付到 Linux 系统上的，能在 Linux 上编码自然的就有原生的优势。
+当然，在 Win 和 MacOS 上也有解决方案，虚拟机、docker 或者 vscode remote 到服务器上进行编码，不一而足。
+不过折腾过 Windows 环境的人应该都能理解，Windows 和 Unix 很多小细节都不一样，更重要的是 Windows 并不是全局 UTF-8，这种小细节上的不同有时就会让人很难受。
+再者，一如 Windows 的名字，它是一个图形操作系统，MacOS 也是，命令行的支持上 Linux 会更好。</p>
+<blockquote>
+<p>Linux is only free if your time has no value</p>
+</blockquote>
+<p>以上这些都不过是萝卜青菜各有所爱。我需要经常处理 k8s 的东西，平时接触的生态比较贴近 Linux，平时用不着 Linux 的同学大可不必大行折腾。</p>
+<h2>优点</h2>
+<h3>了解 Linux</h3>
+<p>Arch Linux 有很齐全的 <a href="https://wiki.archlinux.org/">ArchWiki</a> 可供查阅。</p>
+<p>学习所有东西都是有成本的，即使是友好的 Windows 系统，小朋友也需要上手慢慢使用才能逐渐弄明白操作逻辑。
+在本科期间，第一次接触 Linux 是在 CSAPP 课程的 bomb lab 上，当时连 shell 都不知道怎么用，需要使用 gdb 调试器在命令行中敲敲打打拆炸弹。这是对 Linux 的直观影响。
+实践之后需要理论学习，将之内化于心。要学习 Linux，除了看到的各种小技巧，还需要大量的实践来熟悉操作。
+接下来 “熟悉” 和 “理解” 之间还有很多的路需要走，这个时候就需要再去学习理论知识，如此循环往复，是一个螺旋上升的过程。</p>
+<p>为了大量实践 Linux, 日常使用 Linux 是一个好的选择，不是使用虚拟机，不是使用远程服务器，而是真真正正自己安装一个系统在物理磁盘上，从 boot 开始一步步配置的 Linux 系统。
+在这个过程中，不出意外的会遇到了许多挫折，很多 “难者不会，会者不难” 的问题能折腾许久，
+通过 <a href="https://en.wikipedia.org/wiki/RTFM">RTFM</a>，<a href="https://en.wiktionary.org/wiki/STFW">STFW</a> 最后就能解决 90% 的问题。</p>
+<dialog reverse="true">
+  Read The ~~F\*\*king~~ Friendly Manual. <br> Search The ~~F\*\*king~~
+  Friendly Web.
+</dialog>
+<dialog>OK, fine.</dialog>
+<h3>包管理器</h3>
+<p>Linux 的包管理器非常省心省力，回顾一下 windows 的各种软件安装流程，“进入某个软件的官网 ➡️ 下载安装器 ➡️ 双击下载”，
+但是在 Linux 下用 <code>yum</code>、<code>apt</code>、<code>pacman</code> 之类的包管理器一行命令就能把软件安装好，更好的是这种流程方便自动化和记录，软件也能保证一个比较新的状态。
+相比于 ubuntu 的包管理器，Arch Linux 的包管理器 <code>pacman</code> 更加方便。
+这种便利性来源于 <a href="https://wiki.archlinux.org/title/Arch_User_Repository">AUR (Arch User Repository)</a>，这是一个社区主导的软件仓库，里面包含了各种软件的打包脚本，
+只需要使用 <code>yay</code> 或者 <code>paru</code> 这种 AUR helper 就能傻瓜式的安装各种软件，摆脱折腾 ubuntu ppa 的麻烦。</p>
+<p>假如我需要安装著名的 <code>fd</code>、<code>ripgrep</code> 和我很喜欢的按键映射软件 keyd <sup><a href="#user-content-fn-keyd" id="user-content-fnref-keyd" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup> ，那么我只需要使用如下命令就能安装</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">yay <span class="token parameter variable">-S</span> fd ripgrep
+</span><span class="code-line line-number" line="2">yay <span class="token parameter variable">-S</span> keyd
+</span></code></pre>
+<p><img src="https://blog.lxythan2lxy.cn/image/2023-01-16-17-13-41.png" alt="yay 的使用"></p>
+<p>顺带一提，Windows 现在也有 <code>scoop</code> <code>chocolaty</code> <code>winget</code> 这些包管理器了</p>
+<h3>平铺窗口管理器</h3>
+<p>用 Linux 一定要体验体验不同于 MacOS 和 Windows 的浮动窗口管理器的平铺窗口管理器 <sup><a href="#user-content-fn-tilingwm" id="user-content-fnref-tilingwm" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>。这是一种全新的体验。</p>
+<p><img src="https://blog.lxythan2lxy.cn/image/linux.png" alt="平铺窗口管理器 i3wm"></p>
+<p>一般来说，浮动窗口管理会在一个桌面里开多个窗口，窗口之间是可以相互重叠的。
+但是平铺窗口管理则倾向于把所有的窗口都密铺在桌面上，也就是说桌面始终是占满的状态，那么这个时候如果我开了几十个窗口，在桌面上岂不是什么都看不到了？
+这个时候，我们有工作区（workspace）这个概念（下文称 ws），也就是其他操作系统当中的虚拟桌面，在工作区之间切换只需要使用 <code>win+number</code> 就可以快速切换。
+一般来说，我会将浏览器绑定在 ws2，即时通讯 app 放在 ws3，笔记软件放在 ws4，rss 阅读器放在 ws6，编码环境会放在 ws10+ 的位置，这些配置都依个人而定，可以很简单的进行设置。</p>
+<p>平铺窗口管理的优点主要是它能保证我在一个工作区内能足够专注，主要的软件能占用满整块屏幕。但是，如果某个工作需要开很多窗口，这种桌面管理未免有些麻烦，这个时候也能把各个窗口重新排列。
+形成如下列图片所示的堆叠模式。</p>
+<photoprovider>
+  <div class="relative overflow-auto rounded-lg shadow-lg dark:bg-nord-0 dark:shadow-none">
+    <div class="flex w-full snap-x snap-mandatory gap-8 overflow-x-auto py-0">
+      <div class="last:pr-[calc (100%-21.5rem)] relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6">
+        <photoview src="https://blog.lxythan2lxy.cn/image/2023-01-18_03-54.png">
+          <img src="https://blog.lxythan2lxy.cn/image/2023-01-18_03-54.png" class="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]" draggable="false">
+        </photoview>
+      </div>
+      <div class="last:pr-[calc (100%-21.5rem)] relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6">
+        <photoview src="https://blog.lxythan2lxy.cn/image/2023-01-18_03-54_1.png">
+          <img src="https://blog.lxythan2lxy.cn/image/2023-01-18_03-54_1.png" class="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]" draggable="false">
+        </photoview>
+      </div>
+      <div class="relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6 last:pr-6">
+        <photoview src="https://blog.lxythan2lxy.cn/image/2023-01-18_03-54_2.png">
+          <img src="https://blog.lxythan2lxy.cn/image/2023-01-18_03-54_2.png" class="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]" draggable="false">
+        </photoview>
+      </div>
+      
+    </div>
+  </div>
+</photoprovider>
+<h2>缺点</h2>
+<h3>软件生态</h3>
+<p>由于 Linux 桌面用户太少，并且 Linux 有各大发行版，本就不多的用户量被掰得更加细碎，各大厂商并不会第一时间考虑 Linux 用户，国产软件更是如此。腾讯系的 QQ、Tim、微信等一度并没有官方支持的 Linux 版本。
+在文档编辑方面，Microsoft 的 office 已经成为一种标准，平常需要写的各种杂七杂八的文档都需要在 office 上编写，这是在 Linux 上不能做的事情，wps office 和 libreOffice 并不能完全替代 MicroSoft Office。
+近几年由于开发成本，大家开始拥抱 electron 应用，真正意义上的一次编写处处运行。也许这也是未来 Linux 软件生态的破局之道。</p>
+<p>至于游戏方面，阀门厂的 Steam Deck 上的 SteamOS <sup><a href="#user-content-fn-steamos" id="user-content-fnref-steamos" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup> 就是 Arch 系的，阀门厂为兼容层做了相当多的优化，相信未来 Linux 的游戏生态也会有所好转。</p>
+<p>但是目前看来，软件生态上 Linux 还是有巨大的缺失，能满足程序员的需求但是普通群众确实没有什么理由接触这个门槛很高的操作系统。</p>
+<h3>太折腾</h3>
+<p>不够开箱即用，虽然可以自定义很多组件，不过都需要折腾。对于小白来说，最难的问题莫过于定位问题，没有碰到过千奇百怪的问题就很难知道到底是什么组件出现了问题。
+我个人而言，就遇到过 GRUB 引导错误，X server 不能启动等问题，身边常备着 <a href="https://www.ventoy.net/cn/index.html">ventoy</a> 的 U 盘，里面装着最新的 Arch Live 光盘映像，随时准备修复系统。</p>
+<p>Arch Linux 是滚动发行版，不同于 ubuntu 的点发行版，Arch Linux 更新很频繁，网传有所谓的 “滚挂” 的现象产生。</p>
+<h2>总结</h2>
+<p>适合自己的才是最好的。Arch Linux 给你提供了构建适合自己的工作流的途径，就像在搭积木一样一点点搭起来。
+不想折腾的同学大可以使用开箱即用的操作系统。</p>
+<p>如果读者看到这里想自己试试装个 Linux 玩玩。
+不妨从 Ubuntu desktop 开始试水，然后再试试 <a href="https://manjaro.org/">Manjaro</a>，这是一个 arch 系的操作系统，开箱即用，可以轻松体验到 arch 生态。
+如果你想直接入手 Arch Linux，不妨从官网的 <a href="https://wiki.archlinux.org/title/Installation_guide">安装指南</a> 开始，也可以使用 Arch Linux Studio 发布的 <a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/">ArchTutorial</a>。</p>
+<p>不管是哪个发行版，遇到问题时时刻谨记 RTFM、STFW、<del>RTFSC</del>，大部分情况都会有前人替我们踩好了一路上的坑，自己实在解决不了了再寻求社区帮助，或者给仓库提 issue。</p>
+<hr>
+<section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-fn-keyd">
+<p><a href="https://github.com/rvaiya/keyd">keyd - A key remapping daemon for linux</a> <a href="#user-content-fnref-keyd" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-fn-tilingwm">
+<p><a href="https://wiki.archlinux.org/title/Window_manager#Tiling_window_managers">https://wiki.archlinux.org/title/Window_manager#Tiling_window_managers</a> <a href="#user-content-fnref-tilingwm" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-fn-steamos">
+<p><a href="https://store.steampowered.com/steamos">https://store.steampowered.com/steamos</a> <a href="#user-content-fnref-steamos" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
             <author>lxymontage@gmail.com (Travis Road)</author>
         </item>
         <item>

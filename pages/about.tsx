@@ -20,6 +20,9 @@ const About = (props: statistic) => {
         <div className="mx-auto max-w-3xl">
           <WelcomeCard />
         </div>
+        <figure className="mx-auto mt-4 max-w-3xl pl-4">
+          <embed src="https://wakatime.com/share/@TravisRoad/fa4c2a51-c527-4076-959e-9501d918fdcd.svg"></embed>
+        </figure>
         <div className="relative mt-8 mb-6 inline-flex w-full items-center justify-center">
           {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
           <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
