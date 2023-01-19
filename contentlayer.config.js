@@ -25,6 +25,10 @@ export const Blog = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    createdDate: {
+      type: "date",
+      required: true,
+    },
     summary: {
       type: "string",
       required: false,
@@ -127,6 +131,20 @@ export const Movie = defineDocumentType(() => ({
       type: "string",
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx?$/, ""),
     },
+    externalLink: {
+      type: "json",
+      resolve: (doc) => {
+        var html = markdown(doc.body.raw);
+        if (typeof html !== "string") return [];
+        const match = html.match(/href=\"https?[^\"]*\"/g);
+        if (match === null) return { res: [], raw: [] };
+        const rawLink = [...match];
+        const res = rawLink.map(
+          (str) => str.match(/https?:\/\/([^\"\/]*)\/?/)[1]
+        );
+        return { res: res, raw: rawLink };
+      },
+    },
   },
 }));
 
@@ -135,7 +153,22 @@ export const About = defineDocumentType(() => ({
   filePathPattern: `about.mdx`,
   contentType: "mdx",
   fields: {},
-  computedFields: {},
+  computedFields: {
+    externalLink: {
+      type: "json",
+      resolve: (doc) => {
+        var html = markdown(doc.body.raw);
+        if (typeof html !== "string") return [];
+        const match = html.match(/href=\"https?[^\"]*\"/g);
+        if (match === null) return { res: [], raw: [] };
+        const rawLink = [...match];
+        const res = rawLink.map(
+          (str) => str.match(/https?:\/\/([^\"\/]*)\/?/)[1]
+        );
+        return { res: res, raw: rawLink };
+      },
+    },
+  },
 }));
 
 export default makeSource({
