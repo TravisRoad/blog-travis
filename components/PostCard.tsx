@@ -23,7 +23,7 @@ export default function PostCard({
               <p className="text-xs opacity-60 sm:text-base">{summary}</p>
             )}
           </div>
-          <div className="flex-shrink-0 pl-2 font-mono text-sm tracking-wide opacity-60 sm:text-base">
+          <div className="flex-shrink-0 pl-2 font-sans text-sm font-[500] tracking-wide opacity-60 sm:text-base">
             {date}
           </div>
         </a>

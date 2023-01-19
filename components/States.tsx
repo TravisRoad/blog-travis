@@ -9,11 +9,11 @@ function formatNumber(num: number) {
 
 function DataItem({ title, data }: { title: string; data: string }) {
   return (
-    <li className="relative list-item justify-between">
+    <li className="relative list-item ">
       <span className="block w-[85%] overflow-hidden text-ellipsis text-xl">
         {title}
       </span>
-      <span className=" absolute right-0 top-[0.123rem] rounded bg-nord-9 px-2 font-sans text-[0.88rem] text-nord-6 dark:bg-nord-11">
+      <span className=" absolute right-0 top-[0.123rem] rounded bg-nord-9 px-2 font-sans text-[0.88rem] text-nord-6 ">
         {data}
       </span>
     </li>
