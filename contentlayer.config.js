@@ -45,6 +45,14 @@ export const Blog = defineDocumentType(() => ({
       type: "boolean",
       required: false,
     },
+    tags: {
+      type: "json",
+      required: false,
+    },
+    cate: {
+      type: "json",
+      required: false,
+    },
   },
   computedFields: {
     url: {
@@ -80,7 +88,9 @@ export const Blog = defineDocumentType(() => ({
       resolve: (doc) => {
         var html = markdown(doc.body.raw);
         if (typeof html !== "string") return [];
-        const rawLink = [...html.match(/href=\"https?[^\"]*\"/g)];
+        const match = html.match(/href=\"https?[^\"]*\"/g);
+        if (match === null) return { res: [], raw: [] };
+        const rawLink = [...match];
         const res = rawLink.map(
           (str) => str.match(/https?:\/\/([^\"\/]*)\/?/)[1]
         );

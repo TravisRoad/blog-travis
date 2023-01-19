@@ -4,10 +4,8 @@ title: Linux 系统中的信号量
 tags:
   - Linux
   - Signal
-categories:
+cate:
   - 技术
-alias: Kill vs term vs int vs quit signals
-quota: https://www.semicolonandsons.com/code_diary/unix/kill-vs-term-vs-int-vs-quit-signals
 publishDate: 2022-02-28 20:53:56
 ---
 
@@ -23,7 +21,7 @@ HUP INT QUIT ILL TRAP ABRT EMT FPE KILL BUS SEGV SYS PIPE ALRM TERM URG STOP TST
 
 ## 可忽略信号
 
-2 号信号 `INT` (interrupt) 最弱。它的意思是“停止你现在正在做的事情并等待进一步的用户输入”。这是终端中 `<C-c>` 产生的信号
+2 号信号 `INT` (interrupt) 最弱。它的意思是 “停止你现在正在做的事情并等待进一步的用户输入”。这是终端中 `<C-c>` 产生的信号
 
 15 号信号 `TERM` (terminate) 是正常的终止信号（`kill` 默认发出的信号）。它告诉应用程序干净地退出。该信号允许 `trap` 处理，它使接收进程能够以有序的方式进行一些清理。如果不想在关键操作中被中断，那么应用程序往往会忽略 `SIGTERM`。
 
