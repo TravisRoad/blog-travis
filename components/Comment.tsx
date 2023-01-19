@@ -7,7 +7,6 @@ const Comment = ({ slug }: { slug: string }) => {
 
   useEffect(() => {
     const t = getTheme();
-    console.log(t);
 
     setTheme(t);
   }, []);

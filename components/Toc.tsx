@@ -23,8 +23,6 @@ function genTree(toc: any): TREE {
     i: 0,
   };
   var parent: TREE | null = null;
-  console.log(toc);
-
   toc.forEach((item: any) => {
     if (item.lvl === 2) {
       const h2: TREE = {
@@ -51,7 +49,6 @@ function genTree(toc: any): TREE {
 
 export default function Toc(toc: any) {
   const root: TREE = genTree(toc.toc);
-  console.log(root);
 
   const tocdom = root.son.map((h2) => {
     const h2li = h2.son.map((h3) => (
@@ -85,7 +82,6 @@ export default function Toc(toc: any) {
 
 export function FloatingToc(toc: any) {
   const root: TREE = genTree(toc.toc);
-  console.log(root);
 
   const tocdom = root.son.map((h2) => {
     const h2li = h2.son.map((h3) => (
