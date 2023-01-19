@@ -1,7 +1,7 @@
 ---
 title: Arch Linux 个人小记
 summary: 说说我是如何使用 Arch Linux 的，卖卖安利
-publishDate: 2023-01-19 13:51:57
+publishDate: 2023-01-20 02:44:56
 createdDate: 2023-01-10 15:24:00
 tags:
   - default
@@ -9,8 +9,10 @@ star: false
 cate:
   - default
 showTOC: true
-draft: true
+draft: false
 ---
+
+<Quote>KISS: Keep It Simple, Stupid</Quote>
 
 ## 整体配置
 
@@ -25,11 +27,28 @@ draft: true
 
 ## 为啥要折腾 Arch
 
-🤔 为什么要折腾 Arch Linux 呢 [^arch]？用 Windows WSL 或者装个黑苹果，甚至用 ubuntu，不香吗？
+<Dialog>
+  🤔 为什么要折腾 Arch Linux 呢 ？ 用 Windows WSL 或者装个黑苹果，甚至用
+  ubuntu，不香吗？
+</Dialog>
+<Dialog reverse="true">
+  <p className="not-prose">
+    <> 因为 </>
+    <del>
+      <a
+        href="https://wiki.archlinux.org/title/Arch_is_the_best"
+        className="text-nord-10 hover:underline dark:text-nord-9"
+      >
+        <>"Arch is the best!"</>
+      </a>
+    </del>
+    <>，开玩笑的。</>
+  </p>
+</Dialog>
+
+<div className="py-0.5"></div>
 
 ![Arch 邪教](/image/2023-01-10-10-33-57.png)
-
-[^arch]: [如何评价基于 Arch 的 Linux 发行版 EndeavourOS? - 缨子的回答 - 知乎](https://www.zhihu.com/question/459766821/answer/1890212033)
 
 <Border>
   <ol>
@@ -50,11 +69,34 @@ Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做
 不过折腾过 Windows 环境的人应该都能理解，Windows 和 Unix 很多小细节都不一样，更重要的是 Windows 并不是全局 UTF-8，这种小细节上的不同有时就会让人很难受。
 再者，一如 Windows 的名字，它是一个图形操作系统，MacOS 也是，命令行的支持上 Linux 会更好。
 
+> Linux is only free if your time has no value
+
 以上这些都不过是萝卜青菜各有所爱。我需要经常处理 k8s 的东西，平时接触的生态比较贴近 Linux，平时用不着 Linux 的同学大可不必大行折腾。
 
 ## 优点
 
 ### 了解 Linux
+
+Arch Linux 有很齐全的 [ArchWiki][wiki] 可供查阅。
+
+学习所有东西都是有成本的，即使是友好的 Windows 系统，小朋友也需要上手慢慢使用才能逐渐弄明白操作逻辑。
+在本科期间，第一次接触 Linux 是在 CSAPP 课程的 bomb lab 上，当时连 shell 都不知道怎么用，需要使用 gdb 调试器在命令行中敲敲打打拆炸弹。这是对 Linux 的直观影响。
+实践之后需要理论学习，将之内化于心。要学习 Linux，除了看到的各种小技巧，还需要大量的实践来熟悉操作。
+接下来 “熟悉” 和 “理解” 之间还有很多的路需要走，这个时候就需要再去学习理论知识，如此循环往复，是一个螺旋上升的过程。
+
+为了大量实践 Linux, 日常使用 Linux 是一个好的选择，不是使用虚拟机，不是使用远程服务器，而是真真正正自己安装一个系统在物理磁盘上，从 boot 开始一步步配置的 Linux 系统。
+在这个过程中，不出意外的会遇到了许多挫折，很多 “难者不会，会者不难” 的问题能折腾许久，
+通过 [RTFM][rtfm]，[STFW][stfw] 最后就能解决 90% 的问题。
+
+<Dialog reverse="true">
+  Read The ~~F\*\*king~~ Friendly Manual. <br /> Search The ~~F\*\*king~~
+  Friendly Web.
+</Dialog>
+<Dialog>OK, fine.</Dialog>
+
+[wiki]: https://wiki.archlinux.org/
+[rtfm]: https://en.wikipedia.org/wiki/RTFM
+[stfw]: https://en.wiktionary.org/wiki/STFW
 
 ### 包管理器
 
@@ -73,6 +115,8 @@ yay -S keyd
 
 ![yay 的使用](/image/2023-01-16-17-13-41.png)
 
+顺带一提，Windows 现在也有 `scoop` `chocolaty` `winget` 这些包管理器了
+
 ### 平铺窗口管理器
 
 用 Linux 一定要体验体验不同于 MacOS 和 Windows 的浮动窗口管理器的平铺窗口管理器 [^tilingwm]。这是一种全新的体验。
@@ -86,7 +130,7 @@ yay -S keyd
 这个时候，我们有工作区（workspace）这个概念（下文称 ws），也就是其他操作系统当中的虚拟桌面，在工作区之间切换只需要使用 `win+number` 就可以快速切换。
 一般来说，我会将浏览器绑定在 ws2，即时通讯 app 放在 ws3，笔记软件放在 ws4，rss 阅读器放在 ws6，编码环境会放在 ws10+ 的位置，这些配置都依个人而定，可以很简单的进行设置。
 
-平铺窗口管理的优点主要是它能保证我在一个工作区内能足够专注，主要的软件能占用满整块屏幕。但是，如果某个工作需要开很多窗口，这种桌面管理未免有些麻烦，这个是时候也能把各个窗口重新排列。
+平铺窗口管理的优点主要是它能保证我在一个工作区内能足够专注，主要的软件能占用满整块屏幕。但是，如果某个工作需要开很多窗口，这种桌面管理未免有些麻烦，这个时候也能把各个窗口重新排列。
 形成如下列图片所示的堆叠模式。
 
 <PhotoProvider>
@@ -97,6 +141,7 @@ yay -S keyd
           <img
             src="/image/2023-01-18_03-54.png"
             className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+            draggable="false"
           />
         </PhotoView>
       </div>
@@ -105,6 +150,7 @@ yay -S keyd
           <img
             src="/image/2023-01-18_03-54_1.png"
             className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+            draggable="false"
           />
         </PhotoView>
       </div>
@@ -113,6 +159,7 @@ yay -S keyd
           <img
             src="/image/2023-01-18_03-54_2.png"
             className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+            draggable="false"
           />
         </PhotoView>
       </div>
@@ -123,11 +170,35 @@ yay -S keyd
 
 ## 缺点
 
-### 兼容性
+### 软件生态
+
+由于 Linux 桌面用户太少，并且 Linux 有各大发行版，本就不多的用户量被掰得更加细碎，各大厂商并不会第一时间考虑 Linux 用户，国产软件更是如此。腾讯系的 QQ、Tim、微信等一度并没有官方支持的 Linux 版本。
+在文档编辑方面，Microsoft 的 office 已经成为一种标准，平常需要写的各种杂七杂八的文档都需要在 office 上编写，这是在 Linux 上不能做的事情，wps office 和 libreOffice 并不能完全替代 MicroSoft Office。
+近几年由于开发成本，大家开始拥抱 electron 应用，真正意义上的一次编写处处运行。也许这也是未来 Linux 软件生态的破局之道。
+
+至于游戏方面，阀门厂的 Steam Deck 上的 SteamOS [^steamos] 就是 Arch 系的，阀门厂为兼容层做了相当多的优化，相信未来 Linux 的游戏生态也会有所好转。
+
+[^steamos]: https://store.steampowered.com/steamos
+
+但是目前看来，软件生态上 Linux 还是有巨大的缺失，能满足程序员的需求但是普通群众确实没有什么理由接触这个门槛很高的操作系统。
 
 ### 太折腾
 
-不够开箱即用，虽然可以自定义很多组件，不过都需要折腾。出了问题，除了善用 Google 更需要的是
+不够开箱即用，虽然可以自定义很多组件，不过都需要折腾。对于小白来说，最难的问题莫过于定位问题，没有碰到过千奇百怪的问题就很难知道到底是什么组件出现了问题。
+我个人而言，就遇到过 GRUB 引导错误，X server 不能启动等问题，身边常备着 [ventoy](https://www.ventoy.net/cn/index.html) 的 U 盘，里面装着最新的 Arch Live 光盘映像，随时准备修复系统。
+
+Arch Linux 是滚动发行版，不同于 ubuntu 的点发行版，Arch Linux 更新很频繁，网传有所谓的 “滚挂” 的现象产生。
+
+## 总结
+
+适合自己的才是最好的。Arch Linux 给你提供了构建适合自己的工作流的途径，就像在搭积木一样一点点搭起来。
+不想折腾的同学大可以使用开箱即用的操作系统。
+
+如果读者看到这里想自己试试装个 Linux 玩玩。
+不妨从 Ubuntu desktop 开始试水，然后再试试 [Manjaro](https://manjaro.org/)，这是一个 arch 系的操作系统，开箱即用，可以轻松体验到 arch 生态。
+如果你想直接入手 Arch Linux，不妨从官网的 [安装指南](https://wiki.archlinux.org/title/Installation_guide) 开始，也可以使用 Arch Linux Studio 发布的 [ArchTutorial](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/)。
+
+不管是哪个发行版，遇到问题时时刻谨记 RTFM、STFW、~~RTFSC~~，大部分情况都会有前人替我们踩好了一路上的坑，自己实在解决不了了再寻求社区帮助，或者给仓库提 issue。
 
 ---
 

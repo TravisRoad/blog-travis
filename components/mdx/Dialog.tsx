@@ -1,10 +1,32 @@
+import avatar from "public/profile.jpg";
+import pixel from "public/pixel.png";
 import Image from "next/image";
 
-export function DialogLeft({ children }: { children: any }): JSX.Element {
+export function Dialog({
+  reverse,
+  children,
+}: {
+  reverse: boolean | undefined;
+  children: any;
+}): JSX.Element {
   return (
-    <div className="not-prose flex flex-row">
-      <div> </div>
-      <div>{children}</div>
+    <div
+      className={` flex ${
+        reverse ? "flex-row-reverse" : "flex-row"
+      } my-2 mx-2 items-center gap-x-6`}
+    >
+      <span className="h-12 w-12 ">
+        <Image
+          src={reverse ? avatar : pixel}
+          alt="avatar"
+          className={` overflow-hidden rounded-full ${
+            !reverse && "scale-x-[-1]"
+          }`}
+        ></Image>
+      </span>
+      <div className=" prose max-w-[62%] rounded-lg border-2 border-nord-10 bg-nord-5 py-1 px-4 text-nord-0 dark:bg-nord-0 dark:text-nord-4">
+        {children}
+      </div>
     </div>
   );
 }

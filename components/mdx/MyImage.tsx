@@ -9,7 +9,7 @@ export default function MyImage({
   rounded = true,
 }: any) {
   return (
-    <div className="mx-2 mt-4 mb-6 break-inside-avoid-page">
+    <div className="not-prose mx-2 mt-4 mb-6 break-inside-avoid-page">
       <div
         className={`grid place-items-center overflow-hidden ${
           rounded && "rounded-lg "
@@ -21,7 +21,7 @@ export default function MyImage({
         <Image src={`${src}`} width={width} height={height} alt={alt} />
       </div>
       {alt && (
-        <div className="text-center font-sans text-base font-semibold opacity-40">
+        <div className="not-prose text-center font-sans text-base font-semibold opacity-40">
           {alt}
         </div>
       )}
