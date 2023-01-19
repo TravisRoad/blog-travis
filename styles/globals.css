@@ -28,3 +28,7 @@ body:before {
 #giscus::part(iframe) {
   color-scheme: light;
 }
+
+h2.sr-only {
+  display: none;
+}
