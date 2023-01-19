@@ -117,7 +117,7 @@ function PostTimeLine({ posts }: { posts: Array<any> }) {
               key={post.title}
               url={`/posts/${post.slug}`}
               summary={post.summary}
-              date={format(parseISO(post.publishDate), "yyyy/LL/dd")}
+              date={format(parseISO(post.publishDate), "LL/dd")}
               showSummary={true}
             />
           ))}
