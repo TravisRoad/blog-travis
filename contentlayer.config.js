@@ -80,10 +80,13 @@ export const Blog = defineDocumentType(() => ({
       resolve: (doc) => {
         var html = markdown(doc.body.raw);
         if (typeof html !== "string") return "";
-        html = html.replace(
-          /src=\"\/image/g,
-          `src=\"https://blog.lxythan2lxy.cn/image` // FIXME: hardcode the URL
-        );
+        html = html
+          .replace(
+            /src=\"\/image/g,
+            `src=\"https://blog.lxythan2lxy.cn/image` // FIXME: hardcode the URL
+          )
+          .replace(/\{\/\*[^\*]*\*\/\}/g, "")
+          .replace(/<p><\/p>\n/g, "");
         return html;
       },
     },
