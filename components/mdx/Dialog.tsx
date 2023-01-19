@@ -13,7 +13,7 @@ export function Dialog({
     <div
       className={` flex ${
         reverse ? "flex-row-reverse" : "flex-row"
-      } my-2 mx-2 items-center gap-x-6`}
+      } my-2 items-center gap-x-1 sm:mx-2 sm:gap-x-6`}
     >
       <span className="h-12 w-12 ">
         <Image
@@ -24,7 +24,7 @@ export function Dialog({
           }`}
         ></Image>
       </span>
-      <div className=" prose max-w-[62%] rounded-lg border-2 border-nord-10 bg-nord-5 py-1 px-4 text-nord-0 dark:bg-nord-0 dark:text-nord-4">
+      <div className="prose max-w-[75%] rounded-lg border-2 border-nord-10 bg-nord-5 py-1 px-2 text-sm text-nord-0 dark:bg-nord-0 dark:text-nord-4 sm:max-w-[62%] sm:px-4 sm:text-base">
         {children}
       </div>
     </div>
