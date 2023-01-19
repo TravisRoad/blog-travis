@@ -28,38 +28,42 @@ const createRss = () => {
     },
   });
 
-  allBlogs.forEach((post: Blog) => {
-    const item = {
-      title: post.title,
-      id: `${metadata.site}/posts/${post.slug}`,
-      link: `${metadata.site}/posts/${post.slug}`,
-      description: `${post.summary}\n请在浏览器中浏览以获得最佳体验`,
-      content: post.html,
-      author: [
-        {
-          name: metadata.author,
-          email: metadata.email,
-          // link:,
-        },
-      ],
-      // contributor: [
-      //   {
-      //     name: "Shawn Kemp",
-      //     email: "shawnkemp@example.com",
-      //     link: "https://example.com/shawnkemp",
-      //   },
-      //   {
-      //     name: "Reggie Miller",
-      //     email: "reggiemiller@example.com",
-      //     link: "https://example.com/reggiemiller",
-      //   },
-      // ],
-      date: parseISO(post.publishDate),
-      image: undefined,
-    };
-    //   if (post.image) { }
-    feed.addItem(item);
-  });
+  allBlogs
+    .filter((blog: Blog) => {
+      return !blog.draft;
+    })
+    .forEach((post: Blog) => {
+      const item = {
+        title: post.title,
+        id: `${metadata.site}/posts/${post.slug}`,
+        link: `${metadata.site}/posts/${post.slug}`,
+        description: `${post.summary}\n请在浏览器中浏览以获得最佳体验`,
+        content: post.html,
+        author: [
+          {
+            name: metadata.author,
+            email: metadata.email,
+            // link:,
+          },
+        ],
+        // contributor: [
+        //   {
+        //     name: "Shawn Kemp",
+        //     email: "shawnkemp@example.com",
+        //     link: "https://example.com/shawnkemp",
+        //   },
+        //   {
+        //     name: "Reggie Miller",
+        //     email: "reggiemiller@example.com",
+        //     link: "https://example.com/reggiemiller",
+        //   },
+        // ],
+        date: parseISO(post.publishDate),
+        image: undefined,
+      };
+      //   if (post.image) { }
+      feed.addItem(item);
+    });
 
   // feed.addCategory("Technologie");
 
