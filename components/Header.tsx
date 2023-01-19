@@ -14,8 +14,7 @@ function Logo({ hidden }: { hidden: Boolean }) {
             {metadata.header.logo}
           </span>
           <sup
-            className={`inline overflow-hidden font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13
-            `}
+            className={`inline overflow-hidden font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13`}
           >
             {metadata.header.sup}
           </sup>
