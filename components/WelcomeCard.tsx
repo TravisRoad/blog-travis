@@ -7,7 +7,7 @@ import { EnvelopeIcon, RssIcon } from "@heroicons/react/24/outline";
 function ProfileAvatar() {
   return (
     <Link href="/about">
-      <a className="mt-3 mb-6 h-[80px] w-[80px] transition-all duration-[750ms] hover:rotate-[10deg] hover:scale-125 sm:mb-0 sm:h-[120px] sm:w-[120px]">
+      <a className="mt-3 mb-6 h-[100px] w-[100px] transition-all duration-[750ms] hover:rotate-[10deg] hover:scale-125 sm:mb-0 sm:h-[120px] sm:w-[120px] ">
         <Image
           src={avatar}
           alt="Travis Road"
