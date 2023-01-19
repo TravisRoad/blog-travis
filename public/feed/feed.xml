@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Thu, 19 Jan 2023 05:08:10 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Jan 2023 06:02:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -129,7 +129,7 @@
             <title><![CDATA[Arch Linux 个人小记]]></title>
             <link>https://blog.lxythan2lxy.cn/posts/archlinux_share</link>
             <guid>https://blog.lxythan2lxy.cn/posts/archlinux_share</guid>
-            <pubDate>Mon, 16 Jan 2023 09:16:23 GMT</pubDate>
+            <pubDate>Thu, 19 Jan 2023 05:51:57 GMT</pubDate>
             <description><![CDATA[说说我是如何使用 Arch Linux 的，卖卖安利
 请在浏览器中浏览以获得最佳体验]]></description>
             <content:encoded><![CDATA[<h2>整体配置</h2>
@@ -141,7 +141,7 @@
 <li>dock: polybar</li>
 <li>窗口混成器 (composite): picom-jonaburg-git</li>
 </ul>
-<p><img src="https://blog.lxythan2lxy.cn/image/2023-01-10-09-53-53.png" alt="台式机的信息  "></p>
+<p><img src="https://blog.lxythan2lxy.cn/image/2023-01-10-09-53-53.png" alt="台式机的信息"></p>
 <h2>为啥要折腾 Arch</h2>
 <p>🤔 为什么要折腾 Arch Linux 呢 <sup><a href="#user-content-fn-arch" id="user-content-fnref-arch" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>？用 Windows WSL 或者装个黑苹果，甚至用 ubuntu，不香吗？</p>
 <p><img src="https://blog.lxythan2lxy.cn/image/2023-01-10-10-33-57.png" alt="Arch 邪教"></p>

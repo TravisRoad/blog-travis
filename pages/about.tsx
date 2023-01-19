@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Main from "components/Main";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { allAbouts } from "contentlayer/generated";
+import { allAbouts, allMovies } from "contentlayer/generated";
 import MDXComponents from "components/mdx/MDXComponents";
 import { allBlogs } from ".contentlayer/generated";
 import type { Blog } from "contentlayer/generated";
@@ -20,7 +20,7 @@ const About = (props: statistic) => {
         <div className="mx-auto max-w-3xl">
           <WelcomeCard />
         </div>
-        <div className="relative mt-8 inline-flex w-full items-center justify-center">
+        <div className="relative mt-8 mb-6 inline-flex w-full items-center justify-center">
           {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
           <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
           <span className="absolute left-1/2 -translate-x-1/2 bg-nord-bgLight px-3 text-2xl font-medium text-gray-900 dark:bg-nord-bgDark dark:text-white">
@@ -28,7 +28,7 @@ const About = (props: statistic) => {
           </span>
         </div>
         <div className=" flex flex-col">
-          <div className="prose prose-stone mx-auto text-lg dark:prose-invert sm:max-w-3xl sm:text-2xl">
+          <div className="prose prose-stone mx-auto text-lg prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl sm:text-2xl">
             <Content components={MDXComponents}></Content>
           </div>
         </div>
@@ -65,17 +65,27 @@ export async function getStaticProps() {
   var totalWordsNum = 0;
   var externalLinksMap = new Map<string, number>();
   var externalLinksNum = 0;
-  var postsNum = allBlogs.length;
+  var postsNum = allBlogs.length; /* + allMovies.length */
+  const computeExternalLinksNum = (link: string) => {
+    var val = externalLinksMap.get(link);
+    if (val === undefined) externalLinksMap.set(link, 1);
+    else externalLinksMap.set(link, val + 1);
+  };
   allBlogs.forEach((blog) => {
     const readingTime: ReadingTime = blog.readingTime;
     totalWordsNum += readingTime.words;
 
     externalLinksNum += blog.externalLink.raw.length;
-    blog.externalLink.res.forEach((link: string) => {
-      var val = externalLinksMap.get(link);
-      if (val === undefined) externalLinksMap.set(link, 1);
-      else externalLinksMap.set(link, val + 1);
-    });
+    blog.externalLink.res.forEach(computeExternalLinksNum);
+  });
+  // 统计 Movie 和 About 页面的外链
+  allMovies.forEach((movie) => {
+    externalLinksNum += movie.externalLink.raw.length;
+    movie.externalLink.res.forEach(computeExternalLinksNum);
+  });
+  allAbouts.forEach((about) => {
+    externalLinksNum += about.externalLink.raw.length;
+    about.externalLink.res.forEach(computeExternalLinksNum);
   });
   const externalLinks = Object.fromEntries(externalLinksMap);
 

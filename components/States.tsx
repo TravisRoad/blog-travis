@@ -10,10 +10,10 @@ function formatNumber(num: number) {
 function DataItem({ title, data }: { title: string; data: string }) {
   return (
     <li className="relative list-item justify-between">
-      <span className="block w-[80%] overflow-hidden text-ellipsis">
+      <span className="block w-[85%] overflow-hidden text-ellipsis text-xl">
         {title}
       </span>
-      <span className=" absolute right-0 top-[0.1rem] rounded-full bg-nord-9 px-2 font-mono text-[0.78rem] text-nord-6 dark:bg-nord-10">
+      <span className=" absolute right-0 top-[0.123rem] rounded bg-nord-9 px-2 font-sans text-[0.88rem] text-nord-6 dark:bg-nord-11">
         {data}
       </span>
     </li>
@@ -40,7 +40,7 @@ function States({ statistic }: { statistic: statistic }) {
   return (
     <>
       <h2 className=" mx-auto my-2 max-w-3xl text-lg font-bold">总数统计</h2>
-      <ul className=" mx-auto grid max-w-3xl list-disc grid-cols-2 gap-x-16 px-6 ">
+      <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         <DataItem
           title="文章数"
           data={formatNumber(statistic.postsNum).toString()}
@@ -59,13 +59,13 @@ function States({ statistic }: { statistic: statistic }) {
         />
       </ul>
       <h2 className="mx-auto my-2 max-w-3xl text-lg font-bold">每年统计</h2>
-      <ul className=" mx-auto grid max-w-3xl list-disc grid-cols-2 gap-x-16 px-6 ">
+      <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         {list.map((item: { title: string; data: string }) => (
           <DataItem title={item.title} data={item.data} key={item.title} />
         ))}
       </ul>
       <h2 className="mx-auto my-2 max-w-3xl text-lg font-bold">外链统计</h2>
-      <ul className=" mx-auto grid max-w-3xl list-disc grid-cols-2 gap-x-16 px-6 ">
+      <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         {externalLinks.map((item: [string, number]) => (
           <DataItem
             title={item[0]}
