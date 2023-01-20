@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Fri, 20 Jan 2023 04:02:58 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Jan 2023 10:31:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -168,7 +168,7 @@
     <li>Linux 能让你看到一些操作系统较为底层的东西 </li>
   </ol>
 </border>
-<p>首先说说 <strong>“折腾”</strong> 这件事，如果我需要使用 Linux, 那么折腾是必然的，这和我用什么发行版并没有什么关系，这个时候不如用一个比较纯净的系统（比如 Arch）。
+<p>首先说说 <strong>“折腾”</strong> 这件事，如果我需要使用 Linux, 那么折腾是必然的，这和我用什么发行版并没有太大关系，这个时候不如用一个比较纯净的系统（比如 Arch）方便下手把玩。
 举个例子 🌰，一般的开箱即用的发行版就像精装修的样板房，提包入住，但是我很难一下子弄清楚房间里面的布线和一些家具的设置，万一某个组件坏了无从下手（尤其是当我自己还要当维修工人的时候）。
 Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做的仅仅是对着宜家的家具清单（Arch Wiki）找到自己想要的家具，一件件充实自己的小窝。
 这种感觉是无与伦比的，因为这个时候，它其中的各种东西是按照我的喜好来选择配置的，我好像真正的拥有了它。

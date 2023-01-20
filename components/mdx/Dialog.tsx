@@ -24,7 +24,7 @@ export function Dialog({
           }`}
         ></Image>
       </span>
-      <div className="prose max-w-[75%] rounded-lg border-2 border-nord-10 bg-nord-5 py-1 px-2 text-sm text-nord-0 dark:bg-nord-0 dark:text-nord-4 sm:max-w-[62%] sm:px-4 sm:text-base">
+      <div className="prose max-w-[75%] rounded-lg border-2 border-nord-10 bg-nord-5 py-1 px-2 text-sm text-nord-0 dark:prose-invert dark:bg-nord-0 dark:text-nord-4 sm:max-w-[62%] sm:px-4 sm:text-base">
         {children}
       </div>
     </div>
