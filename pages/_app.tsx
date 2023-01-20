@@ -67,7 +67,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="ZPrJ8vQw1_sw4obcKDYbQYYyZnpf4duEtq9Nu9GBw5E"
         />
         <meta name="msvalidate.01" content="EDFD01D3AA0A9FEAD2F4C86F5714CEF9" />
-        <meta name="description" content="Travis' Blog" />
+        <meta
+          property="og:description"
+          content="这里是 Travis 的博客，分享 ACG 和我的技术"
+        ></meta>
+        <meta
+          name="description"
+          content="这里是 Travis 的博客，分享 ACG 和我的技术"
+        ></meta>
         {/* <meta
           name="theme-color"
           content="#f2f4f8"
