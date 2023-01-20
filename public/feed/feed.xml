@@ -4,7 +4,7 @@
         <title>Travis' Blog</title>
         <link>https://blog.lxythan2lxy.cn</link>
         <description>Travis' personal site about game, programing and movie</description>
-        <lastBuildDate>Thu, 19 Jan 2023 19:22:07 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Jan 2023 04:02:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -145,8 +145,8 @@
 <p><img src="https://blog.lxythan2lxy.cn/image/2023-01-10-09-53-53.png" alt="台式机的信息"></p>
 <h2>为啥要折腾 Arch</h2>
 <dialog>
-  🤔 为什么要折腾 Arch Linux 呢 ？ 用 Windows WSL 或者装个黑苹果，甚至用
-  ubuntu，不香吗？
+  为什么要折腾 Arch Linux 呢 ？🤔
+  <br> 用 Windows WSL 或者装个黑苹果，或者用 ubuntu，不香吗？
 </dialog>
 <dialog reverse="true">
   <p class="not-prose">
@@ -172,11 +172,11 @@
 举个例子 🌰，一般的开箱即用的发行版就像精装修的样板房，提包入住，但是我很难一下子弄清楚房间里面的布线和一些家具的设置，万一某个组件坏了无从下手（尤其是当我自己还要当维修工人的时候）。
 Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做的仅仅是对着宜家的家具清单（Arch Wiki）找到自己想要的家具，一件件充实自己的小窝。
 这种感觉是无与伦比的，因为这个时候，它其中的各种东西是按照我的喜好来选择配置的，我好像真正的拥有了它。
-我能在简易的 WM 上慢慢调整自己的桌面布局，用按键映射软件或者快捷键管理软件管理自己的工作流，可以看看 <a href="https://www.reddit.com/r/unixporn/">unixporn</a> 看看大家是怎么美化桌面折腾电脑的。</p>
+在纯净的 Arch Linux 系统上，我能在简易的 WM 上慢慢调整自己的桌面布局，用按键映射软件或者快捷键管理软件管理自己的工作流，可以看看 <a href="https://www.reddit.com/r/unixporn/">unixporn</a> 看看大家是怎么美化桌面折腾电脑的，有非常多可供自定义的选项等待着去发掘。</p>
 <p>然后再说说 Linux 系统，我们开发的后端软件大多数是最终需要交付到 Linux 系统上的，能在 Linux 上编码自然的就有原生的优势。
-当然，在 Win 和 MacOS 上也有解决方案，虚拟机、docker 或者 vscode remote 到服务器上进行编码，不一而足。
-不过折腾过 Windows 环境的人应该都能理解，Windows 和 Unix 很多小细节都不一样，更重要的是 Windows 并不是全局 UTF-8，这种小细节上的不同有时就会让人很难受。
-再者，一如 Windows 的名字，它是一个图形操作系统，MacOS 也是，命令行的支持上 Linux 会更好。</p>
+当然，在 Win 和 MacOS 上也有解决方案 —— 虚拟机、docker 或者 vscode remote 到服务器上进行编码，不一而足。
+折腾过 Windows 环境的人应该都能理解，Windows 和 Unix 系的系统很多小细节都不尽相同，更重要的是 Windows 并不是全局 UTF-8，有时会出现奇奇怪怪的问题。
+再者，一如 Windows 的名字，它是一个图形操作系统，MacOS 也是，在命令行的支持上 Linux 会更好。</p>
 <blockquote>
 <p>Linux is only free if your time has no value</p>
 </blockquote>
@@ -184,11 +184,11 @@ Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做
 <h2>优点</h2>
 <h3>了解 Linux</h3>
 <p>Arch Linux 有很齐全的 <a href="https://wiki.archlinux.org/">ArchWiki</a> 可供查阅。</p>
-<p>学习所有东西都是有成本的，即使是友好的 Windows 系统，小朋友也需要上手慢慢使用才能逐渐弄明白操作逻辑。
-在本科期间，第一次接触 Linux 是在 CSAPP 课程的 bomb lab 上，当时连 shell 都不知道怎么用，需要使用 gdb 调试器在命令行中敲敲打打拆炸弹。这是对 Linux 的直观影响。
-实践之后需要理论学习，将之内化于心。要学习 Linux，除了看到的各种小技巧，还需要大量的实践来熟悉操作。
-接下来 “熟悉” 和 “理解” 之间还有很多的路需要走，这个时候就需要再去学习理论知识，如此循环往复，是一个螺旋上升的过程。</p>
-<p>为了大量实践 Linux, 日常使用 Linux 是一个好的选择，不是使用虚拟机，不是使用远程服务器，而是真真正正自己安装一个系统在物理磁盘上，从 boot 开始一步步配置的 Linux 系统。
+<p>学习所有东西都是有成本的，即使是友好的 Windows 系统，第一次接触的小朋友也需要上手慢慢使用才能逐渐弄明白操作逻辑。
+在本科期间，我第一次接触 Linux 是在 CSAPP 课程的 bomb lab 上，当时连 shell 都不知道怎么用，需要使用 gdb 调试器在命令行中敲敲打打拆炸弹。这是对 Linux 的直观印象。
+在实践之后需要理论学习，将之内化于心。要学习 Linux，除了看到的各种小技巧，还需要大量的实践来熟悉操作。
+接下来，在 “熟悉” 和 “理解” 之间还有很多的路需要走，这个时候就需要再去学习理论知识，如此循环往复，是一个螺旋上升的过程。</p>
+<p>为了大量实践 Linux, 日常使用 Linux 是一个选择 —— 不是使用虚拟机，不是使用远程服务器，而是真真正正自己安装一个系统在物理磁盘上，从配置引导开始开始一步步配置属于自己的 Linux 系统。
 在这个过程中，不出意外的会遇到了许多挫折，很多 “难者不会，会者不难” 的问题能折腾许久，
 通过 <a href="https://en.wikipedia.org/wiki/RTFM">RTFM</a>，<a href="https://en.wiktionary.org/wiki/STFW">STFW</a> 最后就能解决 90% 的问题。</p>
 <dialog reverse="true">
@@ -207,9 +207,11 @@ Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做
 </span><span class="code-line line-number" line="2">yay <span class="token parameter variable">-S</span> keyd
 </span></code></pre>
 <p><img src="https://blog.lxythan2lxy.cn/image/2023-01-16-17-13-41.png" alt="yay 的使用"></p>
-<p>顺带一提，Windows 现在也有 <code>scoop</code> <code>chocolaty</code> <code>winget</code> 这些包管理器了</p>
+<dialog reverse="true">
+  顺带一提，Windows 现在也有 `scoop`、`chocolaty`、`winget` 这些包管理器了
+</dialog>
 <h3>平铺窗口管理器</h3>
-<p>用 Linux 一定要体验体验不同于 MacOS 和 Windows 的浮动窗口管理器的平铺窗口管理器 <sup><a href="#user-content-fn-tilingwm" id="user-content-fnref-tilingwm" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>。这是一种全新的体验。</p>
+<p>不同于 MacOS 和 Windows 的浮动窗口管理器，Linux 上有一种全新的窗口管理体验 —— 平铺窗口管理器 <sup><a href="#user-content-fn-tilingwm" id="user-content-fnref-tilingwm" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>。</p>
 <p><img src="https://blog.lxythan2lxy.cn/image/linux.png" alt="平铺窗口管理器 i3wm"></p>
 <p>一般来说，浮动窗口管理会在一个桌面里开多个窗口，窗口之间是可以相互重叠的。
 但是平铺窗口管理则倾向于把所有的窗口都密铺在桌面上，也就是说桌面始终是占满的状态，那么这个时候如果我开了几十个窗口，在桌面上岂不是什么都看不到了？
@@ -247,16 +249,16 @@ Arch 就像一个毛坯房，水管电线什么的都预留好了，我需要做
 <p>至于游戏方面，阀门厂的 Steam Deck 上的 SteamOS <sup><a href="#user-content-fn-steamos" id="user-content-fnref-steamos" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup> 就是 Arch 系的，阀门厂为兼容层做了相当多的优化，相信未来 Linux 的游戏生态也会有所好转。</p>
 <p>但是目前看来，软件生态上 Linux 还是有巨大的缺失，能满足程序员的需求但是普通群众确实没有什么理由接触这个门槛很高的操作系统。</p>
 <h3>太折腾</h3>
-<p>不够开箱即用，虽然可以自定义很多组件，不过都需要折腾。对于小白来说，最难的问题莫过于定位问题，没有碰到过千奇百怪的问题就很难知道到底是什么组件出现了问题。
+<p>Arch Linux 不够开箱即用，虽然可以自定义很多组件，不过都需要折腾。
+对于小白来说，最麻烦的莫过于定位问题，没有碰到过千奇百怪的问题就很难知道到底是什么组件出现了问题。
 我个人而言，就遇到过 GRUB 引导错误，X server 不能启动等问题，身边常备着 <a href="https://www.ventoy.net/cn/index.html">ventoy</a> 的 U 盘，里面装着最新的 Arch Live 光盘映像，随时准备修复系统。</p>
 <p>Arch Linux 是滚动发行版，不同于 ubuntu 的点发行版，Arch Linux 更新很频繁，网传有所谓的 “滚挂” 的现象产生。</p>
 <h2>总结</h2>
-<p>适合自己的才是最好的。Arch Linux 给你提供了构建适合自己的工作流的途径，就像在搭积木一样一点点搭起来。
-不想折腾的同学大可以使用开箱即用的操作系统。</p>
+<p>适合自己的才是最好的。Arch Linux 提供了构建适合自己的工作流的途径。</p>
 <p>如果读者看到这里想自己试试装个 Linux 玩玩。
 不妨从 Ubuntu desktop 开始试水，然后再试试 <a href="https://manjaro.org/">Manjaro</a>，这是一个 arch 系的操作系统，开箱即用，可以轻松体验到 arch 生态。
-如果你想直接入手 Arch Linux，不妨从官网的 <a href="https://wiki.archlinux.org/title/Installation_guide">安装指南</a> 开始，也可以使用 Arch Linux Studio 发布的 <a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/">ArchTutorial</a>。</p>
-<p>不管是哪个发行版，遇到问题时时刻谨记 RTFM、STFW、<del>RTFSC</del>，大部分情况都会有前人替我们踩好了一路上的坑，自己实在解决不了了再寻求社区帮助，或者给仓库提 issue。</p>
+如果希望直接入手 Arch Linux，不妨从官网的 <a href="https://wiki.archlinux.org/title/Installation_guide">安装指南</a> 开始，也可以使用 Arch Linux Studio 发布的 <a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/">ArchTutorial</a>。</p>
+<p>不管是哪个发行版，遇到问题时请时刻谨记 RTFM、STFW、<del>RTFSC</del>，大部分情况都会有前人替我们踩好了一路上的坑，自己实在解决不了了再寻求社区帮助，或者给仓库提 issue。</p>
 <hr>
 <section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
 <ol>

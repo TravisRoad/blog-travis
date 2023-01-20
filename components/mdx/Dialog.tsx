@@ -1,5 +1,5 @@
-import avatar from "public/profile.jpg";
-import pixel from "public/pixel.png";
+import me from "public/profile.jpg";
+import other from "public/pixel.png";
 import Image from "next/image";
 
 export function Dialog({
@@ -17,7 +17,7 @@ export function Dialog({
     >
       <span className="h-12 w-12 ">
         <Image
-          src={reverse ? avatar : pixel}
+          src={reverse ? me : other}
           alt="avatar"
           className={` overflow-hidden rounded-full ${
             !reverse && "scale-x-[-1]"
