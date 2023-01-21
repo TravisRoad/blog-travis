@@ -31,6 +31,10 @@
       "---"
     ]
   },
+  "idea": {
+    "prefix": "idea",
+    "body": ["---", "publishDate: ${1:today}", "---"]
+  },
   "Current Date": {
     "prefix": "today",
     "body": [

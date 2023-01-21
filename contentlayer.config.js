@@ -174,9 +174,22 @@ export const About = defineDocumentType(() => ({
   },
 }));
 
+export const Idea = defineDocumentType(() => ({
+  name: "Idea",
+  filePathPattern: `idea/**/*.md[x]*`,
+  contentType: "mdx",
+  fields: {
+    publishDate: {
+      type: "date",
+      required: true,
+    },
+  },
+  computedFields: {},
+}));
+
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Blog, Movie, About],
+  documentTypes: [Blog, Movie, About, Idea],
   mdx: {
     remarkPlugins: [
       remarkGfm,
