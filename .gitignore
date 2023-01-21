@@ -49,3 +49,4 @@ hot-refresh.txt
 # feed
 public/feed/feed.json
 public/feed/feed.xml
+public/sitemap.xml
