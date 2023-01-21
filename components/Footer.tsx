@@ -8,7 +8,9 @@ function MyLink({ url, name }: { url: string; name: string }) {
   return (
     <Link href={url}>
       <a className="text-nord-3 transition hover:text-nord-dark dark:text-nord-4 dark:hover:text-white">
-        <span className="tracking-wider hover:underline">{name}</span>
+        <span className=" capitalize tracking-wider hover:underline">
+          {name}
+        </span>
       </a>
     </Link>
   );
@@ -75,17 +77,6 @@ export default function Footer() {
                   <a className="font-semibold hover:underline">{"blog-1999"}</a>
                 </Link>
               </div>
-              {/* <div className="text-right first-letter:uppercase">
-                powered by
-              </div>
-              <div>
-                <Link href="https://github.com/TravisRoad/blog-travis">
-                  <a className="font-semibold hover:underline ">
-                    {" "}
-                    blog-travis{" "}
-                  </a>
-                </Link>
-              </div> */}
               <div className="text-right first-letter:uppercase">thanks to</div>
               <div>
                 <Link href="https://nordtheme.com">
@@ -105,6 +96,7 @@ export default function Footer() {
             <div className="mt-2 mb-4 flex flex-col items-center space-y-4">
               <MyLink url="/" name="Home" />
               <MyLink url="/about" name="About" />
+              <MyLink url="/idea" name="Ideas" />
               <MyLink url="/posts" name="Blogs" />
             </div>
           </div>

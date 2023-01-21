@@ -1,38 +1,30 @@
 import React from "react";
 import { allBlogs } from "contentlayer/generated";
 import type { Blog } from "contentlayer/generated";
-import PostCard from "./PostCard";
+import PostCard, { FLoatingCard } from "./PostCard";
 import { parseISO, format, compareDesc } from "date-fns";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
-export default function RecentPost() {
-  const recentBlogs = allBlogs
-    .sort((p1: Blog, p2: Blog) =>
-      compareDesc(parseISO(p1.publishDate), parseISO(p2.publishDate))
-    )
-    .filter(
-      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
-    );
-  const staredBlogs = recentBlogs
-    .filter((blog: Blog) => blog.star)
-    .filter(
-      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
-    );
-
+export default function RecentPost({
+  recentBlogs,
+  staredBlogs,
+}: {
+  recentBlogs: Blog[];
+  staredBlogs: Blog[];
+}) {
   return (
     <div className="mt-2 mb-2 px-0">
       <div className="py-4">
         <div className="pl-4 pb-1 text-base font-semibold opacity-80">star</div>
-        <div className="divide-y divide-nord-5 overflow-hidden rounded-lg border-2 border-nord-4 dark:divide-nord-2 dark:border-nord-2">
+        <div className="mx-auto grid grid-cols-2 gap-x-4">
           {staredBlogs.map((blog: Blog) => (
-            <PostCard
+            <FLoatingCard
               key={blog.title}
               title={blog.title}
               url={`/posts/${blog.slug}`}
               summary={blog.summary}
               date={format(parseISO(blog.publishDate), "yyyy/LL/dd")}
-              showSummary={true}
             />
           ))}
         </div>
@@ -47,7 +39,6 @@ export default function RecentPost() {
               url={`/posts/${blog.slug}`}
               summary={blog.summary}
               date={format(parseISO(blog.publishDate), "yyyy/LL/dd")}
-              showSummary={true}
             />
           ))}
           <div className="transition-color rounded-none border-0 bg-white px-3 py-3 duration-200 first:rounded-t-lg last:rounded-b-lg hover:bg-[#f7f7fe] dark:bg-nord-0 dark:hover:bg-nord-1">

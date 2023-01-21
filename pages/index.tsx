@@ -6,15 +6,18 @@ import RecentPost from "components/RecentPost";
 import SideBar from "components/SideBar";
 import createRss from "@/lib/feed";
 import createSiteMap from "@/lib/sitemap";
+import { allBlogs, Blog } from "contentlayer/generated";
+import { compareDesc, parseISO } from "date-fns";
 
-const Home = ({ trivial }: { trivial: boolean }) => {
+const Home = ({
+  recentBlogs,
+  staredBlogs,
+}: {
+  recentBlogs: Blog[];
+  staredBlogs: Blog[];
+}) => {
   return (
     <div>
-      {/* <div className="min-h-[80vh] bg-gray-100 text-black dark:bg-black dark:text-white">
-        <main className="mx-auto sm:max-w-5xl px-2">
-          <WelcomeCard />
-        </main>
-      </div> */}
       <Main>
         <div className="flex flex-col lg:flex-row">
           <div className="lg:hidden">
@@ -24,7 +27,7 @@ const Home = ({ trivial }: { trivial: boolean }) => {
             <SideBar />
           </div>
           <div className="flex-1">
-            <RecentPost />
+            <RecentPost recentBlogs={recentBlogs} staredBlogs={staredBlogs} />
           </div>
         </div>
       </Main>
@@ -35,6 +38,19 @@ const Home = ({ trivial }: { trivial: boolean }) => {
 export async function getStaticProps() {
   createRss();
   createSiteMap();
-  return { props: { trivial: true } };
+  const recentBlogs = allBlogs
+    .sort((p1: Blog, p2: Blog) =>
+      compareDesc(parseISO(p1.publishDate), parseISO(p2.publishDate))
+    )
+    .filter(
+      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
+    );
+  const staredBlogs = recentBlogs
+    .filter((blog: Blog) => blog.star)
+    .filter(
+      (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
+    );
+  return { props: { recentBlogs, staredBlogs } };
 }
+
 export default Home;

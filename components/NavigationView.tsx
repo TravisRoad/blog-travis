@@ -61,6 +61,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
         >
           <DesktopNavItem url="/" name="主页" />
           <DesktopNavItem url="/posts" name="文章" />
+          <DesktopNavItem url="/idea" name="想法" />
           <DesktopNavItem url="/about" name="关于" />
         </div>
         <div className="flex items-center justify-center space-x-4 sm:hidden">
@@ -71,6 +72,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
             <Menu.Items className="top-15 absolute right-4 flex min-w-[17vw] flex-col divide-y divide-nord-4 rounded-lg border border-nord-6 bg-white text-nord-3 dark:divide-nord-2 dark:border-nord-2 dark:bg-nord-0 dark:text-nord-6">
               <MobileNavItem url="/" name="主页" />
               <MobileNavItem url="/posts" name="文章" />
+              <MobileNavItem url="/idea" name="想法" />
               <MobileNavItem url="/about" name="关于" />
             </Menu.Items>
           </Menu>
