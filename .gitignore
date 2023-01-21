@@ -45,3 +45,7 @@ next-env.d.ts
 
 .envrc
 hot-refresh.txt
+
+# feed
+public/feed/feed.json
+public/feed/feed.xml
