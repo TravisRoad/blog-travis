@@ -7,7 +7,9 @@ async function createSiteMap() {
   const pages = await globby([
     "pages/*.tsx",
     "data/**/*.mdx",
+    "!pages/idea.tsx",
     "!data/*.mdx",
+    "!data/idea",
     "!data/movie/*.*",
     "!pages/_*.tsx",
     "!pages/api",
