@@ -1,24 +1,23 @@
 import React from "react";
-import { allBlogs } from "contentlayer/generated";
-import type { Blog } from "contentlayer/generated";
 import PostCard, { FLoatingCard } from "./PostCard";
 import { parseISO, format, compareDesc } from "date-fns";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
+import { PartialBlog } from "types/content";
 
 export default function RecentPost({
   recentBlogs,
   staredBlogs,
 }: {
-  recentBlogs: Blog[];
-  staredBlogs: Blog[];
+  recentBlogs: PartialBlog[];
+  staredBlogs: PartialBlog[];
 }) {
   return (
     <div className="mt-2 mb-2 px-0">
       <div className="py-4">
         <div className="pl-4 pb-1 text-base font-semibold opacity-80">star</div>
         <div className="mx-auto grid grid-cols-2 gap-x-4">
-          {staredBlogs.map((blog: Blog) => (
+          {staredBlogs.map((blog: PartialBlog) => (
             <FLoatingCard
               key={blog.title}
               title={blog.title}
@@ -32,7 +31,7 @@ export default function RecentPost({
           recent
         </div>
         <div className="divide-y divide-black/10 overflow-hidden rounded-lg border-2 border-nord-4 dark:divide-nord-2 dark:border-nord-2">
-          {recentBlogs.slice(0, 5).map((blog: Blog) => (
+          {recentBlogs.map((blog: PartialBlog) => (
             <PostCard
               key={blog.title}
               title={blog.title}
