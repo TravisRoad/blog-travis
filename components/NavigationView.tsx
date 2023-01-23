@@ -15,24 +15,22 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
       ? "text-nord-0 dark:text-nord-6 font-semibold"
       : "text-nord-3/80 dark:text-nord-4/80 font-normal";
   return (
-    <Link href={url}>
-      <a className="mx-1 overflow-hidden rounded-lg ">
-        {/* <div
-          className={`${
-            isActive
-              ? "font-semibold text-gray-200 hover:text-gray-100 transition"
-              : "font-normal text-gray-400 hover:text-gray-100 transition"
-          }`}
-        >
-          {name}
-        </div> */}
-        <div
-          className={` relative block items-center before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
-          data-content={name}
-        >
-          {name}
-        </div>
-      </a>
+    <Link href={url} className="mx-1 overflow-hidden rounded-lg ">
+      {/* <div
+        className={`${
+          isActive
+            ? "font-semibold text-gray-200 hover:text-gray-100 transition"
+            : "font-normal text-gray-400 hover:text-gray-100 transition"
+        }`}
+      >
+        {name}
+      </div> */}
+      <div
+        className={` relative block items-center before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
+        data-content={name}
+      >
+        {name}
+      </div>
     </Link>
   );
 };
@@ -40,10 +38,8 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
 const MobileNavItem: FC<{ url: string; name: string }> = ({ url, name }) => (
   <div className="overflow-hidden px-2 py-1 first:rounded-t-lg last:rounded-b-lg hover:bg-nord-4/30 dark:hover:bg-nord-1">
     <Menu.Item>
-      <Link href={url}>
-        <a className="flex items-center justify-center">
-          <div>{name}</div>
-        </a>
+      <Link href={url} className="flex items-center justify-center">
+        <div>{name}</div>
       </Link>
     </Menu.Item>
   </div>

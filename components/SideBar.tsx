@@ -20,6 +20,7 @@ export default function SideBar() {
   return (
     <div className="mr-2 mt-5 flex-1 pt-4">
       <div className="mx-auto mb-1 h-[128px] w-[128px] cursor-pointer rounded-full p-1 transition duration-500 hover:scale-105 hover:ring">
+        {/* <Link href="/about" legacyBehavior> */}
         <Link href="/about">
           <Image
             src={avatar}

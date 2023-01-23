@@ -4,6 +4,7 @@
     "paths": {
       "@/lib/*": ["lib/*"],
       "@/pages/*": ["pages/*"],
+      "@/app/*": ["app/*"],
       "@/styles/*": ["styles/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
@@ -20,13 +21,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".contentlayer/generated"
-, "pages/_document.js"  ],
+    ".contentlayer/generated",
+    "pages/_document.js",
+    "app/_document.js",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

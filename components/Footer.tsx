@@ -6,12 +6,11 @@ import VVCount from "./posts/VVCount";
 
 function MyLink({ url, name }: { url: string; name: string }) {
   return (
-    <Link href={url}>
-      <a className="text-nord-3 transition hover:text-nord-dark dark:text-nord-4 dark:hover:text-white">
-        <span className=" capitalize tracking-wider hover:underline">
-          {name}
-        </span>
-      </a>
+    <Link
+      href={url}
+      className="text-nord-3 transition hover:text-nord-dark dark:text-nord-4 dark:hover:text-white"
+    >
+      <span className=" capitalize tracking-wider hover:underline">{name}</span>
     </Link>
   );
 }
@@ -37,8 +36,11 @@ const CopyRight = () => {
     <div className="mx-auto p-2 text-nord-3 dark:text-nord-4">
       <span>
         © {metadata.time.start}-{metadata.time.end}{" "}
-        <Link href="https://github.com/TravisRoad/blog-travis">
-          <a className=" hover:underline "> {metadata.title} </a>
+        <Link
+          href="https://github.com/TravisRoad/blog-travis"
+          className=" hover:underline "
+        >
+          {metadata.title}
         </Link>
       </span>
     </div>
@@ -72,15 +74,21 @@ export default function Footer() {
             <div className="my-2 grid grid-cols-2 items-center gap-2">
               <div className="text-right first-letter:uppercase">spired by</div>
               <div>
-                <Link href="https://www.whexy.com/posts/blog-diy">
+                <Link
+                  href="https://www.whexy.com/posts/blog-diy"
+                  className="font-semibold hover:underline"
+                >
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  <a className="font-semibold hover:underline">{"blog-1999"}</a>
+                  {"blog-1999"}
                 </Link>
               </div>
               <div className="text-right first-letter:uppercase">thanks to</div>
               <div>
-                <Link href="https://nordtheme.com">
-                  <a className="font-semibold hover:underline ">Nord theme </a>
+                <Link
+                  href="https://nordtheme.com"
+                  className="font-semibold hover:underline "
+                >
+                  Nord theme
                 </Link>
               </div>
             </div>

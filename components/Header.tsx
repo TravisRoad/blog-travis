@@ -7,18 +7,16 @@ function Logo({ hidden }: { hidden: Boolean }) {
   return (
     <div className="">
       <Link href="/">
-        <a>
-          <span
-            className={`font-sans text-2xl font-bold tracking-tighter text-nord-3 transition-all duration-500 dark:text-nord-6`}
-          >
-            {metadata.header.logo}
-          </span>
-          <sup
-            className={`inline overflow-hidden font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13`}
-          >
-            {metadata.header.sup}
-          </sup>
-        </a>
+        <span
+          className={`font-sans text-2xl font-bold tracking-tighter text-nord-3 transition-all duration-500 dark:text-nord-6`}
+        >
+          {metadata.header.logo}
+        </span>
+        <sup
+          className={`inline overflow-hidden font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13`}
+        >
+          {metadata.header.sup}
+        </sup>
       </Link>
     </div>
   );
@@ -28,18 +26,16 @@ function LogoGradient({ hidden }: { hidden: Boolean }) {
   return (
     <div className="">
       <Link href="/">
-        <a>
-          <span
-            className={`bg-gradient-to-r from-nord-7 to-nord-10 bg-clip-text font-sans text-2xl font-bold tracking-tight text-transparent transition-all duration-500 dark:from-nord-10 dark:to-nord-7`}
-          >
-            {metadata.header.logo}
-          </span>
-          <sup
-            className={` inline bg-gradient-to-r font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13 `}
-          >
-            {metadata.header.sup}
-          </sup>
-        </a>
+        <span
+          className={`bg-gradient-to-r from-nord-7 to-nord-10 bg-clip-text font-sans text-2xl font-bold tracking-tight text-transparent transition-all duration-500 dark:from-nord-10 dark:to-nord-7`}
+        >
+          {metadata.header.logo}
+        </span>
+        <sup
+          className={` inline bg-gradient-to-r font-sans text-base font-normal text-nord-11 transition-all duration-500 dark:text-nord-13 `}
+        >
+          {metadata.header.sup}
+        </sup>
       </Link>
     </div>
   );

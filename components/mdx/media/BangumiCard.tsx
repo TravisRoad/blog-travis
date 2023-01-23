@@ -32,19 +32,17 @@ export default function BangumiCard({
   return (
     <div className="flex flex-row-reverse justify-between rounded-lg border px-4 py-2">
       <div>{bangumiSubject.name_cn}</div>
-      <Link href={url}>
-        <a className="h-[80px] w-[80px]">
-          <Image
-            src={image}
-            alt="image"
-            className="overflow-hidden"
-            placeholder="blur"
-            width={400}
-            height={640}
-            layout="intrinsic"
-            blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-          />
-        </a>
+      <Link href={url} className="h-[80px] w-[80px]">
+        <Image
+          src={image}
+          alt="image"
+          className="overflow-hidden"
+          placeholder="blur"
+          width={400}
+          height={640}
+          layout="intrinsic"
+          blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+        />
       </Link>
     </div>
   );
