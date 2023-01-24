@@ -4,7 +4,6 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { allAbouts, allMovies } from "contentlayer/generated";
 import MDXComponents from "components/mdx/MDXComponents";
 import { allBlogs } from ".contentlayer/generated";
-import type { Blog } from "contentlayer/generated";
 import type { ReadingTime } from "types/reading-time";
 import { parseISO, format } from "date-fns";
 import { statistic } from "types/statistic";
@@ -75,6 +74,7 @@ export async function getStaticProps() {
     else externalLinksMap.set(link, val + 1);
   };
   allBlogs.forEach((blog) => {
+    if (blog.draft) return; // 跳过 draft
     const readingTime: ReadingTime = blog.readingTime;
     totalWordsNum += readingTime.words;
 

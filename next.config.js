@@ -10,4 +10,5 @@ module.exports = withContentlayer({
   images: {
     domains: ["lain.bgm.tv"],
   },
+  ...nextConfig,
 });
