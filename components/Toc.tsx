@@ -52,14 +52,14 @@ export default function Toc(toc: any) {
 
   const tocdom = root.son.map((h2) => {
     const h2li = h2.son.map((h3) => (
-      <li key={h3.i} className="ml-5">
+      <li key={h3.i} className="ml-4">
         <a href={`#${h3.slug}`} className="hover:underline">
           {h3.content}
         </a>
       </li>
     ));
     return (
-      <li key={h2.i} className="ml-3">
+      <li key={h2.i} className="ml-2">
         <a href={`#${h2.slug}`} className="hover:underline ">
           {h2.content}
         </a>
@@ -69,13 +69,16 @@ export default function Toc(toc: any) {
   });
 
   return (
-    <div className="not-prose relative mx-2 mt-4 rounded-lg border-4 pb-2 dark:border-nord-3 dark:text-nord-6/80">
-      <div className="absolute top-0 left-0 flex items-center justify-center space-x-2 rounded-br-lg border-b-2 border-r-2 bg-nord-bgLight px-2 font-bold dark:border-nord-3 dark:bg-nord-bgDark">
-        <QueueListIcon className="h-5 w-5 stroke-nord-12" />
-        <span>目录</span>
-      </div>
-      <div className="pt-6 pb-4"></div>
-      <ul className="list-inside list-[square]">{tocdom}</ul>
+    <div className="not-prose relative mt-4 rounded-lg border-4 py-2 pl-4 pr-8 dark:border-nord-3 dark:text-nord-6/80 dark:shadow-none md:float-right md:ml-4 md:max-w-[50%] md:border-none md:bg-nord-6 md:shadow-md md:dark:bg-nord-1 ">
+      <span className="mt-2 mb-4 flex items-center gap-x-1 md:justify-center">
+        <QueueListIcon className="inline h-8 w-8 stroke-nord-10 dark:stroke-nord-8 " />
+        <h2 className="text-2xl font-bold text-nord-10 dark:text-nord-8 ">
+          目录
+        </h2>
+      </span>
+      <ul className=" list-inside list-disc text-nord-0 dark:text-nord-6">
+        {tocdom}
+      </ul>
     </div>
   );
 }

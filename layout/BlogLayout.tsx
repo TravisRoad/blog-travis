@@ -62,9 +62,9 @@ export default function BlogLayout({
                   <VVCount slug={post.slug} />
                 </div>
               </div>
-              {post.showTOC && <Toc toc={post.toc}></Toc>}
             </header>
             {/* <FloatingToc toc={post.toc} /> */}
+            {post.showTOC && <Toc toc={post.toc}></Toc>}
             {children}
             <div className="py-4"></div>
             <License />
@@ -74,10 +74,6 @@ export default function BlogLayout({
           </Prose>
         </article>
         <Comment slug={post.slug} />
-        {/* <div className="flex justify-between">
-          <div>{prev.slug}</div>
-          <div>{next.slug}</div>
-        </div> */}
       </div>
     </div>
   );
