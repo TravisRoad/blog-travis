@@ -67,7 +67,7 @@ export async function getStaticProps() {
   var totalWordsNum = 0;
   var externalLinksMap = new Map<string, number>();
   var externalLinksNum = 0;
-  var postsNum = allBlogs.length; /* + allMovies.length */
+  var postsNum = 0; /* + allMovies.length */
   const computeExternalLinksNum = (link: string) => {
     var val = externalLinksMap.get(link);
     if (val === undefined) externalLinksMap.set(link, 1);
@@ -75,6 +75,7 @@ export async function getStaticProps() {
   };
   allBlogs.forEach((blog) => {
     if (blog.draft) return; // 跳过 draft
+    postsNum += 1;
     const readingTime: ReadingTime = blog.readingTime;
     totalWordsNum += readingTime.words;
 
@@ -96,6 +97,7 @@ export async function getStaticProps() {
   var wordsPerYearMap = new Map<string, number>();
   var postsPerYearMap = new Map<string, number>();
   allBlogs.forEach((blog) => {
+    if (blog.draft) return;
     const year = format(parseISO(blog.publishDate), "yyyy");
     const wordNum = blog.readingTime.words;
 
