@@ -45,7 +45,9 @@ export function Quote({ children }: { children: any }) {
           <path d="M47.99,21.732V6.513H29.306v16.35h10.629c-0.098,10.181-9.584,12.104-9.584,12.104s-0.05,0.341,0,6.521   c15.815-3.034,17.499-14.931,17.636-18.625h0.004v-0.102C48.011,22.129,47.99,21.732,47.99,21.732z" />
         </g>
       </svg>
-      <div className="z-10 pt-5 pl-5 font-[550] italic">{children}</div>
+      <blockquote className=" not-prose z-10 !my-0 space-y-4 border-none pt-10 text-base font-[350] italic">
+        {children}
+      </blockquote>
     </div>
   );
 }
