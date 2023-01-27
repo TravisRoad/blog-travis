@@ -41,7 +41,10 @@ export default function BlogLayout({
       </Head>
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark md:pt-20">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
-        <article className="mx-auto mt-5 pb-5 sm:max-w-4xl ">
+        <article
+          className="mx-auto mt-5 pb-5 sm:max-w-4xl "
+          data-clarity-region="article"
+        >
           <Prose>
             <header>
               <h1 className="">{post.title}</h1>
