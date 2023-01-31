@@ -5,7 +5,6 @@ import type { Idea } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { parseISO, format, compareDesc } from "date-fns";
 import Image from "next/image";
-import Link from "next/link";
 
 const MyImage = ({ src, alt, width, height }: any) => (
   <>
