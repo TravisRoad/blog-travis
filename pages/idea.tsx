@@ -15,7 +15,7 @@ const MyImage = ({ src, alt, width, height }: any) => (
 function IdeaCard({ idea }: { idea: Idea }) {
   const Content = useMDXComponent(idea.body.code);
   return (
-    <div className="duration-400 prose mb-4 break-inside-avoid rounded-md border-2 bg-white px-5 pt-4 pb-2 shadow-sm transition-all ease-linear hover:-translate-y-1 hover:shadow-xl prose-p:mb-1 prose-p:mt-1 prose-a:text-nord-10 prose-img:my-1 dark:prose-invert dark:border-nord-2 dark:bg-nord-0 prose-a:dark:text-nord-9">
+    <div className="duration-400 prose mb-4 break-inside-avoid rounded-md border-2 bg-white px-5 pt-4 pb-2 shadow-sm transition-all ease-linear hover:shadow-2xl prose-p:mb-1 prose-p:mt-1 prose-a:text-nord-10 prose-img:my-1 dark:prose-invert dark:border-nord-2 dark:bg-nord-0 prose-a:dark:text-nord-9">
       <Content
         components={{
           img: MyImage,
