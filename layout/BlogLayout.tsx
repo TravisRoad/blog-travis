@@ -61,8 +61,12 @@ export default function BlogLayout({
                   <div className="mr-1 dark:text-gray-400">
                     {post.readingTime.text}
                   </div>
-                  <UVCount slug={post.slug} />
-                  <VVCount slug={post.slug} />
+                  {process.env.NODE_ENV !== "development" && (
+                    <>
+                      <UVCount slug={post.slug} />
+                      <VVCount slug={post.slug} />
+                    </>
+                  )}
                 </div>
               </div>
             </header>
@@ -71,9 +75,11 @@ export default function BlogLayout({
             {children}
             <div className="py-4"></div>
             <License />
-            <div className="absolute bottom-0 right-0 mr-5">
-              <LikeButton slug={post.slug} />
-            </div>
+            {process.env.NODE_ENV !== "development" && (
+              <div className="absolute bottom-0 right-0 mr-5">
+                <LikeButton slug={post.slug} />
+              </div>
+            )}
           </Prose>
         </article>
         <Comment slug={post.slug} />
