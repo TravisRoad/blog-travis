@@ -31,7 +31,7 @@
   "pasteImage.basePath": "${projectRoot}/public/image",
   "pasteImage.path": "${projectRoot}/public/image",
   "pasteImage.prefix": "/image/",
-  "pangu.auto_space_on_save": true,
-  "pangu.auto_space_on_save_ext": ["mdx"],
-  "files.autoSave": "onFocusChange"
+  "pangu.auto_format_on_save": true,
+  "files.autoSave": "onFocusChange",
+  "editor.wordBasedSuggestionsMode": "allDocuments"
 }

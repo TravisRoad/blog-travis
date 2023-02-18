@@ -59,7 +59,8 @@ export default function BlogLayout({
                 </div>
                 <div className="flex items-center">
                   <div className="mr-1 dark:text-gray-400">
-                    {post.readingTime.text}
+                    {post.readingTime.words} words,&nbsp;
+                    {Math.ceil(post.readingTime.minutes)} min read
                   </div>
                   {process.env.NODE_ENV !== "development" && (
                     <>
