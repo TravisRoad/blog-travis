@@ -49,18 +49,18 @@ export default function BlogLayout({
             <header>
               <h1 className="">{post.title}</h1>
               {/* <div>{JSON.stringify(post.toc)}</div> */}
-              <div className="-mt-5 flex items-center justify-between">
+              <div className="-mt-5 flex flex-col items-center justify-between sm:flex-row">
                 {/* author and the date */}
-                <div className="inline-flex items-center space-x-1 dark:text-gray-500">
+                <div className="inline-flex items-center space-x-1 text-gray-400 dark:text-gray-500">
                   <span className="text-base">Travis</span>
                   <span className="text-base">
                     {format(parseISO(post.publishDate), "yyyy/LL/dd")}
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <div className="mr-1 dark:text-gray-400">
-                    {post.readingTime.words} words,&nbsp;
-                    {Math.ceil(post.readingTime.minutes)} min read
+                  <div className="mr-1 text-base text-gray-400 dark:text-gray-500">
+                    {post.readingTime.words} 字， 阅读需要&thinsp;
+                    {Math.ceil(post.readingTime.minutes)}&thinsp;分钟
                   </div>
                   {process.env.NODE_ENV !== "development" && (
                     <>
