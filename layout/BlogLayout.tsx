@@ -62,12 +62,12 @@ export default function BlogLayout({
                     {post.readingTime.words} 字， 阅读需要&thinsp;
                     {Math.ceil(post.readingTime.minutes)}&thinsp;分钟
                   </div>
-                  {process.env.NODE_ENV !== "development" && (
+                  {/* {process.env.NODE_ENV !== "development" && (
                     <>
                       <UVCount slug={post.slug} />
                       <VVCount slug={post.slug} />
                     </>
-                  )}
+                  )} */}
                 </div>
               </div>
             </header>
