@@ -47,7 +47,9 @@ export default function BlogLayout({
         >
           <Prose>
             <header>
-              <h1 className="">{post.title}</h1>
+              <div className=" flex items-center justify-center sm:justify-start ">
+                <h1 className="">{post.title}</h1>
+              </div>
               {/* <div>{JSON.stringify(post.toc)}</div> */}
               <div className="-mt-5 flex flex-col items-center justify-between sm:flex-row">
                 {/* author and the date */}
