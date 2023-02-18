@@ -32,3 +32,13 @@ body:before {
 h2.sr-only {
   display: none;
 }
+
+li[id^="user-content-fn"] {
+  margin-top: 0px;
+  margin-bottom: 0px !important;
+}
+
+li[id^="user-content-fn"] > p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
