@@ -54,12 +54,12 @@ export function Quote({
         </g>
       </svg>
       <blockquote
-        className={`not-prose z-10 !my-0 space-y-4 border-none pt-10 font-[350] italic ${
+        className={`not-prose z-10 !my-0 space-y-4 border-none px-4 pt-10 font-[350] italic ${
           normal !== true && "text-base"
         }`}
       >
         {children}
-        {cite && <div>&nbsp; </div>}
+        {cite && <div>&nbsp;</div>}
       </blockquote>
       {cite && (
         <>
