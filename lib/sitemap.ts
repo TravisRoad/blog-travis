@@ -38,12 +38,28 @@ async function createSiteMap() {
           .join("")}
     </urlset>
     `;
+  const txt = `
+        ${pages
+          .map((page) => {
+            const path = page
+              .replace("pages", "")
+              .replace("data", "")
+              .replace(".tsx", "")
+              .replace("blog/", "posts/")
+              .replace(".mdx", "");
+            const route = path === "/index" ? "" : path;
+
+            return `${`${metadata.site}${route}`}`;
+          })
+          .join("\n")}
+  `;
   const formatted = prettier.format(sitemap, {
     parser: "html",
   });
 
   // eslint-disable-next-line no-sync
   writeFileSync("public/sitemap.xml", formatted);
+  writeFileSync("public/sitemap.txt", txt);
 }
 
 export default createSiteMap;
