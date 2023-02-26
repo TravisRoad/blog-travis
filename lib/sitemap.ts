@@ -1,7 +1,8 @@
-import { writeFileSync } from "fs";
+import { writeFileSync, statSync } from "fs";
 import { globby } from "globby";
 import prettier from "prettier";
 import metadata from "data/metaData";
+import { parseISO, format } from "date-fns";
 
 async function createSiteMap() {
   const pages = await globby([
@@ -29,9 +30,12 @@ async function createSiteMap() {
               .replace(".mdx", "");
             const route = path === "/index" ? "" : path;
 
+            const { mtime, ctime } = statSync(page);
+
             return `
               <url>
                   <loc>${`${metadata.site}${route}`}</loc>
+                  <lastmod>${format(mtime, "yyyy-LL-dd")}</lastmod>
               </url>
             `;
           })
