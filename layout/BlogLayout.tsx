@@ -37,9 +37,7 @@ export default function BlogLayout({
         path={post.url}
       />
       <Head>
-        <title>
-          {metadata.title} | {post.title}
-        </title>
+        <title>{`${post.title} | ${metadata.title}`}</title>
         <meta name="description" content={post.summary} />
       </Head>
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark md:pt-20">
