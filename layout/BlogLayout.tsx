@@ -9,6 +9,7 @@ import Comment from "components/Comment";
 import UVCount from "components/posts/UVCount";
 import VVCount from "components/posts/VVCount";
 import Toc from "components/Toc";
+import metadata from "data/metaData";
 
 export default function BlogLayout({
   children,
@@ -36,7 +37,9 @@ export default function BlogLayout({
         path={post.url}
       />
       <Head>
-        <title>{post.title}</title>
+        <title>
+          {metadata.title} | {post.title}
+        </title>
         <meta name="description" content={post.summary} />
       </Head>
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark md:pt-20">
