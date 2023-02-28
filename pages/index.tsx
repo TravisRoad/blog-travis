@@ -8,6 +8,8 @@ import { allBlogs, Blog } from "contentlayer/generated";
 import { compareDesc, parseISO } from "date-fns";
 import { PartialBlog } from "types/content";
 import { pick } from "contentlayer/client";
+import Head from "next/head";
+import metadata from "data/metaData";
 
 const Home = ({
   recentBlogs,
@@ -18,6 +20,9 @@ const Home = ({
 }) => {
   return (
     <div>
+      <Head>
+        <title>{metadata.title}</title>
+      </Head>
       <Main>
         <div className="flex flex-col lg:flex-row">
           <div className="lg:hidden">
