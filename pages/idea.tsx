@@ -5,6 +5,7 @@ import type { Idea } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { parseISO, format, compareDesc } from "date-fns";
 import Image from "next/image";
+import { Quote } from "components/mdx/Quote";
 
 const MyImage = ({ src, alt, width, height }: any) => (
   <>
@@ -19,6 +20,7 @@ function IdeaCard({ idea }: { idea: Idea }) {
       <Content
         components={{
           img: MyImage,
+          Quote,
         }}
       ></Content>
       <div className=" mt-6 border-t border-dashed pt-1 text-right text-sm text-nord-3/50 dark:border-nord-6/20 dark:text-nord-6/20">

@@ -76,7 +76,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="这里是 Travis 的博客，分享 ACG 和我的技术"
         ></meta>
-        <meta http-equiv="content-language" content="zh-cn"></meta>
+        <meta httpEquiv="content-language" content="zh-cn"></meta>
         {/* <meta
           name="theme-color"
           content="#f2f4f8"
