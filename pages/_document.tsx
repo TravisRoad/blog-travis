@@ -38,6 +38,12 @@ export default function Document() {
               `,
           }}
         />
+        <script
+          async
+          defer
+          data-website-id="55c27de1-3943-4efe-98bf-685762731e3b"
+          src="https://umami.lxythan2lxy.cn/index.js"
+         ></script>
       </body>
     </Html>
   );
