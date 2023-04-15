@@ -15,6 +15,7 @@ const MyImage = ({ src, alt, width, height, blurDataURL }: any) => (
       height={height}
       alt={alt}
       blurDataURL={blurDataURL}
+      placeholder="blur"
     />
   </>
 );
