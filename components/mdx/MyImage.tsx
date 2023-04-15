@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getPlaiceholder } from "plaiceholder";
 
 export default function MyImage({
   src,

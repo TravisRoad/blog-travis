@@ -9,6 +9,7 @@ import Border from "./Border";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Dialog, DialogRight } from "./Dialog";
 import Kbd from "./Kbd";
+import GptBlock from "./GptBlock";
 
 const MDXComponents = {
   img: Image,
@@ -24,6 +25,7 @@ const MDXComponents = {
   Dialog,
   DialogRight,
   Kbd,
+  GptBlock,
 };
 
 export default MDXComponents;

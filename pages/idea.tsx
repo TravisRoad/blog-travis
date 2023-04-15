@@ -10,7 +10,7 @@ import { Quote } from "components/mdx/Quote";
 const MyImage = ({ src, alt, width, height, blurDataURL }: any) => (
   <>
     <Image
-      src={`${src}`}
+      src={src}
       width={width}
       height={height}
       alt={alt}

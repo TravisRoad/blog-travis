@@ -24,7 +24,7 @@ function Logo({ hidden }: { hidden: Boolean }) {
   );
 }
 
-function LogoGradient({ hidden }: { hidden: Boolean }) {
+function LogoGradient() {
   return (
     <div className="">
       <Link href="/">
@@ -58,7 +58,7 @@ export default function Header({ isTop }: { isTop: Boolean }) {
         }`}
       >
         {/* <Logo hidden={!isTop} /> */}
-        <LogoGradient hidden={!isTop} />
+        <LogoGradient />
         <NavigationView isTop={isTop} />
       </div>
     </header>

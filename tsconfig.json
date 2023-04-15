@@ -5,6 +5,7 @@
       "@/lib/*": ["lib/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
+      "@/assets/*": ["assets/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "target": "es5",
@@ -28,7 +29,8 @@
     "**/*.tsx",
     ".contentlayer/generated",
     "pages/_document.js",
-    "lib/imageMetadata.js"
+    "lib/imageMetadata.js",
+    "assets/ChatGPT.svg"
   ],
   "exclude": ["node_modules"]
 }

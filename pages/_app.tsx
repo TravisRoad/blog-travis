@@ -12,24 +12,24 @@ import NextNProgress from "nextjs-progressbar";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //   };
 
-    // just trigger this so that the initial state
-    // is updated as soon as the component is mounted
-    // related: https://stackoverflow.com/a/63408216
-    handleScroll();
+  //   // just trigger this so that the initial state
+  //   // is updated as soon as the component is mounted
+  //   // related: https://stackoverflow.com/a/63408216
+  //   handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div>
@@ -93,7 +93,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           showSpinner: false,
         }}
       />
-      <Header isTop={scrollY < 50} />
+      <Header isTop={true} />
       <Component {...pageProps} />
       <Footer />
     </div>
