@@ -1,0 +1,140 @@
+---
+title: 在 nextjs 中添加图像的模糊 placeholder
+summary: 在服务端处理时根据 mdx 内容中的图片路径自动生成对应的模糊图片 base64
+publishDate: 2023-04-15 15:41:21
+createdDate: 2023-04-15 15:41:23
+star: false
+showTOC: false
+draft: false
+# series:
+cate:
+  - default
+tags:
+  - default
+---
+
+<div className="pt-4"></div>
+<Border>
+  本文内容来自 [How to: Blurred images on load in
+  Next.js][howto]，修改代码在我的[这个提交][git]中
+</Border>
+
+## 介绍
+
+Next.js 的 Image 组件支持 blurDataURL 参数，可以在图片完全加载之前先使用 base64 的图片来充当占位符。
+
+为了可以在 mdx 中用 markdown 语法控制图片位置，并且模糊图片的生成过程应该是在服务器 build 时生成的，而不是前端 Get 到图片之后再生成，我们不能把生成过程写在图片组件当中。
+而应该在 mdx 渲染到 tsx 对象时进行，为了控制这个过程，我使用了 rehype 插件[^rehype]。
+
+<GptBlock>
+Rehype 是一个用于 HTML 转换的工具链，可用于在构建网站和应用程序时转换 HTML 的结构和内容。它使用基于 JavaScript 的插件系统来转换 HTML 树的每个节点，能够将 HTML 转换为其他格式，如 Markdown 或 JSX。
+
+Rehype 接受一个 HTML 抽象语法树（AST）作为输入，使用插件将其转换为输出。插件可以添加、删除或修改 HTML 节点，对 HTML 进行编译、优化和检查，修改节点属性等等。
+
+</GptBlock>
+
+我的 mdx 文件，由 contentlayer 负责管理，先用 remark 从 mdx 转换为 html，再使用 rehype 进行一些后处理，转换为 tsx 进行渲染，这一系列流程都是在`next build`阶段完成的，恰好满足了需求。
+
+## 开始
+
+1. 首先安装下所需要用的包，`plaiceholder` 是一个可以利用图片生成对应模糊占位图的包，可以直接生成 base64 格式。
+
+```shell
+pnpm i plaiceholder unist-util-visit
+```
+
+2. 接下来只需要找到对应的 img 标签，读取对应的 src 文件，然后通过 pliceholder 生成对应的 base64 字符串，放入 img 的 blurDataURL 属性当中，接下来用我们自己的 Component 处理一下参数就可以了。
+
+```JavaScript:lib/imageMetadata.js {34}
+import { getPlaiceholder } from "plaiceholder";
+import { visit } from "unist-util-visit";
+
+// Just to check if the node is an image node
+function isImageNode(node) {
+  const img = node;
+  return (
+    img.type === "element" &&
+    img.tagName === "img" &&
+    img.properties &&
+    typeof img.properties.src === "string"
+  );
+}
+
+// Returns the props of given `src` to use for blurred images
+export async function returnProps(src) {
+  const { base64: blurDataURL, img } = await getPlaiceholder(src);
+
+  // If an error happened calculating the resolution, throw an error
+  if (!img) throw Error(`Invalid image with src "${src}"`);
+
+  return {
+    blurDataURL,
+  };
+}
+
+async function addProps(node) {
+  // return the new props we'll need for our image
+  const { blurDataURL } = await returnProps(node.properties.src);
+
+  node.properties.blurDataURL = blurDataURL;
+}
+
+const imageMetadata = () => {
+  return async function transformer(tree) {
+    // Create an array to hold all of the images from the markdown file
+    const images = [];
+
+    visit(tree, "element", (node) => {
+      // Visit every node in the tree, check if it's an image and push it in the images array
+      if (isImageNode(node)) {
+        images.push(node);
+      }
+    });
+
+    for (const image of images) {
+      // Loop through all of the images and add their props
+      await addProps(image);
+    }
+
+    return tree;
+  };
+};
+
+export default imageMetadata;
+```
+
+3. 处理一下 img 标签，把 img 转换成 Next.js 当中的 `Image`
+
+```typescript:components/mdx/MyImage.tsx {18-19}
+import Image from "next/image";
+
+export default function MyImage({
+  src,
+  width,
+  height,
+  alt,
+  blurDataURL,
+}: any) {
+  return (
+    <div className="not-prose mx-2 mt-4 mb-0 break-inside-avoid-page">
+      <div>
+        <Image
+          src={`${src}`}
+          width={width}
+          height={height}
+          alt={alt}
+          blurDataURL={blurDataURL}
+          placeholder="blur"
+        />
+      </div>
+    </div>
+  );
+}
+```
+
+OK，到这里就完成了。
+
+[howto]: https://ironeko.com/posts/how-to-blurred-images-on-load-in-next-js
+[git]: https://github.com/TravisRoad/blog-travis/commit/5d1800d3e25c93ed9b085d9e678a4b098b0ced4b
+
+[^rehype]: [Github rehypejs/rehype](https://github.com/rehypejs/rehype#plugins)
