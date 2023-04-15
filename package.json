@@ -23,6 +23,7 @@
     "next": "12.3.1",
     "next-contentlayer": "^0.2.8",
     "nextjs-progressbar": "^0.0.16",
+    "plaiceholder": "^2.5.0",
     "react": "18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
@@ -36,7 +37,8 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "remark-rehype": "^10.1.0",
-    "remark-unwrap-images": "^3.0.1"
+    "remark-unwrap-images": "^3.0.1",
+    "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",

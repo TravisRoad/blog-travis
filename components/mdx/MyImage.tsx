@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { getPlaiceholder } from "plaiceholder";
 
 export default function MyImage({
   src,
   alt,
   width,
   height,
+  blurDataURL,
   border = true,
   rounded = true,
 }: any) {
@@ -18,7 +20,14 @@ export default function MyImage({
           " border-[3px] border-gray-400 dark:border-2 dark:border-white/10"
         }`}
       >
-        <Image src={`${src}`} width={width} height={height} alt={alt} />
+        <Image
+          src={`${src}`}
+          width={width}
+          height={height}
+          alt={alt}
+          blurDataURL={blurDataURL}
+          placeholder="blur"
+        />
       </div>
       {alt && (
         <div className="not-prose mb-4 text-center font-sans text-base font-semibold opacity-40">

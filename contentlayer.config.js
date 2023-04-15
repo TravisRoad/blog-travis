@@ -5,6 +5,7 @@ import rehypeKatex from "rehype-katex";
 import rehypePrism from "rehype-prism-plus";
 import rehypeImgSize from "rehype-img-size";
 import rehypeSlug from "rehype-slug";
+import imageMetadata from "./lib/imageMetadata";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkUnwrapImages from "remark-unwrap-images";
@@ -206,6 +207,7 @@ export default makeSource({
     rehypePlugins: [
       [rehypeImgSize, { dir: "public" }],
       rehypeCodeTitles,
+      imageMetadata,
       [rehypePrism, { showLineNumbers: true }],
       rehypeKatex,
       rehypeSlug,
