@@ -132,6 +132,29 @@ export default function MyImage({
 }
 ```
 
+4. 在 contentlayer 设置中加入刚刚写好的 rehype 插件
+
+```typescript:contentlayer.config.js {12}
+import imageMetadata from "./lib/imageMetadata";
+
+...
+
+export default makeSource({
+  contentDirPath: "data",
+  documentTypes: [Blog, Movie, About, Idea],
+  mdx: {
+    rehypePlugins: [
+      [rehypeImgSize, { dir: "public" }],
+      rehypeCodeTitles,
+      imageMetadata,
+      [rehypePrism, { showLineNumbers: true }],
+      rehypeKatex,
+      rehypeSlug,
+    ],
+  },
+});
+```
+
 OK，到这里就完成了。
 
 [howto]: https://ironeko.com/posts/how-to-blurred-images-on-load-in-next-js
