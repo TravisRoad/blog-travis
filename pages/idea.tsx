@@ -7,9 +7,15 @@ import { parseISO, format, compareDesc } from "date-fns";
 import Image from "next/image";
 import { Quote } from "components/mdx/Quote";
 
-const MyImage = ({ src, alt, width, height }: any) => (
+const MyImage = ({ src, alt, width, height, blurDataURL }: any) => (
   <>
-    <Image src={`${src}`} width={width} height={height} alt={alt} />
+    <Image
+      src={`${src}`}
+      width={width}
+      height={height}
+      alt={alt}
+      blurDataURL={blurDataURL}
+    />
   </>
 );
 
