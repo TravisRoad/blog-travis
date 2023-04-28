@@ -1,11 +1,11 @@
 ---
 title: "HOWTO: 提交一个软件包到 AUR"
-summary: 提交 AUR 的一些细节
-publishDate: 2023-04-28 10:11:57
+summary: 第一次提交 AUR，心里有些小激动
+publishDate: 2023-04-28 21:48:22
 createdDate: 2023-04-28 10:11:59
 star: false
 showTOC: false
-draft: true
+draft: false
 # series:
 cate:
   - default
@@ -13,6 +13,116 @@ tags:
   - default
 ---
 
-https://aur.archlinux.org/packages/gptcommit-bin
-https://wiki.archlinux.org/title/Arch_package_guidelines
-https://wiki.archlinux.org/title/AUR_submission_guidelines
+最近发现了 [gptcommit][gptcommit]，一个用 Rust 写的使用 gpt 生成提交信息的小工具。原理大概是将 `git diff` 的输出发给 gpt，让它生成可以当提交信息的文本，很适合懒人。
+
+<Dialog reverse={true}>
+  <del className=" text-nord-3 line-through decoration-2 dark:text-nord-4/80">
+    <>人类真的是懒到起飞了</>
+  </del>
+  <> 😂</>
+</Dialog>
+
+在 AUR(Arch User Repository) 上有 [gptcommit-git](https://aur.archlinux.org/packages/gptcommit-git) 包，但是版本停留在 0.1.16，感觉可能是 `PKGBUILD` 写的有点问题导致常常得手动更新版本。
+因为 AUR 中也没有 `gptcommit-bin`，同时也为了后续方便一键 `yay -Syu` 更新版本，我准备自己打个包上传，顺便也给社区做点微不足道的贡献 ☺。
+
+[gptcommit]: https://github.com/zurawiki/gptcommit
+[gptcommit-bin]: https://aur.archlinux.org/packages/gptcommit-bin
+
+首先查找最权威的 Arch Wiki 看看该如何合法的写一个包并上传，查阅一下 Arch 打包准则[^1]和 Arch 提交准则[^2]，问问 ChatGPT 参考参考意见。
+
+![gptcommit - Release](/image/2023-04-28-20-44-42.png)
+
+gptcommit 的作者在 [release](https://github.com/zurawiki/gptcommit/releases) 中提供了各个平台编译好的二进制文件，我们只需要下载下来解压放在 `/usr/bin` 目录下就能使用了，感觉也没什么难的。
+以下就是写出来的 `PKGBUILD` 文件，写好之后，只要使用 `makepkg -Acs` 命令，就能在当前目录生成 tarball，再使用 `sudo pacman -U <tarball>pkg.tar.zst` 就完成安装了。
+
+```shell:PKGBUILD
+# Maintainer: travismtg <travismtg@outlook.com>
+
+pkgname=gptcommit-bin
+pkgver=0.5.8
+pkgrel=1
+pkgdesc="A git prepare-commit-msg hook for authoring commit messages with GPT-3."
+arch=('any')
+url='https://github.com/zurawiki/gptcommit'
+license=('MIT')
+depends=()
+conflicts=('gptcommit-git' 'gptcommit')
+source=('https://github.com/zurawiki/gptcommit/releases/download/v0.5.8/gptcommit-x86_64-unknown-linux-gnu.tar.gz')
+sha256sums=('d0efe345dd4b598a8c06bd9ba7036ae4e148141deb606c64e612e8959273cedc')
+
+package() {
+cd "$srcdir"
+    mkdir -p "$pkgdir/usr/bin/"
+tar zxvf gptcommit-x86_64-unknown-linux-gnu.tar.gz -C "$pkgdir/usr/bin/"
+}
+```
+
+验证可以正常安装之后，就可以准备上传的事情了。
+
+1. 首先注册一个 AUR 账号，注册完之后设置一下 ssh 的公钥来证明我是我自己。
+2. 然后就可以新建仓库了，直接使用 `git clone ssh://aur@aur.archlinux.org/gptcommit-bin.git` 创建远端仓库<small>（没错，直接 clone 就能创建仓库）</small>
+3. 然后把我刚刚写好的 `PKGBUILD` 文件放进去，使用 `makepkg --printsrcinfo > .SRCINFO` 生成包基本信息文件
+4. `git add PKGBUILD .SRCINFO && git commit -m "v0.5.8"`
+5. `git push --ser-upstream origin master` 推到远端
+
+<Dialog reverse={true}>
+  到这里已经可以看到我发布的包
+  [gptcommit-bin](https://aur.archlinux.org/packages/gptcommit-bin)
+  在网页上出现了。
+</Dialog>
+<Dialog reverse={true}>
+  但是既然做了，干脆变得再自动化一些，每次有了新版本让它自己更新吧。每次有了新版本都手动修改版本号，下载地址以及
+  sha256 信息感觉也挺累的。
+</Dialog>
+
+```shell:update.sh {9-10}
+#!/usr/bin/env bash
+# Created by travismtg
+# Thu Apr 27 11:08:31 PM CST 2023
+# usage: ./update.sh /path/to/pkg
+
+DES=$1 # directory that contains the PKGBUILD file
+cd $DES
+
+VERSION_URL=`curl -s https://api.github.com/repos/zurawiki/gptcommit/releases/latest |\
+    jq -r '.tag_name as $version | .assets[] | select(.name | contains("linux-gnu")) | $version + " " + .browser_download_url'`
+
+VERSION=$(echo $VERSION_URL | cut -d' ' -f1 | sed 's/v//')
+CURRENT_VERSION=$(grep 'pkgver=' PKGBUILD | sed 's/pkgver=//')
+echo latest version is $VERSION
+echo current version is $CURRENT_VERSION
+
+if [[ $VERSION == $CURRENT_VERSION ]]; then
+    echo exit
+    exit
+fi
+
+URL=`echo $VERSION_URL | cut -d' ' -f2`
+POSTURL=$(echo $URL | sed 's/\//\\\//g')
+
+TARGET=$(echo $URL | grep -o 'gptcommit-x86.*tar.gz')
+wget $URL -O $TARGET
+SUM=$(sha256sum $TARGET | cut -f1 -d' ')
+
+sed -i 's/^source=(.*)/source=('"'"$POSTURL"'"')/' PKGBUILD
+sed -i 's/^sha256sums=(.*)/sha256sums=('"'"$SUM"'"')/' PKGBUILD
+sed -i 's/^pkgver=.*/pkgver='$VERSION'/' PKGBUILD
+
+makepkg --printsrcinfo > .SRCINFO
+
+# commit and push
+git add PKGBUILD .SRCINFO
+git commit -m "$VERSION"
+git push
+
+```
+
+每次我只需要 `./update.sh /path/to/pkg` 就能更新包文件了。把这些文件放在服务器上，设置一下 `crontab` 定时每天早上 10 点检查版本更新，这样就达到了自动更新 gptcommit 包的目的。
+
+本文到这里就结束了，过程中我最大的感受是 ChatGPT 真的是太好用了，我只需要问它该怎么获取 github 某一仓库的最新 release，并筛选出 linux 的下载链接，它可以很快的替我找到 github api 并且替我写好`jq` 的规则。
+当然，这些东西自己查阅文档，或者去 Google 一下肯定能搞定，但是 ChatGPT 替我压缩了知识获取的时间，能够个性化的推理出我想要的东西，这个永远不会厌烦的老师实在是太棒了。
+
+---
+
+[^1]: https://wiki.archlinux.org/title/AUR_submission_guidelines
+[^2]: https://wiki.archlinux.org/title/Arch_package_guidelines
