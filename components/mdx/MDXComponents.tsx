@@ -10,6 +10,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Dialog, DialogRight } from "./Dialog";
 import Kbd from "./Kbd";
 import GptBlock from "./GptBlock";
+import IframeWithLoading from "./IframeWithLoading";
 
 const MDXComponents = {
   img: Image,
@@ -26,6 +27,7 @@ const MDXComponents = {
   DialogRight,
   Kbd,
   GptBlock,
+  IframeWithLoading,
 };
 
 export default MDXComponents;
