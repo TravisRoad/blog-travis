@@ -63,7 +63,7 @@ tar zxvf gptcommit-x86_64-unknown-linux-gnu.tar.gz -C "$pkgdir/usr/bin/"
 2. 然后就可以新建仓库了，直接使用 `git clone ssh://aur@aur.archlinux.org/gptcommit-bin.git` 创建远端仓库<small>（没错，直接 clone 就能创建仓库）</small>
 3. 然后把我刚刚写好的 `PKGBUILD` 文件放进去，使用 `makepkg --printsrcinfo > .SRCINFO` 生成包基本信息文件
 4. `git add PKGBUILD .SRCINFO && git commit -m "v0.5.8"`
-5. `git push --ser-upstream origin master` 推到远端
+5. `git push --set-upstream origin master` 推到远端
 
 <Dialog reverse={true}>
   到这里已经可以看到我发布的包
