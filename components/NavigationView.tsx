@@ -64,6 +64,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
           <DesktopNavItem url="/idea" name="想法" />
           <DesktopNavItem url="/about" name="关于" />
         </div>
+        {/* mobile menu */}
         <div className="flex items-center justify-center space-x-4 sm:hidden">
           <Menu as="div">
             <Menu.Button className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2">
