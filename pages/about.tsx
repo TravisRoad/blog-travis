@@ -22,6 +22,7 @@ const About = (props: statistic) => {
         <figure className="mx-auto mt-4 hidden max-w-3xl pl-4 dark:invert lg:block lg:h-[8rem]">
           <embed src="https://wakatime.com/share/@TravisRoad/fa4c2a51-c527-4076-959e-9501d918fdcd.svg"></embed>
         </figure>
+        {/* hr 简介 */}
         <div className="relative mt-8 mb-6 inline-flex w-full items-center justify-center">
           {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
           <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
@@ -34,6 +35,20 @@ const About = (props: statistic) => {
             <Content components={MDXComponents}></Content>
           </div>
         </div>
+        {/* hr 简介 */}
+        <div className="relative mt-8 mb-6 inline-flex w-full items-center justify-center">
+          {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
+          <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
+          <span className="absolute left-1/2 -translate-x-1/2 bg-nord-bgLight px-3 text-2xl font-medium text-gray-900 dark:bg-nord-bgDark dark:text-white">
+            大事记
+          </span>
+        </div>
+        <div>
+          <ul className="prose prose-stone mx-auto list-disc pl-4 sm:max-w-3xl">
+            <li>2023年9月28日 - 转移到新博客框架了</li>
+          </ul>
+        </div>
+        {/* hr 数据 */}
         <div className="relative mt-12 mb-4 inline-flex w-full items-center justify-center">
           {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
           <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
