@@ -81,7 +81,7 @@ const About = (props: statistic) => {
             <UserGroupIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
           </div>
         </div>
-        <div className="mx-auto grid grid-cols-2 gap-x-2 px-2 sm:max-w-3xl">
+        <div className="mx-auto grid gap-x-2 px-2 sm:max-w-3xl sm:grid-cols-2">
           {friends.map((friend: Friend) => (
             <FriendCard
               key={friend.name}
