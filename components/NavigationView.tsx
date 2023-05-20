@@ -6,7 +6,15 @@ import { ThemeButton } from "./ThemeButton";
 import { Menu } from "@headlessui/react";
 import { Bars3Icon as MenuIcon } from "@heroicons/react/24/outline";
 
-const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
+function DesktopNavItem({
+  url,
+  name,
+  pseudoContent = undefined,
+}: {
+  url: string;
+  name: string;
+  pseudoContent?: string;
+}) {
   const router = useRouter();
   // const [isActive, setActive] = useState("false");
   // const isActive = router.asPath === url;
@@ -35,7 +43,7 @@ const DesktopNavItem: FC<{ url: string; name: string }> = ({ url, name }) => {
       </a>
     </Link>
   );
-};
+}
 
 const MobileNavItem: FC<{ url: string; name: string }> = ({ url, name }) => (
   <div className="overflow-hidden px-2 py-1 first:rounded-t-lg last:rounded-b-lg hover:bg-nord-4/30 dark:hover:bg-nord-1">
@@ -59,7 +67,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
             isTop ? "text-lg" : "text-sm"
           }`}
         >
-          <DesktopNavItem url="/" name="主页" />
+          <DesktopNavItem url="/" name="主页" pseudoContent="HOME" />
           <DesktopNavItem url="/posts" name="文章" />
           <DesktopNavItem url="/idea/1" name="想法" />
           <DesktopNavItem url="/about" name="关于" />
