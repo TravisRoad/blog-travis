@@ -48,7 +48,7 @@ const About = (props: statistic) => {
         </div>
         <div className="prose prose-stone mx-auto text-xl dark:prose-invert sm:max-w-3xl">
           <ul>
-            <li>2023年9月28日 - 转移到新博客框架了</li>
+            <li>2022年9月28日 - 转移到新博客框架了</li>
           </ul>
         </div>
         {/* hr 数据 */}
