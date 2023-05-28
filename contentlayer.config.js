@@ -175,6 +175,26 @@ export const About = defineDocumentType(() => ({
   },
 }));
 
+export const ProjPage = defineDocumentType(() => ({
+  name: "ProjPage",
+  filePathPattern: `proj.mdx`,
+  contentType: "mdx",
+  fields: {},
+}));
+
+export const Proj = defineDocumentType(() => ({
+  name: "Proj",
+  filePathPattern: `proj/**/*.mdx`,
+  contentType: "mdx",
+  fields: {},
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx?$/, ""),
+    },
+  },
+}));
+
 export const Idea = defineDocumentType(() => ({
   name: "Idea",
   filePathPattern: `idea/**/*.md[x]*`,
@@ -190,7 +210,7 @@ export const Idea = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Blog, Movie, About, Idea],
+  documentTypes: [Blog, Movie, About, Idea, ProjPage, Proj],
   mdx: {
     remarkPlugins: [
       remarkGfm,

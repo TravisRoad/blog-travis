@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 
 interface InputProp {
   src: string;
-  className: string;
-  iframeClassName: string;
+  className?: string;
+  iframeClassName?: string;
 }
 
 export default function IframeWithLoading({
   src,
-  className,
-  iframeClassName,
+  className = "",
+  iframeClassName = "",
 }: InputProp) {
   const [loading, setLoading] = useState(true);
 
@@ -18,11 +18,7 @@ export default function IframeWithLoading({
   }
 
   return (
-    <div
-      className={`relative flex justify-center ${className} my-4 ${
-        loading ? "border" : ""
-      } rounded-lg dark:border-0`}
-    >
+    <div className={`relative flex justify-center ${className} `}>
       {loading && (
         <div className="flex items-center justify-center">
           <div className="mr-3 h-12 w-12 animate-spin rounded-full border-t-4 border-b-4 border-gray-400"></div>
@@ -31,7 +27,7 @@ export default function IframeWithLoading({
       )}
       <iframe
         src={src}
-        className={`absolute ${iframeClassName} rounded-lg border-4 border-nord-0 shadow-lg shadow-nord-3/50 outline-none dark:border-nord-2 dark:shadow-none`}
+        className={`absolute ${iframeClassName} `}
         onLoad={handleIframeLoad}
       />
     </div>
