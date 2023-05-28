@@ -74,24 +74,29 @@ const About = (props: statistic) => {
         </div>
         <States statistic={props} />
         {/* hr 友链 */}
-        <div className="relative mt-8 mb-6 inline-flex w-full items-center justify-center">
-          {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
-          <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
-          <div className="absolute left-1/2 -translate-x-1/2 bg-nord-bgLight px-2 dark:bg-nord-bgDark ">
-            <UserGroupIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
+        <>
+          <div className="relative mt-8 mb-6 inline-flex w-full items-center justify-center">
+            {/* <hr className="my-4 h-1 max-w-3xl border-0 bg-nord-0 " /> */}
+            <hr className=" mt-2 mb-0 h-1 w-[32rem] rounded border-0 bg-nord-3/50 " />
+            <div className="absolute left-1/2 -translate-x-1/2 bg-nord-bgLight px-2 dark:bg-nord-bgDark ">
+              <UserGroupIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
+            </div>
           </div>
-        </div>
-        <div className="mx-auto grid gap-x-2 px-2 sm:max-w-3xl sm:grid-cols-2">
-          {friends.map((friend: Friend) => (
-            <FriendCard
-              key={friend.name}
-              url={friend.url}
-              name={friend.name}
-              description={friend.description}
-              iconUrl={friend.iconUrl}
-            />
-          ))}
-        </div>
+          <div
+            className="mx-auto grid gap-x-2 px-2 sm:max-w-3xl sm:grid-cols-2"
+            id="friendLink"
+          >
+            {friends.map((friend: Friend) => (
+              <FriendCard
+                key={friend.name}
+                url={friend.url}
+                name={friend.name}
+                description={friend.description}
+                iconUrl={friend.iconUrl}
+              />
+            ))}
+          </div>
+        </>
       </Main>
     </div>
   );
