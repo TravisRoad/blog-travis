@@ -11,21 +11,23 @@ import { Dialog, DialogRight } from "./Dialog";
 import Kbd from "./Kbd";
 import GptBlock from "./GptBlock";
 import IframeWithLoading from "./IframeWithLoading";
+import MyLink from "./MyLink";
 
 const MDXComponents = {
   img: Image,
+  a: MyLink,
   PhotoProvider,
   PhotoView,
   WelcomeCard,
   BangumiCard,
-  Ezbg,
+  Ezbg, // easy bangumi?
   QuoteComponent,
   Quote,
   DeletedData,
   Border,
   Dialog,
   DialogRight,
-  Kbd,
+  Kbd, // button key
   GptBlock,
   IframeWithLoading,
 };
