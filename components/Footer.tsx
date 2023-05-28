@@ -98,9 +98,10 @@ export default function Footer() {
           <div className="w-full max-w-2xl">
             <div className="mt-2 mb-4 flex flex-col items-center space-y-4">
               <MyLink url="/" name="Home" />
-              <MyLink url="/about" name="About" />
               <MyLink url="/idea" name="Ideas" />
               <MyLink url="/posts" name="Blogs" />
+              <MyLink url="/proj" name="Projects" />
+              <MyLink url="/about" name="About" />
             </div>
           </div>
         </div>
