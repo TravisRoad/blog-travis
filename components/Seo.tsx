@@ -7,7 +7,7 @@ export interface SeoProps {
   title: string;
   path: string;
   description: string;
-  image: string | undefined;
+  image?: string;
 }
 
 // https://blog.lxythan2lxy.cn

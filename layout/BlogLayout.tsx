@@ -86,7 +86,7 @@ export default function BlogLayout({
             )}
           </Prose>
         </article>
-        <Comment slug={post.slug} />
+        <Comment slug={`posts/${post.slug}`} />
       </div>
     </div>
   );

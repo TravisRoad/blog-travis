@@ -3,34 +3,30 @@ import MDXComponents from "components/mdx/MDXComponents";
 import { allProjs } from "contentlayer/generated";
 import type { Proj } from "contentlayer/generated";
 import Main from "components/Main";
-import Giscus from "@giscus/react";
+import Comment from "components/Comment";
+import Seo from "components/Seo";
 import Head from "next/head";
+import metadata from "data/metaData";
 
 export default function Proj({ proj }: { proj: Proj }) {
   const Content = useMDXComponent(proj.body.code);
 
   return (
     <Main>
-      <Head>
-        <title> {proj.slug} </title>
-      </Head>
+      <Seo
+        title={proj.title}
+        description={proj.summary}
+        path={`/proj/${proj.slug}`}
+      ></Seo>
+
       <div className="prose prose-stone mx-auto flex w-full flex-col prose-h2:text-lg prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl ">
+        <div className="flex items-center justify-center ">
+          <h1 className="">{proj.title}</h1>
+        </div>
         <Content components={MDXComponents} />
       </div>
-      <div className="mt-4" id="giscus">
-        <Giscus
-          repo="TravisRoad/blog-discuss"
-          repoId="R_kgDOIkniCQ"
-          category="Announcements"
-          categoryId="DIC_kwDOIkniCc4CS8y1"
-          mapping="specific"
-          term={`posts/${proj.slug}`}
-          strict="1" // strict title matching
-          lang="zh-CN"
-          loading="lazy"
-          reactionsEnabled="1"
-          emitMetadata="0"
-        />
+      <div className="mt-8" id="giscus">
+        <Comment slug={`posts/${proj.slug}`} reaction="1" />
       </div>
     </Main>
   );

@@ -186,7 +186,24 @@ export const Proj = defineDocumentType(() => ({
   name: "Proj",
   filePathPattern: `proj/**/*.mdx`,
   contentType: "mdx",
-  fields: {},
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    publishDate: {
+      type: "date",
+      required: true,
+    },
+    createdDate: {
+      type: "date",
+      required: true,
+    },
+    summary: {
+      type: "string",
+      required: true,
+    },
+  },
   computedFields: {
     slug: {
       type: "string",
