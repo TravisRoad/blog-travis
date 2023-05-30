@@ -3,6 +3,7 @@ import Main from "components/Main";
 import Nav from "components/Nav";
 import { Idea, allIdeas } from "contentlayer/generated";
 import { compareDesc, parseISO } from "date-fns";
+import Head from "next/head";
 
 const size = 4;
 
@@ -58,6 +59,9 @@ export default function ideaPage({
 }) {
   return (
     <Main>
+      <Head>
+        <title> 我的想法 </title>
+      </Head>
       <div className="mx-auto">
         <h1 className="mt-2 mb-4 text-lg font-bold"> 💡 我的想法 </h1>
         <Nav

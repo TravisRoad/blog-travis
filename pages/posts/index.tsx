@@ -5,6 +5,7 @@ import { pick } from "contentlayer/client";
 import { compareDesc, format, parseISO } from "date-fns";
 import Main from "components/Main";
 import PostCard from "components/PostCard";
+import Head from "next/head";
 
 function PostTimeLine({ posts }: { posts: Array<any> }) {
   function yearDict(posts: Array<any>): { [key: string]: Array<any> } {
@@ -57,6 +58,9 @@ function PostTimeLine({ posts }: { posts: Array<any> }) {
 export default function PostsView({ posts }: { posts: Array<any> }) {
   return (
     <Main>
+      <Head>
+        <title> 文章 </title>
+      </Head>
       <PostTimeLine posts={posts} />
     </Main>
   );

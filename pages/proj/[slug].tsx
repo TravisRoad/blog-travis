@@ -4,12 +4,16 @@ import { allProjs } from "contentlayer/generated";
 import type { Proj } from "contentlayer/generated";
 import Main from "components/Main";
 import Giscus from "@giscus/react";
+import Head from "next/head";
 
 export default function Proj({ proj }: { proj: Proj }) {
   const Content = useMDXComponent(proj.body.code);
 
   return (
     <Main>
+      <Head>
+        <title> {proj.slug} </title>
+      </Head>
       <div className="prose prose-stone mx-auto flex w-full flex-col prose-h2:text-lg prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl ">
         <Content components={MDXComponents} />
       </div>
