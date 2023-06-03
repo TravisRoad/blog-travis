@@ -8,7 +8,6 @@ export default function Document() {
       <body className="main-body bg-light dark:bg-dark bg-nord-bgLight dark:bg-nord-bgDark">
         <Main />
         <NextScript />
-        <Script src="/lib/darkmode.js" strategy="beforeInteractive" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-1Y104QW25K"

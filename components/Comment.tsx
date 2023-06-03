@@ -1,6 +1,7 @@
 import Giscus, { BooleanString } from "@giscus/react";
 import { getTheme } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import useDarkMode from "@/lib/hooks/useDarkMode";
 
 const Comment = ({
   slug,
@@ -9,13 +10,7 @@ const Comment = ({
   slug: string;
   reaction?: BooleanString;
 }) => {
-  const [theme, setTheme] = useState("dark");
-
-  useEffect(() => {
-    const t = getTheme();
-
-    setTheme(t);
-  }, []);
+  const { theme } = useDarkMode();
 
   return (
     <div className="mx-auto max-w-5xl pb-5">
