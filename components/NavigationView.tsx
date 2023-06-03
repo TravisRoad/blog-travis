@@ -48,11 +48,13 @@ function DesktopNavItem({
 const MobileNavItem: FC<{ url: string; name: string }> = ({ url, name }) => (
   <div className="overflow-hidden px-2 py-1 first:rounded-t-lg last:rounded-b-lg hover:bg-nord-4/30 dark:hover:bg-nord-1">
     <Menu.Item>
-      <Link href={url}>
-        <a className="flex items-center justify-center">
-          <div>{name}</div>
-        </a>
-      </Link>
+      {({ close }) => (
+        <Link href={url}>
+          <a className="flex items-center justify-center" onClick={close}>
+            <div>{name}</div>
+          </a>
+        </Link>
+      )}
     </Menu.Item>
   </div>
 );
@@ -67,7 +69,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
             isTop ? "text-lg" : "text-sm"
           }`}
         >
-          <DesktopNavItem url="/" name="主页" pseudoContent="HOME" />
+          <DesktopNavItem url="/" name="主页" />
           <DesktopNavItem url="/posts" name="文章" />
           <DesktopNavItem url="/idea/1" name="想法" />
           <DesktopNavItem url="/proj" name="项目" />

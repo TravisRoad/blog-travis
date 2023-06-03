@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@giscus/react": "^2.2.0",
-    "@headlessui/react": "^1.7.2",
+    "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.12",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@wcj/markdown-to-html": "^2.2.1",
