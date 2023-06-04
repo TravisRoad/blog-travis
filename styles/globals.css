@@ -85,3 +85,11 @@ li[id^="user-content-fn"] > p {
   src: local("Noto Serif SC"),
     url("/fonts/noto-serif-sc-v22-chinese-simplified-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+li#series-list::before {
+  content: "⚬";
+  position: absolute;
+  left: -1rem;
+  height: 1rem;
+  width: 1rem;
+}

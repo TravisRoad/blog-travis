@@ -93,6 +93,18 @@ export default function BlogLayout({
                 <LikeButton slug={post.slug} />
               </div>
             )}
+            {post.series && post.readingTime.minutes > 8.0 && (
+              <SeriesBlock
+                blogs={allBlogs
+                  .filter((blog) => {
+                    if (process.env.NODE_ENV === "development")
+                      return true; // dev mode show draft
+                    else return blog.draft !== true;
+                  })
+                  .filter((blog) => blog.series && blog.series === post.series)}
+                extraKeyString="idk"
+              />
+            )}
           </Prose>
         </article>
         <Comment slug={`posts/${post.slug}`} />
