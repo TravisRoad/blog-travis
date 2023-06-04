@@ -1,15 +1,15 @@
 import LikeButton from "components/posts/LikeButton";
 import Prose from "components/Prose";
 import Seo from "components/Seo";
-import { Blog } from "contentlayer/generated";
+import type { Blog } from "contentlayer/generated";
+import { allBlogs } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import Head from "next/head";
 import React, { PropsWithChildren } from "react";
 import Comment from "components/Comment";
-import UVCount from "components/posts/UVCount";
-import VVCount from "components/posts/VVCount";
 import Toc from "components/Toc";
 import metadata from "data/metaData";
+import SeriesBlock from "components/posts/SeriesBlock";
 
 export default function BlogLayout({
   children,
@@ -51,7 +51,6 @@ export default function BlogLayout({
               <div className=" flex items-center justify-center sm:justify-start ">
                 <h1 className="">{post.title}</h1>
               </div>
-              {/* <div>{JSON.stringify(post.toc)}</div> */}
               <div className="-mt-5 flex flex-col items-center justify-between sm:flex-row">
                 {/* author and the date */}
                 <div className="inline-flex items-center space-x-1 text-gray-400 dark:text-gray-500">
@@ -74,7 +73,17 @@ export default function BlogLayout({
                 </div>
               </div>
             </header>
-            {/* <FloatingToc toc={post.toc} /> */}
+            {post.series && (
+              <SeriesBlock
+                blogs={allBlogs
+                  .filter((blog) => {
+                    if (process.env.NODE_ENV === "development")
+                      return true; // dev mode show draft
+                    else return blog.draft !== true;
+                  })
+                  .filter((blog) => blog.series && blog.series === post.series)}
+              />
+            )}
             {post.showTOC && <Toc toc={post.toc}></Toc>}
             {children}
             <div className="py-4"></div>

@@ -46,6 +46,10 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
+    priority: {
+      type: "number",
+      required: false,
+    },
     draft: {
       type: "boolean",
       required: false,
