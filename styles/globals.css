@@ -25,6 +25,10 @@ body:before {
   position: fixed;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont;
+}
+
 #giscus::part(iframe) {
   color-scheme: light;
 }
@@ -49,4 +53,35 @@ li[id^="user-content-fn"] > p {
 
 .prose code {
   overflow-wrap: break-word;
+}
+
+/* noto-serif-sc-regular - chinese-simplified */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Serif SC"),
+    url("/fonts/noto-serif-sc-v22-chinese-simplified-regular.woff2")
+      format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* noto-serif-sc-600 - chinese-simplified */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Noto Serif SC"),
+    url("/fonts/noto-serif-sc-v22-chinese-simplified-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* noto-serif-sc-700 - chinese-simplified */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Noto Serif SC"),
+    url("/fonts/noto-serif-sc-v22-chinese-simplified-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

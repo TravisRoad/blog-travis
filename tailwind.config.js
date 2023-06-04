@@ -37,6 +37,15 @@ module.exports = {
           15: "#b48ead",
         },
       },
+      fontFamily: {
+        serif: [
+          "Noto Serif SC",
+          "serif",
+          '"Times New Roman"',
+          "Times",
+          '"Apple Color Emoji" !important',
+        ],
+      },
     },
   },
   plugins: [
