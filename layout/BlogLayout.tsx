@@ -40,7 +40,7 @@ export default function BlogLayout({
         <title>{`${post.title} | ${metadata.title}`}</title>
         <meta name="description" content={post.summary} />
       </Head>
-      <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark md:pt-20">
+      <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark ">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article
           className="mx-auto mt-5 pb-5 sm:max-w-4xl "
@@ -102,7 +102,6 @@ export default function BlogLayout({
                     else return blog.draft !== true;
                   })
                   .filter((blog) => blog.series && blog.series === post.series)}
-                extraKeyString="idk"
               />
             )}
           </Prose>
