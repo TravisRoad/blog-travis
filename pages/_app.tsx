@@ -5,11 +5,9 @@ import "react-photo-view/dist/react-photo-view.css";
 import type { AppProps } from "next/app";
 import Header from "components/Header";
 import Footer from "components/Footer";
-import { useEffect, useState } from "react";
 import Head from "next/head";
 import metadata from "data/metaData";
 import NextNProgress from "nextjs-progressbar";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -58,16 +56,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="这里是 Travis 的博客，分享 ACG 和我的技术"
         ></meta>
         <meta httpEquiv="content-language" content="zh-cn"></meta>
-        {/* <meta
-          name="theme-color"
-          content="#f2f4f8"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#242933"
-          media="(prefers-color-scheme: dark)"
-        /> */}
       </Head>
       <NextNProgress
         options={{
