@@ -6,10 +6,10 @@ import { parseISO, format } from "date-fns";
 export default function SeriesBlock({ blogs }: { blogs: Blog[] }) {
   if (blogs.length === 0) return <></>;
   const BlogItem = ({ blog }: { blog: Blog }) => (
-    <li>
+    <li className="list-item">
       <div className="flex flex-row items-baseline justify-between sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%] ">
         <Link href={`/posts/${blog.slug}`}>
-          <a className="z-30 overflow-x-hidden text-ellipsis whitespace-nowrap font-serif font-semibold decoration-nord-9/80 underline-offset-2 hover:underline dark:decoration-nord-10/50 dark:underline-offset-[3px]">
+          <a className="z-30 overflow-x-hidden text-ellipsis whitespace-nowrap font-bold decoration-nord-9/80 underline-offset-2 hover:underline dark:decoration-nord-10/50 dark:underline-offset-[3px]">
             {blog.title}
           </a>
         </Link>
@@ -30,11 +30,11 @@ export default function SeriesBlock({ blogs }: { blogs: Blog[] }) {
       <div className="absolute right-0 top-0 z-[5] -translate-y-[0.75rem] select-none whitespace-nowrap font-serif text-7xl font-bold text-nord-9/10 dark:text-nord-10/5 sm:-translate-y-[1.0rem] sm:text-8xl">
         {blogs[0].series}
       </div>
-      <ol className="ml-8 list-decimal">
+      <div className="ml-[32px] list-decimal font-serif">
         {blogs.map((blog) => (
           <BlogItem blog={blog} key={blog.slug} />
         ))}
-      </ol>
+      </div>
     </div>
   );
 }
