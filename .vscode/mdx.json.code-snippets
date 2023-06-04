@@ -24,6 +24,7 @@
       "showTOC: false",
       "draft: true",
       "# series: ",
+      "# priority",
       "cate:",
       "  - default",
       "tags:",
