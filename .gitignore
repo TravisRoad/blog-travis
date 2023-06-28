@@ -51,3 +51,5 @@ public/feed/feed.json
 public/feed/feed.xml
 public/sitemap.xml
 public/sitemap.txt
+
+.pnpm-store
