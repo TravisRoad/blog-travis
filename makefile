@@ -8,5 +8,5 @@ idea:
 	touch ./data/idea/idea`date '+%Y%m%d'`.mdx
 
 blog:
-	touch ./data/idea/idea`date '+%Y%m%d'`.mdx
+	touch ./data/blog/`date '+%Y%m%d'`.mdx
 
