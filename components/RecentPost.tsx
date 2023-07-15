@@ -40,16 +40,12 @@ export default function RecentPost({
               date={format(parseISO(blog.publishDate), "yyyy/LL/dd")}
             />
           ))}
-          <div className="transition-color rounded-none border-0 bg-white px-3 py-3 duration-200 first:rounded-t-lg last:rounded-b-lg hover:bg-[#f7f7fe] dark:bg-nord-0 dark:hover:bg-nord-1">
-            <Link href="/posts">
-              <a>
-                <div className="flex flex-row items-center justify-between rounded-xl py-1 transition-all">
-                  <span className="font-semibold text-nord-10"> read more</span>
-                  <ArrowUpRightIcon className="h-4 w-4 stroke-nord-10 stroke-[2px] dark:stroke-nord-7" />
-                </div>
-              </a>
-            </Link>
-          </div>
+          <Link href="/posts">
+            <a className="transition-color flex min-h-[4rem] w-full flex-row items-center justify-between bg-white px-3 py-3 transition-all hover:bg-[#f7f7fe] dark:bg-nord-0 dark:hover:bg-nord-1">
+              <span className="font-semibold text-nord-10"> read more</span>
+              <ArrowUpRightIcon className="h-4 w-4 stroke-nord-10 stroke-[2px] dark:stroke-nord-7" />
+            </a>
+          </Link>
         </div>
       </div>
     </div>

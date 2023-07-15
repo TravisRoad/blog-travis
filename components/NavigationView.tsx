@@ -1,10 +1,10 @@
 import Link from "next/link";
-import React, { FC, useState } from "react";
+import React, { FC, Fragment, useState } from "react";
 // import { Menu } from "@headlessui/react";
 import { useRouter } from "next/router";
 import { ThemeButton } from "./ThemeButton";
-import { Menu } from "@headlessui/react";
-import { Bars3Icon as MenuIcon } from "@heroicons/react/24/outline";
+import { Menu, Transition } from "@headlessui/react";
+import { Bars3Icon as MenuIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function DesktopNavItem({
   url,
@@ -46,12 +46,15 @@ function DesktopNavItem({
 }
 
 const MobileNavItem: FC<{ url: string; name: string }> = ({ url, name }) => (
-  <div className="overflow-hidden px-2 py-1 first:rounded-t-lg last:rounded-b-lg hover:bg-nord-4/30 dark:hover:bg-nord-1">
+  <div className="overflow-hidden px-2 py-1">
     <Menu.Item>
       {({ close }) => (
         <Link href={url}>
-          <a className="flex items-center justify-center" onClick={close}>
-            <div>{name}</div>
+          <a
+            className="relative flex h-[3rem] w-full items-center justify-center text-2xl text-nord-0 dark:text-nord-4"
+            onClick={close}
+          >
+            <div className="px-10">{name}</div>
           </a>
         </Link>
       )}
@@ -78,16 +81,41 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
         {/* mobile menu */}
         <div className="flex items-center justify-center space-x-4 sm:hidden">
           <Menu as="div">
-            <Menu.Button className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2">
-              <MenuIcon className="h-6 w-6 stroke-nord-2 transition-colors dark:stroke-nord-5"></MenuIcon>
-            </Menu.Button>
-            <Menu.Items className="top-15 absolute right-4 flex min-w-[17vw] flex-col divide-y divide-nord-4 rounded-lg border border-nord-6 bg-white text-nord-3 dark:divide-nord-2 dark:border-nord-2 dark:bg-nord-0 dark:text-nord-6">
-              <MobileNavItem url="/" name="主页" />
-              <MobileNavItem url="/posts" name="文章" />
-              <MobileNavItem url="/idea/1" name="想法" />
-              <MobileNavItem url="/proj" name="项目" />
-              <MobileNavItem url="/about" name="关于" />
-            </Menu.Items>
+            {({ open, close }) => (
+              <>
+                <Menu.Button className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2">
+                  {open ? (
+                    <XMarkIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5"></XMarkIcon>
+                  ) : (
+                    <MenuIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5"></MenuIcon>
+                  )}
+                </Menu.Button>
+                <Transition
+                  show={open}
+                  enter="transition-opacity duration-200"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="transition-opacity duration-150 ease-in-out"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <Menu.Items as={Fragment} static>
+                    <div
+                      className=" absolute top-[2.75rem] left-0 z-20 flex h-screen w-screen flex-col justify-center bg-gradient-to-b from-nord-bgLight to-nord-10 pt-10 dark:from-nord-bgDark dark:to-nord-9"
+                      onClick={close}
+                    >
+                      <div className="-translate-y-[5rem] font-bold">
+                        <MobileNavItem url="/" name="主页" />
+                        <MobileNavItem url="/posts" name="文章" />
+                        <MobileNavItem url="/idea/1" name="想法" />
+                        <MobileNavItem url="/proj" name="项目" />
+                        <MobileNavItem url="/about" name="关于" />
+                      </div>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </>
+            )}
           </Menu>
         </div>
         <ThemeButton />
