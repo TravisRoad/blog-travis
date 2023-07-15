@@ -34,7 +34,7 @@ const About = (props: statistic) => {
           </div>
         </div>
         <div className=" flex flex-col">
-          <div className="prose prose-stone mx-auto text-xl prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl">
+          <div className="prose prose-stone mx-auto prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl">
             <Content components={MDXComponents}></Content>
           </div>
         </div>
@@ -46,7 +46,7 @@ const About = (props: statistic) => {
             大事记
           </span>
         </div>
-        <div className="prose prose-stone mx-auto text-xl dark:prose-invert sm:max-w-3xl">
+        <div className="prose prose-stone mx-auto dark:prose-invert sm:max-w-3xl">
           <ul>
             <li>2022年9月28日 - 转移到新博客框架了</li>
           </ul>

@@ -10,7 +10,7 @@ function formatNumber(num: number) {
 function DataItem({ title, data }: { title: string; data: string }) {
   return (
     <li className="relative list-item ">
-      <span className="block w-[85%] overflow-hidden text-ellipsis text-xl">
+      <span className="block w-[85%] overflow-hidden text-ellipsis">
         {title}
       </span>
       <span className=" absolute right-0 top-[0.123rem] rounded bg-nord-9 px-2 font-sans text-[0.88rem] text-nord-6 ">
@@ -39,7 +39,7 @@ function States({ statistic }: { statistic: statistic }) {
 
   return (
     <>
-      <h2 className=" mx-auto my-2 max-w-3xl text-lg font-bold">总数统计</h2>
+      <h2 className=" mx-auto my-2 max-w-3xl font-bold">总数统计</h2>
       <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         <DataItem
           title="文章数"
@@ -58,13 +58,13 @@ function States({ statistic }: { statistic: statistic }) {
           data={formatNumber(statistic.totalWordsNum).toString()}
         />
       </ul>
-      <h2 className="mx-auto my-2 max-w-3xl text-lg font-bold">每年统计</h2>
+      <h2 className="mx-auto my-2 max-w-3xl font-bold">每年统计</h2>
       <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         {list.map((item: { title: string; data: string }) => (
           <DataItem title={item.title} data={item.data} key={item.title} />
         ))}
       </ul>
-      <h2 className="mx-auto my-2 max-w-3xl text-lg font-bold">外链统计</h2>
+      <h2 className="mx-auto my-2 max-w-3xl font-bold">外链统计</h2>
       <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         {externalLinks.map((item: [string, number]) => (
           <DataItem
