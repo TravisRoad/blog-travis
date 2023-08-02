@@ -150,7 +150,11 @@ export const Movie = defineDocumentType(() => ({
         const res = rawLink.map(
           (str) => str.match(/https?:\/\/([^\"\/]*)\/?/)[1]
         );
-        return { res: res, raw: rawLink };
+        const filtered = res.filter(
+          (url) => !url.includes("img.travismtg.com")
+        );
+
+        return { res: filtered, raw: rawLink };
       },
     },
   },

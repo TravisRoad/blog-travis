@@ -8,7 +8,7 @@ const nextConfig = {
 
 module.exports = withContentlayer({
   images: {
-    domains: ["lain.bgm.tv"],
+    domains: ["lain.bgm.tv", "img.travismtg.com"],
   },
   ...nextConfig,
 });
