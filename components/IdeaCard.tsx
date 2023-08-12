@@ -3,20 +3,7 @@ import type { Idea } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { parseISO, format } from "date-fns";
 import { Quote } from "components/mdx/Quote";
-import Image from "next/image";
-
-const MyImage = ({ src, alt, width, height, blurDataURL }: any) => (
-  <>
-    <Image
-      src={src}
-      width={width}
-      height={height}
-      alt={alt}
-      blurDataURL={blurDataURL}
-      placeholder="blur"
-    />
-  </>
-);
+import MyImage from "./mdx/MyImage";
 
 export default function IdeaCard({ idea }: { idea: Idea }) {
   const Content = useMDXComponent(idea.body.code);
