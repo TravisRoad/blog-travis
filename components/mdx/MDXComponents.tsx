@@ -12,6 +12,7 @@ import Kbd from "./Kbd";
 import GptBlock from "./GptBlock";
 import IframeWithLoading from "./IframeWithLoading";
 import MyLink from "./MyLink";
+import Admonition from "./Admonition";
 
 const MDXComponents = {
   img: Image,
@@ -30,6 +31,7 @@ const MDXComponents = {
   Kbd, // button key
   GptBlock,
   IframeWithLoading,
+  Admonition,
 };
 
 export default MDXComponents;
