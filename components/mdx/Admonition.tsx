@@ -53,10 +53,14 @@ export default function Admonition({
   };
 
   return (
-    <div className={`admonition border-l-2 ${open ? "open" : ""} ${type} mb-2`}>
+    <div
+      className={`admonition border-l-2 ${
+        open ? "open" : ""
+      } ${type} relative mb-2`}
+    >
       <div
         onClick={() => setOpen(!open)}
-        className="admonition-title relative items-center bg-[rgba(255,145,0,0.1)] pl-2"
+        className="admonition-title relative cursor-pointer items-center bg-[rgba(255,145,0,0.1)] pl-2"
       >
         {icon()}
         {/* <ExclamationTriangleIcon className={className} />

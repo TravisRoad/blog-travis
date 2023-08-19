@@ -1,0 +1,166 @@
+---
+title: 我博客中的各种小组件
+summary: 各种小组件的介绍
+publishDate: 2023-08-19 15:01:42
+createdDate: 2023-08-19 15:01:43
+star: false
+showTOC: true
+draft: false
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+为了更好的利用好 mdx 的特性，我在博客中添加了各种各样的小组件，在这里做一个记录，方便自己未来查看，~~也能快乐的水一期博客~~。
+
+> 我将各种小组件的源码写在了该文件夹下，感兴趣的小伙伴可以看看[TravisRoad/blog-travis](https://github.com/TravisRoad/blog-travis/tree/main/components/mdx)
+
+## 小组件
+
+### MyImage
+
+对 Next.js 的 Image 组件的一个包装，在将 mdx 文件通过 remark 和 rehype 获得一些元信息后，输入 MyImage 组件获得一个固定大小并且有在加载前显示模糊展位图的图片组件。
+具体方法在我的[这篇博客](/posts/blurred_images_loading_%20nextjs)中有介绍过。
+
+![塞尔达的图片](https://img.travismtg.com/2023/08/fac19d96a8ea6aa4e384802747e19dc2.jpg)
+
+### PhotoProvider && PhotoView
+
+这儿的代码写的十分丑陋，直接使用了 `react-photo-view` 库，完全没做抽象（又不是不能用）。事实上看起来也不错。
+
+<PhotoProvider>
+  <div className="relative overflow-auto rounded-lg shadow-lg dark:bg-nord-0 dark:shadow-none">
+    <div className="flex w-full snap-x snap-mandatory gap-8 overflow-x-auto py-0">
+      <div className="last:pr-[calc (100%-21.5rem)] relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6">
+        <PhotoView src="https://img.travismtg.com/2023/08/133e297eed9280ee22e0d439f280b8ac.jpg">
+          <img
+            src="https://img.travismtg.com/2023/08/133e297eed9280ee22e0d439f280b8ac.jpg"
+            className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+            draggable="false"
+          />
+        </PhotoView>
+      </div>
+      <div className="last:pr-[calc (100%-21.5rem)] relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6">
+        <PhotoView src="https://img.travismtg.com/2023/08/ce631387095ab787ec1ee5fb0f2f9fcb.jpg">
+          <img
+            src="https://img.travismtg.com/2023/08/ce631387095ab787ec1ee5fb0f2f9fcb.jpg"
+            className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+            draggable="false"
+          />
+        </PhotoView>
+      </div>
+      <div className="relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6 last:pr-6">
+        <PhotoView src="https://img.travismtg.com/2023/08/84b208b48743e3270c617b31ee0f5939.png">
+          <img
+            src="https://img.travismtg.com/2023/08/84b208b48743e3270c617b31ee0f5939.png"
+            className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+            draggable="false"
+          />
+        </PhotoView>
+      </div>
+    </div>
+  </div>
+</PhotoProvider>
+
+### Quote 引用组件
+
+如题，一个引用小组件
+
+<Quote cite="——道格拉斯·亚当斯" normal={true}>
+  <ol className="ml-4">
+    <li className="list-decimal pl-2">
+      任何在我出生时已经有的科技都是稀松平常的世界本来秩序的一部分
+    </li>
+    <li className="list-decimal pl-2">
+      任何在我 15-35 岁之间诞生的科技都是将会改变世界的革命性产物。
+    </li>
+    <li className="list-decimal pl-2">
+      任何在我 35 岁之后诞生的科技都是违反自然规律要遭天谴的
+    </li>
+  </ol>
+</Quote>
+
+```html
+<Quote cite="——道格拉斯·亚当斯" normal="{true}">
+  <ol className="ml-4">
+    <li className="list-decimal pl-2">
+      任何在我出生时已经有的科技都是稀松平常的世界本来秩序的一部分
+    </li>
+    <li className="list-decimal pl-2">
+      任何在我 15-35 岁之间诞生的科技都是将会改变世界的革命性产物。
+    </li>
+    <li className="list-decimal pl-2">
+      任何在我 35 岁之后诞生的科技都是违反自然规律要遭天谴的
+    </li>
+  </ol>
+</Quote>
+```
+
+### Admonition 小组件
+
+<Admonition type="warn">
+  这是一个警告，但是程序员从来不看这个，不要折叠这个警告
+</Admonition>
+<Admonition type="quote">
+  我想：希望本是无所谓有，无所谓无的。这正如地上的路；其实地上本没有路，走的人多了，也便成了路。
+  <div className="w-full pr-2 text-right">——鲁迅</div>
+</Admonition>
+<Admonition type="info">一点有用的信息，或许没用，反正我写在这儿了</Admonition>
+
+```html
+<Admonition type="warn">
+  这是一个警告，但是程序员从来不看这个，不要折叠这个警告
+</Admonition>
+<Admonition type="quote">
+  我想：希望本是无所谓有，无所谓无的。这正如地上的路；其实地上本没有路，走的人多了，也便成了路。
+  <div className="w-full pr-2 text-right">——鲁迅</div>
+</Admonition>
+<Admonition type="info">一点有用的信息，或许没用，反正我写在这儿了</Admonition>
+```
+
+### GptBlock
+
+<GptBlock>
+  GptBlock 是一个用于在博客中展示 GPT 生成信息的小组件。它可以帮助你将 GPT-3
+  生成的文本嵌入到博客中，以便读者可以直接在博客页面上查看生成的内容。
+  你可以根据自己的需求和喜好来配置和使用
+  GptBlock，以展示符合你博客主题和风格的生成文本。
+</GptBlock>
+
+```html
+<GptBlock>
+  GptBlock 是一个用于在博客中展示 GPT 生成信息的小组件。它可以帮助你将 GPT-3
+  生成的文本嵌入到博客中，...
+</GptBlock>
+```
+
+### 对话框
+
+<Dialog>生活的意义是什么呢？</Dialog>
+<Dialog reverse="true">整点薯条🍟🍟🍟</Dialog>
+
+```html
+<dialog>生活的意义是什么呢？</dialog>
+<dialog reverse="true">整点薯条🍟🍟🍟</dialog>
+```
+
+### Border
+
+<Border>
+  <ol>
+    <li> 我也不知道这有啥用 </li>
+    <li> 就是个虚线边框罢了 </li>
+  </ol>
+</Border>
+
+```html
+<Border>
+  <ol>
+    <li>我也不知道这有啥用</li>
+    <li>就是个虚线边框罢了</li>
+  </ol>
+</Border>
+```
