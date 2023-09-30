@@ -1,0 +1,74 @@
+---
+title: 捡垃圾
+summary: 捡垃圾的快乐
+publishDate: 2023-09-30 23:39:41
+createdDate: 2023-09-26 21:26:30
+star: false
+showTOC: false
+draft: false
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+最近发了工资，有一天晚上突发奇想，想组一台专属于自己的 homelab，要求很简单：
+
+1. 能当 nas 用
+2. 能方便的虚拟化，以供实验
+3. 方便扩展
+4. 除了存储设备之外，价格在 1000 元内
+
+综上要求，我在淘宝和闲鱼上挑选了两个小时，选出了如下配置。
+
+|   类别   | 名称                          | 价格   |
+| :------: | ----------------------------- | ------ |
+| 主板+CPU | 精粤 x99M PLUS D3 + E5 2666V3 | 408    |
+|   散热   | 闲鱼买的利民                  | 45     |
+|   内存   | 三星 DDR3 1600 16Gx2          | 68     |
+|  亮机卡  | GT-610-520 1G                 | 31     |
+|   网线   | 8m + 1m                       | 29.79  |
+|   网卡   | 淘宝随便挑的单网口            | 15.98  |
+|  交换机  | TP-LINK TL-SG1008D 八口交换机 | 55     |
+|   SSD    | pm581 512G                    | 149    |
+|   电源   | 安钛克 VP450P                 | 75     |
+|   机箱   | 实验室里没人要的破旧主机      | 0      |
+|   合计   |                               | 880.77 |
+
+<Dialog reverse="true">后来发现在实验室里还有很多破旧配件（下次再来😂）</Dialog>
+
+我本来的想法是既然捡垃圾，那么就一丐到底，平心而论，这套配置的版 U、电源、散热都有再进一步压缩的空间。
+在 CPU 的选择上，选择主频低一些，但是核心数更多的 E5 2673v3 可能更能满足我的需求。下次定能吸收本次教训！
+
+另外，为了满足虚拟化的需要，并为了规避每次都要重新配置网络的尴尬，我在这台机器上装上了 PVE，虚拟了几台 Arch 和一台 openWrt，同时我也将家中的 2011 Mac Mini 拿来也充当了一个物理机。
+
+折腾完这些之后，为了外网访问的方便，其中一台 Arch 充当堡垒机，使用 [rathole](https://github.com/rapiz1/rathole) 将 ssh 的端口暴露在我的 vps 上。
+现在我的一些个人小项目都可以通过 vscode 的 remote-ssh 插件连接到这台服务器上编写。好处就是可以更加轻松的多端同步，性能也远比公有云强，硬件和软件都完全在我的掌控之中。
+
+<Admonition type="info">
+  rathole 是用 Rust 编写的类似于 frp 和 ngrok 的软件。可以让 NAT
+  后的设备上的服务通过具有公网 IP 的服务器暴露在公网上
+</Admonition>
+
+之后我准备再逐步扩充这台机器的可玩性，比如部署一些 CI/CD 服务，虚拟化一些虚拟机，测试 Kubernetes 调度性能，这里按下不表。
+
+## 参考
+
+### 软件
+
+| 链接                                                                                           | 介绍                               |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------- |
+| [homelab](https://github.com/khuedoan/homelab)                                                 | khuedoan 的自用 homelab 软硬件介绍 |
+| [HomeLab 玩法简单分享](https://blog.stdioa.com/2021/09/homelab-share/index.html)               | 玩法简介，其中也介绍了一些常用软件 |
+| [HomeLab 搭建记录](https://www.jungley.net/how-to-build-a-homelab-hardware-and-software-tips/) |                                    |
+
+### 网络
+
+| 链接                                                                                                                                      | 介绍                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [内网该用什么域名](https://www.reddit.com/r/homelab/comments/vlmzc0/what_domain_name_do_you_use_for_your_homelab/)                        | AD 域名                         |
+| [SSL Certificates on a private/local domain](https://www.reddit.com/r/homelab/comments/pkfbid/ssl_certificates_on_a_privatelocal_domain/) | 介绍了如何为内网申请到 ssl 证书 |
+| [猴子都能看懂的内网 ssl 教程](https://notthebe.ee/blog/easy-ssl-in-homelab-dns01/)                                                        |                                 |
+| [基于 PVE 的新网络架构](https://mozz.ie/posts/pve-based-home-network/)                                                                    |                                 |
