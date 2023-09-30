@@ -76,6 +76,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
           <DesktopNavItem url="/posts" name="文章" />
           <DesktopNavItem url="/idea/1" name="想法" />
           <DesktopNavItem url="/proj" name="项目" />
+          <DesktopNavItem url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn" name="统计" />
           <DesktopNavItem url="/about" name="关于" />
         </div>
         {/* mobile menu */}
@@ -109,6 +110,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
                         <MobileNavItem url="/posts" name="文章" />
                         <MobileNavItem url="/idea/1" name="想法" />
                         <MobileNavItem url="/proj" name="项目" />
+                        <MobileNavItem url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn" name="统计" />
                         <MobileNavItem url="/about" name="关于" />
                       </div>
                     </div>

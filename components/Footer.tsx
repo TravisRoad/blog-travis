@@ -101,6 +101,7 @@ export default function Footer() {
               <MyLink url="/idea" name="Ideas" />
               <MyLink url="/posts" name="Blogs" />
               <MyLink url="/proj" name="Projects" />
+              <MyLink url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn" name="Statistic" />
               <MyLink url="/about" name="About" />
             </div>
           </div>
