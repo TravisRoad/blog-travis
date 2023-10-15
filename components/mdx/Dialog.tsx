@@ -1,5 +1,5 @@
-import me from "public/profile.jpg";
-import other from "public/pixel.png";
+import me from "public/dialog.webp";
+import other from "public/vall.webp";
 import Image from "next/image";
 
 export function Dialog({
