@@ -48,9 +48,7 @@ export default function BlogLayout({
         >
           <Prose>
             <header>
-              <div className=" flex items-center justify-center sm:justify-start ">
-                <h1 className="">{post.title}</h1>
-              </div>
+              <h1 className="text-center md:text-start">{post.title}</h1>
               <div className="-mt-5 flex flex-col items-center justify-between sm:flex-row">
                 {/* author and the date */}
                 <div className="inline-flex items-center space-x-1 text-gray-400 dark:text-gray-500">
