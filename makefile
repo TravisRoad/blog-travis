@@ -10,3 +10,6 @@ idea:
 blog:
 	touch ./data/blog/`date '+%Y%m%d'`.mdx
 
+draft:
+	@grep 'draft: true' data/blog/* | tr ':' '\t' | cut -f1
+
