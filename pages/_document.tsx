@@ -20,6 +20,7 @@ export default function Document() {
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-1Y104QW25K"
         />
+        <Script strategy="beforeInteractive" src="/lib/darkmode.js" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
