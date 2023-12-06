@@ -22,9 +22,11 @@ function DesktopNavItem({
     router.asPath === url // current working path className
       ? "text-nord-0 dark:text-nord-6 underline underline-offset-4 decoration-dashed font-semibold text-nord-3 pointer-none"
       : "text-nord-3/80 dark:text-nord-4/80 font-normal before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full";
+  const target = url.startsWith("http") ? "_blank" : "_self";
+
   return (
     <Link href={url}>
-      <a className="pointer mx-1 overflow-hidden">
+      <a className="pointer mx-1 overflow-hidden" target={target}>
         <div
           className={`relative block items-center decoration-nord-7 dark:decoration-nord-10 ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
           data-content={name}

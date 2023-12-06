@@ -21,6 +21,7 @@ const Subway = () => {
     <a
       className="flex items-center gap-1 decoration-dotted hover:underline"
       href="https://www.travellings.cn/go.html"
+      target="_blank"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
