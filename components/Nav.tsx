@@ -12,15 +12,17 @@ export default function Nav({
 }) {
   function NavLink({ href, key, content }: any) {
     return (
-      <Link href={`/idea/${href}`} key={key}>
-        <button
-          className={` ${
-            content === current ? "bg-nord-10/50" : "bg-nord-10/20"
-          } border-b border-b-nord-3/20 py-1 px-2 shadow-lg first:rounded-l-lg last:rounded-r-lg hover:bg-nord-10/50 dark:hover:bg-nord-10/80`}
-        >
-          {content}
-        </button>
-      </Link>
+      <a key={key}>
+        <Link href={`/idea/${href}`}>
+          <button
+            className={` ${
+              content === current ? "bg-nord-10/50" : "bg-nord-10/20"
+            } border-b border-b-nord-3/20 py-1 px-2 shadow-lg first:rounded-l-lg last:rounded-r-lg hover:bg-nord-10/50 dark:hover:bg-nord-10/80`}
+          >
+            {content}
+          </button>
+        </Link>
+      </a>
     );
   }
 
