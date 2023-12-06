@@ -30,6 +30,10 @@ export const Blog = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    modifiedDate: {
+      type: "date",
+      required: false,
+    },
     summary: {
       type: "string",
       required: false,

@@ -1,4 +1,4 @@
-import { Feed } from "feed";
+import { Feed, Item } from "feed";
 import metadata from "data/metaData";
 import { allBlogs, allIdeas } from "contentlayer/generated";
 import type { Blog, Idea } from "contentlayer/generated";
@@ -33,7 +33,12 @@ const createRss = () => {
       return !blog.draft;
     })
     .forEach((post: Blog) => {
-      const item = {
+      const theDate = (): Date => {
+        return post.modifiedDate
+          ? parseISO(post.modifiedDate)
+          : parseISO(post.publishDate);
+      };
+      const item: Item = {
         title: post.title,
         id: `${metadata.site}/posts/${post.slug}`,
         link: `${metadata.site}/posts/${post.slug}`,
@@ -45,8 +50,9 @@ const createRss = () => {
             email: metadata.email,
           },
         ],
-        date: parseISO(post.publishDate),
+        date: theDate(),
         image: undefined,
+        published: parseISO(post.publishDate),
       };
       feed.addItem(item);
     });
