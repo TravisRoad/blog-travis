@@ -46,6 +46,10 @@ function States({ statistic }: { statistic: statistic }) {
           data={formatNumber(statistic.postsNum).toString()}
         />
         <DataItem
+          title="想法数"
+          data={formatNumber(statistic.ideaNum).toString()}
+        />
+        <DataItem
           title="外链数"
           data={formatNumber(statistic.externalLinksNum).toString()}
         />
