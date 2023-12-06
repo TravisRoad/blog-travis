@@ -230,7 +230,23 @@ export const Idea = defineDocumentType(() => ({
       required: true,
     },
   },
-  computedFields: {},
+  computedFields: {
+    html: {
+      type: "string",
+      resolve: (doc) => {
+        var html = markdown(doc.body.raw);
+        if (typeof html !== "string") return "";
+        html = html
+          .replace(
+            /src=\"\/image/g,
+            `src=\"https://blog.lxythan2lxy.cn/image` // FIXME: hardcode the URL
+          )
+          .replace(/\{\/\*[^\*]*\*\/\}/g, "")
+          .replace(/<p><\/p>\n/g, "");
+        return html;
+      },
+    },
+  },
 }));
 
 export default makeSource({

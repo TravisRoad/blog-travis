@@ -1,6 +1,6 @@
 import Main from "components/Main";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { allAbouts, allMovies } from "contentlayer/generated";
+import { allAbouts, allIdeas, allMovies } from "contentlayer/generated";
 import MDXComponents from "components/mdx/MDXComponents";
 import { allBlogs } from ".contentlayer/generated";
 import type { ReadingTime } from "types/reading-time";
@@ -110,6 +110,8 @@ export async function getStaticProps() {
   var externalLinksMap = new Map<string, number>();
   var externalLinksNum = 0;
   var postsNum = 0; /* + allMovies.length */
+  var ideaNum = 0;
+
   const computeExternalLinksNum = (link: string) => {
     var val = externalLinksMap.get(link);
     if (val === undefined) externalLinksMap.set(link, 1);
@@ -133,6 +135,7 @@ export async function getStaticProps() {
     externalLinksNum += about.externalLink.raw.length;
     about.externalLink.res.forEach(computeExternalLinksNum);
   });
+  ideaNum = allIdeas.length;
   const externalLinks = Object.fromEntries(externalLinksMap);
 
   // statistic per year
@@ -162,6 +165,7 @@ export async function getStaticProps() {
       externalLinksNum,
       externalLinks,
       postsNum,
+      ideaNum,
       wordsPerYear,
       postsPerYear,
       years,

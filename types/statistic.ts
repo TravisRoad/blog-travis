@@ -5,6 +5,7 @@ export interface statistic {
     [k: string]: number;
   };
   postsNum: number;
+  ideaNum: number;
   wordsPerYear: {
     [k: string]: number;
   };
