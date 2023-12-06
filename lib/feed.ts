@@ -52,7 +52,7 @@ const createRss = () => {
         ],
         date: theDate(),
         image: undefined,
-        published: parseISO(post.publishDate),
+        published: theDate(),
       };
       feed.addItem(item);
     });
