@@ -16,16 +16,36 @@ function MyLink({ url, name }: { url: string; name: string }) {
   );
 }
 
+const Subway = () => {
+  return (
+    <a
+      className="flex items-center gap-1 decoration-dotted hover:underline"
+      href="https://www.travellings.cn/go.html"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="16"
+        width="14"
+        viewBox="0 0 448 512"
+        className="inline fill-nord-3 dark:fill-nord-4"
+      >
+        <path d="M96 0C43 0 0 43 0 96V352c0 48 35.2 87.7 81.1 94.9l-46 46C28.1 499.9 33.1 512 43 512H82.7c8.5 0 16.6-3.4 22.6-9.4L160 448H288l54.6 54.6c6 6 14.1 9.4 22.6 9.4H405c10 0 15-12.1 7.9-19.1l-46-46c46-7.1 81.1-46.9 81.1-94.9V96c0-53-43-96-96-96H96zM64 128c0-17.7 14.3-32 32-32h80c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM272 96h80c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H272c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32zM64 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm288-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+      </svg>
+      <span>Travelling</span>
+    </a>
+  );
+};
+
 const ICPnumber = () => {
   // const isChinaMainland: string | undefined = process.env.CHINA;
   const isChinaMainland: string | undefined = "china";
   if (isChinaMainland !== undefined)
     return (
       <a
-        className="mx-auto space-y-2 p-2 text-nord-3 hover:text-nord-dark hover:underline dark:text-nord-4 dark:hover:text-white"
+        className="mx-auto text-nord-3 hover:text-nord-dark hover:underline dark:text-nord-4 dark:hover:text-white"
         href={metadata.ICP.url}
       >
-        <span className="font-bold">备案号：</span>
+        <span className="font-bold">ICP：</span>
         <span>{metadata.ICP.code}</span>
       </a>
     );
@@ -69,7 +89,7 @@ export default function Footer() {
       <footer className="z-10 mx-auto -mt-2 block w-full bg-[#fbfbfc] px-2 pb-4 text-sm text-nord-3 dark:bg-nord-1 dark:text-nord-4 sm:text-base">
         <div className="mx-auto flex flex-col-reverse items-center justify-center sm:grid sm:grid-cols-2 sm:gap-4">
           <div className="flex flex-col items-center">
-            <div className="my-2 grid grid-cols-2 items-center gap-2">
+            <div className="mt-2 mb-4 grid grid-cols-2 items-center gap-2">
               <div className="text-right first-letter:uppercase">spired by</div>
               <div>
                 <Link href="https://www.whexy.com/posts/blog-diy">
@@ -84,8 +104,6 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            <CopyRight />
-            <ICPnumber />
             {process.env.NODE_ENV !== "development" && (
               <div className="flex">
                 {" "}
@@ -94,6 +112,9 @@ export default function Footer() {
                 <VVCount slug="whole-site-uv" />
               </div>
             )}
+            <Subway />
+            <CopyRight />
+            <ICPnumber />
           </div>
           <div className="w-full max-w-2xl">
             <div className="mt-2 mb-4 flex flex-col items-center space-y-4">
@@ -101,11 +122,11 @@ export default function Footer() {
               <MyLink url="/idea" name="Ideas" />
               <MyLink url="/posts" name="Blogs" />
               <MyLink url="/proj" name="Projects" />
+              <MyLink url="/about" name="About" />
               <MyLink
                 url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn"
                 name="Statistic"
               />
-              <MyLink url="/about" name="About" />
             </div>
           </div>
         </div>

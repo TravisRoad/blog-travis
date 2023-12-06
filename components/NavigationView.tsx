@@ -20,22 +20,13 @@ function DesktopNavItem({
   // const isActive = router.asPath === url;
   const cwpClass =
     router.asPath === url // current working path className
-      ? "text-nord-0 dark:text-nord-6 font-semibold"
-      : "text-nord-3/80 dark:text-nord-4/80 font-normal";
+      ? "text-nord-0 dark:text-nord-6 underline underline-offset-4 decoration-dashed font-semibold text-nord-3 pointer-none"
+      : "text-nord-3/80 dark:text-nord-4/80 font-normal before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full";
   return (
     <Link href={url}>
-      <a className="mx-1 overflow-hidden rounded-lg ">
-        {/* <div
-          className={`${
-            isActive
-              ? "font-semibold text-gray-200 hover:text-gray-100 transition"
-              : "font-normal text-gray-400 hover:text-gray-100 transition"
-          }`}
-        >
-          {name}
-        </div> */}
+      <a className="pointer mx-1 overflow-hidden">
         <div
-          className={` relative block items-center before:absolute before:translate-y-full before:content-[attr(data-content)] hover:-translate-y-full ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
+          className={`relative block items-center decoration-nord-7 dark:decoration-nord-10 ${cwpClass} text-xl transition-all duration-[350ms] before:font-semibold before:text-nord-2 before:dark:text-nord-7`}
           data-content={name}
         >
           {name}
@@ -63,6 +54,18 @@ const MobileNavItem: FC<{ url: string; name: string }> = ({ url, name }) => (
 );
 
 export default function NavigationView({ isTop }: { isTop: Boolean }) {
+  const navList: { url: string; name: string }[] = [
+    { url: "/", name: "主页" },
+    { url: "/posts", name: "文章" },
+    { url: "/idea/1", name: "想法" },
+    { url: "/proj", name: "项目" },
+    // {
+    //   url: "https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn",
+    //   name: "统计",
+    // },
+    { url: "/about", name: "关于" },
+    { url: "https://www.travellings.cn/go.html", name: "开往" },
+  ];
   return (
     <div>
       <div className="flex flex-row-reverse items-center transition-all ">
@@ -72,12 +75,9 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
             isTop ? "text-lg" : "text-sm"
           }`}
         >
-          <DesktopNavItem url="/" name="主页" />
-          <DesktopNavItem url="/posts" name="文章" />
-          <DesktopNavItem url="/idea/1" name="想法" />
-          <DesktopNavItem url="/proj" name="项目" />
-          <DesktopNavItem url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn" name="统计" />
-          <DesktopNavItem url="/about" name="关于" />
+          {navList.map((nav, i) => (
+            <DesktopNavItem url={nav.url} name={nav.name} key={i} />
+          ))}
         </div>
         {/* mobile menu */}
         <div className="flex items-center justify-center space-x-4 sm:hidden">
@@ -106,12 +106,13 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
                       onClick={close}
                     >
                       <div className="-translate-y-[5rem] font-bold">
-                        <MobileNavItem url="/" name="主页" />
-                        <MobileNavItem url="/posts" name="文章" />
-                        <MobileNavItem url="/idea/1" name="想法" />
-                        <MobileNavItem url="/proj" name="项目" />
-                        <MobileNavItem url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn" name="统计" />
-                        <MobileNavItem url="/about" name="关于" />
+                        {navList.map((nav, i) => (
+                          <MobileNavItem
+                            url={nav.url}
+                            name={nav.name}
+                            key={i}
+                          />
+                        ))}
                       </div>
                     </div>
                   </Menu.Items>

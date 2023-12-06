@@ -39,8 +39,10 @@ function States({ statistic }: { statistic: statistic }) {
 
   return (
     <>
-      <h2 className=" mx-auto my-2 max-w-3xl font-bold">总数统计</h2>
-      <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
+      <h2 className="mx-auto my-2 max-w-3xl font-bold dark:font-normal">
+        总数统计
+      </h2>
+      <ul className="mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         <DataItem
           title="文章数"
           data={formatNumber(statistic.postsNum).toString()}
@@ -62,13 +64,17 @@ function States({ statistic }: { statistic: statistic }) {
           data={formatNumber(statistic.totalWordsNum).toString()}
         />
       </ul>
-      <h2 className="mx-auto my-2 max-w-3xl font-bold">每年统计</h2>
+      <h2 className="mx-auto my-2 max-w-3xl font-bold dark:font-normal">
+        每年统计
+      </h2>
       <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         {list.map((item: { title: string; data: string }) => (
           <DataItem title={item.title} data={item.data} key={item.title} />
         ))}
       </ul>
-      <h2 className="mx-auto my-2 max-w-3xl font-bold">外链统计</h2>
+      <h2 className="mx-auto my-2 max-w-3xl font-bold dark:font-normal">
+        外链统计
+      </h2>
       <ul className=" mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
         {externalLinks.map((item: [string, number]) => (
           <DataItem
@@ -77,6 +83,17 @@ function States({ statistic }: { statistic: statistic }) {
             key={item[0]}
           ></DataItem>
         ))}
+      </ul>
+      <h2 className="mx-auto my-2 max-w-3xl font-bold dark:font-normal">
+        访问量统计
+      </h2>
+      <ul className="mx-auto flex max-w-3xl list-disc flex-col px-6 sm:grid sm:grid-cols-2 sm:gap-x-16">
+        <a
+          className="list-item underline decoration-dashed underline-offset-2"
+          href="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn"
+        >
+          umami 统计
+        </a>
       </ul>
     </>
   );
