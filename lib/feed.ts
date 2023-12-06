@@ -1,8 +1,8 @@
 import { Feed } from "feed";
 import metadata from "data/metaData";
-import { allBlogs } from "contentlayer/generated";
-import type { Blog } from "contentlayer/generated";
-import { parseISO } from "date-fns";
+import { allBlogs, allIdeas } from "contentlayer/generated";
+import type { Blog, Idea } from "contentlayer/generated";
+import { parseISO, format } from "date-fns";
 import fs from "fs";
 
 const createRss = () => {
@@ -43,27 +43,35 @@ const createRss = () => {
           {
             name: metadata.author,
             email: metadata.email,
-            // link:,
           },
         ],
-        // contributor: [
-        //   {
-        //     name: "Shawn Kemp",
-        //     email: "shawnkemp@example.com",
-        //     link: "https://example.com/shawnkemp",
-        //   },
-        //   {
-        //     name: "Reggie Miller",
-        //     email: "reggiemiller@example.com",
-        //     link: "https://example.com/reggiemiller",
-        //   },
-        // ],
         date: parseISO(post.publishDate),
         image: undefined,
       };
-      //   if (post.image) { }
       feed.addItem(item);
     });
+
+  allIdeas.forEach((idea: Idea) => {
+    const item = {
+      title: idea._id,
+      id: `${metadata.site}/ideas/${idea._id}`,
+      link: `${metadata.site}/idea`,
+      description: `我在 ${format(
+        parseISO(idea.publishDate),
+        "yyyy-MM-dd HH:mm:ss"
+      )} 的想法 \n请在浏览器中浏览以获得最佳体验`,
+      content: idea.html,
+      author: [
+        {
+          name: metadata.author,
+          email: metadata.email,
+        },
+      ],
+      date: parseISO(idea.publishDate),
+      image: undefined,
+    };
+    feed.addItem(item);
+  });
 
   // feed.addCategory("Technologie");
 
