@@ -107,7 +107,7 @@ export default function Footer() {
               </div>
             </div>
             {process.env.NODE_ENV !== "development" && (
-              <div className="flex">
+              <div className="flex py-2">
                 {" "}
                 <UVCount slug="whole-site-uv" />
                 {"|"}
