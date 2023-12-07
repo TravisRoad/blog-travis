@@ -11,6 +11,12 @@ const friends: Friend[] = [
     name: "Ridd 的博客",
     description: "Connect the dots.",
   },
+  {
+    url: "https://mskclover.com",
+    name: "叶子的花园",
+    description: "靡不有初，鲜克有终",
+    iconUrl: "/image/friends/mskclover.jpg",
+  },
 ];
 
 export default friends;
