@@ -1,4 +1,12 @@
+import {
+  allAbouts,
+  allBlogs,
+  allIdeas,
+  allMovies,
+} from "contentlayer/generated";
+import { format, parseISO } from "date-fns";
 import React from "react";
+import { ReadingTime } from "types/reading-time";
 import { statistic } from "types/statistic";
 
 function formatNumber(num: number) {
@@ -20,7 +28,8 @@ function DataItem({ title, data }: { title: string; data: string }) {
   );
 }
 
-function States({ statistic }: { statistic: statistic }) {
+function States() {
+  const statistic: statistic = GetStatistic();
   const postsPerYearMap = new Map(Object.entries(statistic.postsPerYear));
   const wordsPerYearMap = new Map(Object.entries(statistic.wordsPerYear));
   const list: { title: string; data: string }[] = [];
@@ -98,5 +107,72 @@ function States({ statistic }: { statistic: statistic }) {
     </>
   );
 }
+
+const GetStatistic = (): statistic => {
+  // total statistic
+  var totalWordsNum = 0;
+  var externalLinksMap = new Map<string, number>();
+  var externalLinksNum = 0;
+  var postsNum = 0; /* + allMovies.length */
+  var ideaNum = 0;
+
+  const computeExternalLinksNum = (link: string) => {
+    var val = externalLinksMap.get(link);
+    if (val === undefined) externalLinksMap.set(link, 1);
+    else externalLinksMap.set(link, val + 1);
+  };
+  allBlogs.forEach((blog) => {
+    if (blog.draft) return; // 跳过 draft
+    postsNum += 1;
+    const readingTime: ReadingTime = blog.readingTime;
+    totalWordsNum += readingTime.words;
+
+    externalLinksNum += blog.externalLink.raw.length;
+    blog.externalLink.res.forEach(computeExternalLinksNum);
+  });
+  // 统计 Movie 和 About 页面的外链
+  allMovies.forEach((movie) => {
+    externalLinksNum += movie.externalLink.raw.length;
+    movie.externalLink.res.forEach(computeExternalLinksNum);
+  });
+  allAbouts.forEach((about) => {
+    externalLinksNum += about.externalLink.raw.length;
+    about.externalLink.res.forEach(computeExternalLinksNum);
+  });
+  ideaNum = allIdeas.length;
+  const externalLinks = Object.fromEntries(externalLinksMap);
+
+  // statistic per year
+  var wordsPerYearMap = new Map<string, number>();
+  var postsPerYearMap = new Map<string, number>();
+  allBlogs.forEach((blog) => {
+    if (blog.draft) return;
+    const year = format(parseISO(blog.publishDate), "yyyy");
+    const wordNum = blog.readingTime.words;
+
+    var wordVal = wordsPerYearMap.get(year);
+    if (wordVal === undefined) wordsPerYearMap.set(year, wordNum);
+    else wordsPerYearMap.set(year, wordVal + wordNum);
+
+    var postVal = postsPerYearMap.get(year);
+    if (postVal === undefined) postsPerYearMap.set(year, 1);
+    else postsPerYearMap.set(year, postVal + 1);
+  });
+  const wordsPerYear = Object.fromEntries(wordsPerYearMap);
+  const postsPerYear = Object.fromEntries(postsPerYearMap);
+
+  const years = wordsPerYearMap.size;
+
+  return {
+    totalWordsNum,
+    externalLinksNum,
+    externalLinks,
+    postsNum,
+    ideaNum,
+    wordsPerYear,
+    postsPerYear,
+    years,
+  };
+};
 
 export default States;
