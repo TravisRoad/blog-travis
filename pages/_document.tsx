@@ -3,7 +3,7 @@ import Script from "next/script";
 
 export default function Document() {
   return (
-    <Html lang="zh-cn">
+    <Html lang="zh-cn" style={{ scrollBehavior: "smooth" }}>
       <Head>
         {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

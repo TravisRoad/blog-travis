@@ -43,6 +43,7 @@ export default function BlogLayout({
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article
           className="mx-auto mt-5 grid pb-5 sm:max-w-4xl"
+          style={{ gridTemplateColumns: "auto 0px" }}
           data-clarity-region="article"
         >
           <Prose>
@@ -102,14 +103,17 @@ export default function BlogLayout({
               />
             )}
           </Prose>
-          <a
-            href="#"
-            id="btt_button"
-            className="sticky bottom-4 mr-4 place-self-end
-            rounded-full bg-nord-4 p-2 text-nord-3 dark:bg-nord-2 dark:text-nord-6 md:-mr-10"
-          >
-            <ArrowUpIcon className="h-8 w-8" />
-          </a>
+          {post.readingTime.words >= 500 && (
+            <a
+              href="#"
+              id="btt_button"
+              className="group sticky bottom-4 mr-4 mt-[calc(100vh+50px)] place-self-end whitespace-nowrap rounded-lg
+            bg-nord-4 p-[0.65rem] text-nord-3 opacity-80 dark:bg-nord-2 dark:text-nord-6 md:-mr-10 "
+            >
+              {/* https://www.freecodecamp.org/news/css-only-back-to-top-button/ */}
+              <ArrowUpIcon className="h-8 w-8 md:group-hover:translate-y-2 md:group-hover:animate-bounce" />
+            </a>
+          )}
         </article>
         <Comment slug={`posts/${post.slug}`} />
       </div>
