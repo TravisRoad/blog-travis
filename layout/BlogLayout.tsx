@@ -39,16 +39,18 @@ export default function BlogLayout({
         <title>{`${post.title} | ${metadata.title}`}</title>
         <meta name="description" content={post.summary} />
       </Head>
-      <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark ">
+      <div className="-mt-10 min-h-[92vh] bg-nord-bgLight pb-10 dark:bg-nord-bgDark ">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article
-          className="mx-auto mt-5 grid pb-5 sm:max-w-4xl"
+          className="max mx-auto mt-5 grid max-w-[100vw] pb-5 sm:max-w-4xl"
           style={{ gridTemplateColumns: "auto 0px" }}
           data-clarity-region="article"
         >
           <Prose>
             <header>
-              <h1 className="text-center md:text-start">{post.title}</h1>
+              <h1 className="break-words text-center md:text-start">
+                {post.title}
+              </h1>
               <div className="-mt-5 flex flex-col items-center justify-between sm:flex-row">
                 {/* author and the date */}
                 <div className="inline-flex items-center space-x-1 text-gray-400 dark:text-gray-500">

@@ -13,7 +13,7 @@ const Comment = ({
   const { theme } = useDarkMode();
 
   return (
-    <div className="mx-auto max-w-5xl pb-5">
+    <div className="z-10 mx-auto max-w-5xl px-4 ">
       <Giscus
         repo="TravisRoad/blog-discuss"
         repoId="R_kgDOIkniCQ"
