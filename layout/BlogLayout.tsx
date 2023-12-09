@@ -10,12 +10,11 @@ import Comment from "components/Comment";
 import Toc from "components/Toc";
 import metadata from "data/metaData";
 import SeriesBlock from "components/posts/SeriesBlock";
+import { ArrowUpIcon } from "@heroicons/react/24/outline";
 
 export default function BlogLayout({
   children,
   post,
-  prev,
-  next,
 }: PropsWithChildren<{ post: Blog; prev: Blog; next: Blog }>) {
   const License = () => (
     <div className=" text-sm text-nord-3/50 dark:text-nord-6/50">
@@ -43,7 +42,7 @@ export default function BlogLayout({
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight px-2 dark:bg-nord-bgDark ">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article
-          className="mx-auto mt-5 pb-5 sm:max-w-4xl "
+          className="mx-auto mt-5 grid pb-5 sm:max-w-4xl"
           data-clarity-region="article"
         >
           <Prose>
@@ -103,6 +102,14 @@ export default function BlogLayout({
               />
             )}
           </Prose>
+          <a
+            href="#"
+            id="btt_button"
+            className="sticky bottom-4 mr-4 place-self-end
+            rounded-full bg-nord-4 p-2 text-nord-3 dark:bg-nord-2 dark:text-nord-6 md:-mr-10"
+          >
+            <ArrowUpIcon className="h-8 w-8" />
+          </a>
         </article>
         <Comment slug={`posts/${post.slug}`} />
       </div>
