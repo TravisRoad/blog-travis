@@ -15,8 +15,8 @@ export default function PostCard({
     <Link href={url ? url : "/"}>
       <a className="transition-color flex items-center justify-between rounded-none border-0 bg-white px-2 py-3 duration-200 hover:bg-nord-4/40 dark:bg-nord-0 dark:hover:bg-nord-1 md:px-2">
         <div className="flex flex-col items-baseline justify-between rounded-xl transition-all">
-          <p className="text-sm font-bold sm:text-lg">{title}</p>
-          {<p className="text-xs opacity-60 sm:text-base">{summary}</p>}
+          <p className="font-bold sm:text-lg">{title}</p>
+          {<p className="text-sm opacity-60 sm:text-base">{summary}</p>}
         </div>
         <div className="flex-shrink-0 pl-2 font-sans text-sm font-[500] tracking-wide opacity-60 sm:text-base">
           {date}
