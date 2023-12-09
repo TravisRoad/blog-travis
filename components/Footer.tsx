@@ -69,7 +69,7 @@ const CopyRight = () => {
 
 export default function Footer() {
   return (
-    <div className="">
+    <div>
       <svg
         viewBox="0 0 1920 250"
         xmlns="http://www.w3.org/2000/svg"

@@ -16,9 +16,20 @@ export default function RecentPost({
     <div className="mt-2 mb-2 px-0">
       <div className="py-4">
         <div className="pl-4 pb-1 text-base font-semibold opacity-80">star</div>
-        <div className="mx-auto grid grid-cols-2 gap-4">
+        <div className="mx-auto hidden grid-cols-2 gap-4 md:grid">
           {staredBlogs.map((blog: PartialBlog) => (
             <FLoatingCard
+              key={blog.title}
+              title={blog.title}
+              url={`/posts/${blog.slug}`}
+              summary={blog.summary}
+              date={format(parseISO(blog.publishDate), "yyyy/LL/dd")}
+            />
+          ))}
+        </div>
+        <div className="block divide-y divide-black/10 overflow-hidden rounded-lg border-2 border-nord-4 dark:divide-nord-2 dark:border-nord-2 md:hidden">
+          {staredBlogs.map((blog: PartialBlog) => (
+            <PostCard
               key={blog.title}
               title={blog.title}
               url={`/posts/${blog.slug}`}
