@@ -12,7 +12,12 @@ export default function MyLink({
 }) {
   return (
     <Link href={href}>
-      <a className={className}>{children}</a>
+      <a
+        className={className}
+        target={href.startsWith("http") ? "_blank" : "_self"}
+      >
+        {children}
+      </a>
     </Link>
   );
 }
