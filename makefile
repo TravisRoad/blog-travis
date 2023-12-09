@@ -13,3 +13,6 @@ blog:
 draft:
 	@grep 'draft: true' data/blog/* | tr ':' '\t' | cut -f1
 
+star:
+	@grep 'star: true' data/blog/* | tr ':' '\t' | cut -f1
+

@@ -6,7 +6,7 @@ const metadata = {
     sup: "Blog",
   },
   ICP: {
-    url: "https://www.beianx.cn/info/335673546825797",
+    url: "https://beian.miit.gov.cn/",
     code: "京ICP备20006389号-1",
   },
   time: {
