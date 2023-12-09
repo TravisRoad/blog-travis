@@ -59,7 +59,7 @@ export default function Toc(toc: any) {
       </li>
     ));
     return (
-      <li key={h2.i} className="ml-2">
+      <li key={h2.i} className="ml-2 -space-y-[6px] sm:-space-y-1">
         <a href={`#${h2.slug}`} className="hover:underline ">
           {h2.content}
         </a>
@@ -70,13 +70,13 @@ export default function Toc(toc: any) {
 
   return (
     <div className="not-prose relative mt-4 rounded-lg border-4 py-2 pl-4 pr-8 dark:border-nord-3 dark:text-nord-6/80 dark:shadow-none md:float-right md:ml-4 md:max-w-[50%] md:border-none md:bg-nord-6 md:shadow-md md:dark:bg-nord-1 ">
-      <span className="mt-2 mb-4 flex items-center gap-x-1 md:justify-center">
-        <QueueListIcon className="inline h-8 w-8 stroke-nord-10 dark:stroke-nord-8 " />
-        <h2 className="text-2xl font-bold text-nord-10 dark:text-nord-8 ">
+      <span className="mt-2 mb-1 flex items-center gap-x-1 sm:mb-4 md:justify-center">
+        <QueueListIcon className="inline h-6 w-6 stroke-nord-10 dark:stroke-nord-8 sm:h-8 sm:w-8 " />
+        <h2 className="text-lg font-bold text-nord-10 dark:text-nord-8 sm:text-2xl ">
           目录
         </h2>
       </span>
-      <ul className=" list-inside list-disc text-nord-0 dark:text-nord-6">
+      <ul className=" list-inside list-disc -space-y-[6px] text-nord-0 dark:text-nord-6 sm:-space-y-1">
         {tocdom}
       </ul>
     </div>

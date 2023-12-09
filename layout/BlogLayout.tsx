@@ -48,7 +48,7 @@ export default function BlogLayout({
         >
           <Prose>
             <header>
-              <h1 className="break-words text-center md:text-start">
+              <h1 className="break-words text-center text-2xl sm:text-4xl md:text-start">
                 {post.title}
               </h1>
               <div className="-mt-5 flex flex-col items-center justify-between sm:flex-row">
