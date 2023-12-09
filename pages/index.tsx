@@ -51,7 +51,7 @@ export async function getStaticProps() {
       (blog: Blog) => process.env.NODE_ENV === "development" || !blog.draft
     );
   const recentBlogs = sortedBlogs
-    .slice(0, 5)
+    .slice(0, 8)
     .map((blog: Blog) =>
       pick(blog, ["title", "summary", "publishDate", "slug"])
     );
