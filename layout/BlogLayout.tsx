@@ -88,11 +88,9 @@ export default function BlogLayout({
             {children}
             <div className="py-4"></div>
             <License />
-            {process.env.NODE_ENV !== "development" && (
-              <div className="absolute bottom-0 right-0 mr-5">
-                <LikeButton slug={post.slug} />
-              </div>
-            )}
+            <div className="absolute bottom-0 right-0 mr-5">
+              <LikeButton slug={post.slug} />
+            </div>
             {false && post.series && post.readingTime.minutes > 8.0 && (
               <SeriesBlock
                 blogs={allBlogs
@@ -105,12 +103,13 @@ export default function BlogLayout({
               />
             )}
           </Prose>
+          {/* return to top button */}
           {post.readingTime.words >= 500 && (
             <a
               href="#"
               id="btt_button"
-              className="group sticky bottom-4 mr-4 mt-[calc(100vh+50px)] place-self-end whitespace-nowrap rounded-lg
-            bg-nord-4 p-[0.65rem] text-nord-3 opacity-80 dark:bg-nord-2 dark:text-nord-6 md:-mr-10 "
+              className="group sticky bottom-4 mr-4 mt-[calc(100vh+50px)] -mb-10 place-self-end whitespace-nowrap
+            rounded-lg bg-nord-4 p-[0.65rem] text-nord-3 opacity-70 dark:bg-nord-2 dark:text-nord-6 md:-mr-10"
             >
               {/* https://www.freecodecamp.org/news/css-only-back-to-top-button/ */}
               <ArrowUpIcon className="h-8 w-8 md:group-hover:translate-y-2 md:group-hover:animate-bounce" />
