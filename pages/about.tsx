@@ -33,7 +33,7 @@ const FriendLink = () => {
         <UserGroupIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
       </Line>
       <div
-        className="mx-auto grid gap-2 px-2 sm:max-w-3xl sm:grid-cols-2"
+        className="mx-auto grid gap-2 sm:max-w-3xl sm:grid-cols-2"
         id="friendLink"
       >
         {friends.map((friend: Friend) => (

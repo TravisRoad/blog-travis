@@ -13,7 +13,7 @@ export default function PostCard({
 }) {
   return (
     <Link href={url ? url : "/"}>
-      <a className="transition-color flex items-center justify-between rounded-none border-0 bg-white px-2 py-3 duration-200 hover:bg-nord-4/40 dark:bg-nord-0 dark:hover:bg-nord-1 md:px-2">
+      <a className="transition-color flex items-center justify-between rounded-none border-0 bg-white px-2 py-3 duration-200 dark:bg-nord-0 md:px-2 md:hover:bg-nord-4/40 md:dark:hover:bg-nord-1">
         <div className="flex flex-col items-baseline justify-between rounded-xl transition-all">
           <p className="font-bold sm:text-lg">{title}</p>
           {<p className="text-sm opacity-60 sm:text-base">{summary}</p>}
