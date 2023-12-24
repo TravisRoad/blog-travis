@@ -2,13 +2,13 @@ import Main from "components/Main";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { allAbouts, allIdeas, allMovies } from "contentlayer/generated";
 import MDXComponents from "components/mdx/MDXComponents";
-import { allBlogs } from ".contentlayer/generated";
-import type { ReadingTime } from "types/reading-time";
-import { parseISO, format } from "date-fns";
-import { statistic } from "types/statistic";
 import States from "components/States";
 import WelcomeCard from "components/WelcomeCard";
-import { UserCircleIcon, UserGroupIcon } from "@heroicons/react/24/outline";
+import {
+  UserCircleIcon,
+  UserGroupIcon,
+  BookOpenIcon,
+} from "@heroicons/react/24/outline";
 import type { Friend } from "data/friendLink";
 import friends from "data/friendLink";
 import FriendCard from "components/FriendCard";
@@ -74,6 +74,20 @@ const Statistic = () => {
   );
 };
 
+const Log = () => (
+  <>
+    <Line>
+      <BookOpenIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
+    </Line>
+    <div className="prose prose-stone mx-auto dark:prose-invert sm:max-w-3xl">
+      <ul>
+        <li>2022年9月28日 - 转移到新博客框架了</li>
+        <li>2023年12月9日 - 增加了返回顶部按钮 && 丝滑滚动</li>
+      </ul>
+    </div>
+  </>
+);
+
 const About = () => {
   const Content = useMDXComponent(allAbouts[0].body.code);
 
@@ -86,7 +100,6 @@ const About = () => {
         <figure className="mx-auto mt-4 hidden max-w-3xl pl-4 dark:invert lg:block lg:h-[8rem]">
           <embed src="https://wakatime.com/share/@TravisRoad/fa4c2a51-c527-4076-959e-9501d918fdcd.svg"></embed>
         </figure>
-        {/* hr 简介 */}
         <Line>
           <UserCircleIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
         </Line>
@@ -95,15 +108,7 @@ const About = () => {
             <Content components={MDXComponents}></Content>
           </div>
         </div>
-        {/* hr 简介 */}
-        <Line>
-          <div className="translate-y-[0.25rem]">大事记</div>
-        </Line>
-        <div className="prose prose-stone mx-auto dark:prose-invert sm:max-w-3xl">
-          <ul>
-            <li>2022年9月28日 - 转移到新博客框架了</li>
-          </ul>
-        </div>
+        <Log />
         <Statistic />
         <FriendLink />
       </Main>
