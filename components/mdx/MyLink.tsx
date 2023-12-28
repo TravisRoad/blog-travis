@@ -13,7 +13,7 @@ export default function MyLink({
   return (
     <Link href={href}>
       <a
-        className={className}
+        className={`${className} hover-link relative`}
         target={href.startsWith("http") ? "_blank" : "_self"}
       >
         {children}
