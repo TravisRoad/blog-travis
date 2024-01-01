@@ -23,11 +23,11 @@ export const Blog = defineDocumentType(() => ({
       required: true,
     },
     publishDate: {
-      type: "date",
+      type: "string",
       required: true,
     },
     createdDate: {
-      type: "date",
+      type: "string",
       required: true,
     },
     modifiedDate: {
@@ -230,7 +230,7 @@ export const Idea = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     publishDate: {
-      type: "date",
+      type: "string",
       required: true,
     },
   },
