@@ -1,0 +1,91 @@
+---
+title: "HOWTO: 在 Next.js 中实现服务端鉴权"
+summary: "如何在 Next.js 中实现服务端鉴权，了解服务端渲染"
+publishDate: 2024-01-01 16:22:13
+createdDate: 2023-12-31 12:07:30
+star: false
+showTOC: false
+draft: false
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+{/* just for padding */}
+<div className="h-4 w-full"></div>
+
+<Admonition defaultOpen={false} type="info" title="代码仓库">
+demo 位于 [@TravisRoad/blog-travis-code](https://github.com/TravisRoad/blog-travis-code/tree/main/2023/authentication_serverside) 中
+</Admonition>
+
+最近在写自己的练手项目，其中不可避免的遇到了授权、鉴权的问题。方式有以下两种：
+
+1. 直接在客户端这边调用鉴权接口，再根据结果触发重新渲染
+2. 在服务端调用鉴权接口，根据结果渲染界面
+
+第一种方式很容易想到，但是不可避免的，在客户端调用鉴权接口，到接口返回信息，触发重新渲染的过程中，会给用户整个界面闪了一下的感觉。不太直观，对用户体验来说也不合适。
+
+我们在这里采用第二种方式。在请求页面时，就携带上用户的认证信息（session），然后在服务端调用鉴权接口，如果鉴权通过，则渲染请求的页面；否则，就重定向到登录页面。
+
+在 Next.js 中：
+
+- 在 13.0 版本之前的 Page Router 中，一直都有 `getServerSideProps` 函数，这一函数可用于在每一次页面请求时，生成一些 props 注入要返回的 page component 当中。即服务端渲染。
+- 在 13.0 版本以来的 App Router 当中，新加入了 Server Action[^server_action]。即定义一些只在服务端使用的函数，在服务端组件中可以随意调用。
+
+[^server_action]: [Server Actions and Mutations](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
+
+接下来我的代码将使用 Next.js 14.0 的版本进行编写，服务端使用 Golang 的 http 包编写了[基本的功能](https://github.com/TravisRoad/blog-travis-code/tree/main/2023/authentication_serverside/backend)，即函数接口: `/api/login`、`/api/logout`、`/api/islogin`
+
+1. 实现 Server Action，将页面请求中的 cookie 携带着进行鉴权，这里 `http.StatusOK` 则代表已登录，否则未登录。最后则可以返回一个 `Promise`，以供进一步的判断回调。
+
+```typescript:frontend/src/lib/auth.ts {7-9}
+export async function isLogin(): Promise<boolean> {
+  console.log("check login");
+  console.log(cookies().toString());
+
+  const hasLogin = await fetch("http://localhost:8080/api/islogin", {
+    cache: "no-store",
+    headers: {
+      Cookie: cookies().toString(),
+    },
+  }).then((res) => {
+    return res.status === 200;
+  });
+  return hasLogin;
+}
+```
+
+2. 在页面中添加鉴权调用，如果没有登录，则重定向到登录页面。如果读者跑了这个 demo 应当可以看到，未登录的用户即使最开始访问的是 `http://localhost:8080/` 这个路径，也会被直接导向 `/login` 路径进行登录。
+
+<div className="pb-4">
+  <Admonition type="warn">
+    这里一定要记得添加 `await` 和 `async`
+  </Admonition>
+</div>
+
+```typescript:2023/authentication_serverside/frontend/src/app/page.tsx {2-6}
+export default async function Home() {
+  await isLogin().then((res: boolean) => {
+    if (!res) {
+      redirect("/login");
+    }
+  });
+
+  return (
+    <main >
+      <>
+        You has logged in
+        <div>
+          <Logout />
+        </div>
+      </>
+    </main>
+  );
+}
+```
+
+{/* just for padding */}
+<div className="h-4 w-full"></div>
