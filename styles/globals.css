@@ -168,7 +168,7 @@ li#series-list::before {
 }
 
 @media (min-width: 640px) {
-  a.hover-link::after {
+  /* a.hover-link::after {
     content: "";
     @apply absolute top-full left-0 w-full border-b-2 opacity-0;
     transition: top 0.5s, opacity 0.3s;
@@ -176,5 +176,5 @@ li#series-list::before {
 
   a.hover-link:hover::after {
     @apply top-0 border-nord-10 opacity-100 dark:border-nord-7;
-  }
+  } */
 }
