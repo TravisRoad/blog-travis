@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # CHATGPT ALL RIGHTS RESERVED
 
 idea() {
