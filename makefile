@@ -1,18 +1,17 @@
 .PHONY: idea blog
 
 usage:
-	@echo 'make idea'
-	@echo 'make blog'
+	@./script/blog.sh
 
 idea:
-	touch ./data/idea/idea`date '+%Y%m%d'`.mdx
+	@./script/blog.sh idea
 
 blog:
-	touch ./data/blog/`date '+%Y%m%d'`.mdx
+	@./script/blog.sh blog
 
 draft:
-	@grep 'draft: true' data/blog/* | tr ':' '\t' | cut -f1
+	@./script/blog.sh draft
 
 star:
-	@grep 'star: true' data/blog/* | tr ':' '\t' | cut -f1
+	@./script/blog.sh star
 
