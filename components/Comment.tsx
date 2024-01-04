@@ -1,6 +1,4 @@
 import Giscus, { BooleanString } from "@giscus/react";
-import { getTheme } from "@/lib/utils";
-import { useEffect, useState } from "react";
 import useDarkMode from "@/lib/hooks/useDarkMode";
 
 const Comment = ({

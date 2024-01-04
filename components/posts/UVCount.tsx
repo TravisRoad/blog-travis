@@ -20,7 +20,7 @@ export default function UVCount({ slug }: { slug: string }) {
       fetch(`/api/view/${slug}`, { method: "POST" });
       setCookie(cookieName, true, 7);
     }
-  }, [cookieName, slug]);
+  }, []);
 
   return (
     <div className="mx-2 flex cursor-default items-center " title="unique view">

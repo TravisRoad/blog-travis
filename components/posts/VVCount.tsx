@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import type { ViewData } from "types/LikeData";
-import { getCookie, setCookie } from "lib/utils";
 import { EyeIcon } from "@heroicons/react/24/outline";
 
 export default function VVCount({ slug }: { slug: string }) {
@@ -14,13 +13,13 @@ export default function VVCount({ slug }: { slug: string }) {
       .then((data) => {
         setViewData(data);
       });
-    const val = getCookie(cookieName);
-    if (val.length === 0) {
-      // not viewed
-      fetch(`/api/vv/${slug}`, { method: "POST" });
-      setCookie(cookieName, true, 0, "/", 30); // 30 seconds
-    }
-  }, [cookieName, slug]);
+    // const val = getCookie(cookieName);
+    // if (val.length === 0) {
+    //   // not viewed
+    //   fetch(`/api/vv/${slug}`, { method: "POST" });
+    //   setCookie(cookieName, true, 0, "/", 30); // 30 seconds
+    // }
+  }, []);
 
   return (
     <div className="mx-2 flex cursor-default items-center " title="unique view">
