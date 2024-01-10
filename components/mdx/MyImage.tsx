@@ -9,8 +9,20 @@ export default function MyImage({
   border = false,
   rounded = false,
 }: any) {
+  if (src.endsWith("svg")) {
+    return (
+      <Image
+        src={`${src}`}
+        width={width}
+        height={height}
+        alt={alt}
+        blurDataURL={blurDataURL}
+        placeholder="blur"
+      />
+    );
+  }
   return (
-    <div className="not-prose mx-2 mb-0 mt-4 break-inside-avoid-page">
+    <div className="not-prose mx-2 mb-0 mt-4 break-inside-avoid-page ">
       {width && height ? (
         <LocalImage
           src={src}
@@ -45,14 +57,14 @@ function LocalImage({
   width,
   height,
   blurDataURL,
-  border = true,
+  border = false,
   rounded = true,
 }: any) {
   return (
     <div
       className={`grid place-items-center overflow-hidden ${
         rounded && "rounded-lg "
-      } ${border && " border-2 border-nord-10/20 dark:border-white/30"}`}
+      } ${border && " border-0 border-nord-10/20 dark:border-white/30"}`}
     >
       <Image
         src={`${src}`}
@@ -69,7 +81,7 @@ function WebImage({
   src,
   alt,
   blurDataURL,
-  border = true,
+  border = false,
   rounded = true,
 }: any) {
   return (
@@ -77,8 +89,7 @@ function WebImage({
       className={`relative aspect-video place-items-center overflow-hidden ${
         rounded && "rounded-lg"
       } ${
-        border &&
-        " border-[3px] border-gray-400 dark:border-2 dark:border-white/10"
+        border && " border-0 border-gray-400 dark:border-2 dark:border-white/10"
       } bg-nord-10/10`}
     >
       <Image
