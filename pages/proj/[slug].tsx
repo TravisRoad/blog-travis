@@ -19,7 +19,7 @@ export default function Proj({ proj }: { proj: Proj }) {
         path={`/proj/${proj.slug}`}
       ></Seo>
 
-      <div className="prose prose-stone mx-auto flex w-full flex-col prose-h2:text-lg prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl ">
+      <div className="prose prose-stone mx-auto flex w-full flex-col pt-2 prose-h2:text-lg prose-a:text-nord-9 prose-a:no-underline hover:prose-a:underline dark:prose-invert sm:max-w-3xl ">
         <div className="flex items-center justify-center ">
           <h1 className="">{proj.title}</h1>
         </div>

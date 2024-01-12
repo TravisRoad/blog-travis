@@ -106,14 +106,14 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            {process.env.NODE_ENV !== "development" && (
+            {/* {process.env.NODE_ENV !== "development" && (
               <div className="flex py-2">
                 {" "}
                 <UVCount slug="whole-site-uv" />
                 {"|"}
                 <VVCount slug="whole-site-uv" />
               </div>
-            )}
+            )} */}
             <Subway />
             <CopyRight />
             <ICPnumber />
