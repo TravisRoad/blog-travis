@@ -9,3 +9,7 @@
 
 - [ ] Github 小组件
 - [ ] 影视信息展示小组件
+
+## 选材
+
+- [ ] [difference between shell,termial and tty](https://news.ycombinator.com/item?id=38984096)
