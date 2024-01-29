@@ -13,3 +13,4 @@
 ## 选材
 
 - [ ] [difference between shell,termial and tty](https://news.ycombinator.com/item?id=38984096)
+- [ ] litestream 的工作原理
