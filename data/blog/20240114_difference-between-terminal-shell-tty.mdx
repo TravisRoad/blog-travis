@@ -1,0 +1,42 @@
+---
+title: terminal、shell 和 tty 的区别
+summary: 打破砂锅问到底，terminal、shell、tty 到底是什么
+publishDate: 2024-01-14 21:56:13
+createdDate: 2024-01-14 21:56:15
+star: false
+showTOC: false
+draft: true
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+我第一次接触 Linux，是在 [CSAPP](https://csapp.cs.cmu.edu/) 课程上，当时老师下发 Ubuntu 的镜像，用保姆级教程手把手教我们在 vmware 上搭建一个 Ubuntu 虚拟机 (现在看信手拈来，但当时废了好大的功夫)。
+
+对于当时的我来说，对 Linux 的全部理解就是：打开 `Terminal`，然后里面自然而然的就会蹦出 `bash` 的交互界面，我只要输入一些现成的命令就能让系统做我想做的事情了。
+随着理解的加深，我逐渐了解到了我打开的 Terminal 的全称应该是终端模拟器，shell 不只有 bash，还有 zsh、fish 等等，我输入的指令有些是 shell 提供的，大部分只是放在 `$PATH` 路径下的一些二进制文件罢了。
+
+但是我一直没有真正搞清楚，terminal、shell、tty、console 这些名词究竟代表了什么。
+恰好最近在 Hacker News 上看到了 [这篇帖子][hn]，这次就下定决心一探究竟吧。
+
+首先查查维基百科：
+
+- tty 代表的是 **T**ele**Ty**pewriter [^wiki_tty]，也就是电传打字机。
+- shell[^wiki_shell] 则是提供用户界面的**软件**
+- terminal 则在[消歧](https://en.wikipedia.org/wiki/Terminal)中列出了两种
+  - Terminal emulator(or terminal application)，是一种模拟视屏终端的软件
+  - Computer terminal，其中提到了 tty [^wiki_terminal_tty]
+
+在计算机诞生的早期，需要终端来将数据输入计算机，再到后来的分时系统，一台计算机连接多个终端以供使用。而电传打字机，除了能连接到计算机，这种打字机功能和在电视剧当中能见到的老式打字机类似，下面是键盘，上面是一个纸卷的容纳仓。给出指令后，输出就会从纸上一行行打印出来。
+现在，我们都不再使用早期的终端。
+
+[hn]: https://news.ycombinator.com/item?id=38984096
+[^stack]: https://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con
+[^reddit]: https://www.reddit.com/r/programming/comments/41u5hw/comment/cz5ejh6/
+
+[^wiki_tty]: ["What does "TTY" stand for?". Ask Ubuntu.](https://en.wikipedia.org/wiki/Tty_(Unix)#cite_note-2)
+[^wiki_shell]: [Shell(computing)](https://en.wikipedia.org/wiki/Shell_(computing))
+[^wiki_terminal_tty]: [Hard-copy terminal](https://en.wikipedia.org/wiki/Computer_terminal#Hard-copy_terminals)
