@@ -1,11 +1,11 @@
 ---
 title: terminal、shell 和 tty 的区别
 summary: 打破砂锅问到底，terminal、shell、tty 到底是什么
-publishDate: 2024-01-14 21:56:13
+publishDate: 2024-02-08 19:58:31
 createdDate: 2024-01-14 21:56:15
 star: false
 showTOC: false
-draft: true
+draft: false
 # series:
 # priority
 cate:
@@ -25,18 +25,42 @@ tags:
 首先查查维基百科：
 
 - tty 代表的是 **T**ele**Ty**pewriter [^wiki_tty]，也就是电传打字机。
-- shell[^wiki_shell] 则是提供用户界面的**软件**
-- terminal 则在[消歧](https://en.wikipedia.org/wiki/Terminal)中列出了两种
-  - Terminal emulator(or terminal application)，是一种模拟视屏终端的软件
+- shell [^wiki_shell] 则是提供用户界面的<strong>软件</strong>
+- terminal 则在[维基页面](https://en.wikipedia.org/wiki/Terminal)中列出了两种
+  - Terminal emulator (or terminal application)，是一种模拟视屏终端的软件
   - Computer terminal，其中提到了 tty [^wiki_terminal_tty]
 
 在计算机诞生的早期，需要终端来将数据输入计算机，再到后来的分时系统，一台计算机连接多个终端以供使用。而电传打字机，除了能连接到计算机，这种打字机功能和在电视剧当中能见到的老式打字机类似，下面是键盘，上面是一个纸卷的容纳仓。给出指令后，输出就会从纸上一行行打印出来。
-现在，我们都不再使用早期的终端。
+
+现在，我们都不再使用早期的终端，但是我们的电脑上依然存在这种软件，例如 MacOS 上自带的 Terminal，Windows 上的 Windows Terminal，还有诸如 [Kitty](https://github.com/kovidgoyal/kitty)，[Alacritty](https://github.com/alacritty/alacritty)，它们都被叫做终端模拟器（Terminal Emulator）。
+终端模拟器负责处理我们的输入并且将输出渲染出来，简单的指令例如 `cat $FILE`，能够输出该文件的内容，更复杂的交互式进程例如 `vim`，则能输出编辑界面。
+
+终端模拟器并没有直接和 shell 打交道，它们之间隔了一层 tty（或 pty），tty 能够很好的解耦 shell 和输入输出之间的关系。对于不同的设备，输入输出的处理方式不尽相同。下面是一张 ASCII 示意图 [^reddit]。
+
+```txt
+//===========================\\
+||          Terminal         ||
+||             |-----------| ||
+|| Keyboard--->|   Input   |-++->|---|   |-------|
+||             |-----------| ||  |tty|<=>| shell |
+||         |---------|<------++--|---|   |-------|
+|| Print<--|  Output |       ||
+||         |---------|       ||
+||                           ||
+\\===========================//
+```
+
+到了 shell 这一层，就进入我们熟知的软件了。shell 能够通过我们的输入和特殊的转义字符，完成特定的操作。例如 bash 中的 `Ctrl-e` 和 `Ctrl-a` 是将光标跳转到行尾和行首，`Ctrl-u` 和 `Ctrl-k` 则是删除光标前和光标后的所有字符。
+同时 shell 也会对输出做一些手脚，例如输出的各种颜色，其中用的是一堆转义符，shell 理解了之后才会为文本着色。
+
+## 总结
+
+terminal 是古早的终端设备，现在一般指代终端模拟器这一软件；tty 则是 Unix/Linux 系统中的设备，是连接终端和 shell 的桥梁；shell 则是解释我们输入的命令的软件。
 
 [hn]: https://news.ycombinator.com/item?id=38984096
 [^stack]: https://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con
-[^reddit]: https://www.reddit.com/r/programming/comments/41u5hw/comment/cz5ejh6/
+[^reddit]: [What is the exact difference between a 'terminal', a'shell', a 'tty' and a 'console'?](https://www.reddit.com/r/programming/comments/41u5hw/comment/cz5ejh6/)
 
-[^wiki_tty]: ["What does "TTY" stand for?". Ask Ubuntu.](https://en.wikipedia.org/wiki/Tty_(Unix)#cite_note-2)
-[^wiki_shell]: [Shell(computing)](https://en.wikipedia.org/wiki/Shell_(computing))
+[^wiki_tty]: ["What does"TTY"stand for?". Ask Ubuntu.](https://en.wikipedia.org/wiki/Tty_(Unix)#cite_note-2)
+[^wiki_shell]: [Shell (computing)](https://en.wikipedia.org/wiki/Shell_(computing))
 [^wiki_terminal_tty]: [Hard-copy terminal](https://en.wikipedia.org/wiki/Computer_terminal#Hard-copy_terminals)
