@@ -17,6 +17,12 @@ const friends: Friend[] = [
     description: "靡不有初，鲜克有终",
     iconUrl: "/image/friends/mskclover.jpg",
   },
+  {
+    url: "https://blog.izfsk.top/",
+    name: "白漠流霜",
+    description: "izfsk 的博客",
+    iconUrl: "/image/friends/izfsk.ico",
+  },
 ];
 
 export default friends;
