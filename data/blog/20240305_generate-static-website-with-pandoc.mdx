@@ -1,0 +1,84 @@
+---
+title: 使用 pandoc 生成一个静态网站
+summary: 使用 pandoc 生成一个静态网站
+publishDate: 2024-03-05 17:44:38
+createdDate: 2024-03-05 17:44:39
+star: false
+showTOC: false
+draft: true
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+最近，在准备暑期实习的面试，每每面完一场，自然是要记录下本次面试中被拷打的问题，以及一系列心得体会，方便未来查阅。
+
+我个人的工作流是在 Obsidian 中记录，记录的文件自然是 markdown 格式的。然而这种文件记录的方式相比于飞书文档、腾讯文档等一众在线文档而言，不利于分享。
+而这些在线文档又不支持直接将 markdown 的文本黏贴并转换为自己的内建的格式，为了不重复劳动外加分享方便，我写了一个简单的 `makefile` 来组建我的在线面经网站。
+
+整个目录结构大致如下，根目录下摆了 `makefile` 文件和需要托管的 Markdown 文件（这儿的 `index.md` 是自动生成的）。
+```txt
+.
+├── html
+│   ├── idk.html
+│   ├── index.html
+│   ├── 字节面经.html
+│   ├── 百度面经.html
+│   ├── 腾讯面经.html
+│   └── 阿里云面经.html
+├── index.md
+├── makefile
+├── 字节面经.md
+├── 百度面经.md
+├── 腾讯面经.md
+└── 阿里云面经.md
+```
+
+```makefile
+.PHONY: build sync all
+
+# 定义输入和输出目录
+INPUT_DIR := .
+OUTPUT_DIR := ./html
+INDEX_MD := /tmp/index.md
+INDEX_FILE := $(OUTPUT_DIR)/index.html
+
+# 获取所有的Markdown文件
+MD_FILES := $(wildcard $(INPUT_DIR)/*.md)
+
+# 将Markdown文件名转换为相应的HTML文件名
+HTML_FILES := $(patsubst $(INPUT_DIR)/%.md,$(OUTPUT_DIR)/%.html,$(MD_FILES))
+
+# 默认目标：将所有Markdown文件转换为HTML文件
+build: $(INDEX_FILE) $(HTML_FILES)
+
+# 规则：生成索引页面的 html 文件
+$(INDEX_FILE): $(INDEX_MD)
+        pandoc -s $< -o $@
+
+# 规则：生成索引页面
+$(INDEX_MD): $(HTML_FILES)
+        @echo "# Index" >> $(INDEX_MD)
+        @for file in $(HTML_FILES); do \
+                file_name=$$(basename $$file); \
+                echo "- [$$file_name]($$file_name)" >> $(INDEX_MD); \
+        done
+
+# 规则：将Markdown文件转换为HTML文件
+$(OUTPUT_DIR)/%.html: $(INPUT_DIR)/%.md
+        pandoc -s $< -o $@
+
+# 清理规则：删除生成的HTML文件
+clean:
+        rm -f $(HTML_FILES) $(INDEX_FILE) $(INDEX_MD)
+
+sync:
+        rsync -hau --delete --progress ./html/* remote-server:/web
+
+all: clean build sync
+```
+
+接下来我就想到了，要不要试着直接利用 pandoc 做一个博客系统呢，前端就使用 `Alpine.js` 来做一些动态内容，整个构建的过程就使用 `bash script` 来串联。
