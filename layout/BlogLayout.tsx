@@ -42,7 +42,7 @@ export default function BlogLayout({
       <div className="-mt-10 min-h-[92vh] bg-nord-bgLight pb-10 dark:bg-nord-bgDark ">
         {/* <div className="-mt-20 min-h-[92vh] px-2 pt-20"> */}
         <article
-          className=" mx-auto mt-5 grid max-w-[100vw] pb-5 sm:max-w-5xl sm:px-4"
+          className=" mx-auto mt-5 grid max-w-[100vw] pb-5 sm:max-w-3xl sm:px-4"
           style={{ gridTemplateColumns: "auto 0px" }}
           data-clarity-region="article"
         >

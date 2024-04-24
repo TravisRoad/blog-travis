@@ -47,7 +47,7 @@ function PostTimeLine({ posts }: { posts: Array<any> }) {
   }
 
   return (
-    <div className="mx-auto mt-10 max-w-5xl flex-col justify-center space-y-5">
+    <div className="mx-auto mt-10 max-w-3xl flex-col justify-center space-y-5">
       {yearCata.map((year) => (
         <Cell year={year} posts={timeline[year]} key={year} />
       ))}

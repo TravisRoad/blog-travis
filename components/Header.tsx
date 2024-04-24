@@ -53,7 +53,7 @@ export default function Header({ isTop }: { isTop: Boolean }) {
       }`}
     >
       <div
-        className={`mx-auto flex max-w-5xl flex-row items-center justify-between space-x-8 border-b border-nord-4 px-4 text-base transition-all duration-300 dark:border-nord-2 sm:text-xl lg:px-0 ${
+        className={`mx-auto flex max-w-3xl flex-row items-center justify-between space-x-8 border-b border-nord-4 px-4 text-base transition-all duration-300 dark:border-nord-2 sm:text-xl lg:px-0 ${
           isTop ? "h-[2.75rem]" : "h-[2.5rem] "
         }`}
       >
