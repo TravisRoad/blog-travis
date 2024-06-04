@@ -15,6 +15,8 @@ tags:
 ---
 
 > 本文中的所有内容都在 [blog-travis-code](https://github.com/TravisRoad/blog-travis-code/tree/main/2024) 中
+>
+> 我在代码仓库中放了一个简单的 go 代码，能够接受 `-url` 和 `-sel` 参数，分别代表你要截图的 URL 和 CSS 选择器（用来选择你要截图的元素）。
 
 最近在着手写一个 AI 原生的读新闻项目，用了 3 周的时间做了一个简单的 MVP，现在准备重新实现其中的细节并重新设计整个产品的实现。
 在推广方面预备结合图文，在小红书上发布。以此衍生出了一个问题，如何实现自动化的图文制作。
@@ -27,7 +29,7 @@ tags:
 
 ![烫烫烫](/image/2024-06-03_21-53-20.png)
 
-原因也很容易想到，肯定是因为镜像中缺少相应的字体，因此无法渲染汉字和 emoji，那么我只需要自己重新制作一个包含了汉字字体的镜像就可以了，so eazy。
+原因也很容易想到，肯定是因为镜像中缺少相应的字体，因此无法渲染汉字和 emoji，那么我只需要自己重新制作一个包含了汉字字体的镜像就可以了，so easy。
 翻了翻 `chromedp` 的 issue，果然有人曾今提过相关的 [issue](https://github.com/chromedp/chromedp/issues/611#issuecomment-628352321)。
 
 ```Dockerfile:Dockerfile.step1
@@ -73,7 +75,7 @@ ENV LANG en-US.UTF-8
 ENV PATH /headless-shell:$PATH
 ```
 
-构建镜像后，在代码仓库中运行。
+构建镜像后，在代码仓库中运行下列代码。
 
 ```bash
 go run main.go -url 'https://rssrank.com/screenshot/daily/archive/k7KVVVOdg?offset=8&limit=2' -sel 'main#screenshot-body'
@@ -81,3 +83,7 @@ go run main.go -url 'https://rssrank.com/screenshot/daily/archive/k7KVVVOdg?offs
 
 这次我们得到了完美的截图，就仿佛是我们自己在浏览器中截下来的一样。
 
+![完美](/image/2024-06-03_21-40-16.jpg)
+
+[^1]: [FontConfig User Documentation](https://www.freedesktop.org/software/fontconfig/fontconfig-user.html)
+[^2]: [Linux fontconfig 的字体匹配机制](https://catcat.cc/post/2020-10-31/)
