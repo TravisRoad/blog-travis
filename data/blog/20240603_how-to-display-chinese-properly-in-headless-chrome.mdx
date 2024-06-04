@@ -1,0 +1,83 @@
+---
+title: 如何制作一个能够正确展示中文的无头浏览器镜像
+summary: headless-shell in docker + chromedp
+publishDate: 2024-06-03 21:29:14
+createdDate: 2024-06-03 21:29:16
+star: false
+showTOC: false
+draft: false
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+> 本文中的所有内容都在 [blog-travis-code](https://github.com/TravisRoad/blog-travis-code/tree/main/2024) 中
+
+最近在着手写一个 AI 原生的读新闻项目，用了 3 周的时间做了一个简单的 MVP，现在准备重新实现其中的细节并重新设计整个产品的实现。
+在推广方面预备结合图文，在小红书上发布。以此衍生出了一个问题，如何实现自动化的图文制作。
+
+网页的表现力是一流的，并且排版方便，不用花太多功夫就可以设计一个挺不错的图文内容。[下图链接](https://rssrank.com/screenshot/daily/archive/k7KVVVOdg?offset=8&limit=2)
+
+![想象很美好](/image/2024-06-03_21-40-16.jpg)
+
+一切看起来都那么容易，但是当我使用 `chromedp/headless-shell` 的镜像时，不出意外的出了意外——中文和 emoji 全部变成了豆腐块。
+
+![烫烫烫](/image/2024-06-03_21-53-20.png)
+
+原因也很容易想到，肯定是因为镜像中缺少相应的字体，因此无法渲染汉字和 emoji，那么我只需要自己重新制作一个包含了汉字字体的镜像就可以了，so eazy。
+翻了翻 `chromedp` 的 issue，果然有人曾今提过相关的 [issue](https://github.com/chromedp/chromedp/issues/611#issuecomment-628352321)。
+
+```Dockerfile:Dockerfile.step1
+FROM chromedp/headless-shell:latest
+
+RUN apt-get update -y \
+    && apt-get install -y fonts-noto \
+    && apt-get install -y fonts-noto-cjk \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
+
+EXPOSE 9222
+ENV LANG en-US.UTF-8
+```
+
+这个镜像能够 work，但是也有瑕疵，`fonts-noto-cjk` 中的 `cjk` 指的是东亚这边三个国家的字体：日文、韩文、简体中文、繁体中文，后缀分别是 `JP, KR, SC, TC`。
+然而，即使中文是联合国的官方语言，按照字典序 `SC` 依旧是排在 `JP` 之后，所以在解析某些单字，例如 `关、门、今` 之类的汉字会使用日文中的汉字，观感不佳且怪异。
+
+![含有日文汉字的截图](/image/2024-06-03_22-25-16.jpg)
+
+为了解决这个问题，我们可以自己裁剪出简体中文的字体放入镜像
+
+```bash
+wget https://github.com/life888888/cjk-fonts-ttf/releases/download/v0.1.0/NotoSerifCJK-SC.zip
+wget https://github.com/life888888/cjk-fonts-ttf/releases/download/v0.1.0/NotoSansMonoCJK-SC.zip
+wget https://github.com/life888888/cjk-fonts-ttf/releases/download/v0.1.0/NotoSansCJK-SC.zip
+
+mkdir -p fonts
+unzip NotoSerifCJK-SC.zip -d fonts
+unzip NotoSansMonoCJK-SC.zip -d fonts
+unzip NotoSansCJK-SC.zip -d fonts
+
+# 正确展示 emoji
+curl -O fonts/NotoSansCJK-SC.zip https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
+```
+
+```Dockerfile:Dockerfile-step2
+FROM chromedp/headless-shell:latest
+
+ADD fonts/* /usr/share/fonts/
+
+EXPOSE 9222
+ENV LANG en-US.UTF-8
+ENV PATH /headless-shell:$PATH
+```
+
+构建镜像后，在代码仓库中运行。
+
+```bash
+go run main.go -url 'https://rssrank.com/screenshot/daily/archive/k7KVVVOdg?offset=8&limit=2' -sel 'main#screenshot-body'
+```
+
+这次我们得到了完美的截图，就仿佛是我们自己在浏览器中截下来的一样。
+
