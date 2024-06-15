@@ -23,6 +23,12 @@ const friends: Friend[] = [
     description: "izfsk 的博客",
     iconUrl: "/image/friends/izfsk.ico",
   },
+  {
+    name: "Moreality's Blog",
+    description: "The singularity is nearer.",
+    url: "https://blog.roccoshi.top",
+    iconUrl: "/image/friends/moreality.webp",
+  },
 ];
 
 export default friends;
