@@ -13,6 +13,7 @@ import type { Friend } from "data/friendLink";
 import friends from "data/friendLink";
 import FriendCard from "components/FriendCard";
 import React from "react";
+import Head from "next/head";
 
 const Line = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -93,6 +94,9 @@ const About = () => {
 
   return (
     <div>
+      <Head>
+        <title>About</title>
+      </Head>
       <Main>
         <div className="mx-auto max-w-3xl">
           <WelcomeCard />

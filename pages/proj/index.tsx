@@ -4,11 +4,15 @@ import { allProjPages } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Link from "next/link";
 import React from "react";
+import Head from "next/head";
 
 export default function Proj() {
   const Content = useMDXComponent(allProjPages[0].body.code);
   return (
     <Main>
+      <Head>
+        <title>Proj</title>
+      </Head>
       <h1 className="sr-only" id="forSearchEngine">
         Proj | 项目
       </h1>
