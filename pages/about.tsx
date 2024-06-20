@@ -101,9 +101,6 @@ const About = () => {
         <div className="mx-auto max-w-3xl">
           <WelcomeCard />
         </div>
-        <figure className="mx-auto mt-4 hidden max-w-3xl pl-4 dark:invert lg:block lg:h-[8rem]">
-          <embed src="https://wakatime.com/share/@TravisRoad/fa4c2a51-c527-4076-959e-9501d918fdcd.svg"></embed>
-        </figure>
         <Line>
           <UserCircleIcon className="h-6 w-6 stroke-[1.5] text-nord-3/80 dark:text-nord-4/80" />
         </Line>
