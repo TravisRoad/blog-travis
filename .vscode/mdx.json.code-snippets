@@ -18,8 +18,8 @@
       "---",
       "title: ",
       "summary: $0",
-      "publishDate: ${1:today}",
-      "createdDate: ${2:today}",
+      "publishDate: ${1:now}",
+      "createdDate: ${2:now}",
       "star: false",
       "showTOC: false",
       "draft: true",
@@ -34,10 +34,14 @@
   },
   "idea": {
     "prefix": "idea",
-    "body": ["---", "publishDate: ${1:today}", "---"]
+    "body": [
+      "---",
+      "publishDate: ${1:now}",
+      "---"
+    ]
   },
   "Current Date": {
-    "prefix": "today",
+    "prefix": "now",
     "body": [
       "$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE} $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
     ],
@@ -51,6 +55,8 @@
   },
   "dialog": {
     "prefix": "dialog",
-    "body": ["<Dialog reverse=\"true\"></Dialog>"]
+    "body": [
+      "<Dialog reverse=\"true\"></Dialog>"
+    ]
   }
 }
