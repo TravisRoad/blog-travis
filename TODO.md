@@ -17,3 +17,4 @@
 - [ ] golang nil struct call function
 - [ ] Knock 协议 https://wiki.archlinux.org/title/Port_knocking
 - [ ] 猴子都能看懂的 Factorio 部署教程
+- [ ] 异星工厂和异形工厂的对比
