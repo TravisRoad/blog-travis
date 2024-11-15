@@ -1,4 +1,4 @@
-import { withContentlayer } from "next-contentlayer";
+const { withContentlayer } = require("next-contentlayer");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,7 +6,7 @@ const nextConfig = {
   swcMinify: true,
 };
 
-export default withContentlayer({
+module.exports = withContentlayer({
   images: {
     domains: ["lain.bgm.tv", "img.travismtg.com"],
   },

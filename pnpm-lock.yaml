@@ -24,7 +24,7 @@ importers:
         specifier: ^2.2.1
         version: 2.2.1
       contentlayer:
-        specifier: ^0.2.8
+        specifier: ^0.2.9
         version: 0.2.9(esbuild@0.14.54)
       date-fns:
         specifier: ^2.29.3
@@ -45,7 +45,7 @@ importers:
         specifier: 12.3.1
         version: 12.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next-contentlayer:
-        specifier: ^0.2.8
+        specifier: ^0.2.9
         version: 0.2.9(esbuild@0.14.54)(next@12.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       nextjs-progressbar:
         specifier: ^0.0.16
@@ -565,9 +565,6 @@ packages:
 
   '@types/estree-jsx@1.0.0':
     resolution: {integrity: sha512-3qvGd0z8F2ENTGr/GG1yViqfiKmRfrXVx5sJyHGFu3z7m5g5utCQtGp/g29JnjflhtQJBv1WDQukHiT58xPcYQ==}
-
-  '@types/estree@1.0.0':
-    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -3721,7 +3718,7 @@ snapshots:
 
   '@types/acorn@4.0.6':
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
 
   '@types/cookie@0.3.3': {}
 
@@ -3733,9 +3730,7 @@ snapshots:
 
   '@types/estree-jsx@1.0.0':
     dependencies:
-      '@types/estree': 1.0.0
-
-  '@types/estree@1.0.0': {}
+      '@types/estree': 1.0.6
 
   '@types/estree@1.0.6': {}
 
@@ -4581,7 +4576,7 @@ snapshots:
 
   estree-util-attach-comments@2.1.1:
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
 
   estree-util-build-jsx@2.2.2:
     dependencies:
@@ -4910,7 +4905,7 @@ snapshots:
 
   hast-util-to-estree@2.3.3:
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
       '@types/unist': 2.0.6
@@ -5618,7 +5613,7 @@ snapshots:
 
   micromark-extension-mdx-expression@1.0.8:
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       micromark-factory-mdx-expression: 1.0.9
       micromark-factory-space: 1.0.0
       micromark-util-character: 1.1.0
@@ -5630,7 +5625,7 @@ snapshots:
   micromark-extension-mdx-jsx@1.0.5:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       estree-util-is-identifier-name: 2.1.0
       micromark-factory-mdx-expression: 1.0.9
       micromark-factory-space: 1.0.0
@@ -5646,7 +5641,7 @@ snapshots:
 
   micromark-extension-mdxjs-esm@1.0.5:
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       micromark-core-commonmark: 1.0.6
       micromark-util-character: 1.1.0
       micromark-util-events-to-acorn: 1.2.3
@@ -5682,7 +5677,7 @@ snapshots:
 
   micromark-factory-mdx-expression@1.0.9:
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       micromark-util-character: 1.1.0
       micromark-util-events-to-acorn: 1.2.3
       micromark-util-symbol: 1.0.1
@@ -5747,7 +5742,7 @@ snapshots:
   micromark-util-events-to-acorn@1.2.3:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       '@types/unist': 2.0.6
       estree-util-visit: 1.2.1
       micromark-util-symbol: 1.0.1
@@ -6051,7 +6046,7 @@ snapshots:
 
   periscopic@3.1.0:
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.6
       estree-walker: 3.0.1
       is-reference: 3.0.3
 

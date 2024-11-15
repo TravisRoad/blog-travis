@@ -14,7 +14,7 @@ import IframeWithLoading from "./IframeWithLoading";
 import MyLink from "./MyLink";
 import Admonition from "./Admonition";
 
-const MDXComponents = {
+const MDXComponents: { [key: string]: any } = {
   img: Image,
   a: MyLink,
   PhotoProvider,
