@@ -1,0 +1,71 @@
+---
+title: 猴子都能看懂的 Factorio 部署教程
+summary: fff
+publishDate: 2024-11-18 19:11:53
+createdDate: 2024-11-18 19:11:55
+star: false
+showTOC: false
+draft: false
+# series:
+# priority
+cate:
+  - default
+tags:
+  - default
+---
+
+<div style={{margin: "0.5rem 0 0 0"}}></div>
+
+<Admonition type="info" title="TLDR;">
+  <div style={{margin: "0 0.5rem 0 0"}}>
+  ```bash
+  # docker 一行命令部署
+  export FACTORIO_VERSION="2.0.15" && \
+  sudo mkdir -p /opt/factorio && \
+  sudo docker run -d \
+    -p 34197:34197/udp \
+    -p 27015:27015/tcp \
+    -v /opt/factorio:/factorio \
+    --name factorio \
+    --restart=unless-stopped \
+    factoriotools/factorio:${FACTORIO_VERSION}
+  ```
+  </div>
+</Admonition>
+
+异星工厂[太空时代 DLC ](https://factorio.com/blog/post/factorio-space-age-release)于 10 月 21 日发布，wube 团队十分良心得连带着发布了 2.0 版本作为免费更新，加入了很多生活质量更新和革新性的火车系统。
+作为刚入门 450 小时的菜鸟，我自然是不能放过本次机会，在我的[ homelab ](/posts/20230926_my_homelab)上部署一个服务器直接开玩。
+
+一般来说，我们在部署服务器时，有两种方式。
+一种是[裸金属部署](https://wiki.factorio.com/Multiplayer/zh)，另一种是[ docker 部署](https://github.com/factoriotools/factorio-docker)。
+
+## 裸金属部署
+
+参考 [wiki](https://wiki.factorio.com/Multiplayer/zh)
+
+1. 进入[下载页面](https://factorio.com/download/archive/2.0.20)，选择 `Download Factorio (Headless, for servers)`，下载安装包 `factorio-headless_linux_2.0.20.tar.xz`
+2. 上传到服务器任意一个目录之后，解压该 `tar.xz` 文件到 `/opt/factorio` 目录下
+3. 使用 `/opt/factorio/bin/x64/factorio --start-server your-save-name` 运行服务器
+
+## docker 部署
+
+使用 docker compose 直接部署 factorio server，部署完成后，需要自己修改 `data/config/server-settings.json` 配置文件。
+
+```yaml
+version: '3'
+services:
+  factorio:
+    image: factoriotools/factorio:2.0.20
+    container_name: factorio-space-age
+    restart: unless-stopped
+    ports:
+      - "27015:27015/tcp"
+      - "34197:34197/udp"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data:/factorio
+    environment:
+      - TZ=Asia/Shanghai
+```
+
+备份也十分简单，只需要保存 `data` 目录即可恢复。
