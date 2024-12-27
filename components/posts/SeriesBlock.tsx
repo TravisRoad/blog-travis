@@ -7,7 +7,7 @@ export default function SeriesBlock({ blogs }: { blogs: Blog[] }) {
   if (blogs.length === 0) return <></>;
   const BlogItem = ({ blog }: { blog: Blog }) => (
     <>
-      <div className="flex w-full items-baseline justify-between sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%]">
+      <div className="flex w-full items-baseline justify-start ">
         <Link href={`/posts/${blog.slug}`}>
           <a className="z-30 inline-block whitespace-nowrap font-bold decoration-nord-9/80 underline-offset-2 hover:underline dark:decoration-nord-10/50 dark:underline-offset-[3px]">
             {blog.title}
