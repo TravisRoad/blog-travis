@@ -6,7 +6,7 @@
   @apply rounded-t-lg border-2 border-b-0 border-nord-2 bg-nord-1 px-5 py-2 font-mono text-sm font-semibold text-gray-200;
   overflow-x: scroll;
   scrollbar-width: none;
-  @apply sm:max-w-3xl max-w-[92vw]
+  @apply max-w-[92vw] sm:max-w-3xl;
 }
 
 .rehype-code-title::-webkit-scrollbar {
@@ -190,4 +190,39 @@ li#series-list::before {
   a.hover-link:hover::after {
     @apply top-0 border-nord-10 opacity-100 dark:border-nord-7;
   } */
+}
+
+.hover-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: wavy underline;
+  z-index: 1;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  background-color: #d8dee9;
+  transition: width 0.3s ease, height 0.3s ease;
+  z-index: -1;
+}
+
+.dark .hover-link::after {
+  background-color: #4c566a !important;
+}
+
+.hover-link:hover::after {
+  height: 100%;
+  width: 105%;
+  transform: translateX(-50%) scaleX(1);
+}
+
+.hover-link:hover {
+  text-decoration: none;
 }
