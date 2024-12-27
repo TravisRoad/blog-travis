@@ -13,7 +13,7 @@ export default function SeriesBlock({ blogs }: { blogs: Blog[] }) {
             {blog.title}
           </a>
         </Link>
-        <span className="ml-2 font-mono text-sm text-nord-9/80">
+        <span className="ml-2 hidden font-mono text-sm text-nord-9/80 sm:block">
           {format(parseISO(blog.publishDate), "yyyy/LL/dd")}
         </span>
       </div>
