@@ -195,7 +195,8 @@ li#series-list::before {
 .hover-link {
   position: relative;
   display: inline-block;
-  text-decoration: wavy underline;
+  /* text-decoration: wavy underline; */
+  text-decoration: none;
   z-index: 1;
 }
 
@@ -225,4 +226,10 @@ li#series-list::before {
 
 .hover-link:hover {
   text-decoration: none;
+}
+
+/* 附加规则 */
+.prose :where(.prose > ul > li > a):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
