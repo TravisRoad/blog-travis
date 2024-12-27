@@ -8,13 +8,14 @@ export interface SeoProps {
   path: string;
   description: string;
   image?: string;
+  keywords?: Array<string>;
 }
 
 // https://blog.lxythan2lxy.cn
 const ROOTPATH = metadata.site;
 
 const Seo: FC<SeoProps> = (props) => {
-  const { title, path, description, image } = props;
+  const { title, path, description, image, keywords } = props;
   const url = ROOTPATH + path;
   const imgUrl =
     image !== undefined
@@ -45,6 +46,10 @@ const Seo: FC<SeoProps> = (props) => {
         <meta itemProp="name" content={title} />
         <meta itemProp="image" content={imgUrl} />
         <meta name="description" itemProp="description" content={description} />
+        <meta
+          name="keywords"
+          content={keywords?.filter((item) => item !== "default")?.join(", ")}
+        ></meta>
       </Head>
 
       {/* WeChat Sharing */}

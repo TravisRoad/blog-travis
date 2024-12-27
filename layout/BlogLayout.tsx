@@ -34,6 +34,7 @@ export default function BlogLayout({
         image={undefined}
         title={post.title}
         path={post.url}
+        keywords={post.tags}
       />
       <Head>
         <title>{`${post.title} | ${metadata.title}`}</title>
