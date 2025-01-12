@@ -1,8 +1,6 @@
 import metadata from "data/metaData";
 import Link from "next/link";
 import React from "react";
-import UVCount from "./posts/UVCount";
-import VVCount from "./posts/VVCount";
 
 function MyLink({ url, name }: { url: string; name: string }) {
   return (
