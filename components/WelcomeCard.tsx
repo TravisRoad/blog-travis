@@ -25,13 +25,14 @@ function ProfileAvatar() {
   );
 }
 
-const Logo = ({ children, url }: { children: any; url: string }) => {
+// const Logo = ({ children, url }: { children: any; url: string }) => {
+const Logo = ( props: React.ComponentProps<'a'> & { children: any; url: string }) => {
   return (
     <a
       className=" rounded-lg p-1 ring-nord-11 transition-all hover:bg-nord-6 hover:ring-2 dark:hover:bg-nord-1/80"
-      href={url}
+      href={props.url}
     >
-      {children}
+      {props.children}
     </a>
   );
 };
@@ -105,7 +106,7 @@ function ProfileDetail() {
         <span className="pl-3 opacity-80"> a byr at </span> BUPT
       </p>
       <div className=" mt-2 flex gap-1">
-        <Logo url="https://github.com/travisroad">
+        <Logo url="https://github.com/travisroad" aria-label="github">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -122,13 +123,13 @@ function ProfileDetail() {
             ></path>
           </svg>
         </Logo>
-        <Logo url={`mailto: ${metadata.email}`}>
+        <Logo url={`mailto: ${metadata.email}`} aria-label="email">
           <EnvelopeIcon className="h-6 w-6" />
         </Logo>
-        <Logo url={`/feed/feed.xml`}>
+        <Logo url={`/feed/feed.xml`} aria-label="rss">
           <RssIcon className="h-6 w-6" />
         </Logo>
-        <Logo url="https://twitter.com/LuXiuyuan138454">
+        <Logo url="https://twitter.com/LuXiuyuan138454" aria-label="twitter">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"

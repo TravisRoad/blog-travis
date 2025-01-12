@@ -86,7 +86,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
           <Menu as="div">
             {({ open, close }) => (
               <>
-                <Menu.Button className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2">
+                <Menu.Button className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2" aria-label="menu">
                   {open ? (
                     <XMarkIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5"></XMarkIcon>
                   ) : (

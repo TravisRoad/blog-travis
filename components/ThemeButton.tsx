@@ -22,6 +22,7 @@ export const ThemeButton = () => {
       <button
         onClick={onClick}
         className="transition-color mx-2 rounded-lg bg-transparent p-1 duration-500 hover:bg-nord-5 dark:hover:bg-nord-2"
+        aria-label="theme-toggle"
       >
         {theme === "dark" ? (
           <SunIcon className="h-5 w-5 fill-nord-2 stroke-nord-2 dark:fill-nord-5 dark:stroke-nord-5" />
