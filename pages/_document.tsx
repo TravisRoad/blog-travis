@@ -18,7 +18,7 @@ export default function Document() {
         /> */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-1Y104QW25K"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID_GOOGLE}`}
         />
         <Script strategy="beforeInteractive" src="/lib/darkmode.js" />
         <Script
@@ -29,7 +29,7 @@ export default function Document() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-1Y104QW25K');
+            gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID_GOOGLE}');
             `,
           }}
         />
@@ -42,13 +42,13 @@ export default function Document() {
                   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "fitpvdaw6o");
+              })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_ANALYTICS_ID_CLARITY}");
               `,
           }}
         />
         <Script
           strategy="afterInteractive"
-          data-website-id="55c27de1-3943-4efe-98bf-685762731e3b"
+          data-website-id={process.env.NEXT_PUBLIC_ANALYTICS_ID_UMAMI}
           src="https://umami.lxythan2lxy.cn/script.js"
         />
       </Head>
