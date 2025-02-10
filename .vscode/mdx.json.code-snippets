@@ -58,5 +58,11 @@
     "body": [
       "<Dialog reverse=\"true\"></Dialog>"
     ]
+  },
+  "img": {
+    "prefix": "img",
+    "body": [
+      "![](/image/${1}.png)"
+    ]
   }
 }
