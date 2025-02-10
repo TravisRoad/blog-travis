@@ -26,7 +26,9 @@ function ProfileAvatar() {
 }
 
 // const Logo = ({ children, url }: { children: any; url: string }) => {
-const Logo = ( props: React.ComponentProps<'a'> & { children: any; url: string }) => {
+const Logo = (
+  props: React.ComponentProps<"a"> & { children: any; url: string }
+) => {
   return (
     <a
       className=" rounded-lg p-1 ring-nord-11 transition-all hover:bg-nord-6 hover:ring-2 dark:hover:bg-nord-1/80"
@@ -103,7 +105,11 @@ function ProfileDetail() {
         Verified ($10/year for my website instead of $20/month)
       </span> */}
       <p className="my-4 text-lg">
-        <span className="pl-3 opacity-80"> a byr at </span> BUPT
+        <ul className="ml-8 list-disc">
+          <li>七年老北邮人</li>
+          <li>小红书预备役菜鸟</li>
+        </ul>
+        {/* <span className="pl-3 opacity-80"> a former BYR at </span> XHS */}
       </p>
       <div className=" mt-2 flex gap-1">
         <Logo url="https://github.com/travisroad" aria-label="github">
