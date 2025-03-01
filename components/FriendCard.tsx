@@ -26,11 +26,11 @@ export default function FriendCard({
             </div>
             <small> {description} </small>
           </div>
-          <div className="absolute right-0 bottom-0 z-20 h-[2rem] w-24 translate-x-[1.75rem] -rotate-45 bg-nord-10 text-center opacity-75 ">
+          {/* <div className="absolute right-0 bottom-0 z-20 h-[2rem] w-24 translate-x-[1.75rem] -rotate-45 bg-nord-10 text-center opacity-75 ">
             <div className="translate-y-[4px] translate-x-[2px] text-nord-6">
               友链
             </div>
-          </div>
+          </div> */}
         </div>
       </a>
     </Link>
