@@ -1,10 +1,14 @@
-import metadata from "data/metaData";
+import metadata, { pageRouter } from "data/metaData";
 import Link from "next/link";
 import React from "react";
 
-function MyLink({ url, name }: { url: string; name: string }) {
+function MyLink({
+  url,
+  name,
+  ...props
+}: { url: string; name: string } & React.RefAttributes<HTMLAnchorElement>) {
   return (
-    <Link href={url}>
+    <Link href={url} {...props}>
       <a className="text-nord-3 transition hover:text-nord-dark dark:text-nord-4 dark:hover:text-white">
         <span className=" capitalize tracking-wider hover:underline">
           {name}
@@ -118,11 +122,13 @@ export default function Footer() {
           </div>
           <div className="w-full max-w-2xl">
             <div className="mt-2 mb-4 flex flex-col items-center space-y-4">
-              <MyLink url="/" name="Home" />
-              <MyLink url="/idea" name="Ideas" />
-              <MyLink url="/posts" name="Blogs" />
-              <MyLink url="/proj" name="Projects" />
-              <MyLink url="/about" name="About" />
+              {pageRouter
+                .filter((r) => {
+                  return r.nameEn !== "Travel"; // 过滤开往页面
+                })
+                .map((r) => (
+                  <MyLink url={r.url} name={r.nameEn} key={r.nameEn} />
+                ))}
               <MyLink
                 url="https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn"
                 name="Statistic"

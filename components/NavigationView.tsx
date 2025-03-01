@@ -4,6 +4,7 @@ import React, { FC, Fragment, useState } from "react";
 import { useRouter } from "next/router";
 import { ThemeButton } from "./ThemeButton";
 import { Menu, Transition } from "@headlessui/react";
+import { pageRouter } from "data/metaData";
 import { Bars3Icon as MenuIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function DesktopNavItem({
@@ -56,18 +57,6 @@ const MobileNavItem: FC<{ url: string; name: string }> = ({ url, name }) => (
 );
 
 export default function NavigationView({ isTop }: { isTop: Boolean }) {
-  const navList: { url: string; name: string }[] = [
-    { url: "/", name: "主页" },
-    { url: "/posts", name: "文章" },
-    { url: "/idea/1", name: "想法" },
-    { url: "/proj", name: "项目" },
-    // {
-    //   url: "https://umami.lxythan2lxy.cn/share/WH1nhwUn/blog.lxythan2lxy.cn",
-    //   name: "统计",
-    // },
-    { url: "/about", name: "关于" },
-    { url: "https://www.travellings.cn/go.html", name: "开往" },
-  ];
   return (
     <div>
       <div className="flex flex-row-reverse items-center transition-all ">
@@ -77,7 +66,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
             isTop ? "text-lg" : "text-sm"
           }`}
         >
-          {navList.map((nav, i) => (
+          {pageRouter.map((nav, i) => (
             <DesktopNavItem url={nav.url} name={nav.name} key={i} />
           ))}
         </div>
@@ -86,7 +75,10 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
           <Menu as="div">
             {({ open, close }) => (
               <>
-                <Menu.Button className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2" aria-label="menu">
+                <Menu.Button
+                  className="rounded-lg p-1 transition-colors duration-500 hover:bg-nord-5 dark:hover:bg-nord-2"
+                  aria-label="menu"
+                >
                   {open ? (
                     <XMarkIcon className="h-6 w-6 stroke-nord-2 dark:stroke-nord-5"></XMarkIcon>
                   ) : (
@@ -108,7 +100,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
                       onClick={close}
                     >
                       <div className="-translate-y-[5rem] font-bold">
-                        {navList.map((nav, i) => (
+                        {pageRouter.map((nav, i) => (
                           <MobileNavItem
                             url={nav.url}
                             name={nav.name}
