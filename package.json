@@ -21,7 +21,6 @@
     "date-fns": "^2.29.3",
     "feed": "^4.2.2",
     "globby": "^13.1.2",
-    "leancloud-storage": "^4.13.4",
     "markdown-toc": "^1.2.0",
     "next": "12.3.1",
     "next-contentlayer": "^0.2.9",
