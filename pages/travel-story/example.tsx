@@ -477,7 +477,7 @@ export default function Home() {
       <Head>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
       </Head>
-      <div className="intro">
+      {/* <div className="intro">
         <blockquote>
           <em>
             “Twenty years from now you will be more disappointed by the things
@@ -486,7 +486,7 @@ export default function Home() {
           </em>
           <span>Mark Twain</span>
         </blockquote>
-      </div>
+      </div> */}
       <StoryMapComponent mapSrc="/image/story/example.svg">
         <Content />
       </StoryMapComponent>

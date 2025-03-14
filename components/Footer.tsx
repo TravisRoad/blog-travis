@@ -75,7 +75,7 @@ export default function Footer() {
       <svg
         viewBox="0 0 1920 250"
         xmlns="http://www.w3.org/2000/svg"
-        className="z-0 w-full overflow-hidden bg-nord-bgLight dark:bg-nord-bgDark"
+        className="z-0 w-full overflow-hidden "
       >
         <path
           className="fill-nord-5/90 dark:fill-[#373d4c]"

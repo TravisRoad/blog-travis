@@ -35,7 +35,7 @@ body:before {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #giscus::part(iframe) {
