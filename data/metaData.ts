@@ -29,6 +29,7 @@ export const pageRouter: { url: string; name: string; nameEn: string }[] = [
   { url: "/idea/1", name: "想法", nameEn: "Ideas" },
   { url: "/about", name: "关于", nameEn: "About" },
   { url: "https://www.travellings.cn/go.html", name: "开往", nameEn: "Travel" },
+  { url: "/travel-story/example", name: "游记", nameEn: "story" },
 ];
 
 export default metadata;

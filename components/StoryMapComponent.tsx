@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { StoryMap } from "@/lib/storyMap/StoryMap";
 import type { StoryMapConfig } from "@/lib/storyMap/config";
+import clsx from "clsx";
 
 interface StoryMapProps extends Partial<StoryMapConfig> {
   className?: string;
@@ -21,7 +22,7 @@ export default function StoryMapComponent({
     // 创建 StoryMap 实例
     const storyMap = new StoryMap({
       ...config,
-      container: ".container", // 使用固定的容器类名
+      container: ".story-map-container", // 使用固定的容器类名
       textContainer: ".text", // 使用固定的文本容器类名
     });
 
@@ -43,10 +44,10 @@ export default function StoryMapComponent({
   return (
     <>
       <div
-        className={`container ${className}`}
+        className={`story-map-container dark:invert ${className}`}
         ref={containerRef}
       ></div>
-      <div className="text">
+      <div className="text text-nord-0 dark:text-nord-4 after:bg-[#a3be8c26] after:dark:bg-black/5">
         {children}
       </div>
     </>
