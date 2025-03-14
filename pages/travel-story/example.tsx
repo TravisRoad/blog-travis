@@ -467,7 +467,9 @@ const Content = () => (
       className="js-section"
       data-stay="true"
       data-zoom-start="0.8"
-    ></section>
+    >
+      <p>hello</p>
+    </section>
   </>
 );
 
