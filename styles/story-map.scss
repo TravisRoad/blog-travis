@@ -210,7 +210,12 @@ $mobile-breakpoint: 720px;
     all: unset;
     position: fixed;
     z-index: 5;
-    bottom: calc(49vh + env(safe-area-inset-bottom));
+    bottom: calc(45vh);
+
+    @supports (-webkit-touch-callout: none) {
+      /* iOS only */
+      bottom: calc(42vh + env(safe-area-inset-bottom, 0));
+    }
     left: 0;
   }
 

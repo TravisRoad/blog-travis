@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="application/rss+xml"
           title={metadata.title}
         />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, viewport-fit=cover" />
         <meta name="theme-color" content="#242933" />
 
         {/*https://github.com/giscus/giscus/issues/675 */}
