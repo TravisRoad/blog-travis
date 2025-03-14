@@ -71,11 +71,11 @@ const CopyRight = () => {
 
 export default function Footer() {
   return (
-    <div>
+    <div className="z-[1000] relative ">
       <svg
         viewBox="0 0 1920 250"
         xmlns="http://www.w3.org/2000/svg"
-        className="z-0 w-full overflow-hidden "
+        className="z-10 w-full overflow-hidden "
       >
         <path
           className="fill-nord-5/90 dark:fill-[#373d4c]"
@@ -90,7 +90,7 @@ export default function Footer() {
           d="M0 195.553s208.547-75.581 701.325-20.768c376.707 41.908 520.834-67.962 722.545-67.962 222.926 0 311.553 83.523 496.129 86.394V250H0v-54.447z"
         ></path>
       </svg>
-      <footer className="z-10 mx-auto -mt-2 block w-full bg-[#fbfbfc] px-2 pb-4 text-sm text-nord-3 dark:bg-nord-1 dark:text-nord-4 sm:text-base">
+      <footer className="z-10 mx-auto -mt-2 block w-full bg-[#fbfbfc] px-2 pb-4 text-sm text-nord-3 dark:bg-nord-1 dark:text-nord-4 sm:text-base" id="footer">
         <div className="mx-auto flex flex-col-reverse items-center justify-center sm:grid sm:grid-cols-2 sm:gap-4">
           <div className="flex flex-col items-center">
             <div className="mt-2 mb-4 grid grid-cols-2 items-center gap-2">

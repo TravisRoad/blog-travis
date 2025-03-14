@@ -62,9 +62,8 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
       <div className="flex flex-row-reverse items-center transition-all ">
         {/* Desktop menu */}
         <div
-          className={`hidden items-center space-x-4 overflow-hidden font-sans sm:flex ${
-            isTop ? "text-lg" : "text-sm"
-          }`}
+          className={`hidden items-center space-x-4 overflow-hidden font-sans sm:flex ${isTop ? "text-lg" : "text-sm"
+            }`}
         >
           {pageRouter.map((nav, i) => (
             <DesktopNavItem url={nav.url} name={nav.name} key={i} />
@@ -96,7 +95,7 @@ export default function NavigationView({ isTop }: { isTop: Boolean }) {
                 >
                   <Menu.Items as={Fragment} static>
                     <div
-                      className=" absolute top-[2.75rem] left-0 z-20 flex h-screen w-screen flex-col justify-center bg-gradient-to-b from-nord-bgLight to-nord-10 pt-10 dark:from-nord-bgDark dark:to-nord-9"
+                      className=" fixed left-0 z-[1000] flex h-screen w-screen flex-col justify-center bg-gradient-to-b from-nord-bgLight to-nord-10 pt-10 dark:from-nord-bgDark dark:to-nord-9"
                       onClick={close}
                     >
                       <div className="-translate-y-[5rem] font-bold">

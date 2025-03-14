@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";  // 修改这里
 import { StoryMap } from "@/lib/storyMap/StoryMap";
 import type { StoryMapConfig } from "@/lib/storyMap/config";
 import clsx from "clsx";
@@ -16,14 +16,14 @@ export default function StoryMapComponent({
   const mapRef = useRef<StoryMap | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!containerRef.current) return;
+  useLayoutEffect(() => {  // 使用 useLayoutEffect
+    if (!containerRef.current || mapRef.current) return;
 
     // 创建 StoryMap 实例
     const storyMap = new StoryMap({
       ...config,
-      container: ".story-map-container", // 使用固定的容器类名
-      textContainer: ".story-map-text", // 使用固定的文本容器类名
+      container: ".story-map-container",
+      textContainer: ".story-map-text",
     });
 
     // 保存实例以便清理
@@ -39,7 +39,7 @@ export default function StoryMapComponent({
         mapRef.current = null;
       }
     };
-  }, []); // 仅在组件挂载时运行
+  }, []);  // 依赖数组保持为空
 
   return (
     <>
