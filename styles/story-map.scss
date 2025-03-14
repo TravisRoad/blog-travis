@@ -54,8 +54,8 @@ $mobile-breakpoint: 720px;
   max-width: 50rem;
   position: relative;
   z-index: 2;
-  padding: 5em 3em 10rem 3em;
-  margin-bottom: -5rem;
+  padding: 5em 3em 4rem 3em;
+  margin-bottom: -3rem;
 
   &::after {
     z-index: -9;
@@ -206,17 +206,43 @@ $mobile-breakpoint: 720px;
     padding: 1em;
   }
 
+  .story-map-container {
+    all: unset;
+    position: fixed;
+    z-index: 5;
+    bottom: 50vh;
+    left: 0;
+  }
+
+  .story-map-container canvas {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+
   .story-map-text {
     width: 100%;
-    max-width: none;
+    max-width: 100vw;
     font-size: 0.85em;
-    padding: 2em;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: justify;
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
     mask-image: none;
-    -webkit-mask-image: none;
-    background: rgba(163, 190, 140);
+    -webkit-backdrop-filter: none;
+
+    &::after {
+      all: unset;
+    }
 
     section h2 {
       font-size: 1.85em;
@@ -224,6 +250,7 @@ $mobile-breakpoint: 720px;
 
     blockquote {
       font-size: 1.45em;
+      margin-left: 1.5rem;
     }
   }
 
