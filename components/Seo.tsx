@@ -20,7 +20,7 @@ const Seo: FC<SeoProps> = (props) => {
   const imgUrl =
     image !== undefined
       ? ROOTPATH + image
-      : "https://blog.lxythan2lxy.cn/image/2022-01-16-14-27-56.png";
+      : "https://blog.lxythan2lxy.cn/og_image.png";
 
   return (
     <>
