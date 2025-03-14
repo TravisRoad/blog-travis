@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-css-tags */
-import Head from 'next/head';
 import StoryMapComponent from "components/StoryMapComponent";
 
 const Content = () => (
@@ -478,9 +477,6 @@ const Content = () => (
 export default function Home() {
   return (
     <>
-      <Head>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-      </Head>
       {/* <div className="intro">
         <blockquote>
           <em>

@@ -41,16 +41,9 @@
 	color: #464b4b;
 }
 
-/* Content */
-
-.content {
-	padding: 3em 0;
-}
-
-
 /* Story */
 
-.text {
+.story-map-text {
 	width: 65%;
 	max-width: 50rem;
 	position: relative;
@@ -59,7 +52,7 @@
 	margin-bottom: -5rem;
 }
 
-.text::after {
+.story-map-text::after {
 	z-index:-9;
 	content: '';
 	position: absolute;
@@ -83,19 +76,19 @@
 	);
 }
 
-.text section {
+.story-map-text section {
 	font-size: 1.25em;
 	line-height: 1.7;
 }
 
-.text section h2 {
+.story-map-text section h2 {
 	font-size: 2.7em;
 	font-weight: 400;
 	margin: 0;
 	text-align: left;
 }
 
-.text section:not(:first-child) h2 {
+.story-map-text section:not(:first-child) h2 {
 	padding: 2em 0 0 0;
 }
 
@@ -118,15 +111,15 @@
 	color: #5f646c;
 }
 
-.text figure {
+.story-map-text figure {
 	margin: 1em 0 2em;
 }
 
-.text figure img {
+.story-map-text figure img {
 	max-width: 100%;
 }
 
-.text figcaption {
+.story-map-text figcaption {
 	font-size: 0.85em;
 	font-style: italic;
 	padding: 1em 1.5em 0;
@@ -134,12 +127,12 @@
 	color: #5f646c;
 }
 
-.text section p {
+.story-map-text section p {
 	font-size: 0.95em;
 	margin: 0.5em 0 1.5em;
 }
 
-.text section p.text-intro {
+.story-map-text section p.story-map-text-intro {
 	font-size: 1.3em;
 	font-style: italic;
 	line-height: 1.5;
@@ -148,7 +141,7 @@
 	color: #9d9c95;
 }
 
-.text blockquote {
+.story-map-text blockquote {
 	font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 	font-size: 2em;
 	line-height: 1.5;
@@ -157,7 +150,7 @@
 	color: #939997;
 }
 
-.text blockquote::before {
+.story-map-text blockquote::before {
 	content: '\201C';
 	font-size: 2.5em;
 	font-style: italic;
@@ -169,7 +162,7 @@
 	color: #f0f3f3;
 }
 
-.text blockquote span {
+.story-map-text blockquote span {
 	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 0.5em;
 	white-space: nowrap;
@@ -200,7 +193,7 @@
 		height: auto;
 		padding: 1em;
 	}
-	.text {
+	.story-map-text {
 		width: 100%;
 		max-width: none;
 		font-size: 0.85em;
@@ -212,10 +205,10 @@
 		-webkit-mask-image: none;
 		background: rgba(163, 190, 140);
 	}
-	.text section h2 {
+	.story-map-text section h2 {
 		font-size: 1.85em;
 	}
-	.text blockquote {
+	.story-map-text blockquote {
 		font-size: 1.45em;
 	}
 	.js-section {
