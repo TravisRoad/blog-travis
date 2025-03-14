@@ -47,7 +47,8 @@ function LogoGradient() {
   );
 }
 
-export default function Header({ isTop }: { isTop: Boolean }) {
+export default function Header() {
+  const isTop = true;
   const router = useRouter();
 
   return (

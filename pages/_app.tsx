@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "../styles/prism/prism-dark.css";
 import "../styles/nprogress.css";
-import "@/styles/story-map.css";
+import "@/styles/story-map.scss";
 import "react-photo-view/dist/react-photo-view.css";
 import type { AppProps } from "next/app";
 import Header from "components/Header";
@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           showSpinner: false,
         }}
       />
-      <Header isTop={true} />
+      <Header />
       <Component {...pageProps} />
       <Footer />
     </div>
