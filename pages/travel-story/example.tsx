@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-css-tags */
 import Head from 'next/head';
 import StoryMapComponent from "components/StoryMapComponent";
 
@@ -29,7 +31,7 @@ const Content = () => (
         discussed—and no wonder, for we were a motley-looking cavalcade! We must
         have presented a very grotesque appearance, clad as we were in oilskins,
         and covered with mud from head to foot: it had been raining at intervals
-        on the way, and we had had a rather disagreeable journey.{" "}
+        on the way, and we had had a rather disagreeable journey.
       </p>
       <figure>
         <img className="js-image" data-pos="0.25" src="https://placehold.co/600x400" />
@@ -67,7 +69,7 @@ const Content = () => (
         W. H. Cope; he had been at sea for the greater part of his life, and had
         in the course of his journeyings seen much of the world; he was our
         nautical adviser, and we referred to him in matters connected with the
-        sea. W. Glen, Miss Hastie's cousin, was known as the "handy man" of the
+        sea. W. Glen, Miss Hastie&apos;s cousin, was known as the &quot;handy man&quot; of the
         party. If anybody was in difficulties, Glen was always on the spot to
         lend a helping hand. He produced all sorts of things at the right
         moment. Did any one require a screw-driver, then Glen had it; want a
@@ -75,12 +77,12 @@ const Content = () => (
         them—some string, a strap, it was all the same. If a camera struck work,
         Glen could render the strike ineffective, for he carried two, and could
         lend one without interfering with his own photographic work. A. W. Hill,
-        of King's College, Cambridge, was our botanist—who describes what he
+        of King&apos;s College, Cambridge, was our botanist—who describes what he
         saw. H. H. Thomas, of Balliol, paid special attention to the geological
         formation of the country that we traversed, and he was frequently to be
         seen, camera in hand, taking shots at interesting formations—a glaciated
-        lava surface, a volcanic vent, or an immense "erratic" boulder or
-        "perched block," for instance; he also sketched industriously, and
+        lava surface, a volcanic vent, or an immense &quot;erratic&quot; boulder or
+        &quot;perched block,&quot; for instance; he also sketched industriously, and
         sometimes paced the ground compass in hand in order that he might record
         in his note-book the direction of a line of fissure, or the position of
         hot springs along that line; or something else of interest to geologists
@@ -122,7 +124,7 @@ const Content = () => (
         way were of a corrie near Dalatangi, and the face of the mountains near
         Mjofifjord. Our stay at Northfjord was of but short duration, and there
         was no time to go ashore, so the only view we had of the town was
-        obtained from the vessel's deck.
+        obtained from the vessel&apos;s deck.
       </p>
     </section>
     <section className="js-section" data-zoom-start="2.5" data-stay="true">
@@ -137,11 +139,11 @@ const Content = () => (
         fishermen or sailors, and many, through their consequent contact with
         English-speaking people, can converse in good understandable English. A
         small trade is done in wool, and we met two of the islanders, fine types
-        of the race, returning from their day's work; they were quite
+        of the race, returning from their day&apos;s work; they were quite
         picturesque figures, for, besides being attired in the national costume,
         they had wound round them a quantity of wool, which in these islands is
-        generally plucked, not shorn, from the sheep's back. The national
-        costume consists of a sort of brewer's cap, having red and blue stripes
+        generally plucked, not shorn, from the sheep&apos;s back. The national
+        costume consists of a sort of brewer&apos;s cap, having red and blue stripes
         as a rule, a cloth tunic, a waistcoat, and knee breeches split at the
         knees, but very rarely buttoned, rough woollen stockings and skin shoes.
         The fishermen often dispense with tunic and waistcoat, and wear in their
@@ -163,7 +165,7 @@ const Content = () => (
         </figcaption>
       </figure>
       <p>
-        We were to have made a start at eleven o'clock the next morning, but
+        We were to have made a start at eleven o&apos;clock the next morning, but
         fate was against us. At the appointed hour the members of the party were
         ready and waiting, but guides, ponies, pack and riding saddles, tents,
         provisions, etc., were not ready, and we could not well start unless
@@ -185,9 +187,9 @@ const Content = () => (
         enjoined them to await me that they might put me ashore again; when,
         however, I had changed the films and was ready to return, they were
         nowhere to be found—the young beggars had gone off with another fare,
-        and had left me to my own devices and to the off chance of a "lift" in
+        and had left me to my own devices and to the off chance of a &quot;lift&quot; in
         another boat. I felt much inclined to make a murderous attack upon the
-        Queen's English, to say nothing of the young Faroese had they come my
+        Queen&apos;s English, to say nothing of the young Faroese had they come my
         way while pacing the deck in impotent wrath; but I was obliged to
         restrain myself, for there was no one with whom I could with justice
         quarrel, so I suppressed the rising ire, and went in search of somebody
@@ -239,7 +241,7 @@ const Content = () => (
           <em>
             Broad, wholesome, charitable views of men and things cannot be
             acquired by vegetating in one little corner of the earth all of
-            one’s lifetime.
+            one&apos;s lifetime.
           </em>
           <span> &mdash; Mark Twain</span>
         </blockquote>
@@ -263,7 +265,7 @@ const Content = () => (
       </figure>
       <p>
         During the voyage I often wrote my notes somewhere about midnight, and
-        this night, while thus employed in my cabin, my "stable companion" took
+        this night, while thus employed in my cabin, my &quot;stable companion&quot; took
         it into his head that I was preventing him from the proper enjoyment of
         his slumbers, and growled out something to that effect; so, to avoid
         raising his wrath, I interrupted the course of the notes and turned in;
@@ -303,7 +305,7 @@ const Content = () => (
         pastry of equally excellent quality. Some of the Icelandic women are
         very good pastry-cooks, and the cakes and pastry they produce often
         equal in quality any that could be procured at a first-class London
-        confectioner's.
+        confectioner&apos;s.
       </p>
       <p>
         There were some pretty scenes on the river Draghalsá, an interesting
@@ -344,10 +346,10 @@ const Content = () => (
         known as Barnafoss; though fine, it cannot be compared with Gullfoss in
         grandeur, and the glory of this part of the river is the series of
         cascades on its right bank. The spot is supposed to have been named from
-        the drowning of two children near the fall—Barnafoss, the children's
+        the drowning of two children near the fall—Barnafoss, the children&apos;s
         waterfall; but the minister at Reykholt declared that the tale is not
         true, and that the name is more likely to have been corrupted from
-        Bjarni, which is a man's name. It is worthy of note that the birch woods
+        Bjarni, which is a man&apos;s name. It is worthy of note that the birch woods
         seem to flourish best in the decaying lava in the scoriaceous
         lava-fields; it also seems to do well in soil produced from liparite,
         for it grows high up on the east side of the liparite mountain, Tunga.
@@ -370,8 +372,8 @@ const Content = () => (
         finally over a ledge of very hard rock into a yawning abyss more than a
         hundred feet deep, whence it throws up clouds of spray that are carried
         hither and thither as the wind sweeps first this way and then that; so
-        thick is the spray, that one's clothing soon becomes saturated on
-        incautiously getting into it.{" "}
+        thick is the spray, that one&apos;s clothing soon becomes saturated on
+        incautiously getting into it.
       </p>
       <p>
         Gullfoss is one of the finest waterfalls in Europe, and it is only
@@ -408,7 +410,7 @@ const Content = () => (
         elected to perform her ablutions, of whose periodical activity she was
         at the time unaware. During breakfast, one of the guides informed us
         that the small geyser Miss Hastie had been using as her hot-water tap
-        had "gone off." Subsequent experience proved such pools untrustworthy
+        had &quot;gone off.&quot; Subsequent experience proved such pools untrustworthy
         for washing of any kind. A number of handkerchiefs left by themselves to
         soak were found an hour or two later making their way down an escape
         hole in the basin, and one that had been entirely absorbed by suction
@@ -441,7 +443,7 @@ const Content = () => (
         Strytur stands in the middle of the long strip of country lying between,
         and about equidistant from, the two great ice-fields, Lang Jökull and
         Hoff Jökull, the area of each of which is roughly about five hundred
-        square miles.{" "}
+        square miles.
       </p>
     </section>
     <section className="js-section" data-stay="true" data-zoom-start="1.2">
