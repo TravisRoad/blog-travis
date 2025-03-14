@@ -23,7 +23,7 @@ export default function StoryMapComponent({
     const storyMap = new StoryMap({
       ...config,
       container: ".story-map-container", // 使用固定的容器类名
-      textContainer: ".text", // 使用固定的文本容器类名
+      textContainer: ".story-map-text", // 使用固定的文本容器类名
     });
 
     // 保存实例以便清理
@@ -47,7 +47,7 @@ export default function StoryMapComponent({
         className={`story-map-container dark:invert ${className}`}
         ref={containerRef}
       ></div>
-      <div className="text text-nord-0 dark:text-nord-4 after:bg-[#a3be8c26] after:dark:bg-black/5">
+      <div className="story-map-text text-nord-0 dark:text-nord-4 after:bg-[#a3be8c26] after:dark:bg-black/5">
         {children}
       </div>
     </>

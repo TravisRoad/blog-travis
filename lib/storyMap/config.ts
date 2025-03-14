@@ -7,9 +7,9 @@ export interface StoryMapConfig {
 }
 
 export const defaultConfig: StoryMapConfig = {
-  textContainer: '.text',
-  container: '.container',
-  mapSrc: 'story-map/map.svg',
-  trailVisitedColor: '#47DBB4',
-  fontPresentColor: '#5D5C56'
+  textContainer: ".story-map-text",
+  container: ".container",
+  mapSrc: "story-map/map.svg",
+  trailVisitedColor: "#47DBB4",
+  fontPresentColor: "#5D5C56",
 };
