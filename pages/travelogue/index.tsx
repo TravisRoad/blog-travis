@@ -30,6 +30,25 @@ const stories: Story[] = [
   {
     ...defaultStory,
     draft: false
+  },
+  {
+    ...defaultStory,
+    title: "例子",
+    desc: "例子",
+    url: "example-zh",
+    draft: false
+  },
+  {
+    ...defaultStory,
+    title: "长白山",
+    desc: "长白山",
+    url: "baishan",
+    datetime: {
+      year: 2025,
+      month: 3,
+      day: 7
+    },
+    draft: false
   }
 ]
 

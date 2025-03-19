@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from "react";  // 修改这里
 import { StoryMap } from "@/lib/storyMap/StoryMap";
 import type { StoryMapConfig } from "@/lib/storyMap/config";
-import clsx from "clsx";
 
 interface StoryMapProps extends Partial<StoryMapConfig> {
   className?: string;

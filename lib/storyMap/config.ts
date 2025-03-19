@@ -4,6 +4,8 @@ export interface StoryMapConfig {
   mapSrc: string;
   trailVisitedColor?: string;
   fontPresentColor?: string;
+  mapScale: number;
+  mapScales: number;
 }
 
 export const defaultConfig: StoryMapConfig = {
@@ -12,4 +14,6 @@ export const defaultConfig: StoryMapConfig = {
   mapSrc: "story-map/map.svg",
   trailVisitedColor: "#47DBB4",
   fontPresentColor: "#5D5C56",
+  mapScale: 1,
+  mapScales: 2,
 };
