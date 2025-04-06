@@ -117,7 +117,7 @@ export default function BlogLayout({
             </a>
           )}
         </article>
-        <Comment slug={`posts/${post.slug}`} />
+        <Comment slug={`posts/${post.slug}`} reaction="1" />
       </div>
     </div>
   );
