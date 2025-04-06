@@ -10,6 +10,7 @@ import { PartialBlog } from "types/content";
 import { pick } from "contentlayer/client";
 import Head from "next/head";
 import metadata from "data/metaData";
+import Showcase from "components/Showcase";
 
 const Home = ({
   recentBlogs,
@@ -24,16 +25,10 @@ const Home = ({
         <title>{metadata.title}</title>
       </Head>
       <Main>
-        <div className="flex flex-col lg:flex-row">
-          <div className="lg:hidden">
-            <WelcomeCard />
-          </div>
-          <div className="hidden basis-1/4 lg:flex">
-            <SideBar />
-          </div>
-          <div className="flex-1">
-            <RecentPost recentBlogs={recentBlogs} staredBlogs={staredBlogs} />
-          </div>
+        <div className="flex flex-col">
+          <WelcomeCard />
+          <RecentPost recentBlogs={recentBlogs} staredBlogs={staredBlogs} />
+          {/* <Showcase /> */}
         </div>
       </Main>
     </div>
