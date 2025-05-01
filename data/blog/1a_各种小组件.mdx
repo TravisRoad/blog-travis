@@ -27,11 +27,11 @@ tags:
 
 ![塞尔达的图片](https://img.travismtg.com/2023/08/fac19d96a8ea6aa4e384802747e19dc2.jpg)
 
-### PhotoProvider && PhotoView
+### PhotoProvider && PhotoView -> Gallery
 
 这儿的代码写的十分丑陋，直接使用了 `react-photo-view` 库，完全没做抽象（又不是不能用）。事实上看起来也不错。
 
-<PhotoProvider>
+{/* <PhotoProvider>
   <div className="relative overflow-auto rounded-lg shadow-lg dark:bg-nord-0 dark:shadow-none">
     <div className="flex w-full snap-x snap-mandatory gap-8 overflow-x-auto py-0">
       <div className="last:pr-[calc (100%-21.5rem)] relative shrink-0 snap-center snap-normal scroll-ml-6 first:pl-6">
@@ -63,7 +63,12 @@ tags:
       </div>
     </div>
   </div>
-</PhotoProvider>
+</PhotoProvider> */}
+
+<Gallery imgs={[
+  {url: "https://img.travismtg.com/2025/05/cdf701fb7ffe5b66a06490fcbefd8a1b.jpeg"},
+  {url: "https://img.travismtg.com/2025/05/3095d19383562413af2d65e0c4cd00ab.jpeg"},
+  ]} />
 
 ### Quote 引用组件
 
