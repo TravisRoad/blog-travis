@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 export default function MyImage({
   src,
@@ -22,32 +23,36 @@ export default function MyImage({
     );
   }
   return (
-    <div className="not-prose mx-2 mb-0 mt-4 break-inside-avoid-page ">
-      {width && height ? (
-        <LocalImage
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          blurDataURL={blurDataURL}
-          border={true}
-          rounded={rounded}
-        />
-      ) : (
-        <WebImage
-          src={src}
-          alt={alt}
-          blurDataURL={blurDataURL}
-          border={border}
-          rounded={rounded}
-        />
-      )}
-      {alt && (
-        <div className="not-prose mb-4 text-center font-sans text-base font-semibold opacity-40">
-          {alt}
+    <PhotoProvider>
+      <PhotoView src={src}>
+        <div className="not-prose mx-2 mb-0 mt-4 break-inside-avoid-page ">
+          {width && height ? (
+            <LocalImage
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              blurDataURL={blurDataURL}
+              border={true}
+              rounded={rounded}
+            />
+          ) : (
+            <WebImage
+              src={src}
+              alt={alt}
+              blurDataURL={blurDataURL}
+              border={border}
+              rounded={rounded}
+            />
+          )}
+          {alt && (
+            <div className="not-prose mb-4 text-center font-sans text-base font-semibold opacity-40">
+              {alt}
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </PhotoView>
+    </PhotoProvider>
   );
 }
 
@@ -67,7 +72,7 @@ function LocalImage({
       } ${border && " border-0 border-nord-10/20 dark:border-white/30"}`}
     >
       <Image
-        src={`${src}`}
+        src={src}
         width={width}
         height={height}
         alt={alt}
