@@ -13,6 +13,7 @@ import GptBlock from "./GptBlock";
 import IframeWithLoading from "./IframeWithLoading";
 import MyLink from "./MyLink";
 import Admonition from "./Admonition";
+import Gallery from "components/Gallery";
 
 const MDXComponents: { [key: string]: any } = {
   img: Image,
@@ -32,6 +33,7 @@ const MDXComponents: { [key: string]: any } = {
   GptBlock,
   IframeWithLoading,
   Admonition,
+  Gallery,
 };
 
 export default MDXComponents;
