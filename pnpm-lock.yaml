@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/lxgw-wenkai':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@giscus/react':
         specifier: ^2.2.0
         version: 2.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -239,6 +242,9 @@ packages:
 
   '@fal-works/esbuild-plugin-global-externals@2.1.2':
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
+
+  '@fontsource/lxgw-wenkai@5.2.5':
+    resolution: {integrity: sha512-lIBouZW7qNw3VdVnjc0NC80iDfxjU7OnaKGaz6QHiHjC8z0fv9MyrHpeBMzkPnyEVabcpUu4Wf8DnaihfGVYtw==}
 
   '@giscus/react@2.2.0':
     resolution: {integrity: sha512-MXjKAQyO85ZdC8OVApNQsJhPvTJcuUf5GmQw2KdvNcBVivUpVrA+NUppdwsrI+lK6jEX4ZMVOCnbJ5GaQddaAA==}
@@ -3267,6 +3273,8 @@ snapshots:
       - supports-color
 
   '@fal-works/esbuild-plugin-global-externals@2.1.2': {}
+
+  '@fontsource/lxgw-wenkai@5.2.5': {}
 
   '@giscus/react@2.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:

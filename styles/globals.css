@@ -35,7 +35,8 @@ body:before {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
 }
 
 #giscus::part(iframe) {
@@ -232,4 +233,13 @@ li#series-list::before {
 .prose :where(.prose > ul > li > a):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0 !important;
   margin-top: 0 !important;
+}
+
+nextjs-portal {
+  display: none;
+}
+
+body {
+  padding: 0 !important;
+  overflow: auto !important;
 }

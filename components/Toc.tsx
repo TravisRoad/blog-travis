@@ -73,7 +73,7 @@ export default function Toc(toc: any) {
       open={false}
       className="not-prose relative mt-4 rounded-lg border-4 py-2 pl-4 pr-8 dark:border-nord-3 dark:text-nord-6/80 dark:shadow-none md:border-none md:bg-nord-6 md:shadow-md md:dark:bg-nord-1 "
     >
-      <summary className="flex select-none items-center gap-x-1 md:justify-center">
+      <summary className="flex cursor-pointer select-none items-center gap-x-1 md:justify-center">
         <QueueListIcon className="inline h-6 w-6 stroke-nord-10 dark:stroke-nord-8 " />
         <h2 className=" font-bold text-nord-10 dark:text-nord-8 ">目录</h2>
       </summary>

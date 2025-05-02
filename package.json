@@ -11,6 +11,7 @@
     "build:content": "contentlayer build"
   },
   "dependencies": {
+    "@fontsource/lxgw-wenkai": "^5.2.5",
     "@giscus/react": "^2.2.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.12",
