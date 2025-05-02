@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "../styles/prism/prism-dark.css";
 import "../styles/nprogress.css";
 import "@/styles/story-map.scss";
+import "@/styles/font.scss";
 import "react-photo-view/dist/react-photo-view.css";
 import type { AppProps } from "next/app";
 import Header from "components/Header";
@@ -38,7 +39,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="application/rss+xml"
           title={metadata.title}
         />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width, viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width, viewport-fit=cover"
+        />
         <meta name="theme-color" content="#242933" />
 
         {/*https://github.com/giscus/giscus/issues/675 */}

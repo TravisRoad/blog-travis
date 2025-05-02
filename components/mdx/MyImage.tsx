@@ -1,6 +1,37 @@
 import Image from "next/image";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
+function extractDimensionsAndCleanPath(path: string): {
+  dimensions: { width: number; height: number } | null;
+  cleanedPath: string;
+} {
+  // 正则匹配 _{width}x{height} 并确保后缀为指定图片格式
+  const match = path.match(/_(\d+)x(\d+)\.(jpg|jpeg|png|webp)$/i);
+
+  if (match) {
+    const width = parseInt(match[1], 10);
+    const height = parseInt(match[2], 10);
+    const ext = match[3]; // 文件扩展名
+
+    // 去掉 _600x600 部分，保留其他部分
+    const cleanedPath = path.replace(
+      /_\d+x\d+\.(jpg|jpeg|png|webp)$/i,
+      `.${ext}`
+    );
+
+    return {
+      dimensions: { width, height },
+      cleanedPath,
+    };
+  }
+
+  // 如果没有匹配到尺寸，则直接返回原路径
+  return {
+    dimensions: null,
+    cleanedPath: path,
+  };
+}
+
 export default function MyImage({
   src,
   alt,
@@ -22,6 +53,14 @@ export default function MyImage({
       />
     );
   }
+
+  const transformPath = extractDimensionsAndCleanPath(src);
+  if (transformPath.dimensions !== null) {
+    width = transformPath.dimensions.width;
+    height = transformPath.dimensions.height;
+  }
+  console.log(transformPath);
+
   return (
     <PhotoProvider>
       <PhotoView src={src}>
