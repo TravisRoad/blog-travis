@@ -7,10 +7,9 @@ interface Story {
   desc: string;
   url: string;
   datetime: {
-    year: number;
-    month: number;
-    day: number;
-  };
+    from: number[];
+    to: number[];
+  }
   draft: boolean;
 }
 
@@ -19,9 +18,8 @@ const defaultStory: Story = {
   desc: "this is an example",
   url: "example",
   datetime: {
-    year: 1970,
-    month: 1,
-    day: 1
+    from: [1970, 1, 1],
+    to: [1970, 1, 1],
   },
   draft: true
 }
@@ -41,12 +39,11 @@ const stories: Story[] = [
   {
     ...defaultStory,
     title: "长白山",
-    desc: "长白山",
+    desc: "和研究生室友的长白山之行",
     url: "baishan",
     datetime: {
-      year: 2025,
-      month: 3,
-      day: 7
+      from: [2025, 3, 7],
+      to: [2025, 3, 11],
     },
     draft: false
   }
@@ -63,7 +60,7 @@ function Cell({ year, stories }: { year: string; stories: Story[] }) {
             key={s.url}
             url={`/travelogue/${s.url}`}
             summary={s.desc}
-            date={`${s.datetime.year}-${s.datetime.month}-${s.datetime.day}`}
+            date={`${s.datetime.from.slice(1).map(n => n.toString().padStart(2, '0')).join("/")}~${s.datetime.to.slice(1).map(n => n.toString().padStart(2, '0')).join("/")}`}
           />
         ))}
       </div>
@@ -72,17 +69,15 @@ function Cell({ year, stories }: { year: string; stories: Story[] }) {
 }
 
 export default function Home() {
-  const yearlyStories: { [year: string]: Story[] } = {};
-  stories.forEach((s) => {
-    if (yearlyStories[s.datetime.year]) {
-      yearlyStories[s.datetime.year].push(s);
-    } else {
-      yearlyStories[s.datetime.year] = [s];
-    }
-  });
-  const yearCata = Object.keys(yearlyStories).sort((a, b) => {
-    return parseInt(b) - parseInt(a);
-  });
+  const yearlyStories = stories.reduce((acc, story) => {
+    const year = story.datetime.from[0].toString();
+    return {
+      ...acc,
+      [year]: [...(acc[year] || []), story]
+    };
+  }, {} as { [year: string]: Story[] });
+
+  const yearCata = Object.keys(yearlyStories).sort((a, b) => Number(b) - Number(a));
 
   return (
     <Main>
