@@ -59,7 +59,6 @@ export default function MyImage({
     width = transformPath.dimensions.width;
     height = transformPath.dimensions.height;
   }
-  console.log(transformPath);
 
   return (
     <PhotoProvider>
