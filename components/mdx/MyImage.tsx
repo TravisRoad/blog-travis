@@ -137,7 +137,7 @@ function WebImage({
       <img
         src={src}
         alt={alt}
-        className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+        className="relative mx-auto w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
         draggable="false"
       />
     </div>
