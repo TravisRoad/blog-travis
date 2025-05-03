@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
 function extractDimensionsAndCleanPath(path: string): {
@@ -129,21 +130,15 @@ function WebImage({
 }: any) {
   return (
     <div
-      className={`relative aspect-video place-items-center overflow-hidden ${
+      className={`relative aspect-video place-items-center ${
         rounded && "rounded-lg"
-      } ${
-        border && " border-0 border-gray-400 dark:border-2 dark:border-white/10"
-      } bg-nord-10/10`}
+      }`}
     >
-      <Image
-        src={`${src}`}
-        // width={width}
-        // height={height}
-        objectFit="contain"
-        layout="fill"
+      <img
+        src={src}
         alt={alt}
-        blurDataURL={blurDataURL}
-        placeholder="blur"
+        className="relative w-80 shrink-0 cursor-pointer bg-white shadow-xl sm:w-[45rem]"
+        draggable="false"
       />
     </div>
   );

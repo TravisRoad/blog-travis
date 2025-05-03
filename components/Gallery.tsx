@@ -23,7 +23,7 @@ export default function Gallery({ imgs }: { imgs: IMG[] }) {
                     draggable="false"
                   />
                   {img.alt && (
-                    <div className="not-prose mt-0.5 mb-4 text-center font-sans text-base font-semibold opacity-40">
+                    <div className="not-prose mt-0.5 text-center font-sans text-base font-semibold opacity-40">
                       {img.alt}
                     </div>
                   )}
