@@ -30,7 +30,7 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       contentlayer:
-        specifier: ^0.2.9
+        specifier: 0.2.9
         version: 0.2.9(esbuild@0.14.54)
       date-fns:
         specifier: ^2.29.3
@@ -51,7 +51,7 @@ importers:
         specifier: 12.3.1
         version: 12.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.85.1)
       next-contentlayer:
-        specifier: ^0.2.9
+        specifier: 0.2.9
         version: 0.2.9(esbuild@0.14.54)(next@12.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.85.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       nextjs-progressbar:
         specifier: ^0.0.16
@@ -2272,6 +2272,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch@2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
